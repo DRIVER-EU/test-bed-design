@@ -1,22 +1,25 @@
-# Test-bed design 
+# Test-bed design
 
-## Lessons learned from the Functional Spec 
+## Lessons learned from the Functional Spec
 
-## Distributed message bus using Apache Kafka 
+## Distributed message bus using Apache Kafka
 
-## Well-defined messages using Apache AVRO 
+## Well-defined messages using Apache AVRO
 
-Dealing with large messages 
+Dealing with large messages
 
-## Adapters in several programming languages 
+## Adapters in several programming languages
 
-## Overview of the supportive tooling, from the open source community and D+, and how they fit together 
+## Overview of the supportive tooling, from the open source community and D+, and how they fit together
 
-## Dealing with simulations 
+## Dealing with simulations
 
-Time management, Injects, Relation to simulation standards DIS and HLA, Other simulators 
+Time management, Injects, Relation to simulation standards DIS and HLA, Other simulators
 
-## Dealing with data 
+![State diagram of the time service](img/state_diagram_time_service.png)
 
-Map data, Other data 
-  
+
+## Dealing with data
+
+Map data, Other data
+
