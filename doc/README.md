@@ -20,7 +20,7 @@ The simplified process to trial solutions goes like this:
 
 ## Aim
 
-The test-bed supports practitioners by providing an environment in which they can easily trial new solutions and exercise. This has several implications for the test-bed:
+The test-bed supports practitioners by providing an environment in which they can easily trial new solutions and run exercises. This has several implications for the test-bed:
 
 - **Evaluation support:** As we are testing and evaluating new solutions, the test-bed provides tools for observers and After-Action Review.
 - **Simulation support:** Due to the nature of the crisis management domain, most solutions cannot be properly tested outside an actual crisis situation. As starting a flooding or burning a forest is clearly not an option to test the solutions, the crisis incident needs to be faked or simulated. The same applies to expected reactions of the environment: people panicking, traffic jams, etc. must be simulated too.
