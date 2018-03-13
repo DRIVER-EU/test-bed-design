@@ -12,6 +12,7 @@
 | CSS          | Common Simulation Space for exchanging simulation data
 | COP          | Common Operational Picture tools for creating a shared situational awareness
 | CoPCM        | Community of Practice in Crisis Management
+| DIS          | [Distributed Interactive Simulation](https://en.wikipedia.org/wiki/Distributed_Interactive_Simulation), a simulation standard
 | Docker       | Container environment to enable independence between applications and infrastructure
 | EDXL         | Emergency Data Exchange Language, set of message standard to share emergency information
 | EMSI         | Emergency Management Shared Information, message format for the exchange of emergency information
@@ -19,6 +20,7 @@
 | GitHub       | Repository for managing DRIVER+’s software code
 | GT           | Guidance Tool
 | GUI          | Graphical User Interface
+| HLA          | [High Level Architecture](https://en.wikipedia.org/wiki/High-level_architecture), a simulation standard
 | Java         | Programming Language
 | JavaScript   | Programming Language
 | Kafka        | An open source distributed streaming platform supported by the Apache Organisation that is used as the basis to exchange information between simulators and solutions
@@ -27,6 +29,7 @@
 | MGT          | Management
 | Python       | Programming Language
 | REST         | Representational State Transfer (common interface allowing you to read and write data from a service)
+| RTI          | Run-time infrastructure, a kind of HLA-based test-bed
 | SUMO         | Simulation of Urban Mobility, a traffic and pedestrian simulator
 | TypeScript   | Programming Language
 | WFS          | Web Feature Service (serving a map layer as vectors)
