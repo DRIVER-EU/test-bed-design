@@ -48,6 +48,18 @@ Even while using well defined messages based on [Apache AVRO](https://avro.apach
 
 *Validation Services* are specific gateways that, as the name suggests, validate a message in more detail, before it is passed on to other systems. For example, if application A is publishing a CAP (Common Alerting Protocol) message for application B, i.e. A --> CAP topic --> B, the test-bed will make sure that it complies with the appropriate schema before passing it on. However, there may still be certain aspects in the message that are not completely correct, e.g. the alerting area that is represented as a polygon may not have the same starting and ending point (i.e. it should be closed), or the incident location that is represented by two numbers (x, y), may actually be published as (y, x). So during testing, the validation service can 'intercept' messages between A and B and validate them in detail. Only valid messages are passed on, i.e. A --> CAP validation topic --> CAP topic --> B.
 
+## Test-bed administration
+
+The test-bed is a collection of distributed services running in a network environment. You can compare it to a theatre play, where the stage needs to be prepared, the players must be ready, as well as the light and sound engineers. The test-bed admin tool helps you determine whether all services are ready, and that their inputs and outputs are correct. Also in case a service encounters any errors, this is made visible and the errors can be inspected - are they serious and do we need to stop our trial, or can we ignore them safely and run on.
+
+This does not only apply to the test-bed's core tools, gateways and services, but also for the connected simulators and solutions.
+
+![Admin tool](img/admin-tool-screenshot.png)
+
+Detailed information:
+- [Functional specification](https://driver-eu.gitbooks.io/test-bed-specification/technical-requirements.html)
+- [Website](https://github.com/DRIVER-EU/test-bed-admin)
+
 ## Trialling, Exercising and Scenario Management
 
 Whether designing a **trial** to evaluate solutions, or an **exercise** to train people, a scenario and, optionally, simulations, are needed to emerge the training audience and to give them the feeling that they are dealing with an actual crisis.
@@ -79,19 +91,37 @@ The test-bed's scenario manager, then, is responsible for managing the overall f
 
 Additionally, the scenario manager will also publish messages that are not directly related to the scenario itself. For example, it can send a message to the observers, informing them that they need to pay attention, as something important is going to happen soon. Or it could ask these observers specific questions during the trial, e.g. '*Did you notice that X occurred?*'. These messages are also important for the after-action review, as they can be used as bookmarks to quickly go to parts in the scenario that are of extra importance for the evaluation.
 
+Detailed information:
+- [Functional specification](https://driver-eu.gitbooks.io/test-bed-specification/technical-requirements.html)
+
 ## Evaluation
 
 Evaluation is needed to verify that the trial or training objectives have been achieved. The test-bed provides two services for this: an Online Observer Support tool and an After-Action Review tool.
 
 ### Online Observer Support tool
 
-Based on the selected objectives of the trial or exercise, an observer should observe different behaviour.
+Based on the specified objectives of the trial or exercise, an observer expects to observe different kinds of behaviour. At the same time, there is little time during a trial to record behaviour, as the trial runs on, and that's why the observer tool provides trial-specific pre-made forms (templates) to quickly create a new observation. For example, *Did you observe role X do Y? Yes/No*. These trial-specific forms are created before the trial by the observation team manager in the administration panel. Using this panel, specific forms can be assigned to specific observers. The observer can use a tablet, phone or desktop application for his work.
+
+Although the observer tool can run standalone, outside the test-bed, it really shines when it is connected, as this allows:
+- To share observations with trial staff: they can use this information to steer the trial in another direction.
+- The After-Action Review tool can use the observations during the analysis and evaluation
+- The scenario manager can inform the observers of major events that are about to occur: so they can finish drinking their coffee and are warned ahead of time
+- Observation forms can be created dynamically and transmitted to one or all observers
+
+![OST overview](img/ost_overview.png)
+![OST form](img/ost_form.png)
+
+Detailed information:
+- [Functional specification](https://driver-eu.gitbooks.io/test-bed-specification/technical-requirements.html)
+- [Website](https://github.com/DRIVER-EU/ost)
+- [Documentation](https://driver-eu.gitbooks.io/specification-of-the-online-observer-support-tool/)
 
 ### After-Action Review tool
 
+The After-Action Review (AAR) tool provides the possibility to collect data after a trial has finished and analyse it. Its main purpose is to facilitate the evaluation of the trialled solutions against the predefined objectives, and to help the participants determine how well they functioned. It collects messages (exchanged during trial), observation reports and takes screen-shots of the applications during their use.
 
+Detailed information:
+- [Functional specification](https://driver-eu.gitbooks.io/test-bed-specification/technical-requirements.html)
 
 ## Simulation
-
-
 
