@@ -5,3 +5,4 @@
 * [Test-bed for developers & sysops](developers.md)
 * [Test-bed design](design.md)
 * [Acronyms](acronyms.md)
+* [Glossary](GLOSSARY.md)
