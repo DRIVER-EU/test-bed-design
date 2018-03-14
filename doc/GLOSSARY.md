@@ -2,6 +2,10 @@
 
 The After-Action Review (AAR) tool provides the possibility to collect data after a trial has finished and analyse it. Its main purpose is to facilitate the evaluation of the trialled solutions against the predefined objectives, and to help the participants determine how well they functioned. It collects messages (exchanged during trial), observation reports and takes screen-shots of the applications during their use.
 
+## COP
+
+Common Operational Picture tools for creating a shared situational awareness
+
 ## Docker
 
 [Docker](http://docker.com/) is a free software application, available on Linux, Mac and Windows, which offers a way to run other applications in its own sand-box environment without requiring installation. Basically, a single PC can run many different Docker files, where each Docker file represents an application. This is also called *virtualisation*, as a single PC runs many services as if it was server park. A Docker-compose file, then, combines many Docker files into one, each representing a dedicated service of our test-bed or an external solution, such as the csCOP tool.
@@ -23,6 +27,14 @@ The online observer support tool facilitates the task of the observer by providi
 The scenario manager acts as the *composer* and *conductor* of a classical performance:
 - As the *composer*, it defines what each role has to play. For example, what do the simulators need to do in order to provide a realistic incident and background to the trial, or it could include sending direct messages to solutions.
 - As the *conductor*, it controls *when* each role starts and stops.
+
+## SA
+
+Situational awareness, basically do you know on the map where your people and other resources are, as well as all relevant crisis management related incidents and activities.
+
+## Sysops
+
+System operators or system administrators, i.e. the ICT persons managing your local network infrastructure.
 
 ## Trial
 
