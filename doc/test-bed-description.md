@@ -144,7 +144,7 @@ It does not, however, provide these simulations as an integral part of the test-
 ### A word about HLA and DIS
 
 Within the Modelling & Simulation community, especially for military use, there are two simulation standards, HLA (High Level Architecture) and DIS (Distributed Interactive Simulation), which are the norm. The reasons why we did not use these standards, not even for the CSS, are:
-- They are used for connecting simulators to each other, not for connecting solutions and simulators
+- They are used for connecting simulators to each other, not for connecting solutions to simulators nor solutions to other solutions.
 - Their message format is fixed: if you want to send other information, you have to 're-purpose' existing fields, which is not considered a best practice. Also, they have no support for any CM standard.
 - Both have a steep learning curve.
 - HLA and DIS form a very small community, so it is difficult to hire people with this knowledge, and you typically have to train general software engineers by yourself. Second, it is difficult to find solutions for a particular problem on the Internet.
