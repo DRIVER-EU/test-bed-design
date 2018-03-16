@@ -38,7 +38,7 @@ At the heart of the test-bed, i.e. its [core](#core), all messages are exchanged
 
 For not too complex trials, the CSS and CIS will run in the same test-bed. In case the performance suffers, it may be necessary to split the CSS and CIS over two test-beds that are connected to each other.
 
-Note though that the [adapters](#adapters) connect to the CIS as well as the CSS, so there is no difference between them.
+Note, though, that the [adapters](#adapters) connect to the CIS as well as the CSS, so there is no difference between them.
 
 ### Gateways and Validation Services
 
@@ -46,7 +46,15 @@ Even while using well defined messages based on [Apache AVRO](https://avro.apach
 - A message from a simulator sharing the location of all vehicles, to a COP tool message that only contains the location of its own resources
 - An EDXL Resource Management request from a COP tool to a simulator message, which in turn sends out an ambulance to the required location.
 
-*Validation Services* are specific gateways that, as the name suggests, validate a message in more detail, before it is passed on to other systems. For example, if application A is publishing a CAP (Common Alerting Protocol) message for application B, i.e. A --> CAP topic --> B, the test-bed will make sure that it complies with the appropriate schema before passing it on. However, there may still be certain aspects in the message that are not completely correct, e.g. the alerting area that is represented as a polygon may not have the same starting and ending point (i.e. it should be closed), or the incident location that is represented by two numbers (x, y), may actually be published as (y, x). So during testing, the validation service can 'intercept' messages between A and B and validate them in detail. Only valid messages are passed on, i.e. A --> CAP validation topic --> CAP topic --> B.
+In order to facilitate solution tools to obtain their needed information from the simulated world, the CSS needs to be connected with the CIS by means of translator applications, residing in the CIS-CSS Gateway. These translator applications form the bridge between de simulated truth and the perceived/communicated truth by mapping the relevant changes from the simulated world to messages globally understood in the CIS.
+
+An example of this would be a simulation of a flooding. Imagine a river that has a rising water level due to increase of rain water. At the river bank, there are several sensors that react to the amount of water coming in contact with the sensor. An application is created and connected to current operational systems to send CAP messages regarding the water level in clear categories ranging from LOW to DANGEROUSLY HIGH. A possible solution is assessed on improving decision-making based on the messages outputted by the created sensor application.
+
+In this example, the water in the river is handled inside the CSS by means of a simulator focussed at calculating water levels at exact locations. The sensor application would be a translator application or gateway, mapping the current water levels obtained from the CSS into the messages with understandable categories (and, for instance, only sending them whenever a change in category is observed) similar to the operational application. The tool connected to the CIS listens to the formatted messages of the translator application as if it was connected to the actual operational application.
+
+There are also tools that will send out messages that serve as commands or requests to change the simulated world (e.g. Command & Control systems used to trigger procedures to be executed by units, which in case of a trial are simulated). Again, a gateway would be used to bridge the two spaces together. For example, a new dispatch centre solution (i.e. a type of COP system) that allows the user to send out emergency services from their dispatch towards the incident location. The solution would send out a standard resource management message via the CIS. The gateway service picks up the message and maps it towards the corresponding request for changing the simulation space. The responsible simulator would receive this request via the CSS and handles it, changing the respective simulation entity (i.e. letting a simulated unit drive in the simulated world).
+
+**Validation Services** are specific gateways that, as the name suggests, validate a message in more detail, before it is passed on to other systems. For example, if application A is publishing a CAP (Common Alerting Protocol) message for application B, i.e. A --> CAP topic --> B, the test-bed will make sure that it complies with the appropriate schema before passing it on. However, there may still be certain aspects in the message that are not completely correct, e.g. the alerting area that is represented as a polygon may not have the same starting and ending point (i.e. it should be closed), or the incident location that is represented by two numbers (x, y), may actually be published as (y, x). So during testing, the validation service can 'intercept' messages between A and B and validate them in detail. Only valid messages are passed on, i.e. A --> CAP validation topic --> CAP topic --> B.
 
 ## Test-bed administration
 
@@ -138,12 +146,20 @@ In the test-bed, the goal of simulation is to provide a realistic, immersive bac
 
 The test-bed, therefore, offers support to simulators for creating this realistic and immersive background, by:
 - Providing a time-service: i.e. each adapter knows the scenario time, so simulators and solutions can use this in their user interface and calculations. Think of a clock display, but also when sending an email or CAP message, making sure it uses the correct timestamps.
-- The scenario manager, as discussed above
+- The scenario manager, as discussed above.
 
-It does not, however, provide these simulations as an integral part of the test-bed. They are, and shall always remain, external. Even though some simulators will be connected during the project, they are external, as as such, also not bound by the open source requirements that the test-bed has to adhere too. For example:
+It does not, however, provide these simulators as an integral part of the test-bed. They are, and shall always remain, external. Even though some simulators will be connected during the project, they are external, as as such, also not bound by the open source requirements that the test-bed has to adhere too. For example:
 - XVR connects their 3D crisis management environment, Crisis Media and Resource Manager to the test-bed, thereby offering their (commercial) services to other parties too.
 - DLR connects their open source SUMO (Simulation of Urban Mobility) traffic simulator to the test-bed, which provides realistic traffic during an incident
 - Thales connects their commercial Crowd Simulator to the test-bed, e.g. providing a realistic simulation of people in need during a crisis.
+
+## A note about Simulators
+
+All simulators have their own data model of how they represent the simulated world. The CSS allows these simulators to agree on a communication form that the simulators understand to create and maintain a jointly simulated world.
+
+The simulators only need to be concerned with maintaining the current state of a given location (including entities and processes present at that location), and do not have to deal with the different kinds of communication types for tools and users to depict that current state.
+
+The CSS allows simulators to only focus on maintaining the current state of the simulated world (i.e. the simulated truth of the incident and the world around it). In order to communicate state changes with other simulators inside the CSS, self-created communication messages are allowed inside this space. This is different than the messages being sent over the CIS, because the CIS is more aligned with current emergency management standards (like Common Alerting Protocol (CAP) messages, or Emergency Data Exchange Language (EDXL) messages).
 
 ### A word about HLA and DIS
 
