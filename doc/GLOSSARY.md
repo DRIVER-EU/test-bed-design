@@ -48,6 +48,10 @@ Situational awareness, basically do you know on the map where your people and ot
 
 System operators or system administrators, i.e. the ICT persons managing your local network infrastructure.
 
+## REST
+
+REpresentational State Transfer, is a way to interact with many web services, thereby providing interoperability between computer systems on the Internet.
+
 ## Trial
 
 A trial is a test of the performance, qualities, or suitability of a solution.
