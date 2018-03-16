@@ -26,7 +26,7 @@ The adapter is the only form of connection between an application (solution, sim
 
 The adapter sets up and maintains the connection between application and the communication framework via several system message topics. The adapter deals with error handling and additional message validation, allowing the application to send and receive messages easily.
 
-Since the Test-bed requires multiple solutions and simulators with different implementation frameworks to be connected to the CIS/CSS, multiple adapters are created. Currently, an adapter for Java, JavaScript/TypeScript and C# is created and can be found in the DRIVER+ GithHub (https://github.com/DRIVER-EU). A REST endpoint should also be present for web services to communicate with the CSS in a similar fashion. All adapters should have similarly behaving functionality with a clear and understandable API.
+Since the Test-bed requires multiple solutions and simulators with different implementation frameworks to be connected to the CIS/CSS, multiple adapters are created. Currently, an adapter for Java, JavaScript/TypeScript and C# is created and can be found in the DRIVER+ GitHub (https://github.com/DRIVER-EU). A REST endpoint should also be present for web services to communicate with the CSS in a similar fashion. All adapters should have similarly behaving functionality with a clear and understandable API.
 
 ## Well-defined messages using Apache AVRO
 
@@ -40,7 +40,6 @@ Dealing with large messages
 
 Time management, Injects, Relation to simulation standards DIS and HLA, Other simulators
 
-![State diagram of the time service](img/state_diagram_time_service.png)
 
 
 ## Dealing with data
