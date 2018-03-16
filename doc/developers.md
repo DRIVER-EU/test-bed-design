@@ -51,12 +51,25 @@ Connecting to the test-bed is needed to share information that you produce, or c
 
 ## Use case: Translating messages
 
+As a developer, you may be confronted with message formats you need to consume, but do not support natively in your application. In that case, you can either:
+- Adapt your application to support these message formats natively.
+- Create a gateway service which translates messages from one message format to a format that your application does understand.
+
+To create such a gateway service is simple: you consume messages from one message topic, convert them, and publish them on another topic. The validation services follow the same approach, and several dedicated services are already available within the [DRIVER+ space on GitHub](https://github.com/DRIVER-EU).
+
 ## Use case: Time management
 
-## A note about Simulators
+A trial or exercise typically is not performed in real-time: either because the incident occurs at night, and people prefer to trial and train during working hours, because you wish to skip boring parts, or because it would simply take too long. An example of the latter is a flooding incident, which can start days before any flooding actually occurs, so you need to compress the scenario to normal working hours.
 
-All simulators have their own data model of how they represent the simulated world. The CSS allows these simulators to agree on a communication form that the simulators understand to create and maintain a jointly simulated world.
+Within the test-bed, therefore, the scenario time (a.k.a. trial time or fictive time) is controlled via the [time service](https://github.com/DRIVER-EU/test-bed-time-service) using [two types of messages](https://github.com/DRIVER-EU/avro-schemas/tree/master/core/time): one for controlling the time, and one for informing adapters about the current scenario time.
 
-The simulators only need to be concerned with maintaining the current state of a given location (including entities and processes present at that location), and do not have to deal with the different kinds of communication types for tools and users to depict that current state.
+As a developer, you do not need to interact with these messages directly, since:
+- Every adapter has a time interface to get the current scenario time. Even as a solution developer, you should also use this time to timestamp the messages that you send. For example, if inside your message you refer to a particular time, always base it on the scenario time.
+- Every adapter has a state describing the current scenario phase, which you can optionally use during the integration:
+  - Idle: no scenario has started. The time interface returns the system time.
+  - Initialized: the scenario is ready to be started. All adapters will receive the scenario start time, and can use this to initialize their service. In the near future, adapters have the ability to inform the test-bed when they are initialized and ready to start.
+  - Running (started or paused): the scenario time is moving forward, either in real speed or slower/faster than normally. In case the scenario is paused, the current scenario time is still actively being distributed, but does not progress (speed is 0).
+  - Stopped: The scenario is stopped, and the simulation time is no longer being updated.
 
-The CSS allows simulators to only focus on maintaining the current state of the simulated world (i.e. the simulated truth of the incident and the world around it). In order to communicate state changes with other simulators inside the CSS, self-created communication messages are allowed inside this space. This is different than the messages being sent over the CIS, because the CIS is more aligned with current emergency management standards (like Common Alerting Protocol (CAP) messages, or Emergency Data Exchange Language (EDXL) messages).
+![State diagram of the time service](img/state_diagram_time_service.png)
+
