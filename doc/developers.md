@@ -73,3 +73,8 @@ As a developer, you do not need to interact with these messages directly, since:
 
 ![State diagram of the time service](img/state_diagram_time_service.png)
 
+Even though you do not interface with the time messages, you still need to use the time interface when you need to send a message with a timestamp inside. This timestamp should use the current scenario time. Similarly, in case you display the 'actual' time in your user interface, please also use the current scenario time.
+
+### System time versus scenario time
+
+In trials executed in the past, the operating system (OS) time was also adjusted to match the scenario time. The advantage was that if you would check the time in your status bar, it would display the current scenario time instead of the real time. Although this is straightforward to do, your OS does not like it, as it will generate files in the past or future, and may mess up your system. Especially when the scenario is paused. That's why the current test-bed does not require you to synchronize your system time to the scenario time.
