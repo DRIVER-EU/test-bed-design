@@ -18,7 +18,7 @@ Being popular, Kafka has connectors for most programming languages, so software 
 
 The default Kafka connectors are lacking certain features that are useful in a test-bed environment, so some existing connectors have been extended. These extended connectors are called **adapters**, and the test-bed currently maintains four of them: in [Java](https://github.com/DRIVER-EU/java-test-bed-adapter), [C#](https://github.com/DRIVER-EU/csharp-test-bed-adapter), [JavaScript/TypeScript](https://github.com/DRIVER-EU/node-test-bed-adapter) and [REST](https://github.com/DRIVER-EU/test-bed-rest-service). Note that the REST adapter is a simple interface so any application can send and receive messages using basic internet commands.
 
-Adapters extend regular connectors with:
+Adapters extend regular Kafka connectors with:
 - *Heartbeat signals:* Before you can start a trial, every solution, simulator and tool needs to be up-and-running. Therefore every adapter transmits a heartbeat signal every 5 seconds to inform others it is online.
 - *Logging:* Besides being online, it is also important to know that each connected service is running as expected, so each adapter offers the option to log warnings/errors to the test-bed as well.
 - *Configuration options:* The adapter can inform others to what topics it subscribes and publishes. In addition, this can be configured too externally.
@@ -160,22 +160,3 @@ All simulators have their own data model of how they represent the simulated wor
 The simulators only need to be concerned with maintaining the current state of a given location (including entities and processes present at that location), and do not have to deal with the different kinds of communication types for tools and users to depict that current state.
 
 The CSS allows simulators to only focus on maintaining the current state of the simulated world (i.e. the simulated truth of the incident and the world around it). In order to communicate state changes with other simulators inside the CSS, self-created communication messages are allowed inside this space. This is different than the messages being sent over the CIS, because the CIS is more aligned with current emergency management standards (like Common Alerting Protocol (CAP) messages, or Emergency Data Exchange Language (EDXL) messages).
-
-### A word about HLA and DIS
-
-Within the Modelling & Simulation community, especially for military use, there are two simulation standards, HLA (High Level Architecture) and DIS (Distributed Interactive Simulation), which are the norm. The reasons why we did not use these standards, not even for the CSS, are:
-- They are used for connecting simulators to each other, not for connecting solutions to simulators nor solutions to other solutions.
-- Their message format is fixed: if you want to send other information, you have to 're-purpose' existing fields, which is not considered a best practice. Also, they have no support for any CM standard.
-- Both have a steep learning curve.
-- HLA and DIS form a very small community, so it is difficult to hire people with this knowledge, and you typically have to train general software engineers by yourself. Second, it is difficult to find solutions for a particular problem on the Internet.
-- HLA and DIS expect everyone to use Java or C++, and there is even less support for the 'newer' programming languages, like C#, JavaScript, Python, etc.
-- HLA requires a run-time infrastructure, which is a kind of test-bed: there are two commercial providers that are rather expensive. Although there is one [open source version](https://github.com/openlvc/portico), it is feature incomplete and not well maintained. Although these versions should be interoperable, they are not, and they cannot be mixed.
-
-That's why this test-bed is using popular open source software, so it is easy to find:
-- Open source tools to support it, or to connect to it, in many programming languages
-- Answers to questions
-- People that can use it
-- A new schema representing your message
-- And there is no financial hurdle preventing adoption
-
-Even though the test-bed does not use HLA or DIS internally, there are many simulators that provide a HLA or DIS export, and that can be useful for a trial or exercise. In those cases, a HLA or DIS simulation environment can be created, as is done normally, including a gateway service to bridge the gap with our test-bed: typically, such a gateway has an HLA connector to retrieve information from the HLA/DIS side, and a subset of the information is published in the CSS. And vice versa. Even though this kind of integration if suboptimal, in practice, this is not really noticeable.
