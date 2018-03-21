@@ -2,6 +2,10 @@
 
 The After-Action Review (AAR) tool provides the possibility to collect data after a trial has finished and analyse it. Its main purpose is to facilitate the evaluation of the trialled solutions against the predefined objectives, and to help the participants determine how well they functioned. It collects messages (exchanged during trial), observation reports and takes screen-shots of the applications during their use.
 
+## AVRO
+
+[Open data serialization system](https://avro.apache.org) supported by the Apache Organisation.
+
 ## CIS
 
 Common Information Space for exchanging crisis management messages between solutions.
@@ -21,6 +25,12 @@ Common Operational Picture tools for creating a shared situational awareness
 ## Docker
 
 [Docker](http://docker.com/) is a free software application, available on Linux, Mac and Windows, which offers a way to run other applications in its own sand-box environment without requiring installation. Basically, a single PC can run many different Docker files, where each Docker file represents an application. This is also called *virtualisation*, as a single PC runs many services as if it was server park. A Docker-compose file, then, combines many Docker files into one, each representing a dedicated service of our test-bed or an external solution, such as the csCOP tool.
+
+## EDXL DE
+
+[EDXL DE](http://docs.oasis-open.org/emergency/edxl-de/v2.0/edxl-de-v2.0.html), OASIS' Emergency Data Exchange Language (EDXL) Distribution Element Version 2.0. The primary purpose of the Distribution Element 2.0 is to facilitate the routing of any properly formatted  emergency message to recipients. The Distribution Element may be thought of as a "container". It provides the information to route "payload" message sets (such as Alerts or Resource Messages), by including key routing information such as distribution type, geography, incident, and sender/recipient Ids.
+
+
 
 ## Exercise
 

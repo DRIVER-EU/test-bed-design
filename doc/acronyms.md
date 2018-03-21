@@ -3,7 +3,7 @@
 | Abbreviation | Definition |
 |--------------|------------|
 | AAR          | After Action Review
-| AVRO         | [Open data serialization system](https://avro.apache.org/) supported by the Apache Organisation
+| AVRO         | [Open data serialization system](https://avro.apache.org) supported by the Apache Organisation
 | C++          | [C plus plus] Programming Language
 | C#           | [C-sharp] Programming Language
 | CAP          | Common Alerting Protocol, standard data format for exchanging public warnings
@@ -14,7 +14,7 @@
 | CoPCM        | Community of Practice in Crisis Management
 | DIS          | [Distributed Interactive Simulation](https://en.wikipedia.org/wiki/Distributed_Interactive_Simulation), a simulation standard
 | Docker       | Container environment to enable independence between applications and infrastructure
-| EDXL         | Emergency Data Exchange Language, set of message standard to share emergency information
+| EDXL         | Emergency Data Exchange Language, [set of message standards](http://docs.oasis-open.org/emergency) defined by OASIS to share emergency information
 | EMSI         | Emergency Management Shared Information, message format for the exchange of emergency information
 | GitBook      | Open Source service for creating online books
 | GitHub       | Repository for managing DRIVER+’s software code
