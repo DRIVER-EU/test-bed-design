@@ -57,6 +57,18 @@ As a developer, you may be confronted with message formats you need to consume, 
 
 To create such a gateway service is simple: you consume messages from one message topic, convert them, and publish them on another topic. The validation services follow the same approach, and several dedicated services are already available within the [DRIVER+ space on GitHub](https://github.com/DRIVER-EU).
 
+## Data services and data sets
+
+Within a trial or exercise, we need to create a virtual environment where we can safely experiment. This virtual environment is created using data, such as maps, census data, height data, power lines, cell towers, hospitals and care providers, etc. As it is a lot of work to create such a rich data environment, the effort should be shared among the trial owners, solution and simulator providers. Not only to reduce the workload for a specific organisation, but also to make sure that all parties use the same data. Otherwise, a traffic simulator may use a different roadmap than the simulator that provides a 3D environment, and some roads may be blocked by buildings.
+
+In many cases, real-world data is used, optionally enriched with scenario-specific information. Sometimes, a virtual environment is created, based on real-world data but with altered names.
+
+So in order to share all this gathered data, the test-bed offers two types of services:
+- Docker *volume images* to store all this information together, so the data can be easily shared. A test-bed user can simply pull the volume image from the Docker hub to have all data instantly available
+- *Data services*, to share this data with all users, e.g. there is an [MBtiles service](https://github.com/DRIVER-EU/test-bed-mbtiles-service) to offer map images to COP and COP-like tools, or a [WMS service](https://github.com/DRIVER-EU/test-bed-wms-service) that translate test-bed messages to WMS map layers available to make the information available to legacy systems.
+
+**Security** is yet another reason to have these data services and data sets as part of the test-bed. Not all trials and exercises have open access to the Internet, but they still need access to this kind of data.
+
 ## Time management
 
 A trial or exercise typically is not performed in real-time: either because the incident occurs at night, and people prefer to trial and train during working hours, because you wish to skip boring parts, or because it would simply take too long. An example of the latter is a flooding incident, which can start days before any flooding actually occurs, so you need to compress the scenario to normal working hours.
