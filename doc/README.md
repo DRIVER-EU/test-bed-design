@@ -1,54 +1,25 @@
-# Introduction
+# Executive Summary
 
-In the Crisis Management (CM) domain, practitioners need to be prepared for the unexpected: based on past experience and the local incidents they had to deal with, they develop a gut feeling for the things that did not go so well. As with most incidents many lives are involved, they are continuously looking for solutions to improve their response and preparedness.
+The test-bed reference implementation lies at the heart of the trialling environment of the DRIVER+ project. It provides an open source technical backbone to perform trials or exercises in a methodical and structured way as it provides all the *software* tools to run a trial or exercise.
 
-Within the [DRIVER+ project](http://www.driver-project.eu), a guidance methodology and tools are developed to help practitioners translate their gut feeling to practical solutions to their problems. The test-bed is a suite of software tools and services that enables solutions and simulators in the Crisis Management (CM) domain to easily exchange information. This allows end-users in the CM domain to trial solutions, and see if they address their gaps. Additionally,it can be used to support training exercises as well.
+![PTME paradigm applied to DRIVER+](img/pmte_paradigm.png)
 
-The simplified process to trial solutions goes like this:
+The basic problem that the test-bed reference implementation tries to solve is how to connect different solutions, which solve a particular Crisis Management (CM) gap, to:
+- **Each other:** since no single application can solve all CM gaps, they need to work together by sharing information.
+- **One or more simulators:** since during a trial or exercise, you cannot start a real incident, there needs to be a way to *simulate* a realistic incident.
 
-1. The gut feeling is matched with one of the well-known crisis management gaps, as experienced by many of their colleagues, e.g. *How to get a real-time and dynamic overview of the position of all personnel?*.
-2. These gaps, in turn, are still too generic to address, and are made more specific, leading to so-called `research questions`, e.g. *Which Situational Awareness-increasing solution fits best with our mode of operation?*
-3. Existing solutions are reviewed and selected. Some solutions can even be tried out standalone using the test-bed and an existing mini-scenario.
-4. Selected solutions are trialled using the test-bed:
-   - A scenario is developed that puts these solutions to the test.
-   - A simulator of a fictive incident is selected and connected to the test-bed, e.g. a flooding simulator.
-   - Other simulators to create a realistic environment are connected too, e.g. a traffic simulator.
-   - Selected solutions and existing legacy systems are connected to the test-bed, so they can receive input from the simulators as well as each other.
-   - The trial is run, observed, and evaluated, leading to a good appreciation of how the selected solutions can contribute to solving their initial problems.
+The approach that was taken is to connect solutions to a so-called Common Information Space (CIS), simulators to a Common Simulation Space (CSS), and to have gateway services in between that selectively allow some information to pass between the two spaces. Although both spaces are comparable in that they share well structured messages (using Apache AVRO) over a popular open source distributed messaging system, Apache Kafka, the separation allows for a better control of the message flow, and for replacing parts with an alternative.
 
-![Test-bed environment](img/test-bed-environment.jpg)
+In addition, several adapters are created to connect solutions and simulators to the CIS and CSS: besides allowing users of the test-bed to choose an adapter in their favourite programming language, and share messages, it also provides a common interface for configuration, heartbeat messages, and security. Currently, adapters in Java, C#, JavaScript/TypeScript and REST are available, and Python is on its way.
 
-## Aim
+![CIS and CSS](img/test_bed_overview_cis_css.png)
 
-The test-bed supports practitioners by providing an environment in which they can easily trial new solutions and run exercises. This has several implications for the test-bed:
+Around this core functionality, additional tools are developed that facilitate the usage of this environment:
+- Administrative tools: Is everyone up-and-running, secure, and connected to the right information topics?
+- Evaluation tools: What did we observe during the trial, and what implications does this have during the After-Action Review
+- Scenario tools: To create an interesting scenario that triggers the participants and solutions in the right way
+- Support tools: For testing and debugging, for creating your personalized test-bed environment, but also to share common data such as map layers or census data.
 
-- **Evaluation support:** As we are testing and evaluating new solutions, the test-bed provides tools for observers and After-Action Review.
-- **Simulation support:** Due to the nature of the crisis management domain, most solutions cannot be properly tested outside an actual crisis situation. As starting a flooding or burning a forest is clearly not an option to test the solutions, the crisis incident needs to be faked or simulated. The same applies to expected reactions of the environment: people panicking, traffic jams, etc. must be simulated too.
-- **Trial & exercise support:** As the solutions are typically tested within an incident scenario, the test-bed provides tools to create and execute scenario's.
-- **Development support:** To connect new solutions and simulators to the test-bed, the test-bed provides adapters in several popular languages and several debugging tools and services. Also, to check whether everything is up-and-running smoothly, it also has an admin tool.
+![Test-bed reference implementation](img/test-bed-components-explained.png)
 
-## Scope of the test-bed
-
-This document limits its scope to the core test-bed design, more specifically, the design of the test-bed's reference implementation, which is an implementation of the [test-bed specification](https://driver-eu.gitbooks.io/test-bed-specification): it thereby provides an overview of the most important components of the test-bed, how they work together, and how they can be used by different stakeholders.
-
-The CM solutions and simulators that supplement the test-bed, however, are *not* part of the test-bed. The simulators' function is to simulate an incident, and the reactions that may occur in a real world, since we cannot unleash incidents like a flooding and earthquakes on the real world. The solutions are the actual tools that are trialled and evaluated, and measured whether they actually do solve a CM gap. These solutions are fed with the simulator's output, and perhaps the output of other solutions, so end users can observe and evaluate their contribution during a fictive incident.
-
-![Scope of the test-bed](img/test-bed-components-explained.png)
-
-## Organisation of the Document
-
-This document is organised as follows:
-
-The [test-bed description](test-bed-description.md) provides a general overview of the test-bed reference implementation. It is an easy to read chapter which requires no technical background knowledge, and is aimed at anyone who has to work with the test-bed.
-
-The second chapter, a [test-bed for trial owners](trial-owners.md), is specifically aimed at trial owners and practitioners, and discusses the functionality the test-bed offers to them. And also, what it does not offer.
-
-In the chapter, a [test-bed for developers and sysops](developers.md), the technical side of the test-bed is explained, specifically, how to manage a test-bed as a sysop, or how to connect a solution or simulator to it as a developer.
-
-The final chapter offers more details about the [test-bed design](design.md), and provides an explanation for the main design decisions. The intended audience are developers that need a deeper understanding of the test-bed and its underlying architecture, e.g. for supplementing the test-bed or for offering a deeper integration of their solution.
-
-## What's new
-
-### Version 1 (2018-03-31)
-
-This is the first version of the test-bed design document, describing the test-bed reference implementation v1.
+This document is actually a living document, and the latest version is available [online](https://www.gitbook.com/book/driver-eu/test-bed-design/details) or can be download as PDF or ebook (epub of mobi). It starts on a high-level with a description of the main components of the test-bed reference implementation. Next, chapters are dedicated to the main users of this environment, practitioners and developers/ICT administrators. And it concludes with a brief explanation of the main design decisions.
