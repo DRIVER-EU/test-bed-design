@@ -18,7 +18,7 @@ The simplified process to Trial solutions goes like this:
 
 ![Test-bed environment](img/test-bed-environment.jpg)
 
-## Aim
+## Aim {#aim}
 
 The test-bed supports practitioners by providing an environment in which they can easily Trial new solutions and run exercises. This has several implications for the test-bed:
 
@@ -27,7 +27,7 @@ The test-bed supports practitioners by providing an environment in which they ca
 - **Trial & exercise support:** As the solutions are typically tested within an incident scenario, the test-bed provides tools to create and execute scenario's.
 - **Development support:** To connect new solutions and simulators to the test-bed, the test-bed provides adapters in several popular languages and several debugging tools and services. Also, to check whether everything is up-and-running smoothly, it also has an admin tool.
 
-## Scope of the test-bed
+## Scope of the test-bed {#scope}
 
 This document limits its scope to the core test-bed design, more specifically, the design of the test-bed's reference implementation, which is an implementation of the [test-bed specification](https://driver-eu.gitbooks.io/test-bed-specification): it thereby provides an overview of the most important components of the test-bed, how they work together, and how they can be used by different stakeholders.
 
@@ -35,7 +35,7 @@ The CM solutions and simulators that supplement the test-bed, however, are *not*
 
 ![Scope of the test-bed](img/test-bed-components-explained.png)
 
-## Organisation of the Document
+## Organisation of the Document {#organisation}
 
 This document is organised as follows:
 
