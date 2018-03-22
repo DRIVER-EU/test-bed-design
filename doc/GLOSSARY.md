@@ -1,6 +1,6 @@
 ## AAR
 
-The After-Action Review (AAR) tool provides the possibility to collect data after a trial has finished and analyse it. Its main purpose is to facilitate the evaluation of the trialled solutions against the predefined objectives, and to help the participants determine how well they functioned. It collects messages (exchanged during trial), observation reports and takes screen-shots of the applications during their use.
+The After-Action Review (AAR) tool provides the possibility to collect data after a Trial has finished and analyse it. Its main purpose is to facilitate the evaluation of the Trialled solutions against the predefined objectives, and to help the participants determine how well they functioned. It collects messages (exchanged during Trial), observation reports and takes screen-shots of the applications during their use.
 
 ## AVRO
 
@@ -40,12 +40,12 @@ The high-level architecture (HLA) is a general purpose architecture for distribu
 
 ## Observer tool
 
-The online observer support tool facilitates the task of the observer by providing him or her with pre-made questions that can be easily answered during a trial or exercise, and scenario triggers informing the observer of things to come. In addition, these responses will be harvested by the test-bed, and used for evaluation at the end of the exercise.
+The online observer support tool facilitates the task of the observer by providing him or her with pre-made questions that can be easily answered during a Trial or exercise, and scenario triggers informing the observer of things to come. In addition, these responses will be harvested by the test-bed, and used for evaluation at the end of the exercise.
 
 ## Scenario Manager
 
 The scenario manager acts as the *composer* and *conductor* of a classical performance:
-- As the *composer*, it defines what each role has to play. For example, what do the simulators need to do in order to provide a realistic incident and background to the trial, or it could include sending direct messages to solutions.
+- As the *composer*, it defines what each role has to play. For example, what do the simulators need to do in order to provide a realistic incident and background to the Trial, or it could include sending direct messages to solutions.
 - As the *conductor*, it controls *when* each role starts and stops.
 
 ## SA
@@ -62,4 +62,4 @@ REpresentational State Transfer, is a way to interact with many web services, th
 
 ## Trial
 
-A trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.
+A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.

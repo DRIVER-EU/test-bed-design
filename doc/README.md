@@ -1,12 +1,12 @@
 # Executive Summary
 
-The test-bed reference implementation lies at the heart of the trialling environment of the DRIVER+ project. It provides an open source technical backbone to perform trials or exercises in a methodical and structured way as it provides a suite of *software* tools to run a trial or exercise.
+The test-bed reference implementation lies at the heart of the Trialling environment of the DRIVER+ project. It provides an open source technical backbone to perform Trials or exercises in a methodical and structured way as it provides a suite of *software* tools to run a Trial or exercise.
 
 ![PTME paradigm applied to DRIVER+](img/pmte_paradigm.png)
 
 The basic problem that the test-bed reference implementation tries to solve is how to connect different solutions, which solve a particular Crisis Management (CM) gap, to:
 - **Each other:** since no single application can solve all CM gaps, they need to work together by sharing information.
-- **One or more simulators:** since during a trial or exercise, you cannot start a real incident, there needs to be a way to *simulate* a realistic incident.
+- **One or more simulators:** since during a Trial or exercise, you cannot start a real incident, there needs to be a way to *simulate* a realistic incident.
 
 The approach that was taken is to connect solutions to a so-called Common Information Space (CIS), simulators to a Common Simulation Space (CSS), and to have gateway services in between that selectively allow some information to pass between the two spaces. Although both spaces are comparable in that they share well structured messages (using Apache AVRO) over a popular open source distributed messaging system, Apache Kafka, the separation allows for a better control of the message flow, and for replacing parts with an alternative.
 
@@ -16,7 +16,7 @@ In addition, several adapters are created to connect solutions and simulators to
 
 Around this core functionality, additional tools are developed that facilitate the usage of this environment:
 - Administrative tools: Is everyone up-and-running, secure, and connected to the right information topics?
-- Evaluation tools: What did we observe during the trial, and what implications does this have during the After-Action Review
+- Evaluation tools: What did we observe during the Trial, and what implications does this have during the After-Action Review
 - Scenario tools: To create an interesting scenario that triggers the participants and solutions in the right way
 - Support tools: For testing and debugging, for creating your personalized test-bed environment, but also to share common data such as map layers or census data.
 

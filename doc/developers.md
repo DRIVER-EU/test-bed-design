@@ -12,7 +12,7 @@ As a system administrator, you are also responsible for setting up the local net
 
 In particular, it should be considered that some providers make heavy use of the network, e.g. to download maps, stream video, or access external computer clusters. If that is the case, consider using a throttling service in your network, so one provider does not claim all the network traffic.
 
-More directly related to the test-bed, however, is the connection of all solutions and simulators: are they connected correctly to the test-bed, do they run without errors, are they subscribed to the correct topics, and do they publish to the expected topics, are some of the questions that the admin tool can answer for you. In addition, the admin tool makes sure that all message schemas are available. And when everything is in place, the actual trial can start. Finally, the admin tool offers a convenient interface to all the other technical test-bed services, such as the REST services, Topics UI, Schema Registry, Kafka Connect, etc.
+More directly related to the test-bed, however, is the connection of all solutions and simulators: are they connected correctly to the test-bed, do they run without errors, are they subscribed to the correct topics, and do they publish to the expected topics, are some of the questions that the admin tool can answer for you. In addition, the admin tool makes sure that all message schemas are available. And when everything is in place, the actual Trial can start. Finally, the admin tool offers a convenient interface to all the other technical test-bed services, such as the REST services, Topics UI, Schema Registry, Kafka Connect, etc.
 
 From then on, the system administrator only needs to check whether the test-bed does not experience any issues.
 
@@ -29,7 +29,7 @@ Assuming you have installed your test-bed locally, to connect your simulator or 
 
     In the near future, you should also have a message injector web app, comparable to Swagger, in which you will be able to create your own messages.  You can use the test-bed topics UI to see whether they have arrived correctly.
 
--	When your message uses time, you need to query the adapter to get the local trial time. A first version of the test-bed's [time-service](https://github.com/DRIVER-EU/test-bed-time-service) to manage the trial time has just been released, and some adapters already offer an interface to it. So there is no need to query the test-bed yourself to get these messages. In case no time messages are available, i.e. we are not running a trial, it returns the system time.
+-	When your message uses time, you need to query the adapter to get the local Trial time. A first version of the test-bed's [time-service](https://github.com/DRIVER-EU/test-bed-time-service) to manage the Trial time has just been released, and some adapters already offer an interface to it. So there is no need to query the test-bed yourself to get these messages. In case no time messages are available, i.e. we are not running a Trial, it returns the system time.
 
 ### Message Topics UI
 
@@ -59,7 +59,7 @@ To create such a gateway service is simple: you consume messages from one messag
 
 ## Data services and data sets
 
-Within a trial or exercise, we need to create a virtual environment where we can safely experiment. This virtual environment is created using data, such as maps, census data, height data, power lines, cell towers, hospitals and care providers, etc. As it is a lot of work to create such a rich data environment, the effort should be shared among the trial owners, solution and simulator providers. Not only to reduce the workload for a specific organisation, but also to make sure that all parties use the same data. Otherwise, a traffic simulator may use a different roadmap than the simulator that provides a 3D environment, and some roads may be blocked by buildings.
+Within a Trial or exercise, we need to create a virtual environment where we can safely experiment. This virtual environment is created using data, such as maps, census data, height data, power lines, cell towers, hospitals and care providers, etc. As it is a lot of work to create such a rich data environment, the effort should be shared among the Trial owners, solution and simulator providers. Not only to reduce the workload for a specific organisation, but also to make sure that all parties use the same data. Otherwise, a traffic simulator may use a different roadmap than the simulator that provides a 3D environment, and some roads may be blocked by buildings.
 
 In many cases, real-world data is used, optionally enriched with scenario-specific information. Sometimes, a virtual environment is created, based on real-world data but with altered names.
 
@@ -67,13 +67,13 @@ So in order to share all this gathered data, the test-bed offers two types of se
 - Docker *volume images* to store all this information together, so the data can be easily shared. A test-bed user can simply pull the volume image from the Docker hub to have all data instantly available
 - *Data services*, to share this data with all users, e.g. there is an [MBtiles service](https://github.com/DRIVER-EU/test-bed-mbtiles-service) to offer map images to COP and COP-like tools, or a [WMS service](https://github.com/DRIVER-EU/test-bed-wms-service) that translate test-bed messages to WMS map layers available to make the information available to legacy systems.
 
-**Security** is yet another reason to have these data services and data sets as part of the test-bed. Not all trials and exercises have open access to the Internet, but they still need access to this kind of data.
+**Security** is yet another reason to have these data services and data sets as part of the test-bed. Not all Trials and exercises have open access to the Internet, but they still need access to this kind of data.
 
 ## Time management
 
-A trial or exercise typically is not performed in real-time: either because the incident occurs at night, and people prefer to trial and train during working hours, because you wish to skip boring parts, or because it would simply take too long. An example of the latter is a flooding incident, which can start days before any flooding actually occurs, so you need to compress the scenario to normal working hours.
+A Trial or exercise typically is not performed in real-time: either because the incident occurs at night, and people prefer to Trial and train during working hours, because you wish to skip boring parts, or because it would simply take too long. An example of the latter is a flooding incident, which can start days before any flooding actually occurs, so you need to compress the scenario to normal working hours.
 
-Within the test-bed, therefore, the scenario time (a.k.a. trial time or fictive time) is controlled via the [time service](https://github.com/DRIVER-EU/test-bed-time-service) using [two types of messages](https://github.com/DRIVER-EU/avro-schemas/tree/master/core/time): one for controlling the time, and one for informing adapters about the current scenario time.
+Within the test-bed, therefore, the scenario time (a.k.a. Trial time or fictive time) is controlled via the [time service](https://github.com/DRIVER-EU/test-bed-time-service) using [two types of messages](https://github.com/DRIVER-EU/avro-schemas/tree/master/core/time): one for controlling the time, and one for informing adapters about the current scenario time.
 
 As a developer, you do not need to interact with these messages directly, since:
 - Every adapter has a time interface to get the current scenario time. Even as a solution developer, you should also use this time to timestamp the messages that you send. For example, if inside your message you refer to a particular time, always base it on the scenario time.
@@ -89,7 +89,7 @@ Even though you do not interface with the time messages, you still need to use t
 
 ### System time versus scenario time
 
-In trials executed in the past, the operating system (OS) time was also adjusted to match the scenario time. The advantage was that if you would check the time in your status bar, it would display the current scenario time instead of the real time. Although this is straightforward to do, your OS does not like it, as it will generate files in the past or future, and may mess up your system. Especially when the scenario is paused. That's why the current test-bed does not require you to synchronize your system time to the scenario time.
+In Trials executed in the past, the operating system (OS) time was also adjusted to match the scenario time. The advantage was that if you would check the time in your status bar, it would display the current scenario time instead of the real time. Although this is straightforward to do, your OS does not like it, as it will generate files in the past or future, and may mess up your system. Especially when the scenario is paused. That's why the current test-bed does not require you to synchronize your system time to the scenario time.
 
 ### A word about HLA and DIS
 
@@ -108,4 +108,4 @@ That's why this test-bed is using popular open source software, so it is easy to
 - A new schema representing your message
 - And there is no financial hurdle preventing adoption
 
-Even though the test-bed does not use HLA or DIS internally, there are many simulators that provide a HLA or DIS export, and that can be useful for a trial or exercise. In those cases, a HLA or DIS simulation environment can be created, as is done normally, including a gateway service to bridge the gap with our test-bed: typically, such a gateway has an HLA connector to retrieve information from the HLA/DIS side, and a subset of the information is published in the CSS. And vice versa. Even though this kind of integration if suboptimal, in practice, this is not really noticeable.
+Even though the test-bed does not use HLA or DIS internally, there are many simulators that provide a HLA or DIS export, and that can be useful for a Trial or exercise. In those cases, a HLA or DIS simulation environment can be created, as is done normally, including a gateway service to bridge the gap with our test-bed: typically, such a gateway has an HLA connector to retrieve information from the HLA/DIS side, and a subset of the information is published in the CSS. And vice versa. Even though this kind of integration if suboptimal, in practice, this is not really noticeable.

@@ -1,8 +1,8 @@
-# A test-bed for trial owners
+# A test-bed for Trial owners
 
 Trial owners will interact with the test-bed when:
 - They want to evaluate a solution standalone
-- They want to run a trial or exercise
+- They want to run a Trial or exercise
 
 In the following sections, a use case (storyline) description of each is provided. The main actor in each story is Monica, a regional crisis manager with a professional background in fire-fighting. One of the challenges she's facing is that she does now always have a good overview of where her people and trucks are during a fire, and she's looking for a solution.
 
@@ -38,21 +38,21 @@ Monica has heard about an interesting COP solution, *csCOP*, perhaps via the DRI
 
 7. Running a simple command, the test-bed is downloaded and started on her own PC, and she can interact with the test-bed as described above.
 
-## Use Case: Running a trial
+## Use Case: Running a Trial
 
-In order to run a trial, the same process as described above is followed. The main difference is that more services and solutions will be added, and in many cases, perhaps for security reasons, the test-bed is run locally on the internal network. Basically, instead of only using the test-bed core's services, a more complete test-bed is required, also containing the observer tool, AAR, and Scenario Manager.
+In order to run a Trial, the same process as described above is followed. The main difference is that more services and solutions will be added, and in many cases, perhaps for security reasons, the test-bed is run locally on the internal network. Basically, instead of only using the test-bed core's services, a more complete test-bed is required, also containing the observer tool, AAR, and Scenario Manager.
 
-In addition, the test-bed is needed already well-before the final trial or exercise date, since:
+In addition, the test-bed is needed already well-before the final Trial or exercise date, since:
 - The scenario must be created iteratively.
 - Not all solutions or simulators are already able to connect to the test-bed. So even before the first dry-runs, solutions and simulators should be able to test their connection and integration.
 
-Typically, setting up the test-bed for a trial or exercise would not be performed by the trial owner herself. Most likely, she will be supported by a local system administrator or consultant to help her decide what she needs, and to prepare the technical infrastructure.
+Typically, setting up the test-bed for a Trial or exercise would not be performed by the Trial owner herself. Most likely, she will be supported by a local system administrator or consultant to help her decide what she needs, and to prepare the technical infrastructure.
 
-When the test-bed is running, though, the trial owner has to take responsibility again for defining the scenario in case she has not delegated this task. The scenario is key in that it translates specific objectives to a storyline so the solutions or people can be put to the test.
+When the test-bed is running, though, the Trial owner has to take responsibility again for defining the scenario in case she has not delegated this task. The scenario is key in that it translates specific objectives to a storyline so the solutions or people can be put to the test.
 
 As the Scenario Manager is not available in the current version of the test-bed, only a brief outline can be provided. During the preparation, the scenario manager acts as the composer:
-- The objectives of the trial or exercise are defined.
+- The objectives of the Trial or exercise are defined.
 - An overall scenario is described that can put these objectives to the test.
 - Specific storylines are created to stress the solutions or training audience.
 
-During a trial or exercise, the scenario is started by the trial owner. The scenario manager, acting as the conductor now, instructs everyone when to perform their planned act. Optionally,she can control the scenario time, for example freezing the time during a break, or to steer the trial in another direction.
+During a Trial or exercise, the scenario is started by the Trial owner. The scenario manager, acting as the conductor now, instructs everyone when to perform their planned act. Optionally,she can control the scenario time, for example freezing the time during a break, or to steer the Trial in another direction.
