@@ -30,8 +30,6 @@ Common Operational Picture tools for creating a shared situational awareness
 
 [EDXL DE](http://docs.oasis-open.org/emergency/edxl-de/v2.0/edxl-de-v2.0.html), OASIS' Emergency Data Exchange Language (EDXL) Distribution Element Version 2.0. The primary purpose of the Distribution Element 2.0 is to facilitate the routing of any properly formatted  emergency message to recipients. The Distribution Element may be thought of as a "container". It provides the information to route "payload" message sets (such as Alerts or Resource Messages), by including key routing information such as distribution type, geography, incident, and sender/recipient Ids.
 
-
-
 ## Exercise
 
 An exercise is an activity carried out to train personnel and processes in crisis management.
@@ -64,4 +62,4 @@ REpresentational State Transfer, is a way to interact with many web services, th
 
 ## Trial
 
-A trial is a test of the performance, qualities, or suitability of a solution.
+A trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.

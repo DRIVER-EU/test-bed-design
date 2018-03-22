@@ -62,7 +62,7 @@ The test-bed is a collection of distributed services running in a network enviro
 
 This does not only apply to the test-bed's core tools, gateways and services, but also for the connected simulators and solutions.
 
-![Admin tool](img/admin-tool-screenshot.png)
+![Admin tool](img/admin-tool-screenshot.jpg)
 
 Detailed information:
 - [Functional specification](https://driver-eu.gitbooks.io/test-bed-specification/technical-requirements.html)
@@ -95,11 +95,9 @@ A scenario manager is an integral part of the test-bed reference implementation 
 - JEMM and Exonaut are aimed at the military community, and the fit with the Crisis Management domain is not optimal.
 - JEMM and Exonaut are closed source, so a strong integration with the test-bed is not possible, as the applications cannot be modified.
 
-
 The test-bed's scenario manager, then, acts as the *composer* and *conductor* of a classical performance:
 - As the *composer*, it defines what each role has to play. For example, what do the simulators or role-players need to do in order to provide a realistic incident and background to the trial, or it could include sending direct messages to solutions.
 - As the *conductor*, it controls *when* each role starts and stops.
-
 
 Additionally, the scenario manager will also publish messages that are not directly related to the scenario itself. For example, it can send a message to the observers, informing them that they need to pay attention, as something important is going to happen soon. Or it could ask these observers specific questions during the trial, e.g. '*Did you notice that X occurred?*'. These messages are also important for the after-action review, as they can be used as bookmarks to quickly go to parts in the scenario that are of extra importance for the evaluation.
 
