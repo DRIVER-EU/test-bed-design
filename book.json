@@ -2,5 +2,7 @@
     "root": "./doc",
     "title": "Test-bed design document",
     "author": "Erik Vullings",
-    "plugins": []
+    "plugins": [
+        "image-captions"
+    ]
 }
