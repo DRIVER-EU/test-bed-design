@@ -3,7 +3,8 @@
     "title": "Test-bed design document",
     "author": "Erik Vullings",
     "plugins": [
-        "image-captions"
+        "image-captions",
+        "chapter-headings"
     ],
     "pluginsConfig": {
       "image-captions": {
