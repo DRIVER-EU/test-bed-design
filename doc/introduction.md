@@ -47,7 +47,7 @@ In the chapter, a [test-bed for developers and sysops](developers.md), the techn
 
 The final chapter offers more details about the [test-bed design](design.md), and provides an explanation for the main design decisions. The intended audience are developers that need a deeper understanding of the test-bed and its underlying architecture, e.g. for supplementing the test-bed or for offering a deeper integration of their solution.
 
-## What's new
+## What's new {#new}
 
 ### Version 1 (2018-03-31)
 
