@@ -1,6 +1,6 @@
 # Executive Summary
 
-The test-bed reference implementation lies at the heart of the trialling environment of the DRIVER+ project. It provides an open source technical backbone to perform trials or exercises in a methodical and structured way as it provides all the *software* tools to run a trial or exercise.
+The test-bed reference implementation lies at the heart of the trialling environment of the DRIVER+ project. It provides an open source technical backbone to perform trials or exercises in a methodical and structured way as it provides a suite of *software* tools to run a trial or exercise.
 
 ![PTME paradigm applied to DRIVER+](img/pmte_paradigm.png)
 
