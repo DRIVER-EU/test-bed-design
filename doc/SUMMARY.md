@@ -8,3 +8,4 @@
 * [Test-bed design](design.md)
 * [Acronyms](acronyms.md)
 * [Glossary](GLOSSARY.md)
+* [List of figures](list-of-figures.md)
