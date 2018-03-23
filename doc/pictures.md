@@ -1,8 +1,8 @@
 # List of Figures
 
-{{ book.pictures }}
+{{ book.pictures | dump }}
 
   {% for picture in book.pictures %}
-    {{ picture }}
+    {{ picture | dump  }}
     1. [{{ picture.list_caption }}]({{ picture.backlink }})
   {% endfor %}
