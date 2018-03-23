@@ -2,7 +2,7 @@
 
 The test-bed is designed to fulfil the [functional requirements](https://driver-eu.gitbooks.io/test-bed-specification/technical-requirements.html). Clearly, different designs can be created that all fulfil these requirements, so this chapter provides a brief explanation of the major design decisions that underlie the current test-bed's reference implementation. Its intended audience is core developers, who want to improve its functionality, or other backend developers, who want to create an alternative test-bed that also satisfies these requirements.
 
-## Lessons learned from the Functional Specification {#lessons-learned}
+## Lessons learned from the Functional Specification
 
 Part of the functional specification describes the [lessons learned](https://driver-eu.gitbooks.io/test-bed-specification/content/lessons-learned.html) from the past. To summarize the most important technical lessons that have influenced the current design significantly, are:
 
@@ -11,7 +11,7 @@ Part of the functional specification describes the [lessons learned](https://dri
 3. The test-bed should use well-defined, easily accessible, syntactically correct messages, and close to common standards.
 4. The test-bed must be easily reproducible, and offer administrative as well as supporting tools and services.
 
-## Distributed message bus using Apache Kafka {#Kafka}
+## Distributed message bus using Apache Kafka
 
 Based on the functional requirements and lessons 1 and 2, and an analysis of many existing message-oriented systems, the test-bed's backbone is built upon the distributed streaming service, [Apache Kafka](https://kafka.apache.org). The main reasons to use Kafka are:
 - Kafka allows for high performance sending and receiving of a very large number of messages
@@ -46,14 +46,14 @@ Other evaluated candidates for defining message formats were [XML schema](https:
 - Protobuf is also a binary message format, like AVRO, but also lacks schema migration.
 - HLA, yet another binary message format, is standard in the (Defence) simulation world, but of no use when defining messages in the CIS space.
 
-## Dealing with large messages {#large-messages}
+## Dealing with large messages
 
 Kafka and AVRO are ideally suited for smaller-sized messages, i.e. typically not exceeding 1Mb compressed. However, a typical flooding file may well exceed 1Gb of data. The solution that currently is being designed is the following: in the test-bed, there is one file hosting data services (e.g. FTP) for uploading large files. Each adapter, when confronted with a large message exceeding a threshold, uploads the data in the background to the file hosting data service, and in return, receives an obfuscated link. This link is subsequently shared via the test-bed, and any consumer interested in the actual data can retrieve it from there.
 
 A note about security: In principal, these files are openly available within the Trial environment (which may be on a closed network, of course). However, since the link is not easy recognizable, you will not be able to guess it. Basically, *security through obscurity*. This approach is similar to the one popular open file sharing services provide like [wetransfer.com](http://wetransfer.com), and should be sufficiently safe for current usage.
 
 
-## CIS and CSS adapters in several programming languages {#CIS-CSS}
+## CIS and CSS adapters in several programming languages
 
 On top of the communication framework, a set of guidelines need to be present that allows for external components and Test-bed components to communicate effectively. In this case, this set of guidelines is packed into a simple library called the adapter.
 
