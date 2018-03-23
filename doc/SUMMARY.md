@@ -29,4 +29,5 @@
   * [CIS and CSS](design.md#CIS-CSS)
 * [Acronyms](acronyms.md)
 * [Glossary](GLOSSARY.md)
-* [List of Figures](list-of-figures.md)
+* [Annex 1](annex.md)
+* [List of Figures](pictures.md)
