@@ -8,7 +8,7 @@
     ],
     "pluginsConfig": {
       "image-captions": {
-          "caption": "Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.",
+          "caption": "Figure _PAGE_IMAGE_NUMBER_. _CAPTION_.",
           "variable_name": "pictures"
       }
   }
