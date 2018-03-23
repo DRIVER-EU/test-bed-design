@@ -2,7 +2,7 @@
 
 The test-bed supports practitioners by providing an environment in which they can easily Trial new solutions and run exercises. In this chapter, the main components of the test-bed are explained.
 
-![Scope of the test-bed](img/test-bed-components-explained.png)
+![Explanation of the Test-bed components](img/test-bed-components-explained.png)
 
 ## Core
 
