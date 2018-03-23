@@ -11,11 +11,12 @@
   "attributes":{},
   "skip":false,
   "key":"1.1.1"
-} -->
+}
+  {{ picture | dump }}
+-->
 
 # List of Figures
 
 {% for picture in book.pictures %}
-  {{ picture | dump }}
   1. [{{ picture.alt }}]({{ picture.backlink }})
 {% endfor %}
