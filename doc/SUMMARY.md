@@ -2,10 +2,6 @@
 
 * [Executive summary](README.md)
 * [Introduction](introduction.md)
-  * [Aim](introduction.md#aim)
-  * [Scope of the test-bed](introduction.md#scope)
-  * [Document organisation](introduction.md#organisation)
-  * [What's new](introduction.md#new)
 * [Test-bed description](test-bed-description.md)
   * [Core](test-bed-description.md#core)
   * [Administration tool](test-bed-description.md#admin)
