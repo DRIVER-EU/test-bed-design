@@ -13,12 +13,12 @@ Monica has heard about an interesting COP solution, *csCOP*, perhaps via the DRI
 1. Monica visit's the test-bed's [composer website](https://driver-eu.github.io/docker-composer).
 2. She briefly reads its homepage, which explains her what to do next.
 
-![Test-bed composer - home](img/test-bed-composer-home.png)
+![Test-bed composer's home page](img/test-bed-composer-home.png)
 
 3. She opens the solution's tab and sees that *csCOP* is available for evaluation.
 4. She select *csCOP* in the menu.
 
-![Test-bed composer - solutions](img/test-bed-composer-solutions.png)
+![Test-bed composer: Selecting a solution](img/test-bed-composer-solutions.png)
 
 5. She understands that it is difficult to test a solution without any data / scenario, so she visits the data tab and selects a fire-fighting data set situated in the South of France: *It involves a forest fire, which is rapidly spreading. Ambulances and fire trucks are deployed and driving around. She can also look at census data of the area and a weather report.*
 
@@ -34,7 +34,7 @@ Monica has heard about an interesting COP solution, *csCOP*, perhaps via the DRI
 
 6. As she currently isn't interested in other solutions, the opens the menu and clicks on the BUILD button. A dialog opens and she can download the *Docker-compose* file to her PC.
 
-![Test-bed composer - solutions](img/test-bed-composer-download.png)
+![Test-bed composer: Downloading the docker-compose.yml file](img/test-bed-composer-download.png)
 
 7. Running a simple command, the test-bed is downloaded and started on her own PC, and she can interact with the test-bed as described above.
 
