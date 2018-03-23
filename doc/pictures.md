@@ -16,5 +16,6 @@
 # List of Figures
 
 {% for picture in book.pictures %}
+  {{ picture | dump }}
   1. [{{ picture.alt }}]({{ picture.backlink }})
 {% endfor %}
