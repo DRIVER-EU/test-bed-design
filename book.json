@@ -1,15 +1,12 @@
 {
-    "root": "./doc",
-    "title": "Test-bed design document",
-    "author": "Erik Vullings",
-    "plugins": [
-        "image-captions",
-        "chapter-headings"
-    ],
-    "pluginsConfig": {
-      "image-captions": {
-          "caption": "Figure _PAGE_IMAGE_NUMBER_. _CAPTION_.",
-          "variable_name": "pictures"
-      }
+  "root": "./doc",
+  "title": "Test-bed design document",
+  "author": "Erik Vullings",
+  "plugins": [ "image-captions", "chapter-headings" ],
+  "pluginsConfig": {
+    "image-captions": {
+      "caption": "Figure _PAGE_IMAGE_NUMBER_. _CAPTION_.",
+      "variable_name": "pictures"
+    }
   }
 }
