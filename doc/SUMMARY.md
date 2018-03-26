@@ -1,5 +1,6 @@
 # Summary
 
+* [About](about.md)
 * [1. Executive summary](README.md)
 * [2. Introduction](introduction.md)
 * [3. Test-bed description](test-bed-description.md)
