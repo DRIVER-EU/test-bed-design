@@ -1,0 +1,4 @@
+/* Hide the section number after the ToC */
+.section.toc .page {
+  display: none;
+}
