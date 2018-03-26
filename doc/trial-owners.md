@@ -1,4 +1,4 @@
-# A test-bed for Trial owners
+# 3. A test-bed for Trial owners
 
 Trial owners will interact with the test-bed when:
 - They want to evaluate a solution standalone
@@ -6,7 +6,7 @@ Trial owners will interact with the test-bed when:
 
 In the following sections, a use case (storyline) description of each is provided. The main actor in each story is Monica, a regional crisis manager with a professional background in fire-fighting. One of the challenges she's facing is that she does now always have a good overview of where her people and trucks are during a fire, and she's looking for a solution.
 
-## Use Case: Evaluating a solution standalone
+## 3.1 Use Case: Evaluating a solution standalone
 
 Monica has heard about an interesting COP solution, *csCOP*, perhaps via the DRIVER+ Portfolio of Solutions, or otherwise. She considers using it to address her problems
 
@@ -38,7 +38,7 @@ Monica has heard about an interesting COP solution, *csCOP*, perhaps via the DRI
 
 7. Running a simple command, the test-bed is downloaded and started on her own PC, and she can interact with the test-bed as described above.
 
-## Use Case: Running a Trial
+## 3.2 Use Case: Running a Trial
 
 In order to run a Trial, the same process as described above is followed. The main difference is that more services and solutions will be added, and in many cases, perhaps for security reasons, the test-bed is run locally on the internal network. Basically, instead of only using the test-bed core's services, a more complete test-bed is required, also containing the observer tool, AAR, and Scenario Manager.
 

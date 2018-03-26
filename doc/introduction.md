@@ -1,4 +1,4 @@
-# Introduction
+# 1. Introduction
 
 In the Crisis Management (CM) domain, practitioners need to be prepared for the unexpected: based on past experience and the local incidents they had to deal with, they develop a gut feeling for the things that did not go so well. As with most incidents many lives are involved, they are continuously looking for solutions to improve their response and preparedness.
 
@@ -18,7 +18,7 @@ The simplified process to Trial solutions goes like this:
 
 ![Test-bed environment](img/test-bed-environment.jpg)
 
-## Aim
+## 1.1 Aim
 
 The test-bed supports practitioners by providing an environment in which they can easily Trial new solutions and run exercises. This has several implications for the test-bed:
 
@@ -27,7 +27,7 @@ The test-bed supports practitioners by providing an environment in which they ca
 - **Trial & exercise support:** As the solutions are typically tested within an incident scenario, the test-bed provides tools to create and execute scenario's.
 - **Development support:** To connect new solutions and simulators to the test-bed, the test-bed provides adapters in several popular languages and several debugging tools and services. Also, to check whether everything is up-and-running smoothly, it also has an admin tool.
 
-## Scope of the test-bed
+## 1.2 Scope of the test-bed
 
 This document limits its scope to the core test-bed design, more specifically, the design of the test-bed's reference implementation, which is an implementation of the [test-bed specification](https://driver-eu.gitbooks.io/test-bed-specification): it thereby provides an overview of the most important components of the test-bed, how they work together, and how they can be used by different stakeholders.
 
@@ -35,7 +35,7 @@ The CM solutions and simulators that supplement the test-bed, however, are *not*
 
 ![Scope of the test-bed](img/test-bed-components-explained.png)
 
-## Organisation of the Document
+## 1.3 Organisation of the Document
 
 This document is organised as follows:
 
@@ -47,7 +47,7 @@ In the chapter, a [test-bed for developers and sysops](developers.md), the techn
 
 The final chapter offers more details about the [test-bed design](design.md), and provides an explanation for the main design decisions. The intended audience are developers that need a deeper understanding of the test-bed and its underlying architecture, e.g. for supplementing the test-bed or for offering a deeper integration of their solution.
 
-## What's new
+## 1.4 What's new
 
 ### Version 1 (2018-03-31)
 

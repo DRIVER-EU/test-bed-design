@@ -1,10 +1,10 @@
-# Test-bed description
+# 2. Test-bed description
 
 The test-bed supports practitioners by providing an environment in which they can easily Trial new solutions and run exercises. In this chapter, the main components of the test-bed are explained.
 
 ![Explanation of the Test-bed components](img/test-bed-components-explained.png)
 
-## Core
+## 2.1 Core
 
 The test-bed must support the exchange of information between distributed solutions, simulators and tools. Information such as the location of an incident, alert messages, or the locations of vehicles. Comparable to people exchanging information via email, chat or twitter, the test-bed exchanges information using the open-source messaging system [Apache Kafka](https://kafka.apache.org) from the [Apache organisation](http://www.apache.org/).
 
@@ -56,7 +56,7 @@ There are also tools that will send out messages that serve as commands or reque
 
 **Validation Services** are specific gateways that, as the name suggests, validate a message in more detail, before it is passed on to other systems. For example, if application A is publishing a CAP (Common Alerting Protocol) message for application B, i.e. A --> CAP topic --> B, the test-bed will make sure that it complies with the appropriate schema before passing it on. However, there may still be certain aspects in the message that are not completely correct, e.g. the alerting area that is represented as a polygon may not have the same starting and ending point (i.e. it should be closed), or the incident location that is represented by two numbers (x, y), may actually be published as (y, x). So during testing, the validation service can 'intercept' messages between A and B and validate them in detail. Only valid messages are passed on, i.e. A --> CAP validation topic --> CAP topic --> B.
 
-## Test-bed administration tool
+## 2.2 Test-bed administration tool
 
 The test-bed is a collection of distributed services running in a network environment. You can compare it to a theatre play, where the stage needs to be prepared, the musicians must be ready, as well as the light and sound engineers. The test-bed admin tool helps you by monitoring both the CIS and the CSS to support understanding what is/was going on during a trail: to determine whether all services are ready, and that their inputs and outputs are correct. Also in case a service encounters any errors, this is made visible and the errors can be inspected - are they serious and do we need to stop our Trial, or can we ignore them safely and run on.
 
@@ -68,7 +68,7 @@ Detailed information:
 - [Functional specification](https://driver-eu.gitbooks.io/test-bed-specification/technical-requirements.html)
 - [Website](https://github.com/DRIVER-EU/test-bed-admin)
 
-## Trialling, Exercising and Scenario Management
+## 2.3 Trialling, Exercising and Scenario Management
 
 Whether designing a **Trial** to evaluate solutions, or an **exercise** to train people, a scenario and, optionally, simulations, are needed to emerge the training audience and to give them the feeling that they are dealing with an actual crisis.
 
@@ -104,7 +104,7 @@ Additionally, the scenario manager will also publish messages that are not direc
 Detailed information:
 - [Functional specification](https://driver-eu.gitbooks.io/test-bed-specification/technical-requirements.html)
 
-## Evaluation
+## 2.4 Evaluation
 
 Evaluation is needed to verify that the Trial or training objectives have been achieved. The test-bed provides two services for this: an Online Observer Support tool and an After-Action Review tool.
 
@@ -133,7 +133,7 @@ The After-Action Review (AAR) tool provides the possibility to collect data afte
 Detailed information:
 - [Functional specification](https://driver-eu.gitbooks.io/test-bed-specification/technical-requirements.html)
 
-## Simulation
+## 2.5 Simulation
 
 Much can be said on the subject of simulation, but for the purpose of this chapter, it suffices to provide a brief overview of the test-bed's relation to simulation.
 
