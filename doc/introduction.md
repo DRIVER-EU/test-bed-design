@@ -7,7 +7,7 @@ Within the [DRIVER+ project](http://www.driver-project.eu), a guidance methodolo
 The simplified process to Trial solutions goes like this:
 
 1. The gut feeling is matched with one of the well-known crisis management gaps, as experienced by many of their colleagues, e.g. *How to get a real-time and dynamic overview of the position of all personnel?*.
-2. These gaps, in turn, are still too generic to address, and are made more specific, leading to so-called `research questions`, e.g. *Which Situational Awareness-increasing solution fits best with our mode of operation?*
+2. These gaps, in turn, are still too generic to address, and are made more specific, leading to so-called 'research questions', e.g. *Which Situational Awareness-increasing solution fits best with our mode of operation?*
 3. Existing solutions are reviewed and selected. Some solutions can even be tried out standalone using the test-bed and an existing mini-scenario.
 4. Selected solutions are Trialled using the test-bed:
    - A scenario is developed that puts these solutions to the test.
