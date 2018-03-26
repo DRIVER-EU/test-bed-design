@@ -9,7 +9,7 @@
       "variable_name": "pictures"
     },
     "theme-default": {
-      "showLevel": true
+      "showLevel": false
     }
   }
 }
