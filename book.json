@@ -7,6 +7,9 @@
     "image-captions": {
       "caption": "Figure _PAGE_IMAGE_NUMBER_. _CAPTION_.",
       "variable_name": "pictures"
+    },
+    "theme-default": {
+      "showLevel": true
     }
   }
 }
