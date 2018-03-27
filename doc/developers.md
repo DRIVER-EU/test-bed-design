@@ -4,9 +4,9 @@ A sysops (system operators or system administrators), in the current context, is
 
 A developer would be tasked with connecting an existing solution or simulator to the test-bed. Besides the direct coupling, allowing their tools to receive and publish messages, it most likely also involves translating existing messages to their own format. Finally, in case you are connecting a simulator, you also need information more detailed information about the time management in the test-bed.
 
-## 4.1 Use case: Installing the test-bed
+## 4.1 Use case: Installing the Test-bed
 
-The previous chapter already explained how to setup the test-bed. More detailed information about how to run the Docker-compose environment can be found [here](https://github.com/DRIVER-EU/test-bed/tree/master/docker). Alternatively, in the near future, use the [GUI](https://driver-eu.github.io/docker-composer).
+The previous chapter already explained how to setup the Test-bed. More detailed information about how to run the Docker-compose environment can be found [here](https://github.com/DRIVER-EU/test-bed/tree/master/docker). Alternatively, in the near future, use the [GUI](https://driver-eu.github.io/docker-composer).
 
 As a system administrator, you are also responsible for setting up the local network, such that all solution and simulator providers have access to the local intranet as well as extranet.
 
@@ -18,6 +18,8 @@ From then on, the system administrator only needs to check whether the Test-bed 
 
 ## 4.2 Use case: Integration process
 
+Within DRIVER+, a dedicated integration process *for solutions* is described in a separate document, D934.21, "Solution testing procedure". This section describes how to integrate with the Test-bed reference implementation, and also covers simulators and other tools.
+
 Assuming you have installed your Test-bed locally, to connect your simulator or solution to the test-bed, the generic process is as follows:
 -	Choose the adapter in your preferred programming language: [Java](https://github.com/DRIVER-EU/java-test-bed-adapter), [C#](https://github.com/DRIVER-EU/csharp-test-bed-adapter), [JavaScript/TypeScript](https://github.com/DRIVER-EU/node-test-bed-adapter) and [REST](https://github.com/DRIVER-EU/test-bed-rest-service). A Python version will be available in the near future.
 -	Define your input/output messages as [AVRO](http://avro.apache.org/docs/current): already supported messages can be found [here](https://github.com/DRIVER-EU/avro-schemas/). Register the AVRO schema with the Test-bed via the schema registry (only available after running the Test-bed locally, typically at [http://localhost:3601](http://localhost:3601)). You can do that manually, or alternatively, the adapter will do this for you. The registration procedure is a bit different for each adapter.
@@ -26,7 +28,7 @@ Assuming you have installed your Test-bed locally, to connect your simulator or 
 
     In the near future, there will also be a message injector application, comparable to [Swagger](http://swagger.io) or [Postman](https://www.getpostman.com), in which you will be able to create your own messages using a friendly user interface. It will use the AVRO schema to automatically create a form for defining your messages.
 
--	When your message uses time, you need to query the adapter to get the local Trial time. A first version of the test-bed's [time-service](https://github.com/DRIVER-EU/test-bed-time-service) to manage the Trial time has just been released, and some adapters already offer an interface to it. So there is no need to query the Test-bed yourself to get these messages. In case no time messages are available, i.e. you are not running a Trial, it returns the local system time.
+-	When your message uses time, you need to query the adapter to get the local Trial time. A first version of the test-bed's [time-service](https://github.com/DRIVER-EU/test-bed-time-service) to manage the Trial time has just been released, and some adapters already offer an interface to it. So there is no need to query the Test-bed yourself to get these messages. In case no time messages are available, i.e. you are not running a Trial, it returns the local system time. Please also check the time management's state machine in [Section 4.5](#time) below.
 
 ### Message Topics UI
 
@@ -72,7 +74,7 @@ So in order to share all this gathered data, the Test-bed offers two types of se
 
 **Security** is yet another reason to have these data services and data sets as part of the test-bed. Not all Trials have open access to the Internet, but they still need access to this kind of data.
 
-## 4.5 Time management
+## 4.5 Time management {#time}
 
 A Trial typically is not performed in real-time: either because the incident occurs at night, and people prefer to Trial and train during working hours, because you wish to skip boring parts, or because it would simply take too long. An example of the latter is a flooding incident, which can start days before any flooding actually occurs, so you need to compress the scenario to normal working hours.
 
