@@ -6,15 +6,21 @@ Within the [DRIVER+ project](http://www.driver-project.eu), a Trial Guidance Met
 
 The simplified process to Trial solutions goes like this:
 
-1. The gut feeling is matched with one of the well-known crisis management gaps, as experienced by many of their colleagues, e.g. *How to get a real-time and dynamic overview of the position of all personnel?*.
-2. These gaps, in turn, are still too generic to address, and are made more specific, leading to so-called 'research questions', e.g. *Which Situational Awareness-increasing solution fits best with our mode of operation?*
-3. Existing solutions are reviewed and selected. Some solutions can even be tried out standalone using the Test-bed and an existing mini-scenario.
-4. Selected solutions are Trialled using the test-bed:
-   - A scenario is developed that puts these solutions to the test.
-   - A simulator of a fictive incident is selected and connected to the test-bed, e.g. a flooding simulator.
-   - Other simulators to create a realistic environment are connected too, e.g. a traffic simulator.
+1. PREPARATION PHASE:
+
+   - The gut feeling is matched with one of the well-known crisis management gaps, as experienced by many of their colleagues, e.g. *How to get a real-time and dynamic overview of the position of all personnel?*.
+   - These gaps, in turn, are still too generic to address, and are made more specific, leading to so-called 'research questions', e.g. *Which Situational Awareness-increasing solution fits best with our mode of operation?*
+   - Existing solutions are reviewed and selected. Some solutions can even be tried out standalone using the Test-bed and an existing mini-scenario.
+   - A scenario is developed that puts these solutions to the test. This includes selecting and connecting simulators of a fictive incident, e.g. a flooding simulator, and other simulators to create a realistic environment, e.g. a traffic simulator.
    - Selected solutions and existing legacy systems are connected to the test-bed, so they can receive input from the simulators as well as each other.
-   - The Trial is run, observed, and evaluated, leading to a good appreciation of how the selected solutions can contribute to solving their initial problems.
+
+2. EXECUTION PHASE:
+
+   The Test-bed is setup, all simulators and solutions are connected, data collection is in place, and a scenario can be run (executed). Before the actual Trial, several dry runs are performed, partially for testing the setup, and partially for training the participants in using the solutions. This phase ends when the Trial is executed and observed.
+
+3. EVALUATION PHASE:
+
+   Based on the recorded observations and collected data during the Trial, the solutions are evaluated with the participants, leading to a good appreciation of how the selected solutions have contributed to solving the problems.
 
 ![Test-bed environment](img/test-bed-environment.jpg)
 
@@ -31,7 +37,7 @@ The Test-bed supports practitioners by providing an environment in which they ca
 
 This document limits its scope to the core Test-bed design, more specifically, the design of the test-bed's reference implementation, which is an implementation of the [Test-bed specification](https://driver-eu.gitbooks.io/test-bed-specification): it thereby provides an overview of the most important components of the test-bed, how they work together, and how they can be used by different stakeholders.
 
-The CM solutions and simulators that supplement the test-bed, however, are *not* part of the test-bed. The simulators' function is to simulate an incident, and the reactions that may occur in a real world, since we cannot unleash incidents like a flooding and earthquakes on the real world. The solutions are the actual tools that are Trialled and evaluated, and measured whether they actually do solve a CM gap. These solutions are fed with the simulator's output, and perhaps the output of other solutions, so end users can observe and evaluate their contribution during a fictive incident.
+The CM solutions and simulators that supplement the test-bed, however, are *not* part of the test-bed. The simulators' function is to simulate an incident, and the reactions that may occur in a real world, since we cannot unleash incidents like a flooding and earthquakes on the real world. The solutions are the actual tools that are trialled and evaluated, and measured whether they actually do solve a CM gap. These solutions are fed with the simulator's output, and perhaps the output of other solutions, so end users can observe and evaluate their contribution during a fictive incident.
 
 ![Scope of the test-bed](img/test-bed-components-explained.png)
 
