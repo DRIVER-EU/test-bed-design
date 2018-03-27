@@ -1,6 +1,6 @@
 # 5. Test-bed design
 
-The test-bed is designed to fulfil the [functional requirements](https://driver-eu.gitbooks.io/test-bed-specification/technical-requirements.html). Clearly, different designs can be created that all fulfil these requirements, so this chapter provides a brief explanation of the major design decisions that underlie the current test-bed's reference implementation. Its intended audience is core developers, who want to improve its functionality, or other backend developers, who want to create an alternative test-bed that also satisfies these requirements.
+The test-bed is designed to fulfil the [functional requirements][spec]. Clearly, different designs can be created that all fulfil these requirements, so this chapter provides a brief explanation of the major design decisions that underlie the current test-bed's reference implementation. Its intended audience is core developers, who want to improve its functionality, or other backend developers, who want to create an alternative test-bed that also satisfies these requirements.
 
 ## 5.1 Lessons learned from the Functional Specification
 
@@ -68,3 +68,7 @@ Adapters extend regular Kafka connectors with the following information, each of
 - *Logging:* Besides being online, it is also important to know that each connected service is running as expected, so each adapter offers the option to log warnings/errors to the test-bed as well.
 - *Configuration options:* The adapter can inform others to what topics it subscribes and publishes. In addition, this can be configured too externally. For example, the admin tool can configure the (potentially secret) topics an adapter must listen too.
 - *Time:* A Trial scenario typically will not run at real-time, so the adapter needs to share the fictive simulation time. In addition, it shares the simulation speed, as we may be running slower or faster than real-time, as well as the simulation state.
+
+## References
+
+[spec]: https://driver-eu.gitbooks.io/test-bed-specification/technical-requirements.html D923.11 Functional specification of the Test-bed.
