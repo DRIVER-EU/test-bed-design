@@ -8,11 +8,11 @@ The Test-bed supports practitioners by providing an environment in which they ca
 
 The Test-bed must support the exchange of information between distributed solutions, simulators and tools. Information such as the location of an incident, alert messages, or the locations of vehicles. Comparable to people exchanging information via email, chat or twitter, the Test-bed exchanges information using the open-source messaging system [Apache Kafka](https://kafka.apache.org) from the [Apache organisation](http://www.apache.org/).
 
-As it is assumed that the systems the Test-bed connecting are either software systems, or hardware with a software interface, the Test-bed support for non-technical systems is limited: typically, support will be limited to the evaluation tools, such as the observer support tool and After-Action Review tool.
+As it is assumed that the systems that are connected via the Test-bed are either software systems, or hardware with a software interface, the Test-bed's support for non-technical systems is limited: typically, support will be limited to the evaluation tools, such as the Observer Support tool and After-Action Review tool.
 
 ### Adapters
 
-Being popular, Kafka has connectors for most programming languages, so software applications can easily be connected to it. While connected to Kafka, and therefore the test-bed, the application can send and receive messages. When you want to receive a message, you subscribe to a topic of interest: thereafter, you get all the messages that are sent instantaneously until you end your subscription. Optionally, you can even get messages that were sent previously, or while you were offline. To publish a message, you send it to your topic of interest.
+Being popular, Kafka has connectors for most programming languages, so software applications can easily connect to it. While connected to Kafka, and therefore the Test-bed, the application can send and receive messages. When you want to receive a message, you subscribe to a topic of interest: thereafter, you get all the messages that are sent instantaneously until you end your subscription. Optionally, you can even get messages that were sent in the past, or while you were offline, as Kafka logs all messages for a pre-set time. To publish a message, you just need to send it to your topic of interest.
 
 *For example, to send a CAP (Common Alerting Protocol) message to all interested parties, you use a connector to send your CAP message to the cap topic. Every tool that has subscribed to the cap topic will get it right away.*
 
@@ -26,7 +26,7 @@ Adapters extend regular Kafka connectors with:
 
 ### Messages
 
-As computers are still less flexible than people in *understanding* messages, the Test-bed has to assure that every message that is sent complies with the expected format (syntax). For example, when a solution wants to share the location of a vehicle or the value of a sensor, you probably need to capture the vehicle's or sensor's location, as well as its type, speed or sensor value. Then it is important to know that the type will be one out of a list of possibilities, that the location is specified using two numbers, and that the speed or sensor value is a number too.
+As software applications need to understand the messages they receive, the Test-bed has to assure that every message that is sent complies with the expected format (syntax). For example, when a solution wants to share the location of a vehicle or the value of a sensor, you probably need to capture the vehicle's or sensor's location, as well as its type, speed or sensor value. Then it is important to know that the type will be one out of a list of possibilities, that the location is specified using two numbers, and that the speed or sensor value is a number too.
 
 To capture this information, the common solution is to specify it in a so-called schema. The Test-bed enforces this too, and is uses the open [Apache AVRO](https://avro.apache.org) schema format.
 
