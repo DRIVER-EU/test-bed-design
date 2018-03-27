@@ -1,6 +1,6 @@
 # 5. Test-bed design
 
-The Test-bed is designed to fulfil the [functional requirements][spec]. Clearly, different designs can be created that all fulfil these requirements, so this chapter provides a brief explanation of the major design decisions that underlie the current test-bed's reference implementation. Its intended audience is core developers, who want to improve its functionality, or other backend developers, who want to create an alternative Test-bed that also satisfies these requirements.
+The Test-bed is designed to fulfil the [functional requirements]. Clearly, different designs can be created that all fulfil these requirements, so this chapter provides a brief explanation of the major design decisions that underlie the current test-bed's reference implementation. Its intended audience is core developers, who want to improve its functionality, or other backend developers, who want to create an alternative Test-bed that also satisfies these requirements.
 
 ## 5.1 Lessons learned from the Functional Specification
 
@@ -71,4 +71,4 @@ Adapters extend regular Kafka connectors with the following information, each of
 
 ## References
 
-[spec]: https://driver-eu.gitbooks.io/test-bed-specification/technical-requirements.html D923.11 Functional specification of the Test-bed.
+[Functional requirements]: https://driver-eu.gitbooks.io/test-bed-specification/technical-requirements.html D923.11 Functional specification of the Test-bed.
