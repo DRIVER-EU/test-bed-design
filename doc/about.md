@@ -1,4 +1,4 @@
-<h1>Project information</h1>
+# Project information
 
 <table style="border: 2px solid black">
 <tr><td style="font-weight: bold; color: white; background: #00497E">Project Acronym:</td><td>DRIVER+</td></tr>
@@ -10,7 +10,7 @@
 </table>
 
 
-<h1>Document information</h1>
+# Document information
 
 <table style="border: 2px solid black">
   <tr><td style="font-weight: bold; color: white; background: #00497E">Document Status:</td><td>Draft</td></tr>
@@ -24,3 +24,23 @@
   <tr><td style="font-weight: bold; color: white; background: #00497E">Document Leader:</td><td>TNO</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">File Name:</td><td>test-bed-design.pdf</td></tr>
 </table>
+
+
+<div style="font-style: italic; color: grey;">
+<strong>DISCLAIMER</strong>
+
+The opinion stated in this report reflects the opinion of the authors and not the opinion of the European Commission.
+All intellectual property rights are owned by the DRIVER+ consortium members and are protected by the applicable laws. Except where otherwise specified, all document contents are: “©DRIVER+ Project - All rights reserved”. Reproduction is not authorised without prior written agreement.
+
+The commercial use of any information contained in this document may require a license from the owner of that information.
+All DRIVER+ consortium members are also committed to publish accurate and up to date information and take the greatest care to do so. However, the DRIVER+ consortium members cannot accept liability for any inaccuracies or omissions nor do they accept liability for any direct, indirect, special, consequential or other losses or damages of any kind arising out of the use of this information.
+
+</div>
+
+# Revision table
+
+| Issue | Date       | Comment                                 | Author                            |
+|-------|------------|-----------------------------------------|-----------------------------------|
+| V0.1  | 01/02/2018 | Initial draft                           | Erik Vullings (TNO, WP923 leader) |
+| V0.2  | 21/03/2018 | First reviews started                   | Erik Vullings (TNO, WP923 leader) |
+| V1.0  | xx/xx/2018 | Final approval and submission to the EC | Erik Vullings (TNO, WP923 leader) |
