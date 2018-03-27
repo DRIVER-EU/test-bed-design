@@ -43,9 +43,9 @@ The CM solutions and simulators that supplement the test-bed, however, are *not*
 
 ## 1.3 Organisation of the Document
 
-This document is organised as follows:
+This is actually a live document, and the latest version can always be found online at [www.gitbook.com/book/driver-eu/test-bed-design](https://www.gitbook.com/book/driver-eu/test-bed-design). It is organised as follows:
 
-The [Test-bed description](test-bed-description.md) provides a general overview of the Test-bed reference implementation. It is an easy to read chapter which requires no technical background knowledge, and is aimed at anyone who has to work with the test-bed.
+The [Test-bed description](test-bed-description.md) provides a general overview of the Test-bed reference implementation. It is an easy to read chapter which requires little technical knowledge, and is aimed at anyone who has to work with the test-bed.
 
 The chapter, a [Test-bed for Trial owners](Trial-owners.md), is specifically aimed at Trial owners and practitioners, and discusses the functionality the Test-bed offers to them. And also, what it does not offer.
 
