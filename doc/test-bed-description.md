@@ -40,6 +40,8 @@ For not too complex Trials, the CSS and CIS will run in the same test-bed. In ca
 
 Note, though, that the [adapters](#adapters) connect to the CIS as well as the CSS, so there is no difference between them.
 
+In rare cases, the CSS may be replaced, or extended, by one of the existing simulation standards such as HLA or DIS, that are especially popular in the Defence sector. Please refer to Chapter 4 to learn more about this.
+
 ### Gateways and Validation Services
 
 Even while using well defined messages based on [Apache AVRO](https://avro.apache.org), it is certain that not all solutions and simulators speak each other's 'language'. Like in Europe, as not everyone is speaking Esperanto or English and there is a need for translators, in the Test-bed we need *gateways* to translate one topic's message to another. Examples are not only translating one message format to another, but for example to translate:
