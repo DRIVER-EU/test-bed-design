@@ -22,7 +22,7 @@
   <tr><td style="font-weight: bold; color: white; background: #00497E">Sub-Project (SP):</td><td>SP92 - Test-bed</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">Work Package (WP):</td><td>WP923 – Test-bed infrastructure</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">Document Leader:</td><td>TNO</td></tr>
-  <tr><td style="font-weight: bold; color: white; background: #00497E">File Name:</td><td>test-bed-design.pdf, latest version available online at [https://driver-eu.gitbooks.io/test-bed-specification](https://driver-eu.gitbooks.io/test-bed-specification)</td></tr>
+  <tr><td style="font-weight: bold; color: white; background: #00497E">File Name:</td><td>test-bed-design.pdf, latest version available online at <a href="https://driver-eu.gitbooks.io/test-bed-specification" target="_blank">driver-eu.gitbooks.io/test-bed-specification</a></td></tr>
 </table>
 
 
