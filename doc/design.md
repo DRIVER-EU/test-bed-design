@@ -27,7 +27,7 @@ Besides Apache Kafka, there are numerous popular open source messaging systems t
 
 Being able to communicate using well-defined messages is of primordial importance for any messaging system, and the Test-bed uses [Apache AVRO](https://avro.apache.org).
 
-Avro provides:
+AVRO provides:
 
 - Rich data structures.
 - A compact, fast, binary data format.
