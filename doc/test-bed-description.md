@@ -60,7 +60,7 @@ There are also tools that will send out messages that serve as commands or reque
 
 ## 2.2 Test-bed administration tool
 
-The Test-bed is a collection of distributed services running in a network environment. You can compare it to a theatre play, where the stage needs to be prepared, the musicians must be ready, as well as the light and sound engineers. The Test-bed admin tool helps you by monitoring both the CIS and the CSS to support understanding what is/was going on during a trail: to determine whether all services are ready, and that their inputs and outputs are correct. Also in case a service encounters any errors, this is made visible and the errors can be inspected - are they serious and do we need to stop our Trial, or can we ignore them safely and run on.
+The Test-bed is a collection of distributed services running in a network environment. You can compare it to a theatre play, where the stage needs to be prepared, the musicians must be ready, as well as the light and sound engineers. The Test-bed admin tool helps you by monitoring both the CIS and the CSS to support understanding what is/was going on during a Trial: to determine whether all services are ready, and that their inputs and outputs are correct. Also in case a service encounters any errors, this is made visible and the errors can be inspected - are they serious and do we need to stop our Trial, or can we ignore them safely and run on.
 
 This does not only apply to the test-bed's core tools, gateways and services, but also for the connected simulators and solutions.
 
