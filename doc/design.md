@@ -1,15 +1,15 @@
 # 5. Test-bed design
 
-The test-bed is designed to fulfil the [functional requirements][spec]. Clearly, different designs can be created that all fulfil these requirements, so this chapter provides a brief explanation of the major design decisions that underlie the current test-bed's reference implementation. Its intended audience is core developers, who want to improve its functionality, or other backend developers, who want to create an alternative test-bed that also satisfies these requirements.
+The Test-bed is designed to fulfil the [functional requirements][spec]. Clearly, different designs can be created that all fulfil these requirements, so this chapter provides a brief explanation of the major design decisions that underlie the current test-bed's reference implementation. Its intended audience is core developers, who want to improve its functionality, or other backend developers, who want to create an alternative Test-bed that also satisfies these requirements.
 
 ## 5.1 Lessons learned from the Functional Specification
 
 Part of the functional specification describes the [lessons learned](https://driver-eu.gitbooks.io/test-bed-specification/content/lessons-learned.html) from the past. To summarize the most important technical lessons that have influenced the current design significantly, are:
 
-1. The test-bed should be open source.
-2. The test-bed should have a message-oriented architecture.
-3. The test-bed should use well-defined, easily accessible, syntactically correct messages, and close to common standards.
-4. The test-bed must be easily reproducible, and offer administrative as well as supporting tools and services.
+1. The Test-bed should be open source.
+2. The Test-bed should have a message-oriented architecture.
+3. The Test-bed should use well-defined, easily accessible, syntactically correct messages, and close to common standards.
+4. The Test-bed must be easily reproducible, and offer administrative as well as supporting tools and services.
 
 ## 5.2 Distributed message bus using Apache Kafka
 
@@ -25,7 +25,7 @@ Besides Apache Kafka, there are numerous popular open source messaging systems t
 
 ## 5.3 Well-defined messages using Apache AVRO #{AVRO}
 
-Being able to communicate using well-defined messages is of primordial importance for any messaging system, and the test-bed uses [Apache AVRO](https://avro.apache.org).
+Being able to communicate using well-defined messages is of primordial importance for any messaging system, and the Test-bed uses [Apache AVRO](https://avro.apache.org).
 
 Avro provides:
 
@@ -65,7 +65,7 @@ Since the Test-bed requires multiple solutions and simulators with different imp
 
 Adapters extend regular Kafka connectors with the following information, each of which is displayed in the test-bed's admin tool:
 - *Heartbeat signals:* Before you can start a Trial, every solution, simulator and tool needs to be up-and-running. Therefore every adapter transmits a heartbeat signal every 5 seconds to inform others it is online.
-- *Logging:* Besides being online, it is also important to know that each connected service is running as expected, so each adapter offers the option to log warnings/errors to the test-bed as well.
+- *Logging:* Besides being online, it is also important to know that each connected service is running as expected, so each adapter offers the option to log warnings/errors to the Test-bed as well.
 - *Configuration options:* The adapter can inform others to what topics it subscribes and publishes. In addition, this can be configured too externally. For example, the admin tool can configure the (potentially secret) topics an adapter must listen too.
 - *Time:* A Trial scenario typically will not run at real-time, so the adapter needs to share the fictive simulation time. In addition, it shares the simulation speed, as we may be running slower or faster than real-time, as well as the simulation state.
 

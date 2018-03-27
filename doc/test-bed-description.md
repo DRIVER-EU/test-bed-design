@@ -1,14 +1,14 @@
 # 2. Test-bed description
 
-The test-bed supports practitioners by providing an environment in which they can easily Trial new solutions and run exercises. In this chapter, the main components of the test-bed are explained.
+The Test-bed supports practitioners by providing an environment in which they can easily Trial new solutions and run exercises. In this chapter, the main components of the Test-bed are explained.
 
 ![Explanation of the Test-bed components](img/test-bed-components-explained.png)
 
 ## 2.1 Core
 
-The test-bed must support the exchange of information between distributed solutions, simulators and tools. Information such as the location of an incident, alert messages, or the locations of vehicles. Comparable to people exchanging information via email, chat or twitter, the test-bed exchanges information using the open-source messaging system [Apache Kafka](https://kafka.apache.org) from the [Apache organisation](http://www.apache.org/).
+The Test-bed must support the exchange of information between distributed solutions, simulators and tools. Information such as the location of an incident, alert messages, or the locations of vehicles. Comparable to people exchanging information via email, chat or twitter, the Test-bed exchanges information using the open-source messaging system [Apache Kafka](https://kafka.apache.org) from the [Apache organisation](http://www.apache.org/).
 
-As it is assumed that the systems the test-bed connecting are either software systems, or hardware with a software interface, the test-bed support for non-technical systems is limited: typically, support will be limited to the evaluation tools, such as the observer support tool and After-Action Review tool.
+As it is assumed that the systems the Test-bed connecting are either software systems, or hardware with a software interface, the Test-bed support for non-technical systems is limited: typically, support will be limited to the evaluation tools, such as the observer support tool and After-Action Review tool.
 
 ### Adapters
 
@@ -16,21 +16,21 @@ Being popular, Kafka has connectors for most programming languages, so software 
 
 *For example, to send a CAP (Common Alerting Protocol) message to all interested parties, you use a connector to send your CAP message to the cap topic. Every tool that has subscribed to the cap topic will get it right away.*
 
-The default Kafka connectors are lacking certain features that are useful in a test-bed environment, so some existing connectors have been extended. These extended connectors are called **adapters**, and the test-bed currently maintains four of them: in [Java](https://github.com/DRIVER-EU/java-test-bed-adapter), [C#](https://github.com/DRIVER-EU/csharp-test-bed-adapter), [JavaScript/TypeScript](https://github.com/DRIVER-EU/node-test-bed-adapter) and [REST](https://github.com/DRIVER-EU/test-bed-rest-service). Note that the REST adapter is a simple interface so any application can send and receive messages using basic internet commands.
+The default Kafka connectors are lacking certain features that are useful in a Test-bed environment, so some existing connectors have been extended. These extended connectors are called **adapters**, and the Test-bed currently maintains four of them: in [Java](https://github.com/DRIVER-EU/java-test-bed-adapter), [C#](https://github.com/DRIVER-EU/csharp-test-bed-adapter), [JavaScript/TypeScript](https://github.com/DRIVER-EU/node-test-bed-adapter) and [REST](https://github.com/DRIVER-EU/test-bed-rest-service). Note that the REST adapter is a simple interface so any application can send and receive messages using basic internet commands.
 
 Adapters extend regular Kafka connectors with:
 - *Heartbeat signals:* Before you can start a Trial, every solution, simulator and tool needs to be up-and-running. Therefore every adapter transmits a heartbeat signal every 5 seconds to inform others it is online.
-- *Logging:* Besides being online, it is also important to know that each connected service is running as expected, so each adapter offers the option to log warnings/errors to the test-bed as well.
+- *Logging:* Besides being online, it is also important to know that each connected service is running as expected, so each adapter offers the option to log warnings/errors to the Test-bed as well.
 - *Configuration options:* The adapter can inform others to what topics it subscribes and publishes. In addition, this can be configured too externally.
 - *Time:* A Trial scenario typically will not run at real-time, so the adapter needs to share the fictive simulation time. In addition, it shares the simulation speed, as we may be running slower or faster than real-time, as well as the simulation state.
 
 ### Messages
 
-As computers are still less flexible than people in *understanding* messages, the test-bed has to assure that every message that is sent complies with the expected format (syntax). For example, when a solution wants to share the location of a vehicle or the value of a sensor, you probably need to capture the vehicle's or sensor's location, as well as its type, speed or sensor value. Then it is important to know that the type will be one out of a list of possibilities, that the location is specified using two numbers, and that the speed or sensor value is a number too.
+As computers are still less flexible than people in *understanding* messages, the Test-bed has to assure that every message that is sent complies with the expected format (syntax). For example, when a solution wants to share the location of a vehicle or the value of a sensor, you probably need to capture the vehicle's or sensor's location, as well as its type, speed or sensor value. Then it is important to know that the type will be one out of a list of possibilities, that the location is specified using two numbers, and that the speed or sensor value is a number too.
 
-To capture this information, the common solution is to specify it in a so-called schema. The test-bed enforces this too, and is uses the open [Apache AVRO](https://avro.apache.org) schema format.
+To capture this information, the common solution is to specify it in a so-called schema. The Test-bed enforces this too, and is uses the open [Apache AVRO](https://avro.apache.org) schema format.
 
-**Dealing with standards:** In the CM domain, several standards exists, such as CAP, EDXL or EMSI. They are represented using XML, a textual representation of a message that is easily readable by computers. A recurring problem with all standards, however, is that they rarely represent all the information you would like to share. This often leads to adding new fields, or, even worse, *re-purposing* existing fields. Additionally, not every organisation uses it in the same way. For Trialling new solutions, the test-bed needs to be flexible and exact, and that's why the test-bed does support these standards, but converted to the AVRO format. In that way, every connected solution or simulator will exactly know what to expect when reading a message, as new fields can be easily added in a robust way.
+**Dealing with standards:** In the CM domain, several standards exists, such as CAP, EDXL or EMSI. They are represented using XML, a textual representation of a message that is easily readable by computers. A recurring problem with all standards, however, is that they rarely represent all the information you would like to share. This often leads to adding new fields, or, even worse, *re-purposing* existing fields. Additionally, not every organisation uses it in the same way. For Trialling new solutions, the Test-bed needs to be flexible and exact, and that's why the Test-bed does support these standards, but converted to the AVRO format. In that way, every connected solution or simulator will exactly know what to expect when reading a message, as new fields can be easily added in a robust way.
 
 ### CIS and CSS
 
@@ -42,7 +42,7 @@ Note, though, that the [adapters](#adapters) connect to the CIS as well as the C
 
 ### Gateways and Validation Services
 
-Even while using well defined messages based on [Apache AVRO](https://avro.apache.org), it is certain that not all solutions and simulators speak each other's 'language'. Like in Europe, as not everyone is speaking Esperanto or English and there is a need for translators, in the test-bed we need *gateways* to translate one topic's message to another. Examples are not only translating one message format to another, but for example to translate:
+Even while using well defined messages based on [Apache AVRO](https://avro.apache.org), it is certain that not all solutions and simulators speak each other's 'language'. Like in Europe, as not everyone is speaking Esperanto or English and there is a need for translators, in the Test-bed we need *gateways* to translate one topic's message to another. Examples are not only translating one message format to another, but for example to translate:
 - A message from a simulator sharing the location of all vehicles, to a COP tool message that only contains the location of its own resources
 - An EDXL Resource Management request from a COP tool to a simulator message, which in turn sends out an ambulance to the required location.
 
@@ -54,11 +54,11 @@ In this example, the water in the river is handled inside the CSS by means of a 
 
 There are also tools that will send out messages that serve as commands or requests to change the simulated world (e.g. Command & Control systems used to trigger procedures to be executed by units, which in case of a Trial are simulated). Again, a gateway would be used to bridge the two spaces together. For example, a new dispatch centre solution (i.e. a type of COP system) that allows the user to send out emergency services from their dispatch towards the incident location. The solution would send out a standard resource management message via the CIS. The gateway service picks up the message and maps it towards the corresponding request for changing the simulation space. The responsible simulator would receive this request via the CSS and handles it, changing the respective simulation entity (i.e. letting a simulated unit drive in the simulated world).
 
-**Validation Services** are specific gateways that, as the name suggests, validate a message in more detail, before it is passed on to other systems. For example, if application A is publishing a CAP (Common Alerting Protocol) message for application B, i.e. A --> CAP topic --> B, the test-bed will make sure that it complies with the appropriate schema before passing it on. However, there may still be certain aspects in the message that are not completely correct, e.g. the alerting area that is represented as a polygon may not have the same starting and ending point (i.e. it should be closed), or the incident location that is represented by two numbers (x, y), may actually be published as (y, x). So during testing, the validation service can 'intercept' messages between A and B and validate them in detail. Only valid messages are passed on, i.e. A --> CAP validation topic --> CAP topic --> B.
+**Validation Services** are specific gateways that, as the name suggests, validate a message in more detail, before it is passed on to other systems. For example, if application A is publishing a CAP (Common Alerting Protocol) message for application B, i.e. A --> CAP topic --> B, the Test-bed will make sure that it complies with the appropriate schema before passing it on. However, there may still be certain aspects in the message that are not completely correct, e.g. the alerting area that is represented as a polygon may not have the same starting and ending point (i.e. it should be closed), or the incident location that is represented by two numbers (x, y), may actually be published as (y, x). So during testing, the validation service can 'intercept' messages between A and B and validate them in detail. Only valid messages are passed on, i.e. A --> CAP validation topic --> CAP topic --> B.
 
 ## 2.2 Test-bed administration tool
 
-The test-bed is a collection of distributed services running in a network environment. You can compare it to a theatre play, where the stage needs to be prepared, the musicians must be ready, as well as the light and sound engineers. The test-bed admin tool helps you by monitoring both the CIS and the CSS to support understanding what is/was going on during a trail: to determine whether all services are ready, and that their inputs and outputs are correct. Also in case a service encounters any errors, this is made visible and the errors can be inspected - are they serious and do we need to stop our Trial, or can we ignore them safely and run on.
+The Test-bed is a collection of distributed services running in a network environment. You can compare it to a theatre play, where the stage needs to be prepared, the musicians must be ready, as well as the light and sound engineers. The Test-bed admin tool helps you by monitoring both the CIS and the CSS to support understanding what is/was going on during a trail: to determine whether all services are ready, and that their inputs and outputs are correct. Also in case a service encounters any errors, this is made visible and the errors can be inspected - are they serious and do we need to stop our Trial, or can we ignore them safely and run on.
 
 This does not only apply to the test-bed's core tools, gateways and services, but also for the connected simulators and solutions.
 
@@ -90,10 +90,10 @@ Alternative commercial solutions exist too, such as [Exonaut](https://www.4cstra
 
 ### Scenario manager
 
-A scenario manager is an integral part of the test-bed reference implementation too, since it is not possible to use JEMM or Exonaut directly, as:
+A scenario manager is an integral part of the Test-bed reference implementation too, since it is not possible to use JEMM or Exonaut directly, as:
 - JEMM is only available to NATO members, and can only be used in a Trial or exercise when military personnel requests it. This will not always be the case.
 - JEMM and Exonaut are aimed at the military community, and the fit with the Crisis Management domain is not optimal.
-- JEMM and Exonaut are closed source, so a strong integration with the test-bed is not possible, as the applications cannot be modified.
+- JEMM and Exonaut are closed source, so a strong integration with the Test-bed is not possible, as the applications cannot be modified.
 
 The test-bed's scenario manager, then, acts as the *composer* and *conductor* of a classical performance:
 - As the *composer*, it defines what each role has to play. For example, what do the simulators or role-players need to do in order to provide a realistic incident and background to the Trial, or it could include sending direct messages to solutions.
@@ -106,7 +106,7 @@ Detailed information:
 
 ## 2.4 Evaluation
 
-Evaluation is needed to verify that the Trial or training objectives have been achieved. The test-bed provides two services for this: an Online Observer Support tool and an After-Action Review tool.
+Evaluation is needed to verify that the Trial or training objectives have been achieved. The Test-bed provides two services for this: an Online Observer Support tool and an After-Action Review tool.
 
 ### Online Observer Support tool
 
@@ -146,7 +146,7 @@ The test-bed, therefore, offers support to simulators for creating this realisti
 - Providing a time-service: i.e. each adapter knows the scenario time, so simulators and solutions can use this in their user interface and calculations. Think of a clock display, but also when sending an email or CAP message, making sure it uses the correct timestamps.
 - The scenario manager, as discussed above.
 
-It does not, however, provide these simulators as an integral part of the test-bed. They are, and shall always remain, external. Even though some simulators will be connected during the project, they are external, as as such, also not bound by the open source requirements that the test-bed has to adhere too. For example:
+It does not, however, provide these simulators as an integral part of the test-bed. They are, and shall always remain, external. Even though some simulators will be connected during the project, they are external, as as such, also not bound by the open source requirements that the Test-bed has to adhere too. For example:
 - XVR connects their 3D crisis management environment, Crisis Media and Resource Manager to the test-bed, thereby offering their (commercial) services to other parties too.
 - DLR connects their open source SUMO (Simulation of Urban Mobility) traffic simulator to the test-bed, which provides realistic traffic during an incident
 - Thales connects their commercial Crowd Simulator to the test-bed, e.g. providing a realistic simulation of people in need during a crisis.

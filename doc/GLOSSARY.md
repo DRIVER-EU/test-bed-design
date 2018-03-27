@@ -26,7 +26,7 @@ Common Operational Picture tools for creating a shared situational awareness
 
 ## Docker
 
-[Docker](http://docker.com/) is a free software application, available on Linux, Mac and Windows, which offers a way to run other applications in its own sand-box environment without requiring installation. Basically, a single PC can run many different Docker files, where each Docker file represents an application. This is also called *virtualisation*, as a single PC runs many services as if it was server park. A Docker-compose file, then, combines many Docker files into one, each representing a dedicated service of our test-bed or an external solution, such as the csCOP tool.
+[Docker](http://docker.com/) is a free software application, available on Linux, Mac and Windows, which offers a way to run other applications in its own sand-box environment without requiring installation. Basically, a single PC can run many different Docker files, where each Docker file represents an application. This is also called *virtualisation*, as a single PC runs many services as if it was server park. A Docker-compose file, then, combines many Docker files into one, each representing a dedicated service of our Test-bed or an external solution, such as the csCOP tool.
 
 ## EDXL DE
 

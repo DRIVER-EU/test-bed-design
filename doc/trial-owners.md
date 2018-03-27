@@ -1,6 +1,6 @@
-# 3. A test-bed for Trial owners
+# 3. A Test-bed for Trial owners
 
-Trial owners will interact with the test-bed when:
+Trial owners will interact with the Test-bed when:
 - They want to evaluate a solution standalone
 - They want to run a Trial or exercise
 
@@ -26,9 +26,9 @@ Monica has heard about an interesting COP solution, *csCOP*, perhaps via the DRI
 
 ### Alternative 1: Cloud scenario
 
-6. As she currently isn't interested in other solutions, the opens the menu and clicks on the DEPLOY button. A dialog opens and informs her to wait while her selected test-bed is started in the cloud.
+6. As she currently isn't interested in other solutions, the opens the menu and clicks on the DEPLOY button. A dialog opens and informs her to wait while her selected Test-bed is started in the cloud.
 
-7. After a minute or so, the test-bed is running and she gets her own unique link. She visits this website, and is presented with a simple menu: she can start (pause | stop) the fire fighting scenario, and open the website of the *csCOP* tool. *In its layer menu, she can turn on the layer which shows the ambulances and fire trucks. There are also options to turn on the fire fighting layer, etc.*
+7. After a minute or so, the Test-bed is running and she gets her own unique link. She visits this website, and is presented with a simple menu: she can start (pause | stop) the fire fighting scenario, and open the website of the *csCOP* tool. *In its layer menu, she can turn on the layer which shows the ambulances and fire trucks. There are also options to turn on the fire fighting layer, etc.*
 
 ### Alternative 2: Local scenario
 
@@ -36,19 +36,19 @@ Monica has heard about an interesting COP solution, *csCOP*, perhaps via the DRI
 
 ![Test-bed composer: Downloading the docker-compose.yml file](img/test-bed-composer-download.png)
 
-7. Running a simple command, the test-bed is downloaded and started on her own PC, and she can interact with the test-bed as described above.
+7. Running a simple command, the Test-bed is downloaded and started on her own PC, and she can interact with the Test-bed as described above.
 
 ## 3.2 Use Case: Running a Trial
 
-In order to run a Trial, the same process as described above is followed. The main difference is that more services and solutions will be added, and in many cases, perhaps for security reasons, the test-bed is run locally on the internal network. Basically, instead of only using the test-bed core's services, a more complete test-bed is required, also containing the observer tool, AAR, and Scenario Manager.
+In order to run a Trial, the same process as described above is followed. The main difference is that more services and solutions will be added, and in many cases, perhaps for security reasons, the Test-bed is run locally on the internal network. Basically, instead of only using the Test-bed core's services, a more complete Test-bed is required, also containing the observer tool, AAR, and Scenario Manager.
 
-In addition, the test-bed is needed already well-before the final Trial or exercise date, since:
+In addition, the Test-bed is needed already well-before the final Trial or exercise date, since:
 - The scenario must be created iteratively.
 - Not all solutions or simulators are already able to connect to the test-bed. So even before the first dry-runs, solutions and simulators should be able to test their connection and integration.
 
-Typically, setting up the test-bed for a Trial or exercise would not be performed by the Trial owner herself. Most likely, she will be supported by a local system administrator or consultant to help her decide what she needs, and to prepare the technical infrastructure.
+Typically, setting up the Test-bed for a Trial or exercise would not be performed by the Trial owner herself. Most likely, she will be supported by a local system administrator or consultant to help her decide what she needs, and to prepare the technical infrastructure.
 
-When the test-bed is running, though, the Trial owner has to take responsibility again for defining the scenario in case she has not delegated this task. The scenario is key in that it translates specific objectives to a storyline so the solutions or people can be put to the test.
+When the Test-bed is running, though, the Trial owner has to take responsibility again for defining the scenario in case she has not delegated this task. The scenario is key in that it translates specific objectives to a storyline so the solutions or people can be put to the test.
 
 As the Scenario Manager is not available in the current version of the test-bed, only a brief outline can be provided. During the preparation, the scenario manager acts as the composer:
 - The objectives of the Trial or exercise are defined.
