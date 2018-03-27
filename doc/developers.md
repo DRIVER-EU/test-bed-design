@@ -14,7 +14,7 @@ In particular, it should be considered that some providers make heavy use of the
 
 More directly related to the test-bed, however, is the connection of all solutions and simulators: are they connected correctly to the test-bed, do they run without errors, are they subscribed to the correct topics, and do they publish to the expected topics, are some of the questions that the admin tool can answer for you. In addition, the admin tool makes sure that all message schemas are available. And when everything is in place, the actual Trial can start. Finally, the admin tool offers a convenient interface to all the other technical Test-bed services, such as the REST services, Topics UI, Schema Registry, Kafka Connect, etc.
 
-From then on, the system administrator only needs to check whether the Test-bed does not experience any issues.
+From then on, the system administrator only needs to check whether the Test-bed does not experience any issues, like disconnected applications.
 
 ## 4.2 Use case: Integration process
 
