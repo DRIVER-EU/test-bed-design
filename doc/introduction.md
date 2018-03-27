@@ -47,7 +47,7 @@ This document is organised as follows:
 
 The [Test-bed description](test-bed-description.md) provides a general overview of the Test-bed reference implementation. It is an easy to read chapter which requires no technical background knowledge, and is aimed at anyone who has to work with the test-bed.
 
-The second chapter, a [Test-bed for Trial owners](Trial-owners.md), is specifically aimed at Trial owners and practitioners, and discusses the functionality the Test-bed offers to them. And also, what it does not offer.
+The chapter, a [Test-bed for Trial owners](Trial-owners.md), is specifically aimed at Trial owners and practitioners, and discusses the functionality the Test-bed offers to them. And also, what it does not offer.
 
 In the chapter, a [Test-bed for developers and sysops](developers.md), the technical side of the Test-bed is explained, specifically, how to manage a Test-bed as a sysop, or how to connect a solution or simulator to it as a developer.
 
