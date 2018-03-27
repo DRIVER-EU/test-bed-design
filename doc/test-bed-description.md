@@ -48,7 +48,7 @@ Even while using well defined messages based on [Apache AVRO](https://avro.apach
 - A message from a simulator sharing the location of all vehicles, to a COP tool message that only contains the location of its own resources
 - An EDXL Resource Management request from a COP tool to a simulator message, which in turn sends out an ambulance to the required location.
 
-In order to facilitate solution tools to obtain their needed information from the simulated world, the CSS needs to be connected with the CIS by means of translator applications, residing in the CIS-CSS Gateway. These translator applications form the bridge between de simulated truth and the perceived/communicated truth by mapping the relevant changes from the simulated world to messages globally understood in the CIS.
+In order to facilitate solution tools to obtain their needed information from the simulated world, the CSS needs to be connected with the CIS by means of translator applications, residing in the CIS-CSS Gateway. These translator applications form the bridge between the simulated truth and the perceived/communicated truth by mapping the relevant changes from the simulated world to messages globally understood in the CIS.
 
 An example of this would be a simulation of a flooding. Imagine a river that has a rising water level due to increase of rain water. At the river bank, there are several sensors that react to the amount of water coming in contact with the sensor. An application is created and connected to current operational systems to send CAP messages regarding the water level in clear categories ranging from LOW to DANGEROUSLY HIGH. A possible solution is assessed on improving decision-making based on the messages outputted by the created sensor application.
 
