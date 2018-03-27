@@ -30,7 +30,7 @@ The Test-bed supports practitioners by providing an environment in which they ca
 
 - **Evaluation support:** As we are testing and evaluating new solutions, the Test-bed provides tools for observers and After-Action Review.
 - **Simulation support:** Due to the nature of the crisis management domain, most solutions cannot be properly tested outside an actual crisis situation. As starting a flooding or burning a forest is clearly not an option to test the solutions, the crisis incident needs to be faked or simulated. The same applies to expected reactions of the environment: people panicking, traffic jams, etc. must be simulated too.
-- **Trial & exercise support:** As the solutions are typically tested within an incident scenario, the Test-bed provides tools to create and execute scenario's.
+- **Execution support:** As the solutions are typically tested within an incident scenario, the Test-bed provides tools to create and execute scenario's.
 - **Development support:** To connect new solutions and simulators to the test-bed, the Test-bed provides adapters in several popular languages and several debugging tools and services. Also, to check whether everything is up-and-running smoothly, it also has an admin tool.
 
 ## 1.2 Scope of the test-bed

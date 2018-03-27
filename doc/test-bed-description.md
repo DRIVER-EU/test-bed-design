@@ -91,7 +91,7 @@ Alternative commercial solutions exist too, such as [Exonaut](https://www.4cstra
 ### Scenario manager
 
 A scenario manager is an integral part of the Test-bed reference implementation too, since it is not possible to use JEMM or Exonaut directly, as:
-- JEMM is only available to NATO members, and can only be used in a Trial or exercise when military personnel requests it. This will not always be the case.
+- JEMM is only available to NATO members, and can only be used in a an exercise when military personnel requests it. This will not always be the case.
 - JEMM and Exonaut are aimed at the military community, and the fit with the Crisis Management domain is not optimal.
 - JEMM and Exonaut are closed source, so a strong integration with the Test-bed is not possible, as the applications cannot be modified.
 
@@ -110,7 +110,7 @@ Evaluation is needed to verify that the Trial or training objectives have been a
 
 ### Online Observer Support tool
 
-Based on the specified objectives of the Trial or exercise, an observer expects to observe different kinds of behaviour. At the same time, there is little time during a Trial to record behaviour, as the Trial runs on, and that's why the observer tool provides Trial-specific pre-made forms (templates) to quickly create a new observation. For example, *Did you observe role X do Y? Yes/No*. These Trial-specific forms are created before the Trial by the observation team manager in the administration panel. Using this panel, specific forms can be assigned to specific observers. The observer can use a tablet, phone or desktop application for his work.
+Based on the specified objectives of the Trial, an observer expects to observe different kinds of behaviour. At the same time, there is little time during a Trial to record behaviour, as the Trial runs on, and that's why the observer tool provides Trial-specific pre-made forms (templates) to quickly create a new observation. For example, *Did you observe role X do Y? Yes/No*. These Trial-specific forms are created before the Trial by the observation team manager in the administration panel. Using this panel, specific forms can be assigned to specific observers. The observer can use a tablet, phone or desktop application for his work.
 
 Although the observer tool can run standalone, outside the test-bed, it really shines when it is connected, as this allows:
 - To share observations with Trial staff: they can use this information to steer the Trial in another direction.
@@ -137,7 +137,7 @@ Detailed information:
 
 Much can be said on the subject of simulation, but for the purpose of this chapter, it suffices to provide a brief overview of the test-bed's relation to simulation.
 
-In the test-bed, the goal of simulation is to provide a realistic, immersive background for the Trial or exercise. Typically, this requires:
+In the test-bed, the goal of simulation is to provide a realistic, immersive background for the Trial. Typically, this requires:
 - A **simulation of the incident** e.g. a flooding, earthquake or explosion, etc. simulation
 - A **simulation of the reactions** to the incident, e.g. people running away or drowning, buildings collapsing, road jams or traffic accidents, etc.
 - A **simulation of the perceived world**, i.e. painting a picture of the world to solutions of what they are reasonably expected to see, not what is actually happening. For example, when an area is flooded in the simulation, all simulators know the exact location of the water. So if people are standing knee-deep in the water, or a road is inaccessible due to water, that can be shown and used. However, a COP tool or other solution does not have such a perfect view of what is happening in the world. It does not know where everyone is, nor the exact location of the water level. As long as it has no sensors, cameras, drones, or people informing it, it may well believe that the flooding is in an entirely different location or not happening at all. In a recent CM exercise, it took the participants quite some time to figure out that the water was actually threatening their own location, and they hadn't taken the necessary precautions. A well-designed Trial, therefore, needs to think about how they are going to present the simulated world within the Trial.
