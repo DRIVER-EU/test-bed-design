@@ -22,7 +22,7 @@ Within DRIVER+, a dedicated integration process *for solutions* is described in 
 
 This use-case is executed during the integration of a single solution or simulator into the Test-bed. It does not apply to the testing of multiple applications, and should already have been successfully performed before the application is tested in a larger context with multiple solutions and simulators.
 
-1. Developer starts up the Test-bed and the Admin Tool or uses a Test-bed available online.
+1. Developer starts up the Test-bed and the Admin Tool, or uses a Test-bed available online.
 2. Developer selects one of the existing adapters, integrates it into his application, and connects to the Test-bed. The Admin Tool shows whether the connection is established successfully. Adapters are available in multiple languages: [Java](https://github.com/DRIVER-EU/java-test-bed-adapter), [C#](https://github.com/DRIVER-EU/csharp-test-bed-adapter), [JavaScript/TypeScript](https://github.com/DRIVER-EU/node-test-bed-adapter) and [REST](https://github.com/DRIVER-EU/test-bed-rest-service). A Python version will be available in the next release.
 3. Developer defines the input/output [AVRO](http://avro.apache.org/docs/current) message schemas and topics based on the running test-bed. Many popular schemas for CAP, EMSI, MLP, GeoJSON etc. have already been defined in our [AVRO-schemas repository](https://github.com/DRIVER-EU/avro-schemas) and should be re-used if applicable.
    1. In case your message format is not available, you need to create a new one and register it with the Test-bed's schema registry. You can do that manually, or alternatively, the adapter will do this for you. The registration procedure is a bit different for each adapter.
@@ -60,7 +60,17 @@ Connecting to the Test-bed is needed to share information that you produce, or c
 
 ![Screenshot displaying the Kafka-replay service's Swagger interface](img/kafka_replay_service.png)
 
-## 4.3 Gateways for translating messages
+## 4.3 Use case: Pre-trial integration testing
+
+The procedure for testing multiple solutions and simulators before an actual Trial with participants is performed, is similar to the procedure for testing a single application. It is assumed that the single solutions and simulators have already been successfully integrated with the Test-bed, and all required message schemas are defined.
+
+1. Sysop starts up the Test-bed and the Admin Tool, or uses a Test-bed available online. If not done already, all required schema's are registered with the schema registry.
+2. Sysop inspects the Admin Tool and verifies that all required solutions and simulators are available and running online without errors.
+3. Sysop starts up the Scenario Manager (not yet available), loads the Trial scenario, and initializes it. The Test-bed's time service updates the fictive trial time and state, and every application that uses time should reflect that.
+4. Sysop runs the Trial scenario, either from the beginning or at another point in time, e.g. where issues were discovered. The time-service will update the fictive time accordingly.
+5. Sysop resets the Trial scenario, and replays it, as many times as required to make sure that everything works as expected.
+
+## 4.4 Gateways for translating messages
 
 As a developer, you may be confronted with message formats you need to consume, but do not support natively in your application. In that case, you can either:
 - Adapt your application to support these message formats natively.
@@ -68,7 +78,7 @@ As a developer, you may be confronted with message formats you need to consume, 
 
 To create such a gateway service is simple: you consume messages from one message topic, convert them, and publish them on another topic. The validation services follow the same approach, and several dedicated services are already available within the [DRIVER+ space on GitHub](https://github.com/DRIVER-EU).
 
-## 4.4 Data services and data sets
+## 4.5 Data services and data sets
 
 Within a Trial, we need to create a virtual environment where we can safely experiment. This virtual environment is created using data, such as maps, census data, height data, power lines, cell towers, hospitals and care providers, etc. As it is a lot of work to create such a rich data environment, the effort should be shared among the Trial owners, solution and simulator providers. Not only to reduce the workload for a specific organisation, but also to make sure that all parties use the same data. Otherwise, a traffic simulator may use a different roadmap than the simulator that provides a 3D environment, and some roads may be blocked by buildings.
 
@@ -80,7 +90,7 @@ So in order to share all this gathered data, the Test-bed offers two types of se
 
 **Security** is yet another reason to have these data services and data sets as part of the Test-bed. Not all Trials have open access to the Internet, but they still need access to this kind of data.
 
-## 4.5 Time management {#time}
+## 4.6 Time management {#time}
 
 A Trial typically is not performed in real-time: either because the incident occurs at night, and people prefer to Trial and train during working hours, because you wish to skip boring parts, or because it would simply take too long. An example of the latter is a flooding incident, which can start days before any flooding actually occurs, so you need to compress the scenario to normal working hours.
 
