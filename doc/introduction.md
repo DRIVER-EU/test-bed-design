@@ -1,16 +1,17 @@
 # 1. Introduction
 
-In the Crisis Management (CM) domain, practitioners need to be prepared for the unexpected: based on past experience and the local incidents they had to deal with, they develop a gut feeling for the things that did not go so well. As with most incidents many lives are involved, they are continuously looking for solutions to improve their response and preparedness.
+In the Crisis Management (CM) domain, practitioners need to be prepared for the unexpected: based on past experience and the local incidents they had to deal with, they develop a feeling for the things that did not go so well. As with most incidents many lives are involved, they are continuously looking for solutions to improve their response and preparedness.
 
-Within the [DRIVER+ project](http://www.driver-project.eu), a Trial Guidance Methodology (TGM) and tools are developed to help practitioners translate their gut feeling to practical solutions to their problems. The Test-bed is a suite of software tools and services that enables solutions and simulators in the Crisis Management (CM) domain to easily exchange information. This allows end-users in the CM domain to Trial solutions, and see if they address their gaps. Additionally,it can be used to support training exercises as well.
+Within the [DRIVER+ project](http://www.driver-project.eu), a Trial Guidance Methodology (TGM, see also deliverable D922.21, "Trial guidance methodology and guidance tool specifications (version 1)".) and tools are developed to help resolve the needs of practitioners through a systematic and pragmatic approach. The Test-bed infrastructure is a suite of software tools and services that enables solutions and simulators in the Crisis Management (CM) domain to easily exchange information. This allows end-users in the CM domain to Trial solutions, and see if they address their gaps. Additionally,it can be used to support training exercises as well.
 
-The simplified process to Trial solutions goes like this:
+The simplified DRIVER+ TGM process to Trial solutions is like this. For a more detailed discussion, see deliverable D922.21):
 
 1. PREPARATION PHASE:
 
-   - The gut feeling is matched with one of the well-known crisis management gaps, as experienced by many of their colleagues, e.g. *How to get a real-time and dynamic overview of the position of all personnel?*.
+   - The operational issues practitioners experience are matched with one or more of the well-known crisis management gaps, as experienced by many of their colleagues, e.g. *How to get a real-time and dynamic overview of the position of all personnel?*.
    - These gaps, in turn, are still too generic to address, and are made more specific, leading to so-called 'research questions', e.g. *Which Situational Awareness-increasing solution fits best with our mode of operation?*
    - Existing solutions are reviewed and selected. Some solutions can even be tried out standalone using the Test-bed and an existing mini-scenario.
+   - Based on the selected solutions, gaps and research questions, a data collection plan is developed: what kind of data does the Trial need to generate to enable a valid evaluation at the end of the Trial.
    - A scenario is developed that puts these solutions to the test. This includes selecting and connecting simulators of a fictive incident, e.g. a flooding simulator, and other simulators to create a realistic environment, e.g. a traffic simulator.
    - Selected solutions and existing legacy systems are connected to the Test-bed, so they can receive input from the simulators as well as each other.
 
@@ -57,4 +58,4 @@ The final chapter offers more details about the [Test-bed design](design.md), an
 
 ### Version 1 (2018-03-31)
 
-This is the first version of D923.21 Test-bed reference implementation v1. Two updates are planned, after v2 and v3 of the Test-bed are released.
+This is the first version of D923.21 Test-bed reference implementation v1. It matches the release version of the software applications as available on GitHub: [github.com/DRIVER-EU](https://github.com/DRIVER-EU). Two future releases of this document are planned, v2 and v3, and the major changes between the different documents will be described here. In the mean time, this online documentation is continuously updated, so it matches the current state of the Test-bed.

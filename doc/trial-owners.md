@@ -2,15 +2,15 @@
 
 Trial owners will interact with the Test-bed when:
 - They want to evaluate a solution standalone
-- They want to run a Trial or exercise
+- They run a Trial
 
-In the following sections, a use case (storyline) description of each is provided. The main actor in each story is Monica, a regional crisis manager with a professional background in fire-fighting. One of the challenges she's facing is that she does now always have a good overview of where her people and trucks are during a fire, and she's looking for a solution.
+In the following sections, a use case (storyline) description of each is provided. The main actor in each story is Monica, a regional crisis manager with a professional background in fire-fighting. One of the challenges she is facing is that she does now always have a good overview of where her people and trucks are during a fire, and she is looking for a solution.
 
 ## 3.1 Use Case: Evaluating a solution standalone
 
 Monica has heard about an interesting COP solution, *csCOP*, perhaps via the DRIVER+ Portfolio of Solutions, or otherwise. She considers using it to address her problems
 
-1. Monica visit's the Test-bed's [composer website](https://driver-eu.github.io/docker-composer).
+1. Monica visits the Test-bed's [composer website](https://driver-eu.github.io/docker-composer).
 2. She briefly reads its homepage, which explains her what to do next.
 
 ![Test-bed composer's home page](img/test-bed-composer-home.png)

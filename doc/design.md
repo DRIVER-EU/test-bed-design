@@ -1,6 +1,6 @@
 # 5. Test-bed design
 
-The Test-bed is designed to fulfil the [functional requirements]. Clearly, different designs can be created that all fulfil these requirements, so this chapter provides a brief explanation of the major design decisions that underlie the current Test-bed's reference implementation. Its intended audience is core developers, who want to improve its functionality, or other backend developers, who want to create an alternative Test-bed that also satisfies these requirements.
+The Test-bed is designed to fulfil the functional requirements, as described in D923.11, "Functional specification of the Test-bed". Clearly, different designs can be created that all fulfil these requirements, so this chapter provides a brief explanation of the major design decisions that underlie the current Test-bed's reference implementation. Its intended audience is core developers, who want to improve its functionality, or other backend developers, who want to create an alternative Test-bed that also satisfies these requirements.
 
 ## 5.1 Lessons learned from the Functional Specification
 
@@ -23,7 +23,7 @@ Based on the functional requirements and lessons 1 and 2, and an analysis of man
 
 Besides Apache Kafka, there are numerous popular open source messaging systems that were considered: [ActiveMQ](activemq.apache.org), [RabbitMQ](https://www.rabbitmq.com), and [ZeroMQ](http://zeromq.org). The main reason for using Kafka, however, is its speed, low latency, and the fact that it is built from the ground up to be distributed. Especially for the simulators that are connected to the Test-bed, speed and low-latency are very important. And Kafka can easily process up to 100,000 messages per second, 10 times as much as the others. Its distributed nature allows to not only separate simulators and solutions, if required, but also supports having a reliable cross-site communication framework. Additionally, with its schema registry, it has excellent support for message validation out-of-the-box, which is detailed in the next section. The same applies to message persistency. Each message is immediately persisted to disk for a set time, which is easy for After-Action-Reviews, but also for clients that are not continuously online. In most messaging systems, when a consumer is briefly offline, the message is lost forever unless special care is taken to persist them.
 
-## 5.3 Well-defined messages using Apache AVRO #{AVRO}
+## 5.3 Well-defined messages using Apache AVRO {#AVRO}
 
 Being able to communicate using well-defined messages is of primordial importance for any messaging system, and the Test-bed uses [Apache AVRO](https://avro.apache.org).
 
@@ -68,7 +68,3 @@ Adapters extend regular Kafka connectors with the following information, each of
 - *Logging:* Besides being online, it is also important to know that each connected service is running as expected, so each adapter offers the option to log warnings/errors to the Test-bed as well.
 - *Configuration options:* The adapter can inform others to what topics it subscribes and publishes. In addition, this can be configured too externally. For example, the admin tool can configure the (potentially secret) topics an adapter must listen too.
 - *Time:* A Trial scenario typically will not run at real-time, so the adapter needs to share the fictive simulation time. In addition, it shares the simulation speed, as we may be running slower or faster than real-time, as well as the simulation state.
-
-## References
-
-[Functional requirements]: https://driver-eu.gitbooks.io/test-bed-specification/technical-requirements.html D923.11 Functional specification of the Test-bed.
