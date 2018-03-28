@@ -10,7 +10,7 @@ In the following sections, a use case (storyline) description of each is provide
 
 Monica has heard about an interesting COP solution, *csCOP*, perhaps via the DRIVER+ Portfolio of Solutions, or otherwise. She considers using it to address her problems
 
-1. Monica visit's the test-bed's [composer website](https://driver-eu.github.io/docker-composer).
+1. Monica visit's the Test-bed's [composer website](https://driver-eu.github.io/docker-composer).
 2. She briefly reads its homepage, which explains her what to do next.
 
 ![Test-bed composer's home page](img/test-bed-composer-home.png)
@@ -44,13 +44,13 @@ In order to run a Trial, the same process as described above is followed. The ma
 
 In addition, the Test-bed is needed already well-before the final Trial date, since:
 - The scenario must be created iteratively.
-- Not all solutions or simulators are already able to connect to the test-bed. So even before the first dry-runs, solutions and simulators should be able to test their connection and integration.
+- Not all solutions or simulators are already able to connect to the Test-bed. So even before the first dry-runs, solutions and simulators should be able to test their connection and integration.
 
 Typically, setting up the Test-bed for a Trial  would not be performed by the Trial owner herself. Most likely, she will be supported by a local system administrator or consultant to help her decide what she needs, and to prepare the technical infrastructure.
 
 When the Test-bed is running, though, the Trial owner has to take responsibility again for defining the scenario in case she has not delegated this task. The scenario is key in that it translates specific objectives to a storyline so the solutions or people can be put to the test.
 
-As the Scenario Manager is not available in the current version of the test-bed, only a brief outline can be provided. During the preparation, the scenario manager acts as the composer:
+As the Scenario Manager is not available in the current version of the Test-bed, only a brief outline can be provided. During the preparation, the scenario manager acts as the composer:
 - The objectives of the Trial are defined.
 - An overall scenario is described that can put these objectives to the test.
 - Specific storylines are created to stress the solutions or training audience.

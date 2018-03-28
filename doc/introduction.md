@@ -12,7 +12,7 @@ The simplified process to Trial solutions goes like this:
    - These gaps, in turn, are still too generic to address, and are made more specific, leading to so-called 'research questions', e.g. *Which Situational Awareness-increasing solution fits best with our mode of operation?*
    - Existing solutions are reviewed and selected. Some solutions can even be tried out standalone using the Test-bed and an existing mini-scenario.
    - A scenario is developed that puts these solutions to the test. This includes selecting and connecting simulators of a fictive incident, e.g. a flooding simulator, and other simulators to create a realistic environment, e.g. a traffic simulator.
-   - Selected solutions and existing legacy systems are connected to the test-bed, so they can receive input from the simulators as well as each other.
+   - Selected solutions and existing legacy systems are connected to the Test-bed, so they can receive input from the simulators as well as each other.
 
 2. EXECUTION PHASE:
 
@@ -31,13 +31,13 @@ The Test-bed supports practitioners by providing an environment in which they ca
 - **Evaluation support:** As we are testing and evaluating new solutions, the Test-bed provides tools for observers and After-Action Review.
 - **Simulation support:** Due to the nature of the crisis management domain, most solutions cannot be properly tested outside an actual crisis situation. As starting a flooding or burning a forest is clearly not an option to test the solutions, the crisis incident needs to be faked or simulated. The same applies to expected reactions of the environment: people panicking, traffic jams, etc. must be simulated too.
 - **Execution support:** As the solutions are typically tested within an incident scenario, the Test-bed provides tools to create and execute scenario's.
-- **Development support:** To connect new solutions and simulators to the test-bed, the Test-bed provides adapters in several popular languages and several debugging tools and services. Also, to check whether everything is up-and-running smoothly, it also has an admin tool.
+- **Development support:** To connect new solutions and simulators to the Test-bed, the Test-bed provides adapters in several popular languages and several debugging tools and services. Also, to check whether everything is up-and-running smoothly, it also has an admin tool.
 
 ## 1.2 Scope of the test-bed
 
-This document limits its scope to the core Test-bed design, more specifically, the design of the test-bed's reference implementation, which is an implementation of the [Test-bed specification](https://driver-eu.gitbooks.io/test-bed-specification): it thereby provides an overview of the most important components of the test-bed, how they work together, and how they can be used by different stakeholders.
+This document limits its scope to the core Test-bed design, more specifically, the design of the Test-bed's reference implementation, which is an implementation of the [Test-bed specification](https://driver-eu.gitbooks.io/test-bed-specification): it thereby provides an overview of the most important components of the Test-bed, how they work together, and how they can be used by different stakeholders.
 
-The CM solutions and simulators that supplement the test-bed, however, are *not* part of the test-bed. The simulators' function is to simulate an incident, and the reactions that may occur in a real world, since we cannot unleash incidents like a flooding and earthquakes on the real world. The solutions are the actual tools that are trialled and evaluated, and measured whether they actually do solve a CM gap. These solutions are fed with the simulator's output, and perhaps the output of other solutions, so end users can observe and evaluate their contribution during a fictive incident.
+The CM solutions and simulators that supplement the Test-bed, however, are *not* part of the Test-bed. The simulators' function is to simulate an incident, and the reactions that may occur in a real world, since we cannot unleash incidents like a flooding and earthquakes on the real world. The solutions are the actual tools that are trialled and evaluated, and measured whether they actually do solve a CM gap. These solutions are fed with the simulator's output, and perhaps the output of other solutions, so end users can observe and evaluate their contribution during a fictive incident.
 
 ![Scope of the test-bed](img/test-bed-components-explained.png)
 
@@ -45,7 +45,7 @@ The CM solutions and simulators that supplement the test-bed, however, are *not*
 
 This is actually a live document, and the latest version can always be found online at [www.gitbook.com/book/driver-eu/test-bed-design](https://www.gitbook.com/book/driver-eu/test-bed-design). It is organised as follows:
 
-The [Test-bed description](test-bed-description.md) provides a general overview of the Test-bed reference implementation. It is an easy to read chapter which requires little technical knowledge, and is aimed at anyone who has to work with the test-bed.
+The [Test-bed description](test-bed-description.md) provides a general overview of the Test-bed reference implementation. It is an easy to read chapter which requires little technical knowledge, and is aimed at anyone who has to work with the Test-bed.
 
 The chapter, a [Test-bed for Trial owners](Trial-owners.md), is specifically aimed at Trial owners and practitioners, and discusses the functionality the Test-bed offers to them. And also, what it does not offer.
 

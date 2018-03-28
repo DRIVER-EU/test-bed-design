@@ -29,7 +29,7 @@
 | MGT          | Management
 | Python       | Programming Language
 | REST         | Representational State Transfer (common interface allowing you to read and write data from a service)
-| RTI          | Run-time infrastructure, a kind of HLA-based test-bed
+| RTI          | Run-time infrastructure, a kind of HLA-based Test-bed
 | SA           | Situational awareness, basically do you know on the map where your people and other resources are, as well as all relevant crisis management related incidents and activities.
 | SUMO         | Simulation of Urban Mobility, a traffic and pedestrian simulator
 | TypeScript   | Programming Language

@@ -2,7 +2,7 @@
 
 A sysops (system operators or system administrators), in the current context, is responsible for installing the Test-bed on their local network, and making sure that all the solution and simulation providers can get access to this network as well. This task is discussed in the use case 'Installing the test-bed'.
 
-A developer would be tasked with connecting an existing solution or simulator to the test-bed. Besides the direct coupling, allowing their tools to receive and publish messages, it most likely also involves translating existing messages to their own format. Finally, in case you are connecting a simulator, you also need information more detailed information about the time management in the test-bed.
+A developer would be tasked with connecting an existing solution or simulator to the Test-bed. Besides the direct coupling, allowing their tools to receive and publish messages, it most likely also involves translating existing messages to their own format. Finally, in case you are connecting a simulator, you also need information more detailed information about the time management in the Test-bed.
 
 ## 4.1 Use case: Installing the Test-bed
 
@@ -12,7 +12,7 @@ As a system administrator, you are also responsible for setting up the local net
 
 In particular, it should be considered that some providers make heavy use of the network, e.g. to download maps, stream video, or access external computer clusters. If that is the case, consider using a throttling service in your network, so one provider does not claim all the network traffic.
 
-More directly related to the test-bed, however, is the connection of all solutions and simulators: are they connected correctly to the test-bed, do they run without errors, are they subscribed to the correct topics, and do they publish to the expected topics, are some of the questions that the admin tool can answer for you. In addition, the admin tool makes sure that all message schemas are available. And when everything is in place, the actual Trial can start. Finally, the admin tool offers a convenient interface to all the other technical Test-bed services, such as the REST services, Topics UI, Schema Registry, Kafka Connect, etc.
+More directly related to the Test-bed, however, is the connection of all solutions and simulators: are they connected correctly to the Test-bed, do they run without errors, are they subscribed to the correct topics, and do they publish to the expected topics, are some of the questions that the admin tool can answer for you. In addition, the admin tool makes sure that all message schemas are available. And when everything is in place, the actual Trial can start. Finally, the admin tool offers a convenient interface to all the other technical Test-bed services, such as the REST services, Topics UI, Schema Registry, Kafka Connect, etc.
 
 From then on, the system administrator only needs to check whether the Test-bed does not experience any issues, like disconnected applications.
 
@@ -20,19 +20,19 @@ From then on, the system administrator only needs to check whether the Test-bed 
 
 Within DRIVER+, a dedicated integration process *for solutions* is described in a separate document, D934.21, "Solution testing procedure". This section describes how to integrate with the Test-bed reference implementation, and also covers simulators and other tools.
 
-Assuming you have installed your Test-bed locally, to connect your simulator or solution to the test-bed, the generic process is as follows:
+Assuming you have installed your Test-bed locally, to connect your simulator or solution to the Test-bed, the generic process is as follows:
 -	Choose the adapter in your preferred programming language: [Java](https://github.com/DRIVER-EU/java-test-bed-adapter), [C#](https://github.com/DRIVER-EU/csharp-test-bed-adapter), [JavaScript/TypeScript](https://github.com/DRIVER-EU/node-test-bed-adapter) and [REST](https://github.com/DRIVER-EU/test-bed-rest-service). A Python version will be available in the near future.
 -	Define your input/output messages as [AVRO](http://avro.apache.org/docs/current): already supported messages can be found [here](https://github.com/DRIVER-EU/avro-schemas/). Register the AVRO schema with the Test-bed via the schema registry (only available after running the Test-bed locally, typically at [http://localhost:3601](http://localhost:3601)). You can do that manually, or alternatively, the adapter will do this for you. The registration procedure is a bit different for each adapter.
--	Use the adapter to send messages to the test-bed. You can use the Kafka topics UI to see whether they have arrived correctly.
+-	Use the adapter to send messages to the Test-bed. You can use the Kafka topics UI to see whether they have arrived correctly.
 -	Define some input messages (manually): use our [replay-service](https://github.com/DRIVER-EU/kafka-replay-service) to send them one-by-one or replay a logged sequence of messages. To log the messages in a topic, you can use the [Kafka-topics-logger](https://github.com/DRIVER-EU/kafka-topics-logger) or the topics UI to save them. This is, for example, useful when you need to integrate with an application that does not run locally, e.g. when your COP tool needs to consume messages from a simulator that you do not have running locally.
 
     In the near future, there will also be a message injector application, comparable to [Swagger](http://swagger.io) or [Postman](https://www.getpostman.com), in which you will be able to create your own messages using a friendly user interface. It will use the AVRO schema to automatically create a form for defining your messages.
 
--	When your message uses time, you need to query the adapter to get the local Trial time. A first version of the test-bed's [time-service](https://github.com/DRIVER-EU/test-bed-time-service) to manage the Trial time has just been released, and some adapters already offer an interface to it. So there is no need to query the Test-bed yourself to get these messages. In case no time messages are available, i.e. you are not running a Trial, it returns the local system time. Please also check the time management's state machine in [Section 4.5](#time) below.
+-	When your message uses time, you need to query the adapter to get the local Trial time. A first version of the Test-bed's [time-service](https://github.com/DRIVER-EU/test-bed-time-service) to manage the Trial time has just been released, and some adapters already offer an interface to it. So there is no need to query the Test-bed yourself to get these messages. In case no time messages are available, i.e. you are not running a Trial, it returns the local system time. Please also check the time management's state machine in [Section 4.5](#time) below.
 
 ### Message Topics UI
 
-The Test-bed includes Landoop's [Kafka topics UI](https://github.com/Landoop/kafka-topics-ui) service to inspect all the message topics that exist (default location [http://localhost:3600](http://localhost:3600)). It can be used to inspect whether you have been successful in sending your messages to the test-bed.
+The Test-bed includes Landoop's [Kafka topics UI](https://github.com/Landoop/kafka-topics-ui) service to inspect all the message topics that exist (default location [http://localhost:3600](http://localhost:3600)). It can be used to inspect whether you have been successful in sending your messages to the Test-bed.
 
 ![Screenshot of Landoop's Kafka topics UI, which is part of our test-bed](img/kafka_topics_ui.png)
 
@@ -50,7 +50,7 @@ The Test-bed contains a REST service: in case a (legacy) solution is not adaptab
 
 Connecting to the Test-bed is needed to share information that you produce, or consume information from others. While working on integrating your own simulator or solution, however, it is very likely that there are no other simulators or solutions running. When sending messages, you can use the Kafka topics UI to verify that your messages have been delivered. And it is the purpose of the [replay service](https://github.com/DRIVER-EU/kafka-replay-service) to present you with messages to consume.
 
-*For example, assume that you as a developer are tasked to integrate a COP solution. It needs to consume the locations of the rescue vehicles, which are normally generated by a simulator. However, it is a commercial simulator that you do not have. In that case, you request the simulator to run a scenario and publish it to the test-bed. Next, the simulator will log all the messages to file using the [Kafka-topics-logger](https://github.com/DRIVER-EU/kafka-topics-logger). This log file is subsequently sent to the COP solution developer, who can replay it using the replay service, as if it was the simulator was present.*
+*For example, assume that you as a developer are tasked to integrate a COP solution. It needs to consume the locations of the rescue vehicles, which are normally generated by a simulator. However, it is a commercial simulator that you do not have. In that case, you request the simulator to run a scenario and publish it to the Test-bed. Next, the simulator will log all the messages to file using the [Kafka-topics-logger](https://github.com/DRIVER-EU/kafka-topics-logger). This log file is subsequently sent to the COP solution developer, who can replay it using the replay service, as if it was the simulator was present.*
 
 ![Screenshot displaying the Kafka-replay service's Swagger interface](img/kafka_replay_service.png)
 
@@ -72,13 +72,13 @@ So in order to share all this gathered data, the Test-bed offers two types of se
 - Docker *volume images* to store all this information together, so the data can be easily shared. A Test-bed user can simply pull the volume image from the Docker hub to have all data instantly available
 - *Data services*, to share this data with all users, e.g. there is an [MBtiles service](https://github.com/DRIVER-EU/test-bed-mbtiles-service) to offer map images to COP and COP-like tools, or a [WMS service](https://github.com/DRIVER-EU/test-bed-wms-service) that translate Test-bed messages to WMS map layers available to make the information available to legacy systems.
 
-**Security** is yet another reason to have these data services and data sets as part of the test-bed. Not all Trials have open access to the Internet, but they still need access to this kind of data.
+**Security** is yet another reason to have these data services and data sets as part of the Test-bed. Not all Trials have open access to the Internet, but they still need access to this kind of data.
 
 ## 4.5 Time management {#time}
 
 A Trial typically is not performed in real-time: either because the incident occurs at night, and people prefer to Trial and train during working hours, because you wish to skip boring parts, or because it would simply take too long. An example of the latter is a flooding incident, which can start days before any flooding actually occurs, so you need to compress the scenario to normal working hours.
 
-Within the test-bed, therefore, the scenario time (a.k.a. Trial time or fictive time) is controlled via the [time service](https://github.com/DRIVER-EU/test-bed-time-service) using [two types of messages](https://github.com/DRIVER-EU/avro-schemas/tree/master/core/time): one for controlling the time, and one for informing adapters about the current scenario time.
+Within the Test-bed, therefore, the scenario time (a.k.a. Trial time or fictive time) is controlled via the [time service](https://github.com/DRIVER-EU/test-bed-time-service) using [two types of messages](https://github.com/DRIVER-EU/avro-schemas/tree/master/core/time): one for controlling the time, and one for informing adapters about the current scenario time.
 
 As a developer, you do not need to interact with these messages directly, since:
 - Every adapter has a time interface to get the current scenario time. Even as a solution developer, you should also use this time to timestamp the messages that you send. For example, if inside your message you refer to a particular time, always base it on the scenario time.

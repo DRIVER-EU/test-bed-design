@@ -1,6 +1,6 @@
 # 5. Test-bed design
 
-The Test-bed is designed to fulfil the [functional requirements]. Clearly, different designs can be created that all fulfil these requirements, so this chapter provides a brief explanation of the major design decisions that underlie the current test-bed's reference implementation. Its intended audience is core developers, who want to improve its functionality, or other backend developers, who want to create an alternative Test-bed that also satisfies these requirements.
+The Test-bed is designed to fulfil the [functional requirements]. Clearly, different designs can be created that all fulfil these requirements, so this chapter provides a brief explanation of the major design decisions that underlie the current Test-bed's reference implementation. Its intended audience is core developers, who want to improve its functionality, or other backend developers, who want to create an alternative Test-bed that also satisfies these requirements.
 
 ## 5.1 Lessons learned from the Functional Specification
 
@@ -13,7 +13,7 @@ Part of the functional specification describes the [lessons learned](https://dri
 
 ## 5.2 Distributed message bus using Apache Kafka
 
-Based on the functional requirements and lessons 1 and 2, and an analysis of many existing message-oriented systems, the test-bed's backbone is built upon the distributed streaming service, [Apache Kafka](https://kafka.apache.org). The main reasons to use Kafka are:
+Based on the functional requirements and lessons 1 and 2, and an analysis of many existing message-oriented systems, the Test-bed's backbone is built upon the distributed streaming service, [Apache Kafka](https://kafka.apache.org). The main reasons to use Kafka are:
 - Kafka allows for high performance sending and receiving of a very large number of messages
 - Kafka allows for fast data replication and supports multiple receivers on the same message topic
 - Kafka is a highly durable messaging system, persisting messages on the server or complete distributable file systems
@@ -21,7 +21,7 @@ Based on the functional requirements and lessons 1 and 2, and an analysis of man
 - Kafka already has a large developer community, making it possible to easily use community-released tools to the current framework and assuring sustainability of Kafka.
 - Kafka already has several security and message validation modules present, that will make it easier for simulators to safely connect to the CSS.
 
-Besides Apache Kafka, there are numerous popular open source messaging systems that were considered: [ActiveMQ](activemq.apache.org), [RabbitMQ](https://www.rabbitmq.com), and [ZeroMQ](http://zeromq.org). The main reason for using Kafka, however, is its speed, low latency, and the fact that it is built from the ground up to be distributed. Especially for the simulators that are connected to the test-bed, speed and low-latency are very important. And Kafka can easily process up to 100,000 messages per second, 10 times as much as the others. Its distributed nature allows to not only separate simulators and solutions, if required, but also supports having a reliable cross-site communication framework. Additionally, with its schema registry, it has excellent support for message validation out-of-the-box, which is detailed in the next section. The same applies to message persistency. Each message is immediately persisted to disk for a set time, which is easy for After-Action-Reviews, but also for clients that are not continuously online. In most messaging systems, when a consumer is briefly offline, the message is lost forever unless special care is taken to persist them.
+Besides Apache Kafka, there are numerous popular open source messaging systems that were considered: [ActiveMQ](activemq.apache.org), [RabbitMQ](https://www.rabbitmq.com), and [ZeroMQ](http://zeromq.org). The main reason for using Kafka, however, is its speed, low latency, and the fact that it is built from the ground up to be distributed. Especially for the simulators that are connected to the Test-bed, speed and low-latency are very important. And Kafka can easily process up to 100,000 messages per second, 10 times as much as the others. Its distributed nature allows to not only separate simulators and solutions, if required, but also supports having a reliable cross-site communication framework. Additionally, with its schema registry, it has excellent support for message validation out-of-the-box, which is detailed in the next section. The same applies to message persistency. Each message is immediately persisted to disk for a set time, which is easy for After-Action-Reviews, but also for clients that are not continuously online. In most messaging systems, when a consumer is briefly offline, the message is lost forever unless special care is taken to persist them.
 
 ## 5.3 Well-defined messages using Apache AVRO #{AVRO}
 
@@ -35,7 +35,7 @@ AVRO provides:
 - Remote procedure call (RPC).
 - Simple integration with dynamic languages. Code generation is not required to read or write data files nor to use or implement RPC protocols. Code generation as an optional optimization, only worth implementing for statically typed languages.
 
-So in our test-bed, each message consists of a key and a value. Each message uses:
+So in our Test-bed, each message consists of a key and a value. Each message uses:
 - The **same** AVRO-encoded [key](https://github.com/DRIVER-EU/avro-schemas/blob/master/edxl-de/edxl-de-key.avsc), based on the core attributes from the EDXL DE envelope (distributionID, senderID, dateTimeSent, dateTimeExpires, distributionStatus, and distributionKind). It can be used to support easy filtering and routing, and have a consistent message timestamp.
 - A potentially different AVRO-encoded value, containing the actual message.
 
@@ -48,7 +48,7 @@ Other evaluated candidates for defining message formats were [XML schema](https:
 
 ## 5.4 Dealing with large messages
 
-Kafka and AVRO are ideally suited for smaller-sized messages, i.e. typically not exceeding 1Mb compressed. However, a typical flooding file may well exceed 1Gb of data. The solution that currently is being designed is the following: in the test-bed, there is one file hosting data services (e.g. FTP) for uploading large files. Each adapter, when confronted with a large message exceeding a threshold, uploads the data in the background to the file hosting data service, and in return, receives an obfuscated link. This link is subsequently shared via the test-bed, and any consumer interested in the actual data can retrieve it from there.
+Kafka and AVRO are ideally suited for smaller-sized messages, i.e. typically not exceeding 1Mb compressed. However, a typical flooding file may well exceed 1Gb of data. The solution that currently is being designed is the following: in the Test-bed, there is one file hosting data services (e.g. FTP) for uploading large files. Each adapter, when confronted with a large message exceeding a threshold, uploads the data in the background to the file hosting data service, and in return, receives an obfuscated link. This link is subsequently shared via the Test-bed, and any consumer interested in the actual data can retrieve it from there.
 
 A note about security: In principal, these files are openly available within the Trial environment (which may be on a closed network, of course). However, since the link is not easy recognizable, you will not be able to guess it. Basically, *security through obscurity*. This approach is similar to the one popular open file sharing services provide like [wetransfer.com](http://wetransfer.com), and should be sufficiently safe for current usage.
 
@@ -63,7 +63,7 @@ The adapter sets up and maintains the connection between application and the com
 
 Since the Test-bed requires multiple solutions and simulators with different implementation frameworks to be connected to the CIS/CSS, multiple adapters are created. Currently, an adapter for [Java](https://github.com/DRIVER-EU/java-test-bed-adapter), [JavaScript/TypeScript](https://github.com/DRIVER-EU/node-test-bed-adapter) and [C#](https://github.com/DRIVER-EU/csharp-test-bed-adapter) is created and can be found in the DRIVER+ GitHub (https://github.com/DRIVER-EU). A [REST](https://github.com/DRIVER-EU/test-bed-rest-service) endpoint is also present for web services to communicate with the CSS in a similar fashion. All adapters should have similarly behaving functionality with a clear and understandable API.
 
-Adapters extend regular Kafka connectors with the following information, each of which is displayed in the test-bed's admin tool:
+Adapters extend regular Kafka connectors with the following information, each of which is displayed in the Test-bed's admin tool:
 - *Heartbeat signals:* Before you can start a Trial, every solution, simulator and tool needs to be up-and-running. Therefore every adapter transmits a heartbeat signal every 5 seconds to inform others it is online.
 - *Logging:* Besides being online, it is also important to know that each connected service is running as expected, so each adapter offers the option to log warnings/errors to the Test-bed as well.
 - *Configuration options:* The adapter can inform others to what topics it subscribes and publishes. In addition, this can be configured too externally. For example, the admin tool can configure the (potentially secret) topics an adapter must listen too.

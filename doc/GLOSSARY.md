@@ -42,7 +42,7 @@ The high-level architecture (HLA) is a general purpose architecture for distribu
 
 ## Observer tool
 
-The online observer support tool facilitates the task of the observer by providing him or her with pre-made questions that can be easily answered during a Trial or exercise, and scenario triggers informing the observer of things to come. In addition, these responses will be harvested by the test-bed, and used for evaluation at the end of the exercise.
+The online observer support tool facilitates the task of the observer by providing him or her with pre-made questions that can be easily answered during a Trial or exercise, and scenario triggers informing the observer of things to come. In addition, these responses will be harvested by the Test-bed, and used for evaluation at the end of the exercise.
 
 ## Scenario Manager
 

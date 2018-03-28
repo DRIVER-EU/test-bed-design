@@ -34,9 +34,9 @@ To capture this information, the common solution is to specify it in a so-called
 
 ### CIS and CSS
 
-At the heart of the test-bed, i.e. its [core](#core), all messages are exchanged using [Apache Kafka](https://kafka.apache.org). Conceptually, though, we distinguish between a Common Information Space (CIS) and a Common Simulation Space (CSS). The CIS is where the solutions exchange information, and the CSS is for simulators. Typically, the CIS will exchange far less messages during a Trial, and time synchronisation is simple. In the CSS, much more messages are generated, e.g. the location of all vehicles may be updated every second, and simulators may need to be in sync with others, e.g. a flooding simulator may flood an area, and at the same time, the traffic in the same area should experience the flood too.
+At the heart of the Test-bed, i.e. its [core](#core), all messages are exchanged using [Apache Kafka](https://kafka.apache.org). Conceptually, though, we distinguish between a Common Information Space (CIS) and a Common Simulation Space (CSS). The CIS is where the solutions exchange information, and the CSS is for simulators. Typically, the CIS will exchange far less messages during a Trial, and time synchronisation is simple. In the CSS, much more messages are generated, e.g. the location of all vehicles may be updated every second, and simulators may need to be in sync with others, e.g. a flooding simulator may flood an area, and at the same time, the traffic in the same area should experience the flood too.
 
-For not too complex Trials, the CSS and CIS will run in the same test-bed. In case the performance suffers, it may be necessary to split the CSS and CIS over two test-beds that are connected to each other.
+For not too complex Trials, the CSS and CIS will run in the same Test-bed. In case the performance suffers, it may be necessary to split the CSS and CIS over two test-beds that are connected to each other.
 
 Note, though, that the [adapters](#adapters) connect to the CIS as well as the CSS, so there is no difference between them.
 
@@ -62,7 +62,7 @@ There are also tools that will send out messages that serve as commands or reque
 
 The Test-bed is a collection of distributed services running in a network environment. You can compare it to a theatre play, where the stage needs to be prepared, the musicians must be ready, as well as the light and sound engineers. The Test-bed admin tool helps you by monitoring both the CIS and the CSS to support understanding what is/was going on during a Trial: to determine whether all services are ready, and that their inputs and outputs are correct. Also in case a service encounters any errors, this is made visible and the errors can be inspected - are they serious and do we need to stop our Trial, or can we ignore them safely and run on.
 
-This does not only apply to the test-bed's core tools, gateways and services, but also for the connected simulators and solutions.
+This does not only apply to the Test-bed's core tools, gateways and services, but also for the connected simulators and solutions.
 
 ![Admin tool](img/admin-tool-screenshot.jpg)
 
@@ -97,7 +97,7 @@ A scenario manager is an integral part of the Test-bed reference implementation 
 - JEMM and Exonaut are aimed at the military community, and the fit with the Crisis Management domain is not optimal.
 - JEMM and Exonaut are closed source, so a strong integration with the Test-bed is not possible, as the applications cannot be modified.
 
-The test-bed's scenario manager, then, acts as the *composer* and *conductor* of a classical performance:
+The Test-bed's scenario manager, then, acts as the *composer* and *conductor* of a classical performance:
 - As the *composer*, it defines what each role has to play. For example, what do the simulators or role-players need to do in order to provide a realistic incident and background to the Trial, or it could include sending direct messages to solutions.
 - As the *conductor*, it controls *when* each role starts and stops.
 
@@ -114,7 +114,7 @@ Evaluation is needed to verify that the Trial or training objectives have been a
 
 Based on the specified objectives of the Trial, an observer expects to observe different kinds of behaviour. At the same time, there is little time during a Trial to record behaviour, as the Trial runs on, and that's why the observer tool provides Trial-specific pre-made forms (templates) to quickly create a new observation. For example, *Did you observe role X do Y? Yes/No*. These Trial-specific forms are created before the Trial by the observation team manager in the administration panel. Using this panel, specific forms can be assigned to specific observers. The observer can use a tablet, phone or desktop application for his work.
 
-Although the observer tool can run standalone, outside the test-bed, it really shines when it is connected, as this allows:
+Although the observer tool can run standalone, outside the Test-bed, it really shines when it is connected, as this allows:
 - To share observations with Trial staff: they can use this information to steer the Trial in another direction.
 - The After-Action Review tool can use the observations during the analysis and evaluation
 - The scenario manager can inform the observers of major events that are about to occur: so they can finish drinking their coffee and are warned ahead of time
@@ -137,21 +137,21 @@ Detailed information:
 
 ## 2.5 Simulation
 
-Much can be said on the subject of simulation, but for the purpose of this chapter, it suffices to provide a brief overview of the test-bed's relation to simulation.
+Much can be said on the subject of simulation, but for the purpose of this chapter, it suffices to provide a brief overview of the Test-bed's relation to simulation.
 
-In the test-bed, the goal of simulation is to provide a realistic, immersive background for the Trial. Typically, this requires:
+In the Test-bed, the goal of simulation is to provide a realistic, immersive background for the Trial. Typically, this requires:
 - A **simulation of the incident** e.g. a flooding, earthquake or explosion, etc. simulation
 - A **simulation of the reactions** to the incident, e.g. people running away or drowning, buildings collapsing, road jams or traffic accidents, etc.
 - A **simulation of the perceived world**, i.e. painting a picture of the world to solutions of what they are reasonably expected to see, not what is actually happening. For example, when an area is flooded in the simulation, all simulators know the exact location of the water. So if people are standing knee-deep in the water, or a road is inaccessible due to water, that can be shown and used. However, a COP tool or other solution does not have such a perfect view of what is happening in the world. It does not know where everyone is, nor the exact location of the water level. As long as it has no sensors, cameras, drones, or people informing it, it may well believe that the flooding is in an entirely different location or not happening at all. In a recent CM exercise, it took the participants quite some time to figure out that the water was actually threatening their own location, and they hadn't taken the necessary precautions. A well-designed Trial, therefore, needs to think about how they are going to present the simulated world within the Trial.
 
-The test-bed, therefore, offers support to simulators for creating this realistic and immersive background, by:
+The Test-bed, therefore, offers support to simulators for creating this realistic and immersive background, by:
 - Providing a time-service: i.e. each adapter knows the scenario time, so simulators and solutions can use this in their user interface and calculations. Think of a clock display, but also when sending an email or CAP message, making sure it uses the correct timestamps.
 - The scenario manager, as discussed above.
 
-It does not, however, provide these simulators as an integral part of the test-bed. They are, and shall always remain, external. Even though some simulators will be connected during the project, they are external, as as such, also not bound by the open source requirements that the Test-bed has to adhere too. For example:
-- XVR connects their 3D crisis management environment, Crisis Media and Resource Manager to the test-bed, thereby offering their (commercial) services to other parties too.
-- DLR connects their open source SUMO (Simulation of Urban Mobility) traffic simulator to the test-bed, which provides realistic traffic during an incident
-- Thales connects their commercial Crowd Simulator to the test-bed, e.g. providing a realistic simulation of people in need during a crisis.
+It does not, however, provide these simulators as an integral part of the Test-bed. They are, and shall always remain, external. Even though some simulators will be connected during the project, they are external, as as such, also not bound by the open source requirements that the Test-bed has to adhere too. For example:
+- XVR connects their 3D crisis management environment, Crisis Media and Resource Manager to the Test-bed, thereby offering their (commercial) services to other parties too.
+- DLR connects their open source SUMO (Simulation of Urban Mobility) traffic simulator to the Test-bed, which provides realistic traffic during an incident
+- Thales connects their commercial Crowd Simulator to the Test-bed, e.g. providing a realistic simulation of people in need during a crisis.
 
 ### A note about Simulators
 
