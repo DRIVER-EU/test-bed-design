@@ -45,5 +45,5 @@ All DRIVER+ consortium members are also committed to publish accurate and up to 
 | Issue | Date       | Comment                                 | Author                            |
 |-------|------------|-----------------------------------------|-----------------------------------|
 | V0.1  | 01/02/2018 | Initial draft                           | Erik Vullings (TNO, WP923 leader) |
-| V0.2  | 21/03/2018 | First reviews started                   | Erik Vullings (TNO, WP923 leader) |
-| V1.0  | xx/xx/2018 | Final approval and submission to the EC | Erik Vullings (TNO, WP923 leader) |
+| V0.2  | 21/03/2018 | Reviews started                         | Erik Vullings (TNO, WP923 leader) |
+| V1.0  | 31/03/2018 | Final approval and submission to the EC | Erik Vullings (TNO, WP923 leader) |
