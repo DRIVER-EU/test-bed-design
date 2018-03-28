@@ -25,9 +25,8 @@
   <tr><td style="font-weight: bold; color: white; background: #00497E">File Name:</td><td>test-bed-design.pdf, latest version available online at <a href="https://driver-eu.gitbooks.io/test-bed-specification" target="_blank">driver-eu.gitbooks.io/test-bed-specification</a></td></tr>
 </table>
 
-
 <div style="font-style: italic; color: grey;">
-<strong>DISCLAIMER</strong>
+<strong id="disclaimer">DISCLAIMER</strong>
 
 <p>
 The opinion stated in this report reflects the opinion of the authors and not the opinion of the European Commission.
