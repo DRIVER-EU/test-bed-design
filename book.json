@@ -1,6 +1,6 @@
 {
   "root": "./doc",
-  "title": "Test-bed design document",
+  "title": "D923.21 Test-bed reference implementation",
   "author": "Erik Vullings",
   "plugins": [ "image-captions" ],
   "pluginsConfig": {

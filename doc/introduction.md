@@ -47,9 +47,9 @@ This is actually a live document, and the latest version can always be found onl
 
 The [Test-bed description](test-bed-description.md) provides a general overview of the Test-bed reference implementation. It is an easy to read chapter which requires little technical knowledge, and is aimed at anyone who has to work with the Test-bed.
 
-The chapter, a [Test-bed for Trial owners](Trial-owners.md), is specifically aimed at Trial owners and practitioners, and discusses the functionality the Test-bed offers to them. And also, what it does not offer.
+The chapter, [Test-bed for Trial owners](Trial-owners.md), is specifically aimed at Trial owners and practitioners, and discusses the functionality the Test-bed offers to them. And also, what it does not offer.
 
-In the chapter, a [Test-bed for developers and sysops](developers.md), the technical side of the Test-bed is explained, specifically, how to manage a Test-bed as a sysop, or how to connect a solution or simulator to it as a developer.
+In the chapter, [Test-bed for developers and sysops](developers.md), the technical side of the Test-bed is explained, specifically, how to manage a Test-bed as a sysop, or how to connect a solution or simulator to it as a developer.
 
 The final chapter offers more details about the [Test-bed design](design.md), and provides an explanation for the main design decisions. The intended audience are developers that need a deeper understanding of the Test-bed and its underlying architecture, e.g. for supplementing the Test-bed or for offering a deeper integration of their solution.
 
@@ -57,4 +57,4 @@ The final chapter offers more details about the [Test-bed design](design.md), an
 
 ### Version 1 (2018-03-31)
 
-This is the first version of the Test-bed design document, describing the Test-bed reference implementation v1.
+This is the first version of D923.21 Test-bed reference implementation v1. Two updates are planned, after v2 and v3 of the Test-bed are released.
