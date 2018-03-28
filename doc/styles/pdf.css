@@ -2,3 +2,8 @@
 .section.toc .page {
   display: none;
 }
+@media print {
+  #disclaimer {
+    page-break-before: always;
+  }
+}
