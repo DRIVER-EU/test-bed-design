@@ -46,7 +46,7 @@ The online observer support tool facilitates the task of the observer by providi
 
 ## Scenario Manager
 
-The scenario manager acts as the *composer* and *conductor* of a classical performance:
+The Scenario Manager acts as the *composer* and *conductor* of a classical performance:
 - As the *composer*, it defines what each role has to play. For example, what do the simulators need to do in order to provide a realistic incident and background to the Trial, or it could include sending direct messages to solutions.
 - As the *conductor*, it controls *when* each role starts and stops.
 
