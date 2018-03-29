@@ -92,16 +92,16 @@ Alternative commercial solutions exist too, such as [Exonaut](https://www.4cstra
 
 ### Scenario manager
 
-A scenario manager is an integral part of the Test-bed reference implementation too, since it is not possible to use JEMM or Exonaut directly, as:
+A Scenario Manager is an integral part of the Test-bed reference implementation too, since it is not possible to use JEMM or Exonaut directly, as:
 - JEMM is only available to NATO members, and can only be used in a an exercise when military personnel requests it. This will not always be the case.
 - JEMM and Exonaut are aimed at the military community, and the fit with the Crisis Management domain is not optimal.
 - JEMM and Exonaut are closed source, so a strong integration with the Test-bed is not possible, as the applications cannot be modified.
 
-The Test-bed's scenario manager, then, acts as the *composer* and *conductor* of a classical performance:
+The Test-bed's Scenario Manager, then, acts as the *composer* and *conductor* of a classical performance:
 - As the *composer*, it defines what each role has to play. For example, what do the simulators or role-players need to do in order to provide a realistic incident and background to the Trial, or it could include sending direct messages to solutions.
 - As the *conductor*, it controls *when* each role starts and stops.
 
-Additionally, the scenario manager will also publish messages that are not directly related to the scenario itself. For example, it can send a message to the observers, informing them that they need to pay attention, as something important is going to happen soon. Or it could ask these observers specific questions during the Trial, e.g. '*Did you notice that X occurred?*'. These messages are also important for the after-action review, as they can be used as bookmarks to quickly go to parts in the scenario that are of extra importance for the evaluation.
+Additionally, the Scenario Manager will also publish messages that are not directly related to the scenario itself. For example, it can send a message to the observers, informing them that they need to pay attention, as something important is going to happen soon. Or it could ask these observers specific questions during the Trial, e.g. '*Did you notice that X occurred?*'. These messages are also important for the after-action review, as they can be used as bookmarks to quickly go to parts in the scenario that are of extra importance for the evaluation.
 
 Detailed information:
 - [Functional specification](https://driver-eu.gitbooks.io/test-bed-specification/technical-requirements.html)
@@ -117,7 +117,7 @@ Based on the specified objectives of the Trial, an observer expects to observe d
 Although the observer tool (see Figure 10) can run standalone, outside of the Test-bed context, there are several benefits when it is connected, since this allows:
 - To share observations with Trial staff: they can use this information to steer the Trial in a particular direction.
 - The After-Action Review tool can use the observations during the analysis and evaluation
-- The scenario manager can inform the observers of major events that are about to occur: so they are warned ahead of time
+- The Scenario Manager can inform the observers of major events that are about to occur: so they are warned ahead of time
 - Observation forms can be created dynamically and transmitted to selected observers
 
 Although the observer tool enables the collection of personal data, research ethics is outside the scope of this technically-oriented document, and is being described in more detail in D922.21 - Trial guidance methodology and guidance tool specifications (version 1).
@@ -147,7 +147,7 @@ In the Test-bed, the goal of simulation is to provide a realistic, immersive bac
 
 The Test-bed, therefore, offers support to simulators for creating this realistic and immersive background, by:
 - Providing a time-service: i.e. each adapter knows the scenario time, so simulators and solutions can use this in their user interface and calculations. Think of a clock display, but also when sending an email or CAP message, making sure it uses the correct timestamps.
-- The scenario manager, as discussed above.
+- The Scenario Manager, as discussed above.
 
 It does not, however, provide these simulators as an integral part of the Test-bed. They are, and shall always remain, external. Even though some simulators will be connected during the project, they are external, as as such, also not bound by the open source requirements that the Test-bed has to adhere too. For example:
 - XVR connects their 3D crisis management environment, Crisis Media and Resource Manager to the Test-bed, thereby offering their (commercial) services to other parties too.

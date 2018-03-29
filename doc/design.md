@@ -4,12 +4,12 @@ The Test-bed is designed to fulfil the functional requirements, as described in 
 
 ## 5.1 Lessons learned from the Functional Specification
 
-Part of the functional specification describes the [lessons learned](https://driver-eu.gitbooks.io/test-bed-specification/content/lessons-learned.html) from the past. To summarize the most important technical lessons that have influenced the current design significantly, are:
+Part of the functional specification describes the [lessons learned](https://driver-eu.gitbooks.io/test-bed-specification/content/lessons-learned.html) from D923.11. To summarize the most important technical lessons that have influenced the current design significantly, are:
 
 1. The Test-bed should be open source.
 2. The Test-bed should have a message-oriented architecture.
 3. The Test-bed should use well-defined, easily accessible, syntactically correct messages, and close to common standards.
-4. The Test-bed must be easily reproducible, and offer administrative as well as supporting tools and services.
+4. The Test-bed should be easily reproducible, and offer administrative as well as supporting tools and services.
 
 ## 5.2 Distributed message bus using Apache Kafka
 
@@ -35,7 +35,7 @@ AVRO provides:
 - Remote procedure call (RPC).
 - Simple integration with dynamic languages. Code generation is not required to read or write data files nor to use or implement RPC protocols. Code generation as an optional optimization, only worth implementing for statically typed languages.
 
-So in our Test-bed, each message consists of a key and a value. Each message uses:
+In the Test-bed, each message consists of a key and a value, with:
 - The **same** AVRO-encoded [key](https://github.com/DRIVER-EU/avro-schemas/blob/master/edxl-de/edxl-de-key.avsc), based on the core attributes from the EDXL DE envelope (distributionID, senderID, dateTimeSent, dateTimeExpires, distributionStatus, and distributionKind). It can be used to support easy filtering and routing, and have a consistent message timestamp.
 - A potentially different AVRO-encoded value, containing the actual message.
 

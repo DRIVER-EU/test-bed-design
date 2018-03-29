@@ -1,8 +1,8 @@
 # 4. The Test-bed for developers and sysops
 
-A sysops (system operators or system administrators), in the current context, is responsible for installing the Test-bed on their local network, and making sure that all the solution and simulation providers can get access to this network as well. This task is discussed in the use case 'Installing the test-bed'.
+A sysops (system operators or system administrators), in the current context, is responsible for installing the Test-bed on their local network, and making sure that all the solution and simulation providers can get access to this network as well. This task is discussed in the use case 'Installing the Test-bed'.
 
-A developer would be tasked with connecting an existing solution or simulator to the Test-bed. Besides the direct coupling, allowing their tools to receive and publish messages, it most likely also involves translating existing messages to their own format. Finally, in case you are connecting a simulator, you also need information more detailed information about the time management in the Test-bed.
+A developer would be tasked with connecting an existing solution or simulator to the Test-bed. Besides the direct coupling, allowing their tools to receive and publish messages, it most likely also involves translating existing messages to their own format. Finally, in case you are connecting a simulator, you also need more detailed information about the time management in the Test-bed.
 
 ## 4.1 Use case: Installing the Test-bed
 
@@ -44,7 +44,7 @@ The Test-bed includes Landoop's [Kafka topics UI](https://github.com/Landoop/kaf
 
 ### Schema Registry
 
-The Test-bed also includes Landoop's [AVRO schema registry](https://github.com/Landoop/schema-registry-ui) service (see Figure 15) to inspect all the available schema's (default location [http://localhost:3601](http://localhost:3601)). As each message topic only has one schema, every message send to a topic needs to comply with that schema too. Also, in case you as a developer are creating new messages, these schema's must first be added to the schema registry, either manually or via an adapter.
+The Test-bed also includes Landoop's [AVRO schema registry](https://github.com/Landoop/schema-registry-ui) service (see Figure 15) to inspect all the available schema's (default location [http://localhost:3601](http://localhost:3601)). As each message topic only has one schema, every message send to a topic needs to comply with that schema too. Also, in case a developer is creating new messages, these schemas must first be added to the schema registry, either manually or via an adapter.
 
 ![Screenshot of Landoop's AVRO schema registry, which is part of our test-bed](img/avro_schema_registry_ui.png)
 
@@ -92,7 +92,7 @@ So in order to share all this gathered data, the Test-bed offers two types of se
 
 ## 4.6 Time management {#time}
 
-A Trial typically is not performed in real-time: either because the incident occurs at night, and people prefer to Trial and train during working hours, because you wish to skip boring parts, or because it would simply take too long. An example of the latter is a flooding incident, which can start days before any flooding actually occurs, so you need to compress the scenario to normal working hours.
+A Trial typically is not performed in real-time: either because the incident occurs at night, and people prefer to Trial during working hours, because of the limited availability of participants, or because it would simply take too long. An example of the latter is a flooding incident, which can start days before any flooding actually occurs, so you need to compress the scenario to normal working hours.
 
 Within the Test-bed, therefore, the scenario time (a.k.a. Trial time or fictive time) is controlled via the [time service](https://github.com/DRIVER-EU/test-bed-time-service) (see Figure 17) using [two types of messages](https://github.com/DRIVER-EU/avro-schemas/tree/master/core/time): one for controlling the time, and one for informing adapters about the current scenario time.
 
@@ -102,7 +102,7 @@ As a developer, you do not need to interact with these messages directly, since:
   - Idle: no scenario has started. The time interface returns the system time.
   - Initialized: the scenario is ready to be started. All adapters will receive the scenario start time, and can use this to initialize their service. In the near future, adapters have the ability to inform the Test-bed when they are initialized and ready to start.
   - Running (started or paused): the scenario time is moving forward, either in real speed or slower/faster than normally. In case the scenario is paused, the current scenario time is still actively being distributed, but does not progress (speed is 0).
-  - Stopped: The scenario is stopped, and the simulation time is no longer being updated.
+  - Stopped: The scenario stops, and the simulation time is no longer being updated.
 
 ![State diagram of the time service](img/state_diagram_time_service.png)
 
@@ -122,7 +122,7 @@ Within the Modelling & Simulation community, especially for military use, there 
 - HLA and DIS expect everyone to use Java or C++, and there is even less support for the 'newer' programming languages, like C#, JavaScript, Python, etc.
 - HLA requires a run-time infrastructure, which is a kind of test-bed: there are two commercial providers that are rather expensive. Although there is one [open source version](https://github.com/openlvc/portico), it is feature incomplete and not well maintained. Although these versions should be interoperable, they are not, and they cannot be mixed.
 
-That's why this Test-bed is using popular open source software, so it is easy to find:
+That's why this Test-bed is using open source software, so it is easy to find:
 - Open source tools to support it, or to connect to it, in many programming languages
 - Answers to questions
 - People that can use it
