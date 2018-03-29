@@ -8,6 +8,5 @@
 * [4. Test-bed for developers & sysops](developers.md)
 * [5. Test-bed design](design.md)
 * [Acronyms](acronyms.md)
-* [Glossary](GLOSSARY.md)
 * [Annex 1](annex.md)
 * [List of Figures](pictures.md)
