@@ -21,7 +21,7 @@ The simplified DRIVER+ TGM process to Trial solutions is like this. For a more d
 
 3. EVALUATION PHASE:
 
-   Based on the recorded observations and collected data during the Trial, the solutions are evaluated with the participants, leading to a good appreciation of how the selected solutions have contributed to solving the problems.
+   Based on the recorded observations and collected data (screenshots of running applications, messages sent, actions and decisions taken) during the Trial, the solutions are evaluated with the participants, leading to a good appreciation of how the selected solutions have contributed to solving the problems.
 
 ![Test-bed environment](img/test-bed-environment.jpg)
 

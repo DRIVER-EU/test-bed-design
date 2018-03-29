@@ -131,7 +131,7 @@ Detailed information:
 
 ### After-Action Review tool
 
-The After-Action Review (AAR) tool provides the possibility to collect data after a Trial has finished and analyse it. Its main purpose is to facilitate the evaluation of the trialled solutions against the predefined objectives, and to help the participants determine how well they functioned. It collects messages (exchanged during Trial), observation reports and takes screen-shots of the applications during their use.
+The After-Action Review (AAR) tool provides the possibility to collect data after a Trial has finished and analyse it. Its main purpose is to facilitate the evaluation of the trialled solutions against the predefined objectives, and to help the participants determine how well they functioned. It collects messages (exchanged during Trial), observation reports and takes screenshots of the applications during their use.
 
 Detailed information:
 - [Functional specification](https://driver-eu.gitbooks.io/test-bed-specification/technical-requirements.html)
