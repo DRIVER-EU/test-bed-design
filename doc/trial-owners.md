@@ -1,8 +1,8 @@
 # 3. A Test-bed for Trial owners
 
 Trial owners will interact with the Test-bed when:
-- They want to evaluate a solution personally and standalone, outside the scope of a Trial.
-- They run a Trial, where they can evaluate one or more solutions together with other participants.
+- They want to **test** a solution personally, outside the context of a Trial. A kind of *try before you trial* kind of test, in which they can verify that the solution is useful, has nice features, is user-friendly, looks good, and doesn’t crash or has irritating features. For a CM solution, a technical test would still require the Test-bed, together with a ‘mini-scenario’. The mini-scenario allows you to test the solution in a relevant context. For example, if one would test a COP tool as is, it would probably not have any map layers, basically being an empty map. Using a mini-scenario, the COP tool can be tested in the context of a simple incident, perhaps a flooding, have some ambulances driving around, and map layers showing population information, locations of critical infrastructure, etc.
+- They run a Trial, where they can **assess** one or more solutions together with other participants and observers, in a more relevant and larger scenario, with proper data collection and evaluation in place. So according to the TGM. Presumably after they have tested the solutions standalone, as discussed above.
 
 In the following sections, a use case (storyline) description of each is provided. The main actor in each story is Monica, a regional crisis manager with a professional background in fire-fighting. One of the challenges she is facing is that she does now always have a good overview of where her people and trucks are during a large-scale fire, and she is looking for a solution.
 
