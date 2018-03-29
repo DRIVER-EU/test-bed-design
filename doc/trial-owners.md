@@ -8,7 +8,7 @@ In the following sections, a use case (storyline) description of each is provide
 
 ## 3.1 Use Case: Evaluating a solution standalone
 
-Monica has heard about an interesting COP solution, *csCOP*, perhaps via the DRIVER+ Portfolio of Solutions, or otherwise. She considers using it to address her problems
+Monica has heard about an interesting COP solution, *csCOP* via the DRIVER+ Portfolio of Solutions. She considers using it to address her problems
 
 1. Monica visits the Test-bed's [composer website](https://driver-eu.github.io/docker-composer) (see Figure 11).
 2. She briefly reads its homepage, which explains her what to do next.
