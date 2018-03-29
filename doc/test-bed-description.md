@@ -114,7 +114,7 @@ Evaluation is needed to verify that the Trial or training objectives have been a
 
 Based on the specified objectives of the Trial, an observer expects to observe different kinds of behaviour. At the same time, there is little time during a Trial to record behaviour, as the Trial runs on, and that's why the observer tool provides Trial-specific pre-made forms (templates) to quickly create a new observation. For example, *Did you observe role X do Y? Yes/No*. These Trial-specific forms are created before the Trial by the observation team manager in the administration panel. Using this panel, specific forms can be assigned to specific observers. The observer can use a tablet, phone or desktop application for his work.
 
-Although the observer tool (see Figure 10 and 11) can run standalone, outside of the Test-bed context, there are several benefits when it is connected, since this allows:
+Although the observer tool (see Figure 10) can run standalone, outside of the Test-bed context, there are several benefits when it is connected, since this allows:
 - To share observations with Trial staff: they can use this information to steer the Trial in another direction.
 - The After-Action Review tool can use the observations during the analysis and evaluation
 - The scenario manager can inform the observers of major events that are about to occur: so they are warned ahead of time
@@ -122,9 +122,7 @@ Although the observer tool (see Figure 10 and 11) can run standalone, outside of
 
 Although the observer tool enables the collection of personal data, research ethics is outside the scope of this technically-oriented document, and is appropriately dealt within the DRIVER+ project.
 
-![OST overview](img/ost_forms_overview.png)
-
-![OST form](img/ost_form.png)
+![Observer Support Tool: Left, an overview of available observation templates. Right, one of the observation templates is selected](img/ost_forms_overview.png)
 
 Detailed information:
 - [Functional specification](https://driver-eu.gitbooks.io/test-bed-specification/technical-requirements.html)
