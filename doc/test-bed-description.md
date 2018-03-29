@@ -12,9 +12,9 @@ As it is assumed that the systems that are connected via the Test-bed are either
 
 ### Adapters
 
-Being popular, Kafka has connectors for most programming languages, so software applications can easily connect to it. While connected to Kafka, and therefore the Test-bed, the application can send and receive messages. When you want to receive a message, you subscribe to a topic of interest: thereafter, you get all the messages that are sent instantaneously until you end your subscription. Optionally, you can even get messages that were sent in the past, or while you were offline, as Kafka logs all messages for a pre-set time. To publish a message, you just need to send it to your topic of interest.
+Being widely used worldwide, Kafka has connectors for most programming languages, so software applications can easily connect to it. While connected to Kafka, and therefore the Test-bed, the application can send and receive messages. When you want to receive a message, you subscribe to a topic of interest: thereafter, you get all the messages that are sent instantaneously until you end your subscription. Optionally, you can even get messages that were sent in the past, or while you were offline, as Kafka logs all messages for a pre-set time. To publish a message, you just need to send it to your topic of interest.
 
-*For example, to send a CAP (Common Alerting Protocol) message to all interested parties, you use a connector to send your CAP message to the cap topic. Every tool that has subscribed to the cap topic will get it right away.*
+*For example, to send a CAP (Common Alerting Protocol) message to all interested parties, you use a connector to send your CAP message to the 'cap' topic. Every tool that has subscribed to the 'cap' topic will get it right away.*
 
 The default Kafka connectors are lacking certain features that are useful in a Test-bed environment, so some existing connectors have been extended. These extended connectors are called **adapters**, and the Test-bed currently maintains four of them: in [Java](https://github.com/DRIVER-EU/java-test-bed-adapter), [C#](https://github.com/DRIVER-EU/csharp-test-bed-adapter), [JavaScript/TypeScript](https://github.com/DRIVER-EU/node-test-bed-adapter) and [REST](https://github.com/DRIVER-EU/test-bed-rest-service). Note that the REST adapter is a simple interface so any application can send and receive messages using basic internet commands.
 
@@ -28,7 +28,7 @@ Adapters extend regular Kafka connectors with:
 
 As software applications need to understand the messages they receive, the Test-bed has to assure that every message that is sent complies with the expected format (syntax). For example, when a solution wants to share the location of a vehicle or the value of a sensor, you probably need to capture the vehicle's or sensor's location, as well as its type, speed or sensor value. Then it is important to know that the type will be one out of a list of possibilities, that the location is specified using two numbers, and that the speed or sensor value is a number too.
 
-To capture this information, the common solution is to specify it in a so-called schema. The Test-bed enforces this too, and is uses the open [Apache AVRO](https://avro.apache.org) schema format.
+To capture this information, the common solution is to specify it in a so-called schema. The Test-bed enforces this too, and it uses the open [Apache AVRO](https://avro.apache.org) schema format.
 
 **Dealing with standards:** In the CM domain, several standards exists, such as CAP, EDXL or EMSI. They are represented using XML, a textual representation of a message that is easily readable by computers. A recurring problem with all standards, however, is that they rarely represent all the information you would like to share. This often leads to adding new fields, or, even worse, *re-purposing* existing fields. Additionally, not every organisation uses it in the same way. For Trialling new solutions, the Test-bed needs to be flexible and exact, and that's why the Test-bed does support these standards, but converted to the AVRO format. In that way, every connected solution or simulator will exactly know what to expect when reading a message, as new fields can be easily added in a robust way.
 
@@ -76,7 +76,7 @@ Whether designing a **Trial** to evaluate solutions, or an **exercise** to train
 
 For an exercise, one starts by defining the *training objectives*, *What does the training audience need to learn?*. Next, an appropriate *Mission / Main scenario* is formulated in which these training objectives can be tested and exercised. The mission if further broken down into *storylines*. A Storyline describes a developing situation that will set conditions and provide the Training Audience an opportunity to achieve a specific Training Objective and optional secondary Training Objectives. It often targets a subset of the training audience, e.g. only the fire fighters, and consists of timed events, or so called *injects*. Think of an email to the commander, a 'start flooding' message to a flooding simulator, or instructions to a role-playing actor.
 
-In a **Trial**, although the primary objective is not to train people, but to test and evaluate solutions, still a similar procedure can be followed. In that case, the *training objectives* are replaced by *solution objectives / research questions*, but the other steps remain the same.
+In a **Trial**, although the primary objective is not to train people, but to test and evaluate solutions, still a similar procedure can be followed. In that case, the *training objectives* are replaced by *research questions*, but the other steps remain the same.
 
 ### Existing software
 
@@ -108,19 +108,19 @@ Detailed information:
 
 ## 2.4 Evaluation
 
-Evaluation is needed to verify that the Trial or training objectives have been achieved. The Test-bed provides two services for this: an Online Observer Support tool and an After-Action Review tool.
+Evaluation is needed to verify that the Trial objectives have been achieved. The Test-bed provides two services for this: an Online Observer Support tool and an After-Action Review tool.
 
 ### Online Observer Support tool
 
-Based on the specified objectives of the Trial, an observer expects to observe different kinds of behaviour. At the same time, there is little time during a Trial to record behaviour, as the Trial runs on, and that's why the observer tool provides Trial-specific pre-made forms (templates) to quickly create a new observation. For example, *Did you observe role X do Y? Yes/No*. These Trial-specific forms are created before the Trial by the observation team manager in the administration panel. Using this panel, specific forms can be assigned to specific observers. The observer can use a tablet, phone or desktop application for his work.
+Based on the specified objectives of the Trial, an observer expects to observe different kinds of behaviour. At the same time, there is little time during a Trial to record behaviour, as the Trial runs on, and that's why the observer tool provides Trial-specific pre-made forms (templates) to quickly create a new observation. For example, *Did you observe role X do Y? Yes/No*. These trial-specific forms are created before the Trial by the observation team manager in the administration panel. based on the data collection plan (as described in the Trial Guidance Methodology). Using this panel, specific forms can be assigned to specific observers. The observer can use a tablet, phone or desktop application for his work.
 
 Although the observer tool (see Figure 10) can run standalone, outside of the Test-bed context, there are several benefits when it is connected, since this allows:
-- To share observations with Trial staff: they can use this information to steer the Trial in another direction.
+- To share observations with Trial staff: they can use this information to steer the Trial in a particular direction.
 - The After-Action Review tool can use the observations during the analysis and evaluation
 - The scenario manager can inform the observers of major events that are about to occur: so they are warned ahead of time
-- Observation forms can be created dynamically and transmitted to one or all observers
+- Observation forms can be created dynamically and transmitted to selected observers
 
-Although the observer tool enables the collection of personal data, research ethics is outside the scope of this technically-oriented document, and is appropriately dealt within the DRIVER+ project.
+Although the observer tool enables the collection of personal data, research ethics is outside the scope of this technically-oriented document, and is being described in more detail in D922.21 - Trial guidance methodology and guidance tool specifications (version 1).
 
 ![Observer Support Tool: Left, an overview of available observation templates. Right, one of the observation templates is selected](img/ost_forms_overview.png)
 
