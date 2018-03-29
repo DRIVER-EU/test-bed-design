@@ -32,9 +32,9 @@ Monica has heard about an interesting COP solution, *csCOP* via the DRIVER+ Port
 
 1. As she currently isn't interested in other solutions, she opens the menu and clicks on the BUILD button. A dialog opens and she can download the *Docker-compose* file to her PC (see Figure 13).
 
-![Test-bed composer: Downloading the docker-compose.yml file](img/test-bed-composer-download.png)
-
 2. Running a simple command, the Test-bed is downloaded and started on her own PC, and she can interact with the Test-bed as described above.
+
+![Test-bed composer: Downloading the docker-compose.yml file](img/test-bed-composer-download.png)
 
 ## 3.2 Use Case: Running a Trial
 
