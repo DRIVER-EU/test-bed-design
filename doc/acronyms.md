@@ -27,6 +27,7 @@
 | KPI          | Key Performance Indicator
 | MBtiles      | Single file database format to store images of a map
 | MGT          | Management
+| PoS          | Portfolio of Solutions, a DRIVER+ content management system to maintain a list of CM solutions, their application, strength and weaknesses, and user reviews.
 | Python       | Programming Language
 | REST         | Representational State Transfer (common interface allowing you to read and write data from a service)
 | RTI          | Run-time infrastructure, a kind of HLA-based Test-bed
