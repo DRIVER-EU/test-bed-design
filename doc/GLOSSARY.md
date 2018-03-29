@@ -62,6 +62,10 @@ System operators or system administrators, i.e. the ICT persons managing your lo
 
 REpresentational State Transfer, is a way to interact with many web services, thereby providing interoperability between computer systems on the Internet.
 
+## TGM
+
+Trial Guidance Methodology, see also DRIVER+ deliverable D922.21 - Trial guidance methodology and guidance tool specifications (version 1).
+
 ## Trial
 
 A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.

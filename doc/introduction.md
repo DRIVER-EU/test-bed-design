@@ -2,9 +2,9 @@
 
 In the Crisis Management (CM) domain, practitioners need to be prepared for the unexpected: based on past experience and the local incidents they had to deal with, they develop a feeling for the things that did not go so well. As with most incidents many lives are involved, they are continuously looking for solutions to improve their response and preparedness.
 
-Within the [DRIVER+ project](http://www.driver-project.eu), a Trial Guidance Methodology (TGM, see also deliverable D922.21, "Trial guidance methodology and guidance tool specifications (version 1)".) and tools are developed to help resolve the needs of practitioners through a systematic and pragmatic approach. The Test-bed infrastructure is a suite of software tools and services that enables solutions and simulators in the Crisis Management (CM) domain to easily exchange information (see Figure 4). This allows end-users in the CM domain to Trial solutions, and see if they address their gaps. Additionally,it can be used to support training exercises as well.
+Within the [DRIVER+ project](http://www.driver-project.eu), a Trial Guidance Methodology (TGM, deliverable D922.21 - Trial guidance methodology and guidance tool specifications (version 1)) and tools are developed to help resolve the needs of practitioners through a systematic and pragmatic approach. The Test-bed infrastructure is a suite of software tools and services that enables solutions and simulators in the Crisis Management (CM) domain to easily exchange information (see Figure 4). This allows end-users in the CM domain to Trial solutions, and see if they address their gaps. Additionally,it can be used to support training exercises as well.
 
-The simplified DRIVER+ TGM process to Trial solutions is like this. For a more detailed discussion, see deliverable D922.21):
+The simplified DRIVER+ TGM process to Trial solutions is like this:
 
 1. PREPARATION PHASE:
 
