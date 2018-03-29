@@ -2,7 +2,7 @@
 
 In the Crisis Management (CM) domain, practitioners need to be prepared for the unexpected: based on past experience and the local incidents they had to deal with, they develop a feeling for the things that did not go so well. As with most incidents many lives are involved, they are continuously looking for solutions to improve their response and preparedness.
 
-Within the [DRIVER+ project](http://www.driver-project.eu), a Trial Guidance Methodology (TGM, see also deliverable D922.21, "Trial guidance methodology and guidance tool specifications (version 1)".) and tools are developed to help resolve the needs of practitioners through a systematic and pragmatic approach. The Test-bed infrastructure is a suite of software tools and services that enables solutions and simulators in the Crisis Management (CM) domain to easily exchange information. This allows end-users in the CM domain to Trial solutions, and see if they address their gaps. Additionally,it can be used to support training exercises as well.
+Within the [DRIVER+ project](http://www.driver-project.eu), a Trial Guidance Methodology (TGM, see also deliverable D922.21, "Trial guidance methodology and guidance tool specifications (version 1)".) and tools are developed to help resolve the needs of practitioners through a systematic and pragmatic approach. The Test-bed infrastructure is a suite of software tools and services that enables solutions and simulators in the Crisis Management (CM) domain to easily exchange information (see Figure 4). This allows end-users in the CM domain to Trial solutions, and see if they address their gaps. Additionally,it can be used to support training exercises as well.
 
 The simplified DRIVER+ TGM process to Trial solutions is like this. For a more detailed discussion, see deliverable D922.21):
 
@@ -36,7 +36,7 @@ The Test-bed supports practitioners by providing an environment in which they ca
 
 ## 1.2 Scope of the test-bed
 
-This document limits its scope to the core Test-bed design, more specifically, the design of the Test-bed's reference implementation, which is an implementation of the [Test-bed specification](https://driver-eu.gitbooks.io/test-bed-specification): it thereby provides an overview of the most important components of the Test-bed, how they work together, and how they can be used by different stakeholders.
+This document limits its scope to the core Test-bed design, more specifically, the design of the Test-bed's reference implementation, which is an implementation of the [Test-bed specification](https://driver-eu.gitbooks.io/test-bed-specification) (see Figure 5): it thereby provides an overview of the most important components of the Test-bed, how they work together, and how they can be used by different stakeholders.
 
 The CM solutions and simulators that supplement the Test-bed, however, are *not* part of the Test-bed. The simulators' function is to simulate an incident, and the reactions that may occur in a real world, since we cannot unleash incidents like a flooding and earthquakes on the real world. The solutions are the actual tools that are trialled and evaluated, and measured whether they actually do solve a CM gap. These solutions are fed with the simulator's output, and perhaps the output of other solutions, so end users can observe and evaluate their contribution during a fictive incident.
 

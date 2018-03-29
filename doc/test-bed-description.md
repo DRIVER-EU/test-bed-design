@@ -1,6 +1,6 @@
 # 2. Test-bed description
 
-The Test-bed supports practitioners by providing an environment in which they can easily Trial new solutions and run exercises. In this chapter, the main components of the Test-bed are explained.
+The Test-bed supports practitioners by providing an environment in which they can easily Trial new solutions and run exercises. In this chapter, the main components of the Test-bed are explained (see Figure 6).
 
 ![Explanation of the Test-bed components](img/test-bed-components-explained.png)
 
@@ -60,7 +60,7 @@ There are also tools that will send out messages that serve as commands or reque
 
 ## 2.2 Test-bed administration tool
 
-The Test-bed is a collection of distributed services running in a network environment. You can compare it to a theatre play, where the stage needs to be prepared, the musicians must be ready, as well as the light and sound engineers. The Test-bed admin tool helps you by monitoring both the CIS and the CSS to support understanding what is/was going on during a Trial: to determine whether all services are ready, and that their inputs and outputs are correct. Also in case a service encounters any errors, this is made visible and the errors can be inspected - are they serious and do we need to stop our Trial, or can we ignore them safely and run on.
+The Test-bed is a collection of distributed services running in a network environment. You can compare it to a theatre play, where the stage needs to be prepared, the musicians must be ready, as well as the light and sound engineers. The Test-bed admin tool (see Figure 7) helps you by monitoring both the CIS and the CSS to support understanding what is/was going on during a Trial: to determine whether all services are ready, and that their inputs and outputs are correct. Also in case a service encounters any errors, this is made visible and the errors can be inspected - are they serious and do we need to stop our Trial, or can we ignore them safely and run on.
 
 This does not only apply to the Test-bed's core tools, gateways and services, but also for the connected simulators and solutions.
 
@@ -80,13 +80,13 @@ In a **Trial**, although the primary objective is not to train people, but to te
 
 ### Existing software
 
-The process described above is the typical approach taken by the NATO Joint Exercise Management Module ([JEMM](http://slideplayer.com/slide/7873364)). It is a tool to support live exercises as well as table top exercises, from a few people to battalions. It puts a lot of emphasis on authorization management (*who can do what?*) during the creation of a scenario, and has a limited level of automation. For example, JEMM can connect to Outlook / Exchange Server to automatically create or receive email messages. Sending, though, is still a manual process.
+The process described above is the typical approach taken by the NATO Joint Exercise Management Module ([JEMM](http://slideplayer.com/slide/7873364)) (see Figure 8). It is a tool to support live exercises as well as table top exercises, from a few people to battalions. It puts a lot of emphasis on authorization management (*who can do what?*) during the creation of a scenario, and has a limited level of automation. For example, JEMM can connect to Outlook / Exchange Server to automatically create or receive email messages. Sending, though, is still a manual process.
 
 JEMM is available free of charge to military NATO members, i.e. to use it in a Trial, a military presence is required.
 
 ![JEMM exercise script example](img/jemm_exercise_script_example.png)
 
-Alternative commercial solutions exist too, such as [Exonaut](https://www.4cstrategies.com/exonaut-products/training-and-exercise-manager). They also aim at a military audience, and follow a similar approach.
+Alternative commercial solutions exist too, such as [Exonaut](https://www.4cstrategies.com/exonaut-products/training-and-exercise-manager) (see Figure 9). They also aim at a military audience, and follow a similar approach.
 
 ![Exonaut timeline example](img/exonaut_example.png)
 
@@ -114,7 +114,7 @@ Evaluation is needed to verify that the Trial or training objectives have been a
 
 Based on the specified objectives of the Trial, an observer expects to observe different kinds of behaviour. At the same time, there is little time during a Trial to record behaviour, as the Trial runs on, and that's why the observer tool provides Trial-specific pre-made forms (templates) to quickly create a new observation. For example, *Did you observe role X do Y? Yes/No*. These Trial-specific forms are created before the Trial by the observation team manager in the administration panel. Using this panel, specific forms can be assigned to specific observers. The observer can use a tablet, phone or desktop application for his work.
 
-Although the observer tool can run standalone, outside of the Test-bed context, there are several benefits when it is connected, since this allows:
+Although the observer tool (see Figure 10 and 11) can run standalone, outside of the Test-bed context, there are several benefits when it is connected, since this allows:
 - To share observations with Trial staff: they can use this information to steer the Trial in another direction.
 - The After-Action Review tool can use the observations during the analysis and evaluation
 - The scenario manager can inform the observers of major events that are about to occur: so they are warned ahead of time
@@ -122,7 +122,8 @@ Although the observer tool can run standalone, outside of the Test-bed context, 
 
 Although the observer tool enables the collection of personal data, research ethics is outside the scope of this technically-oriented document, and is appropriately dealt within the DRIVER+ project.
 
-![OST overview](img/ost_overview.png)
+![OST overview](img/ost_forms_overview.png)
+
 ![OST form](img/ost_form.png)
 
 Detailed information:

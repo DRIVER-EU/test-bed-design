@@ -1,6 +1,6 @@
 # Executive Summary
 
-The Test-bed reference implementation lies at the heart of the Trialling environment of the [DRIVER+ project](driver-project.eu). It provides an open source technical backbone to perform Trials or exercises in a methodical and structured way as it provides a suite of *software* tools to run a Trial. The underlying document discusses the Test-bed's usage and design, and therefore it is expected that the reader has at least some technical background. In DRIVER+ deliverable [D923.11](https://driver-eu.gitbooks.io/test-bed-specification) "Functional specification of the Test-bed", the requirements of the Test-bed are documented.
+The Test-bed reference implementation lies at the heart of the Trialling environment of the [DRIVER+ project](driver-project.eu) (see Figure 1). It provides an open source technical backbone to perform Trials or exercises in a methodical and structured way as it provides a suite of *software* tools to run a Trial. The underlying document discusses the Test-bed's usage and design, and therefore it is expected that the reader has at least some technical background. In DRIVER+ deliverable [D923.11](https://driver-eu.gitbooks.io/test-bed-specification) "Functional specification of the Test-bed", the requirements of the Test-bed are documented.
 
 The trial-oriented environment developed in sub-project 92 (Test-bed) of DRIVER+ is conceived and designed to allow systematic testing of solutions in realistic but non-operational contexts (namely, in Trials) to help practitioners in assessing solutions that can drive innovation (changes) before adopting them. See also deliverable D922.21, "Trial guidance methodology and guidance tool specifications (version 1)".
 
@@ -12,13 +12,13 @@ The basic problem that the Test-bed reference implementation tries to solve is h
 - **Each other:** since no single application can solve all CM gaps, they need to work together by sharing information.
 - **One or more simulators:** since during a Trial, you cannot start a real incident, there needs to be a way to *simulate* a realistic incident.
 
-The approach that was taken is to connect solutions to a so-called Common Information Space (CIS), simulators to a Common Simulation Space (CSS), and to have gateway services in between that selectively allow some information to pass between the two spaces. These spaces can be public or private, and allow for applications to write messages to a topic of interest, or read those messages. Although both spaces are comparable in that they share well structured messages (using Apache AVRO) over a popular open source distributed messaging system, Apache Kafka, the separation allows for a better control of the message flow, and for replacing parts with an alternative.
+The approach that was taken is to connect solutions to a so-called Common Information Space (CIS), simulators to a Common Simulation Space (CSS), and to have gateway services in between that selectively allow some information to pass between the two spaces (see Figure 2). These spaces can be public or private, and allow for applications to write messages to a topic of interest, or read those messages. Although both spaces are comparable in that they share well structured messages (using Apache AVRO) over a popular open source distributed messaging system, Apache Kafka, the separation allows for a better control of the message flow, and for replacing parts with an alternative.
 
 In addition, several adapters are created to connect solutions and simulators to the CIS and CSS: besides allowing users of the Test-bed to choose an adapter in their favourite programming language, and share messages, it also provides a common interface for configuration, heartbeat messages, and security. Currently, adapters in Java, C#, JavaScript/TypeScript and REST are available, and a Python adapter is planned for the next release.
 
 ![CIS and CSS](img/test_bed_overview_cis_css.png)
 
-Around this core functionality, additional tools are developed that facilitate the usage of this environment:
+Around this core functionality, additional tools are developed that facilitate the usage of this environment (see Figure 3):
 - Administrative tools: Is everyone up-and-running, secure, and connected to the right information topics?
 - Evaluation tools: What did we observe during the Trial, and what implications does this have during the After-Action Review
 - Scenario tools: To create an interesting scenario that triggers the participants and solutions in the right way
