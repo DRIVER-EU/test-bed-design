@@ -66,7 +66,7 @@ The procedure for testing multiple solutions and simulators before an actual Tri
 
 1. Sysop starts up the Test-bed and the Admin Tool, or uses a Test-bed available online. If not done already, all required schema's are registered with the schema registry.
 2. Sysop inspects the Admin Tool and verifies that all required solutions and simulators are available and running online without errors.
-3. Sysop starts up the Scenario Manager (not yet available), loads the Trial scenario, and initializes it. The Test-bed's time service updates the fictive trial time and state, and every application that uses time should reflect that.
+3. Sysop starts up the Scenario Manager (not yet available), loads the Trial scenario, and initializes it. The Test-bed's time service updates the fictive Trial time and state, and every application that uses time should reflect that.
 4. Sysop runs the Trial scenario, either from the beginning or at another point in time, e.g. where issues were discovered. The time-service will update the fictive time accordingly.
 5. Sysop resets the Trial scenario, and replays it, as many times as required to make sure that everything works as expected.
 

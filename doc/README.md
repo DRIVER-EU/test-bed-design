@@ -2,9 +2,9 @@
 
 The Test-bed reference implementation lies at the heart of the Trialling environment of the [DRIVER+ project](driver-project.eu). It provides an open source technical backbone to perform Trials or exercises in a methodical and structured way as it provides a suite of *software* tools to run a Trial. The underlying document discusses the Test-bed's usage and design, and therefore it is expected that the reader has at least some technical background. In DRIVER+ deliverable [D923.11](https://driver-eu.gitbooks.io/test-bed-specification) "Functional specification of the Test-bed", the requirements of the Test-bed are documented.
 
-The trial-oriented environment developed in sub-project 92 (Test-bed) of DRIVER+ is conceived and designed to allow systematic testing of solutions in realistic but non-operational contexts (namely, in trials) to help practitioners in assessing solutions that can drive innovation (changes) before adopting them. See also deliverable D922.21, "Trial guidance methodology and guidance tool specifications (version 1)".
+The trial-oriented environment developed in sub-project 92 (Test-bed) of DRIVER+ is conceived and designed to allow systematic testing of solutions in realistic but non-operational contexts (namely, in Trials) to help practitioners in assessing solutions that can drive innovation (changes) before adopting them. See also deliverable D922.21, "Trial guidance methodology and guidance tool specifications (version 1)".
 
-The purpose of conducting trials in DRIVER+ is to find out if and how some innovative solutions can help resolve the needs of the Crisis Management practitioners.
+The purpose of conducting Trials in DRIVER+ is to find out if and how some innovative solutions can help resolve the needs of the Crisis Management practitioners.
 
 ![PTME paradigm applied to DRIVER+](img/pmte_paradigm.png)
 
