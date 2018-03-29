@@ -14,7 +14,7 @@ Common Information Space for exchanging crisis management messages between solut
 
 ## CM
 
-Crisis Management
+Crisis Management, a holistic management process that identifies potential impacts that threaten an organization and provides a framework for building resilience, with the capability for an effective response that safeguards the interests of the organization's key interested parties, reputation, brand and value creating activities, as well as effectively restoring operational capabilities. Note to entry: Crisis management also involves the management of preparedness, mitigation, response, and continuity or recovery in the event of an incident, as well as management of the overall programme through training, rehearsals and reviews to ensure the preparedness, response and continuity plans stay current and up-to-date.
 
 ## CSS
 

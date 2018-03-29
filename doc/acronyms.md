@@ -8,7 +8,7 @@
 | C#           | [C-sharp] Programming Language
 | CAP          | Common Alerting Protocol, standard data format for exchanging public warnings
 | CIS          | Common Information Space for exchanging crisis management messages
-| CM           | Crisis Management
+| CM           | Crisis Management, see also [Annex 1](annex.md#cm)
 | CSS          | Common Simulation Space for exchanging simulation data
 | COP          | Common Operational Picture tools for creating a shared situational awareness
 | CoPCM        | Community of Practice in Crisis Management
