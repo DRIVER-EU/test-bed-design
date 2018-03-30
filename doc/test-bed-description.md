@@ -34,11 +34,11 @@ To capture this information, the common solution is to specify it in a so-called
 
 ### CIS and CSS
 
-At the heart of the Test-bed, i.e. its [core](#core), all messages are exchanged using [Apache Kafka](https://kafka.apache.org). Conceptually, though, we distinguish between a Common Information Space (CIS) and a Common Simulation Space (CSS). The CIS is where the solutions exchange information, and the CSS is for simulators. Typically, the CIS will exchange far less messages during a Trial, and time synchronisation is simple. In the CSS, much more messages are generated, e.g. the location of all vehicles may be updated every second, and simulators may need to be in sync with others, e.g. a flooding simulator may flood an area, and at the same time, the traffic in the same area should experience the flood too.
+At the heart of the Test-bed, i.e. its [core](#core), all messages are exchanged using [Apache Kafka](https://kafka.apache.org). Conceptually, though, we distinguish between a Common Information Space (CIS) and a Common Simulation Space (CSS). The CIS is where the solutions exchange information, and the CSS is for simulators. Typically, the CIS will exchange fewer messages during a Trial, and time synchronisation is simple. In the CSS, many more messages are generated, e.g. the location of all vehicles may be updated every second. Simulators may need to be in sync with others, e.g. a flooding simulator may flood an area, and at the same time, the traffic in the same area should experience the flood too.
 
-For not too complex Trials, the CSS and CIS will run in the same Test-bed. In case the performance suffers, it may be necessary to split the CSS and CIS over two test-beds that are connected to each other.
+For simple Trials, the CSS and CIS will run in the same Test-bed. In case the performance suffers, it may be necessary to split the CSS and CIS over two test-beds that are interconnected.
 
-Note, though, that the [adapters](#adapters) connect to the CIS as well as the CSS, so there is no difference between them.
+Note, though, that the [adapters](#adapters) can be used to connect to the CIS as well as the CSS, so there is no difference between them.
 
 In rare cases, the CSS may be replaced, or extended, by one of the existing simulation standards such as HLA or DIS, that are especially popular in the Defence sector. Please refer to Chapter 4 to learn more about this.
 
