@@ -16,7 +16,7 @@ Monica has heard about an interesting COP solution, *csCOP* via the DRIVER+ Port
 2. She briefly reads its homepage, which explains her what to do next.
 3. She opens the solution's tab and sees that *csCOP* is available for evaluation.
 4. She select *csCOP* in the menu (see Figure 12).
-5. She understands that it is difficult to test a solution without any data / scenario, so she visits the data tab and selects a fire-fighting data set situated in the South of France: *It involves a forest fire, which is rapidly spreading. Ambulances and fire trucks are deployed and driving around. She can also look at census data of the area and a weather report.*
+5. She understands that it is difficult to test a solution without any data / scenario, so she visits the data tab and selects a fire-fighting data set situated in the South of France: *It involves a large-scale forest fire, which is rapidly spreading. Ambulances and fire trucks are deployed and driving around. She can also look at census data of the area and a weather report.*
 
 ![Test-bed composer's home page](img/test-bed-composer-home.png)
 
@@ -28,7 +28,7 @@ Monica has heard about an interesting COP solution, *csCOP* via the DRIVER+ Port
 
 1. As she currently isn't interested in other solutions, she opens the menu and clicks on the DEPLOY button. A dialog opens and informs her to wait while her selected Test-bed is started in the cloud.
 
-2. After a minute or so, the Test-bed is running and she gets her own unique link. She visits this website, and is presented with a simple menu: she can start (pause | stop) the fire fighting scenario, and open the website of the *csCOP* tool. *In its layer menu, she can turn on the layer which shows the ambulances and fire trucks. There are also options to turn on the fire fighting layer, etc.*
+2. After a minute or so, the Test-bed is running and she gets her own unique link. She visits this website, and is presented with a simple menu: she can start (pause | stop) the fire fighting scenario, and open the website of the *csCOP* tool. *In its layer menu, she can turn on the layer which shows the ambulances and fire trucks. There are also options to turn on the fire fighting layer to show the location of vehicles and staff, etc.*
 
 ### Alternative 2: Local scenario
 
@@ -38,7 +38,7 @@ Monica has heard about an interesting COP solution, *csCOP* via the DRIVER+ Port
 
 ![Test-bed composer: Downloading the docker-compose.yml file](img/test-bed-composer-download.png)
 
-## 3.2 Use Case: Running a Trial
+## 3.2 Use Case: Assessing solutions using a Trial
 
 In order to run a Trial, the same process as described above is followed. The main difference is that more services and solutions will be added, and in many cases, perhaps for security reasons, the Test-bed is run locally on the internal network. Basically, instead of only using the Test-bed core's services, a more complete Test-bed is required, also containing the observer tool, AAR, and Scenario Manager.
 
