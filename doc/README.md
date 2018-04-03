@@ -1,6 +1,6 @@
 # Executive Summary
 
-The Test-bed reference implementation lies at the heart of the Trialling environment of the [DRIVER+ project](driver-project.eu) (see Figure 1). It provides an open source technical backbone to perform Trials or exercises in a methodical and structured way by offering practitioners a suite of free *software* tools. This document discusses the Test-bed's usage and design, and therefore it is expected that the reader has at least some technical background. In DRIVER+ deliverable [D923.11](https://driver-eu.gitbooks.io/test-bed-specification) "Functional specification of the Test-bed", the requirements of the Test-bed are documented.
+The Test-bed reference implementation lies at the heart of the Trialling environment of the [DRIVER+ project](driver-project.eu) (see Figure 1). It provides an open source technical backbone to perform Trials or exercises in a methodical and structured way by offering practitioners a suite of free *software* tools. This document discusses the Test-bed's usage and design, and therefore it is expected that the reader has at least some technical background. In DRIVER+ deliverable [D923.11](https://driver-eu.gitbooks.io/test-bed-specification) "Functional specification of the Test-bed", the requirements of the Test-bed are documented. These requirements serve as basis for the design of the first release of the DRIVER+ Test-bed reference implementation as described in this deliverable D923.21.
 
 The trial-oriented environment developed in sub-project 92 (Test-bed) of DRIVER+ is conceived and designed to allow systematic testing of solutions in realistic but non-operational contexts (namely, in Trials) to help practitioners in assessing solutions that can drive innovation (changes) before adopting them. See also deliverable D922.21, "Trial guidance methodology and guidance tool specifications (version 1)".
 
@@ -25,6 +25,9 @@ Around this core functionality, additional tools are developed that facilitate t
 - Support tools: For testing and debugging, for creating your personalized Test-bed environment, but also to share common data such as map layers or census data.
 
 ![Test-bed reference implementation](img/test-bed-components-explained.png)
+
+The Test-bed will be delivered in 3 versions. Version 1 is intended for use in Trials 1 and 2, and consists of a limited number of components (i.e. Scenario Manager and AAR not included and other components in first prototype quality). Version 2 is to be used in Trials 3 and 4 and the Final Demo and comes with all components with a quality level surpassing that of a first prototype. It should contain data-sets and basic scenarios that can be used for effectively implementing and testing the Test-bed. The final version, Version 3, should have an even better quality based on experiences gathered from the use of the Test-bed in the executed Trials. All versions are already available open-source (under a liberal MIT license) on [github.com/DRIVER-EU](https://github.com/DRIVER-EU).
+The subsequent updated Test-bed reference implementations are documented in D923.21, D923.22 and D923.23 - Reference Implementations of the Test-bed (versions 1/2/3 resp.).
 
 This document is a living document, and the latest version is available [online at www.gitbook.com/book/driver-eu/test-bed-design](https://www.gitbook.com/book/driver-eu/test-bed-design/details) or can be downloaded as PDF or ebook (epub or mobi) [^1].
 
