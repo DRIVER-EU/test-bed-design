@@ -3,6 +3,7 @@
   display: none;
 }
 
+#driver,
 #disclaimer {
   page-break-before: always;
   margin-top: 5em;

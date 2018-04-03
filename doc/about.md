@@ -52,7 +52,7 @@ All DRIVER+ consortium members are also committed to publish accurate and up to 
 |	V0.6  | 03/04/2018 | Final check and approval for submission | Peter Petiet, Project Director (TNO) |
 | V1.0  | 03/04/2018 | Submission to the EC | Francisco Gala (ATOS) |
 
-# The DRIVER+ project
+<h1 id="driver">The DRIVER+ project</h1>
 
 Current and future challenges due to increasingly severe consequences of natural disasters and terrorist threats require the development and uptake of innovative solutions that are addressing the operational needs of practitioners dealing with Crisis Management. DRIVER+ (Driving Innovation in Crisis Management for European Resilience) is a FP7 Crisis Management demonstration project aiming at improving the way capability development and innovation management is tackled. DRIVER+ has three main objectives:
 
