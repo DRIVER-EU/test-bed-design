@@ -18,7 +18,7 @@
   <tr><td style="font-weight: bold; color: white; background: #00497E">Document Nature:</td><td>Report (R)</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">Dissemination Level:</td><td>Public (P)</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">Due Date:</td><td>31 March, 2018 </td></tr>
-  <tr><td style="font-weight: bold; color: white; background: #00497E">Submission Date:</td><td>31/03/2018</td></tr>
+  <tr><td style="font-weight: bold; color: white; background: #00497E">Submission Date:</td><td>03/04/2018</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">Sub-Project (SP):</td><td>SP92 - Test-bed</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">Work Package (WP):</td><td>WP923 – Test-bed infrastructure</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">Document Leader:</td><td>TNO</td></tr>
@@ -50,7 +50,7 @@ All DRIVER+ consortium members are also committed to publish accurate and up to 
 | V0.4  | 28/03/2018 | Reviews from Chiara Fonio (JRC), Laurent Dubois (Thales) and Peter Petiet (TNO) processed | Erik Vullings |
 | V0.5  | 29/03/2018 | Reviews from Marcel van Berlo (TNO) processed | Erik Vullings |
 |	V0.6  | 03/04/2018 | Final check and approval for submission | Peter Petiet, Project Director (TNO) |
-| V1.0  | 03/04/2018 | Submission to the EC | Francisco Gala (ATOS) |
+| V1.0  | 03/04/2018 | Submission to the EC                    | Francisco Gala (ATOS) |
 
 <h1 id="driver">The DRIVER+ project</h1>
 
