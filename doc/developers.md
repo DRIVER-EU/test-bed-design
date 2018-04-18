@@ -97,9 +97,9 @@ A Trial typically is not performed in real-time: either because the incident occ
 Within the Test-bed, therefore, the scenario time (a.k.a. Trial time or fictive time) is controlled via the [time service](https://github.com/DRIVER-EU/test-bed-time-service) (see Figure 17) using [two types of messages](https://github.com/DRIVER-EU/avro-schemas/tree/master/core/time): one for controlling the time, and one for informing adapters about the current scenario time.
 
 As a developer, you do not need to interact with these messages directly, since:
-- Every adapter has a time interface to get the current scenario time. Even as a solution developer, you should also use this time to timestamp the messages that you send. For example, if inside your message you refer to a particular time, always base it on the scenario time.
+- Every adapter has a time interface to get the current scenario time. Even as a solution developer, you should also use this time to timestamp the messages that you send. For example, if inside your message you refer to a particular time, always base it on the scenario time. 
 - Every adapter has a state describing the current scenario phase, which you can optionally use during the integration:
-  - Idle: no scenario has started. The time interface returns the system time.
+  - Idle: no scenario has started. The time interface returns the system time (in UTC).
   - Initialized: the scenario is ready to be started. All adapters will receive the scenario start time, and can use this to initialize their service. In the near future, adapters have the ability to inform the Test-bed when they are initialized and ready to start.
   - Running (started or paused): the scenario time is moving forward, either in real speed or slower/faster than normally. In case the scenario is paused, the current scenario time is still actively being distributed, but does not progress (speed is 0).
   - Stopped: The scenario stops, and the simulation time is no longer being updated.
