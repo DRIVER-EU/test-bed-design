@@ -1,0 +1,473 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2. Test-bed description · D923.21 Test-bed reference implementation</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Erik Vullings">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="trial-owners.html" />
+    
+    
+    <link rel="prev" href="introduction.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Executive summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="introduction.html">
+            
+                <a href="introduction.html">
+            
+                    
+                    1. Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="test-bed-description.html">
+            
+                <a href="test-bed-description.html">
+            
+                    
+                    2. Test-bed description
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="trial-owners.html">
+            
+                <a href="trial-owners.html">
+            
+                    
+                    3. Test-bed for Trial owners
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="developers.html">
+            
+                <a href="developers.html">
+            
+                    
+                    4. Test-bed for developers & sysops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="design.html">
+            
+                <a href="design.html">
+            
+                    
+                    5. Test-bed design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="acronyms.html">
+            
+                <a href="acronyms.html">
+            
+                    
+                    Acronyms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="annex.html">
+            
+                <a href="annex.html">
+            
+                    
+                    Annex 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="pictures.html">
+            
+                <a href="pictures.html">
+            
+                    
+                    List of Figures
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >2. Test-bed description</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="2-test-bed-description">2. Test-bed description</h1>
+<p>The Test-bed supports practitioners by providing an environment in which they can easily <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> new solutions and run exercises. In this chapter, the main components of the Test-bed are explained (see Figure 6).</p>
+<figure id="fig1.4.1"><img src="img/test-bed-components-explained.png" alt="Explanation of the Test-bed components"><figcaption>Figure 6. Explanation of the Test-bed components.</figcaption></figure>
+<h2 id="21-core">2.1 Core</h2>
+<p>The Test-bed must support the exchange of information between distributed solutions, simulators and tools. Information such as the location of an incident, alert messages, or the locations of vehicles. Comparable to people exchanging information via email, chat or twitter, the Test-bed exchanges information using the open-source messaging system <a href="https://kafka.apache.org" target="_blank">Apache Kafka</a> from the <a href="http://www.apache.org/" target="_blank">Apache organisation</a>.</p>
+<p>As it is assumed that the systems that are connected via the Test-bed are either software systems, or hardware with a software interface, the Test-bed&apos;s support for non-technical systems is limited: typically, support will be limited to the evaluation tools, such as the Observer Support tool and After-Action Review tool.</p>
+<h3 id="adapters">Adapters</h3>
+<p>Being widely used worldwide, Kafka has connectors for most programming languages, so software applications can easily connect to it. While connected to Kafka, and therefore the Test-bed, the application can send and receive messages. When you want to receive a message, you subscribe to a topic of interest: thereafter, you get all the messages that are sent instantaneously until you end your subscription. Optionally, you can even get messages that were sent in the past, or while you were offline, as Kafka logs all messages for a pre-set time. To publish a message, you just need to send it to your topic of interest.</p>
+<p><em>For example, to send a CAP (Common Alerting Protocol) message to all interested parties, you use a connector to send your CAP message to the &apos;cap&apos; topic. Every tool that has subscribed to the &apos;cap&apos; topic will get it right away.</em></p>
+<p>The default Kafka connectors are lacking certain features that are useful in a Test-bed environment, so some existing connectors have been extended. These extended connectors are called <strong>adapters</strong>, and the Test-bed currently maintains four of them: in <a href="https://github.com/DRIVER-EU/java-test-bed-adapter" target="_blank">Java</a>, <a href="https://github.com/DRIVER-EU/csharp-test-bed-adapter" target="_blank">C#</a>, <a href="https://github.com/DRIVER-EU/node-test-bed-adapter" target="_blank">JavaScript/TypeScript</a> and <a href="https://github.com/DRIVER-EU/test-bed-rest-service" target="_blank">REST</a>. Note that the <a href="GLOSSARY.html#rest" class="glossary-term" title="REpresentational State Transfer, is a way to interact with many web services, thereby providing interoperability between computer systems on the Internet.">REST</a> adapter is a simple interface so any application can send and receive messages using basic internet commands.</p>
+<p>Adapters extend regular Kafka connectors with:</p>
+<ul>
+<li><em>Heartbeat signals:</em> Before you can start a <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a>, every solution, simulator and tool needs to be up-and-running. Therefore every adapter transmits a heartbeat signal every 5 seconds to inform others it is online.</li>
+<li><em>Logging:</em> Besides being online, it is also important to know that each connected service is running as expected, so each adapter offers the option to log warnings/errors to the Test-bed as well.</li>
+<li><em>Configuration options:</em> The adapter can inform others to what topics it subscribes and publishes. In addition, this can be configured too externally.</li>
+<li><em>Time:</em> A <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> scenario typically will not run at real-time, so the adapter needs to share the fictive simulation time. In addition, it shares the simulation speed, as we may be running slower or faster than real-time, as well as the simulation state.</li>
+</ul>
+<h3 id="messages">Messages</h3>
+<p>As software applications need to understand the messages they receive, the Test-bed has to assure that every message that is sent complies with the expected format (syntax). For example, when a solution wants to share the location of a vehicle or the value of a sensor, you probably need to capture the vehicle&apos;s or sensor&apos;s location, as well as its type, speed or sensor value. Then it is important to know that the type will be one out of a list of possibilities, that the location is specified using two numbers, and that the speed or sensor value is a number too.</p>
+<p>To capture this information, the common solution is to specify it in a so-called schema. The Test-bed enforces this too, and it uses the open <a href="https://avro.apache.org" target="_blank">Apache AVRO</a> schema format.</p>
+<p><strong>Dealing with standards:</strong> In the <a href="GLOSSARY.html#cm" class="glossary-term" title="Crisis Management, a holistic management process that identifies potential impacts that threaten an organization and provides a framework for building resilience, with the capability for an effective response that safeguards the interests of the organization&apos;s key interested parties, reputation, brand and value creating activities, as well as effectively restoring operational capabilities. Note to entry: Crisis management also involves the management of preparedness, mitigation, response, and continuity or recovery in the event of an incident, as well as management of the overall programme through training, rehearsals and reviews to ensure the preparedness, response and continuity plans stay current and up-to-date.">CM</a> domain, several standards exists, such as CAP, EDXL or EMSI. They are represented using XML, a textual representation of a message that is easily readable by computers. A recurring problem with all standards, however, is that they rarely represent all the information you would like to share. This often leads to adding new fields, or, even worse, <em>re-purposing</em> existing fields. Additionally, not every organisation uses it in the same way. For Trialling new solutions, the Test-bed needs to be flexible and exact, and that&apos;s why the Test-bed does support these standards, but converted to the <a href="GLOSSARY.html#avro" class="glossary-term" title="Open data serialization system supported by the Apache Organisation.">AVRO</a> format. In that way, every connected solution or simulator will exactly know what to expect when reading a message, as new fields can be easily added in a robust way.</p>
+<h3 id="cis-and-css">CIS and CSS</h3>
+<p>At the heart of the Test-bed, i.e. its <a href="#core">core</a>, all messages are exchanged using <a href="https://kafka.apache.org" target="_blank">Apache Kafka</a>. Conceptually, though, we distinguish between a Common Information Space (<a href="GLOSSARY.html#cis" class="glossary-term" title="Common Information Space for exchanging crisis management messages between solutions.">CIS</a>) and a Common Simulation Space (<a href="GLOSSARY.html#css" class="glossary-term" title="Common Simulation Space for exchanging simulation data between simulators.">CSS</a>). The <a href="GLOSSARY.html#cis" class="glossary-term" title="Common Information Space for exchanging crisis management messages between solutions.">CIS</a> is where the solutions exchange information, and the <a href="GLOSSARY.html#css" class="glossary-term" title="Common Simulation Space for exchanging simulation data between simulators.">CSS</a> is for simulators. Typically, the <a href="GLOSSARY.html#cis" class="glossary-term" title="Common Information Space for exchanging crisis management messages between solutions.">CIS</a> will exchange fewer messages during a <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a>, and time synchronisation is simple. In the <a href="GLOSSARY.html#css" class="glossary-term" title="Common Simulation Space for exchanging simulation data between simulators.">CSS</a>, many more messages are generated, e.g. the location of all vehicles may be updated every second. Simulators may need to be in sync with others, e.g. a flooding simulator may flood an area, and at the same time, the traffic in the same area should experience the flood too.</p>
+<p>For simple Trials, the <a href="GLOSSARY.html#css" class="glossary-term" title="Common Simulation Space for exchanging simulation data between simulators.">CSS</a> and <a href="GLOSSARY.html#cis" class="glossary-term" title="Common Information Space for exchanging crisis management messages between solutions.">CIS</a> will run in the same Test-bed. In case the performance suffers, it may be necessary to split the <a href="GLOSSARY.html#css" class="glossary-term" title="Common Simulation Space for exchanging simulation data between simulators.">CSS</a> and <a href="GLOSSARY.html#cis" class="glossary-term" title="Common Information Space for exchanging crisis management messages between solutions.">CIS</a> over two test-beds that are interconnected.</p>
+<p>Note, though, that the <a href="#adapters">adapters</a> can be used to connect to the <a href="GLOSSARY.html#cis" class="glossary-term" title="Common Information Space for exchanging crisis management messages between solutions.">CIS</a> as well as the <a href="GLOSSARY.html#css" class="glossary-term" title="Common Simulation Space for exchanging simulation data between simulators.">CSS</a>, so there is no difference between them.</p>
+<p>In rare cases, the <a href="GLOSSARY.html#css" class="glossary-term" title="Common Simulation Space for exchanging simulation data between simulators.">CSS</a> may be replaced, or extended, by one of the existing simulation standards such as <a href="GLOSSARY.html#hla" class="glossary-term" title="The high-level architecture (HLA) is a general purpose architecture for distributed computer simulation systems. Using HLA, computer simulations can interact (that is, to communicate data, and to synchronize actions) with other computer simulations regardless of the computing platforms. The interaction between simulations is managed by a run-time infrastructure (RTI). HLA is an interoperability standard for distributed simulation used to support analysis, engineering and training in a number of different domains in both military and civilian applications and is the standard technical architecture for all US Department of Defence simulations.">HLA</a> or <a href="GLOSSARY.html#dis" class="glossary-term" title="Distributed Interactive Simulation, a simulation standard en.wikipedia.org/wiki/Distributed_Interactive_Simulation.">DIS</a>, that are especially popular in the Defence sector. Please refer to Chapter 4 to learn more about this.</p>
+<h3 id="gateways-and-validation-services">Gateways and Validation Services</h3>
+<p>Even while using well defined messages based on <a href="https://avro.apache.org" target="_blank">Apache AVRO</a>, it is certain that not all solutions and simulators speak each other&apos;s &apos;language&apos;. Like in Europe, as not everyone is speaking Esperanto or English and there is a need for translators, in the Test-bed we need <em>gateways</em> to translate one topic&apos;s message to another. Examples are not only translating one message format to another, but for example to translate:</p>
+<ul>
+<li>A message from a simulator sharing the location of all vehicles, to a <a href="GLOSSARY.html#cop" class="glossary-term" title="Common Operational Picture tools for creating a shared situational awareness">COP</a> tool message that only contains the location of its own resources</li>
+<li>An EDXL Resource Management request from a <a href="GLOSSARY.html#cop" class="glossary-term" title="Common Operational Picture tools for creating a shared situational awareness">COP</a> tool to a simulator message, which in turn sends out an ambulance to the required location.</li>
+</ul>
+<p>In order to facilitate solution tools to obtain their needed information from the simulated world, the <a href="GLOSSARY.html#css" class="glossary-term" title="Common Simulation Space for exchanging simulation data between simulators.">CSS</a> needs to be connected with the <a href="GLOSSARY.html#cis" class="glossary-term" title="Common Information Space for exchanging crisis management messages between solutions.">CIS</a> by means of translator applications, residing in the <a href="GLOSSARY.html#cis" class="glossary-term" title="Common Information Space for exchanging crisis management messages between solutions.">CIS</a>-<a href="GLOSSARY.html#css" class="glossary-term" title="Common Simulation Space for exchanging simulation data between simulators.">CSS</a> Gateway. These translator applications form the bridge between the simulated truth and the perceived/communicated truth by mapping the relevant changes from the simulated world to messages globally understood in the <a href="GLOSSARY.html#cis" class="glossary-term" title="Common Information Space for exchanging crisis management messages between solutions.">CIS</a>.</p>
+<p>An example of this would be a simulation of a flooding. Imagine a river that has a rising water level due to increase of rain water. At the river bank, there are several sensors that react to the amount of water coming in contact with the sensor. An application is created and connected to current operational systems to send CAP messages regarding the water level in clear categories ranging from LOW to DANGEROUSLY HIGH. A possible solution is assessed on improving decision-making based on the messages outputted by the created sensor application.</p>
+<p>In this example, the water in the river is handled inside the <a href="GLOSSARY.html#css" class="glossary-term" title="Common Simulation Space for exchanging simulation data between simulators.">CSS</a> by means of a simulator focussed at calculating water levels at exact locations. The sensor application would be a translator application or gateway, mapping the current water levels obtained from the <a href="GLOSSARY.html#css" class="glossary-term" title="Common Simulation Space for exchanging simulation data between simulators.">CSS</a> into the messages with understandable categories (and, for instance, only sending them whenever a change in category is observed) similar to the operational application. The tool connected to the <a href="GLOSSARY.html#cis" class="glossary-term" title="Common Information Space for exchanging crisis management messages between solutions.">CIS</a> listens to the formatted messages of the translator application as if it was connected to the actual operational application.</p>
+<p>There are also tools that will send out messages that serve as commands or requests to change the simulated world (e.g. Command &amp; Control systems used to trigger procedures to be executed by units, which in case of a <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> are simulated). Again, a gateway would be used to bridge the two spaces together. For example, a new dispatch centre solution (i.e. a type of <a href="GLOSSARY.html#cop" class="glossary-term" title="Common Operational Picture tools for creating a shared situational awareness">COP</a> system) that allows the user to send out emergency services from their dispatch towards the incident location. The solution would send out a standard resource management message via the <a href="GLOSSARY.html#cis" class="glossary-term" title="Common Information Space for exchanging crisis management messages between solutions.">CIS</a>. The gateway service picks up the message and maps it towards the corresponding request for changing the simulation space. The responsible simulator would receive this request via the <a href="GLOSSARY.html#css" class="glossary-term" title="Common Simulation Space for exchanging simulation data between simulators.">CSS</a> and handles it, changing the respective simulation entity (i.e. letting a simulated unit drive in the simulated world).</p>
+<p><strong>Validation Services</strong> are specific gateways that, as the name suggests, validate a message in more detail, before it is passed on to other systems. For example, if application A is publishing a CAP (Common Alerting Protocol) message for application B, i.e. A --&gt; CAP topic --&gt; B, the Test-bed will make sure that it complies with the appropriate schema before passing it on. However, there may still be certain aspects in the message that are not completely correct, e.g. the alerting area that is represented as a polygon may not have the same starting and ending point (i.e. it should be closed), or the incident location that is represented by two numbers (x, y), may actually be published as (y, x). So during testing, the validation service can &apos;intercept&apos; messages between A and B and validate them in detail. Only valid messages are passed on, i.e. A --&gt; CAP validation topic --&gt; CAP topic --&gt; B.</p>
+<h2 id="22-test-bed-administration-tool">2.2 Test-bed administration tool</h2>
+<p>The Test-bed is a collection of distributed services running in a network environment. You can compare it to a theatre play, where the stage needs to be prepared, the musicians must be ready, as well as the light and sound engineers. The Test-bed admin tool (see Figure 7) helps you by monitoring both the <a href="GLOSSARY.html#cis" class="glossary-term" title="Common Information Space for exchanging crisis management messages between solutions.">CIS</a> and the <a href="GLOSSARY.html#css" class="glossary-term" title="Common Simulation Space for exchanging simulation data between simulators.">CSS</a> to support understanding what is/was going on during a <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a>: to determine whether all services are ready, and that their inputs and outputs are correct. Also in case a service encounters any errors, this is made visible and the errors can be inspected - are they serious and do we need to stop our <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a>, or can we ignore them safely and run on.</p>
+<p>This does not only apply to the Test-bed&apos;s core tools, gateways and services, but also for the connected simulators and solutions.</p>
+<figure id="fig1.4.2"><img src="img/admin-tool-screenshot.jpg" alt="Admin tool"><figcaption>Figure 7. Admin tool.</figcaption></figure>
+<p>Detailed information:</p>
+<ul>
+<li><a href="https://driver-eu.gitbooks.io/test-bed-specification/technical-requirements.html" target="_blank">Functional specification</a></li>
+<li><a href="https://github.com/DRIVER-EU/test-bed-admin" target="_blank">Website</a></li>
+</ul>
+<h2 id="23-trialling-exercising-and-scenario-management">2.3 Trialling, Exercising and Scenario Management</h2>
+<p>Whether designing a <strong><a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a></strong> to evaluate solutions, or an <strong><a href="GLOSSARY.html#exercise" class="glossary-term" title="An exercise is an activity carried out to train personnel and processes in crisis management.">exercise</a></strong> to train people, a scenario and, optionally, simulations, are needed to emerge the training audience and to give them the feeling that they are dealing with an actual crisis.</p>
+<p>For an <a href="GLOSSARY.html#exercise" class="glossary-term" title="An exercise is an activity carried out to train personnel and processes in crisis management.">exercise</a>, one starts by defining the <em>training objectives</em>, <em>What does the training audience need to learn?</em>. Next, an appropriate <em>Mission / Main scenario</em> is formulated in which these training objectives can be tested and exercised. The mission if further broken down into <em>storylines</em>. A Storyline describes a developing situation that will set conditions and provide the Training Audience an opportunity to achieve a specific Training Objective and optional secondary Training Objectives. It often targets a subset of the training audience, e.g. only the fire fighters, and consists of timed events, or so called <em>injects</em>. Think of an email to the commander, a &apos;start flooding&apos; message to a flooding simulator, or instructions to a role-playing actor.</p>
+<p>In a <strong><a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a></strong>, although the primary objective is not to train people, but to test and evaluate solutions, still a similar procedure can be followed. In that case, the <em>training objectives</em> are replaced by <em>research questions</em>, but the other steps remain the same.</p>
+<h3 id="existing-software">Existing software</h3>
+<p>The process described above is the typical approach taken by the NATO Joint <a href="GLOSSARY.html#exercise" class="glossary-term" title="An exercise is an activity carried out to train personnel and processes in crisis management.">Exercise</a> Management Module (<a href="http://slideplayer.com/slide/7873364" target="_blank">JEMM</a>) (see Figure 8). It is a tool to support live exercises as well as table top exercises, from a few people to battalions. It puts a lot of emphasis on authorization management (<em>who can do what?</em>) during the creation of a scenario, and has a limited level of automation. For example, JEMM can connect to Outlook / Exchange Server to automatically create or receive email messages. Sending, though, is still a manual process.</p>
+<p>JEMM is available free of charge to military NATO members, i.e. to use it in a <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a>, a military presence is required.</p>
+<figure id="fig1.4.3"><img src="img/jemm_exercise_script_example.png" alt="JEMM exercise script example"><figcaption>Figure 8. JEMM <a href="GLOSSARY.html#exercise" class="glossary-term" title="An exercise is an activity carried out to train personnel and processes in crisis management.">exercise</a> script example.</figcaption></figure>
+<p>Alternative commercial solutions exist too, such as <a href="https://www.4cstrategies.com/exonaut-products/training-and-exercise-manager" target="_blank">Exonaut</a> (see Figure 9). They also aim at a military audience, and follow a similar approach.</p>
+<figure id="fig1.4.4"><img src="img/exonaut_example.png" alt="Exonaut timeline example"><figcaption>Figure 9. Exonaut timeline example.</figcaption></figure>
+<h3 id="scenario-manager">Scenario manager</h3>
+<p>A <a href="GLOSSARY.html#scenario-manager" class="glossary-term" title="The Scenario Manager acts as the composer and conductor of a classical performance:">Scenario Manager</a> is an integral part of the Test-bed reference implementation too, since it is not possible to use JEMM or Exonaut directly, as:</p>
+<ul>
+<li>JEMM is only available to NATO members, and can only be used in a an <a href="GLOSSARY.html#exercise" class="glossary-term" title="An exercise is an activity carried out to train personnel and processes in crisis management.">exercise</a> when military personnel requests it. This will not always be the case.</li>
+<li>JEMM and Exonaut are aimed at the military community, and the fit with the Crisis Management domain is not optimal.</li>
+<li>JEMM and Exonaut are closed source, so a strong integration with the Test-bed is not possible, as the applications cannot be modified.</li>
+</ul>
+<p>The Test-bed&apos;s <a href="GLOSSARY.html#scenario-manager" class="glossary-term" title="The Scenario Manager acts as the composer and conductor of a classical performance:">Scenario Manager</a>, then, acts as the <em>composer</em> and <em>conductor</em> of a classical performance:</p>
+<ul>
+<li>As the <em>composer</em>, it defines what each role has to play. For example, what do the simulators or role-players need to do in order to provide a realistic incident and background to the <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a>, or it could include sending direct messages to solutions.</li>
+<li>As the <em>conductor</em>, it controls <em>when</em> each role starts and stops.</li>
+</ul>
+<p>Additionally, the <a href="GLOSSARY.html#scenario-manager" class="glossary-term" title="The Scenario Manager acts as the composer and conductor of a classical performance:">Scenario Manager</a> will also publish messages that are not directly related to the scenario itself. For example, it can send a message to the observers, informing them that they need to pay attention, as something important is going to happen soon. Or it could ask these observers specific questions during the <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a>, e.g. &apos;<em>Did you notice that X occurred?</em>&apos;. These messages are also important for the after-action review, as they can be used as bookmarks to quickly go to parts in the scenario that are of extra importance for the evaluation.</p>
+<p>Detailed information:</p>
+<ul>
+<li><a href="https://driver-eu.gitbooks.io/test-bed-specification/technical-requirements.html" target="_blank">Functional specification</a></li>
+</ul>
+<h2 id="24-evaluation">2.4 Evaluation</h2>
+<p>Evaluation is needed to verify that the <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> objectives have been achieved. The Test-bed provides two services for this: an Online Observer Support tool and an After-Action Review tool.</p>
+<h3 id="online-observer-support-tool">Online Observer Support tool</h3>
+<p>Based on the specified objectives of the <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a>, an observer expects to observe different kinds of behaviour. At the same time, there is little time during a <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> to record behaviour, as the <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> runs on, and that&apos;s why the <a href="GLOSSARY.html#observer-tool" class="glossary-term" title="The online observer support tool facilitates the task of the observer by providing him or her with pre-made questions that can be easily answered during a Trial or exercise, and scenario triggers informing the observer of things to come. In addition, these responses will be harvested by the Test-bed, and used for evaluation at the end of the exercise.">observer tool</a> provides <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a>-specific pre-made forms (templates) to quickly create a new observation. For example, <em>Did you observe role X do Y? Yes/No</em>. These <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">trial</a>-specific forms are created before the <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> by the observation team manager in the administration panel. based on the data collection plan (as described in the <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> Guidance Methodology). Using this panel, specific forms can be assigned to specific observers. The observer can use a tablet, phone or desktop application for his work.</p>
+<p>Although the <a href="GLOSSARY.html#observer-tool" class="glossary-term" title="The online observer support tool facilitates the task of the observer by providing him or her with pre-made questions that can be easily answered during a Trial or exercise, and scenario triggers informing the observer of things to come. In addition, these responses will be harvested by the Test-bed, and used for evaluation at the end of the exercise.">observer tool</a> (see Figure 10) can run standalone, outside of the Test-bed context, there are several benefits when it is connected, since this allows:</p>
+<ul>
+<li>To share observations with <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> staff: they can use this information to steer the <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> in a particular direction.</li>
+<li>The After-Action Review tool can use the observations during the analysis and evaluation</li>
+<li>The <a href="GLOSSARY.html#scenario-manager" class="glossary-term" title="The Scenario Manager acts as the composer and conductor of a classical performance:">Scenario Manager</a> can inform the observers of major events that are about to occur: so they are warned ahead of time</li>
+<li>Observation forms can be created dynamically and transmitted to selected observers</li>
+</ul>
+<p>Although the <a href="GLOSSARY.html#observer-tool" class="glossary-term" title="The online observer support tool facilitates the task of the observer by providing him or her with pre-made questions that can be easily answered during a Trial or exercise, and scenario triggers informing the observer of things to come. In addition, these responses will be harvested by the Test-bed, and used for evaluation at the end of the exercise.">observer tool</a> enables the collection of personal data, research ethics is outside the scope of this technically-oriented document, and is being described in more detail in D922.21 - <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> guidance methodology and guidance tool specifications (version 1).</p>
+<figure id="fig1.4.5"><img src="img/ost_forms_overview.png" alt="Observer Support Tool: Left, an overview of available observation templates. Right, one of the observation templates is selected"><figcaption>Figure 10. Observer Support Tool: Left, an overview of available observation templates. Right, one of the observation templates is selected.</figcaption></figure>
+<p>Detailed information:</p>
+<ul>
+<li><a href="https://driver-eu.gitbooks.io/test-bed-specification/technical-requirements.html" target="_blank">Functional specification</a></li>
+<li><a href="https://github.com/DRIVER-EU/ost" target="_blank">Website</a></li>
+<li><a href="https://driver-eu.gitbooks.io/specification-of-the-online-observer-support-tool/" target="_blank">Documentation</a></li>
+</ul>
+<h3 id="after-action-review-tool">After-Action Review tool</h3>
+<p>The After-Action Review (<a href="GLOSSARY.html#aar" class="glossary-term" title="The After-Action Review (AAR) tool provides the possibility to collect data after a Trial has finished and analyse it. Its main purpose is to facilitate the evaluation of the trialled solutions against the predefined objectives, and to help the participants determine how well they functioned. It collects messages (exchanged during Trial), observation reports and takes screen-shots of the applications during their use.">AAR</a>) tool provides the possibility to collect data after a <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> has finished and analyse it. Its main purpose is to facilitate the evaluation of the trialled solutions against the predefined objectives, and to help the participants determine how well they functioned. It collects messages (exchanged during <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a>), observation reports and takes screenshots of the applications during their use.</p>
+<p>Detailed information:</p>
+<ul>
+<li><a href="https://driver-eu.gitbooks.io/test-bed-specification/technical-requirements.html" target="_blank">Functional specification</a></li>
+</ul>
+<h2 id="25-simulation">2.5 Simulation</h2>
+<p>Much can be said on the subject of simulation, but for the purpose of this chapter, it suffices to provide a brief overview of the Test-bed&apos;s relation to simulation.</p>
+<p>In the Test-bed, the goal of simulation is to provide a realistic, immersive background for the <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a>. Typically, this requires:</p>
+<ul>
+<li>A <strong>simulation of the incident</strong> e.g. a flooding, earthquake or explosion, etc. simulation</li>
+<li>A <strong>simulation of the reactions</strong> to the incident, e.g. people running away or drowning, buildings collapsing, road jams or traffic accidents, etc.</li>
+<li>A <strong>simulation of the perceived world</strong>, i.e. painting a picture of the world to solutions of what they are reasonably expected to see, not what is actually happening. For example, when an area is flooded in the simulation, all simulators know the exact location of the water. So if people are standing knee-deep in the water, or a road is inaccessible due to water, that can be shown and used. However, a <a href="GLOSSARY.html#cop" class="glossary-term" title="Common Operational Picture tools for creating a shared situational awareness">COP</a> tool or other solution does not have such a perfect view of what is happening in the world. It does not know where everyone is, nor the exact location of the water level. As long as it has no sensors, cameras, drones, or people informing it, it may well believe that the flooding is in an entirely different location or not happening at all. In a recent <a href="GLOSSARY.html#cm" class="glossary-term" title="Crisis Management, a holistic management process that identifies potential impacts that threaten an organization and provides a framework for building resilience, with the capability for an effective response that safeguards the interests of the organization&apos;s key interested parties, reputation, brand and value creating activities, as well as effectively restoring operational capabilities. Note to entry: Crisis management also involves the management of preparedness, mitigation, response, and continuity or recovery in the event of an incident, as well as management of the overall programme through training, rehearsals and reviews to ensure the preparedness, response and continuity plans stay current and up-to-date.">CM</a> <a href="GLOSSARY.html#exercise" class="glossary-term" title="An exercise is an activity carried out to train personnel and processes in crisis management.">exercise</a>, it took the participants quite some time to figure out that the water was actually threatening their own location, and they hadn&apos;t taken the necessary precautions. A well-designed <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a>, therefore, needs to think about how they are going to present the simulated world within the <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a>.</li>
+</ul>
+<p>The Test-bed, therefore, offers support to simulators for creating this realistic and immersive background, by:</p>
+<ul>
+<li>Providing a time-service: i.e. each adapter knows the scenario time, so simulators and solutions can use this in their user interface and calculations. Think of a clock display, but also when sending an email or CAP message, making sure it uses the correct timestamps.</li>
+<li>The <a href="GLOSSARY.html#scenario-manager" class="glossary-term" title="The Scenario Manager acts as the composer and conductor of a classical performance:">Scenario Manager</a>, as discussed above.</li>
+</ul>
+<p>It does not, however, provide these simulators as an integral part of the Test-bed. They are, and shall always remain, external. Even though some simulators will be connected during the project, they are external, as as such, also not bound by the open source requirements that the Test-bed has to adhere too. For example:</p>
+<ul>
+<li>XVR connects their 3D crisis management environment, Crisis Media and Resource Manager to the Test-bed, thereby offering their (commercial) services to other parties too.</li>
+<li>DLR connects their open source SUMO (Simulation of Urban Mobility) traffic simulator to the Test-bed, which provides realistic traffic during an incident</li>
+<li>Thales connects their commercial Crowd Simulator to the Test-bed, e.g. providing a realistic simulation of people in need during a crisis.</li>
+</ul>
+<h3 id="a-note-about-simulators">A note about Simulators</h3>
+<p>All simulators have their own data model of how they represent the simulated world. The <a href="GLOSSARY.html#css" class="glossary-term" title="Common Simulation Space for exchanging simulation data between simulators.">CSS</a> allows these simulators to agree on a communication form that the simulators understand to create and maintain a jointly simulated world.</p>
+<p>The simulators only need to be concerned with maintaining the current state of a given location (including entities and processes present at that location), and do not have to deal with the different kinds of communication types for tools and users to depict that current state.</p>
+<p>The <a href="GLOSSARY.html#css" class="glossary-term" title="Common Simulation Space for exchanging simulation data between simulators.">CSS</a> allows simulators to only focus on maintaining the current state of the simulated world (i.e. the simulated truth of the incident and the world around it). In order to communicate state changes with other simulators inside the <a href="GLOSSARY.html#css" class="glossary-term" title="Common Simulation Space for exchanging simulation data between simulators.">CSS</a>, self-created communication messages are allowed inside this space. This is different than the messages being sent over the <a href="GLOSSARY.html#cis" class="glossary-term" title="Common Information Space for exchanging crisis management messages between solutions.">CIS</a>, because the <a href="GLOSSARY.html#cis" class="glossary-term" title="Common Information Space for exchanging crisis management messages between solutions.">CIS</a> is more aligned with current emergency management standards (like Common Alerting Protocol (CAP) messages, or Emergency Data Exchange Language (EDXL) messages).</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page: 1. Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="trial-owners.html" class="navigation navigation-next " aria-label="Next page: 3. Test-bed for Trial owners">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2. Test-bed description","level":"1.4","depth":1,"next":{"title":"3. Test-bed for Trial owners","level":"1.5","depth":1,"path":"trial-owners.md","ref":"trial-owners.md","articles":[]},"previous":{"title":"1. Introduction","level":"1.3","depth":1,"path":"introduction.md","ref":"introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["image-captions"],"root":"./doc","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"image-captions":{"caption":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","variable_name":"pictures"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"Erik Vullings","pdf":{"pageBreaksBefore":"/","headerTemplate":"DRIVER+ project - _TITLE_ - 31 March 2018","paperSize":"a4","margin":{"right":62,"left":62,"top":56,"bottom":56},"fontSize":12,"fontFamily":"Arial","footerTemplate":"_PAGENUM_","chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"pictures":[{"backlink":"index.html#fig1.2.1","level":"1.2","list_caption":"Figure: PTME paradigm applied to DRIVER+","alt":"PTME paradigm applied to DRIVER+","nro":1,"url":"img/pmte_paradigm.png","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"PTME paradigm applied to DRIVER+","attributes":{},"skip":false,"key":"1.2.1"},{"backlink":"index.html#fig1.2.2","level":"1.2","list_caption":"Figure: CIS and CSS","alt":"CIS and CSS","nro":2,"url":"img/test_bed_overview_cis_css.png","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"CIS and CSS","attributes":{},"skip":false,"key":"1.2.2"},{"backlink":"index.html#fig1.2.3","level":"1.2","list_caption":"Figure: Test-bed reference implementation","alt":"Test-bed reference implementation","nro":3,"url":"img/test-bed-components-explained.png","index":3,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Test-bed reference implementation","attributes":{},"skip":false,"key":"1.2.3"},{"backlink":"introduction.html#fig1.3.1","level":"1.3","list_caption":"Figure: Test-bed environment","alt":"Test-bed environment","nro":4,"url":"img/test-bed-environment.jpg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Test-bed environment","attributes":{},"skip":false,"key":"1.3.1"},{"backlink":"introduction.html#fig1.3.2","level":"1.3","list_caption":"Figure: Scope of the test-bed","alt":"Scope of the test-bed","nro":5,"url":"img/test-bed-components-explained.png","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Scope of the test-bed","attributes":{},"skip":false,"key":"1.3.2"},{"backlink":"test-bed-description.html#fig1.4.1","level":"1.4","list_caption":"Figure: Explanation of the Test-bed components","alt":"Explanation of the Test-bed components","nro":6,"url":"img/test-bed-components-explained.png","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Explanation of the Test-bed components","attributes":{},"skip":false,"key":"1.4.1"},{"backlink":"test-bed-description.html#fig1.4.2","level":"1.4","list_caption":"Figure: Admin tool","alt":"Admin tool","nro":7,"url":"img/admin-tool-screenshot.jpg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Admin tool","attributes":{},"skip":false,"key":"1.4.2"},{"backlink":"test-bed-description.html#fig1.4.3","level":"1.4","list_caption":"Figure: JEMM exercise script example","alt":"JEMM exercise script example","nro":8,"url":"img/jemm_exercise_script_example.png","index":3,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"JEMM exercise script example","attributes":{},"skip":false,"key":"1.4.3"},{"backlink":"test-bed-description.html#fig1.4.4","level":"1.4","list_caption":"Figure: Exonaut timeline example","alt":"Exonaut timeline example","nro":9,"url":"img/exonaut_example.png","index":4,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Exonaut timeline example","attributes":{},"skip":false,"key":"1.4.4"},{"backlink":"test-bed-description.html#fig1.4.5","level":"1.4","list_caption":"Figure: Observer Support Tool: Left, an overview of available observation templates. Right, one of the observation templates is selected","alt":"Observer Support Tool: Left, an overview of available observation templates. Right, one of the observation templates is selected","nro":10,"url":"img/ost_forms_overview.png","index":5,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Observer Support Tool: Left, an overview of available observation templates. Right, one of the observation templates is selected","attributes":{},"skip":false,"key":"1.4.5"},{"backlink":"trial-owners.html#fig1.5.1","level":"1.5","list_caption":"Figure: Test-bed composer's home page","alt":"Test-bed composer's home page","nro":11,"url":"img/test-bed-composer-home.png","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Test-bed composer's home page","attributes":{},"skip":false,"key":"1.5.1"},{"backlink":"trial-owners.html#fig1.5.2","level":"1.5","list_caption":"Figure: Test-bed composer: Selecting a solution","alt":"Test-bed composer: Selecting a solution","nro":12,"url":"img/test-bed-composer-solutions.png","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Test-bed composer: Selecting a solution","attributes":{},"skip":false,"key":"1.5.2"},{"backlink":"trial-owners.html#fig1.5.3","level":"1.5","list_caption":"Figure: Test-bed composer: Downloading the docker-compose.yml file","alt":"Test-bed composer: Downloading the docker-compose.yml file","nro":13,"url":"img/test-bed-composer-download.png","index":3,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Test-bed composer: Downloading the docker-compose.yml file","attributes":{},"skip":false,"key":"1.5.3"},{"backlink":"developers.html#fig1.6.1","level":"1.6","list_caption":"Figure: Screenshot of Landoop's Kafka topics UI, which is part of our test-bed","alt":"Screenshot of Landoop's Kafka topics UI, which is part of our test-bed","nro":14,"url":"img/kafka_topics_ui.png","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Screenshot of Landoop's Kafka topics UI, which is part of our test-bed","attributes":{},"skip":false,"key":"1.6.1"},{"backlink":"developers.html#fig1.6.2","level":"1.6","list_caption":"Figure: Screenshot of Landoop's AVRO schema registry, which is part of our test-bed","alt":"Screenshot of Landoop's AVRO schema registry, which is part of our test-bed","nro":15,"url":"img/avro_schema_registry_ui.png","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Screenshot of Landoop's AVRO schema registry, which is part of our test-bed","attributes":{},"skip":false,"key":"1.6.2"},{"backlink":"developers.html#fig1.6.3","level":"1.6","list_caption":"Figure: Screenshot displaying the Kafka-replay service's Swagger interface","alt":"Screenshot displaying the Kafka-replay service's Swagger interface","nro":16,"url":"img/kafka_replay_service.png","index":3,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Screenshot displaying the Kafka-replay service's Swagger interface","attributes":{},"skip":false,"key":"1.6.3"},{"backlink":"developers.html#fig1.6.4","level":"1.6","list_caption":"Figure: State diagram of the time service","alt":"State diagram of the time service","nro":17,"url":"img/state_diagram_time_service.png","index":4,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"State diagram of the time service","attributes":{},"skip":false,"key":"1.6.4"}]},"title":"D923.21 Test-bed reference implementation","gitbook":"*"},"file":{"path":"test-bed-description.md","mtime":"2018-04-03T07:55:40.070Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T10:50:10.859Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

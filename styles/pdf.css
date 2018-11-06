@@ -1,0 +1,10 @@
+/* Hide the section number after the ToC */
+.section.toc .page {
+  display: none;
+}
+
+#driver,
+#disclaimer {
+  page-break-before: always;
+  margin-top: 5em;
+}

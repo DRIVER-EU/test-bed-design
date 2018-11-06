@@ -1,0 +1,396 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1. Introduction · D923.21 Test-bed reference implementation</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Erik Vullings">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="test-bed-description.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Executive summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="introduction.html">
+            
+                <a href="introduction.html">
+            
+                    
+                    1. Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="test-bed-description.html">
+            
+                <a href="test-bed-description.html">
+            
+                    
+                    2. Test-bed description
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="trial-owners.html">
+            
+                <a href="trial-owners.html">
+            
+                    
+                    3. Test-bed for Trial owners
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="developers.html">
+            
+                <a href="developers.html">
+            
+                    
+                    4. Test-bed for developers & sysops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="design.html">
+            
+                <a href="design.html">
+            
+                    
+                    5. Test-bed design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="acronyms.html">
+            
+                <a href="acronyms.html">
+            
+                    
+                    Acronyms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="annex.html">
+            
+                <a href="annex.html">
+            
+                    
+                    Annex 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="pictures.html">
+            
+                <a href="pictures.html">
+            
+                    
+                    List of Figures
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >1. Introduction</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="1-introduction">1. Introduction</h1>
+<p>In the Crisis Management (<a href="GLOSSARY.html#cm" class="glossary-term" title="Crisis Management, a holistic management process that identifies potential impacts that threaten an organization and provides a framework for building resilience, with the capability for an effective response that safeguards the interests of the organization&apos;s key interested parties, reputation, brand and value creating activities, as well as effectively restoring operational capabilities. Note to entry: Crisis management also involves the management of preparedness, mitigation, response, and continuity or recovery in the event of an incident, as well as management of the overall programme through training, rehearsals and reviews to ensure the preparedness, response and continuity plans stay current and up-to-date.">CM</a>) domain, practitioners need to be prepared for the unexpected: based on past experience and the local incidents they had to deal with, they develop a feeling for the things that did not go so well. As with most incidents many lives are involved, they are continuously looking for solutions to improve their response and preparedness.</p>
+<p>Within the <a href="http://www.driver-project.eu" target="_blank">DRIVER+ project</a>, a <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> Guidance Methodology (<a href="GLOSSARY.html#tgm" class="glossary-term" title="Trial Guidance Methodology, see also DRIVER+ deliverable D922.21 - Trial guidance methodology and guidance tool specifications (version 1).">TGM</a>, deliverable D922.21 - <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> guidance methodology and guidance tool specifications (version 1)) and tools are developed to help resolve the needs of practitioners through a systematic and pragmatic approach. The Test-bed infrastructure is a suite of software tools and services that enables solutions and simulators in the Crisis Management (<a href="GLOSSARY.html#cm" class="glossary-term" title="Crisis Management, a holistic management process that identifies potential impacts that threaten an organization and provides a framework for building resilience, with the capability for an effective response that safeguards the interests of the organization&apos;s key interested parties, reputation, brand and value creating activities, as well as effectively restoring operational capabilities. Note to entry: Crisis management also involves the management of preparedness, mitigation, response, and continuity or recovery in the event of an incident, as well as management of the overall programme through training, rehearsals and reviews to ensure the preparedness, response and continuity plans stay current and up-to-date.">CM</a>) domain to easily exchange information (see Figure 4). This allows end-users in the <a href="GLOSSARY.html#cm" class="glossary-term" title="Crisis Management, a holistic management process that identifies potential impacts that threaten an organization and provides a framework for building resilience, with the capability for an effective response that safeguards the interests of the organization&apos;s key interested parties, reputation, brand and value creating activities, as well as effectively restoring operational capabilities. Note to entry: Crisis management also involves the management of preparedness, mitigation, response, and continuity or recovery in the event of an incident, as well as management of the overall programme through training, rehearsals and reviews to ensure the preparedness, response and continuity plans stay current and up-to-date.">CM</a> domain to <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> solutions, and see if they address their gaps. Additionally,it can be used to support training exercises as well.</p>
+<p>The simplified DRIVER+ <a href="GLOSSARY.html#tgm" class="glossary-term" title="Trial Guidance Methodology, see also DRIVER+ deliverable D922.21 - Trial guidance methodology and guidance tool specifications (version 1).">TGM</a> process to <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> solutions is like this:</p>
+<ol>
+<li><p>PREPARATION PHASE:</p>
+<ul>
+<li>The operational issues practitioners experience are matched with one or more of the well-known crisis management gaps, as experienced by many of their colleagues, e.g. <em>How to get a real-time and dynamic overview of the position of all personnel?</em>.</li>
+<li>These gaps, in turn, are still too generic to address, and are made more specific, leading to so-called &apos;research questions&apos;, e.g. <em>Which Situational Awareness-increasing solution fits best with our mode of operation?</em></li>
+<li>Existing solutions are reviewed and selected. Some solutions can even be tried out standalone using the Test-bed and an existing mini-scenario.</li>
+<li>Based on the selected solutions, gaps and research questions, a data collection plan is developed: what kind of data does the <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> need to generate to enable a valid evaluation at the end of the <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a>.</li>
+<li>A scenario is developed that puts these solutions to the test. This includes selecting and connecting simulators of a fictive incident, e.g. a flooding simulator, and other simulators to create a realistic environment, e.g. a traffic simulator.</li>
+<li>Selected solutions and existing legacy systems are connected to the Test-bed, so they can receive input from the simulators as well as each other.</li>
+</ul>
+</li>
+<li><p>EXECUTION PHASE:</p>
+<p>The Test-bed is setup, all simulators and solutions are connected, data collection is in place, and a scenario can be run (executed). Before the actual <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a>, several dry runs are performed, partially for testing the setup, and partially for training the participants in using the solutions. This phase ends when the <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> is executed and observed.</p>
+</li>
+<li><p>EVALUATION PHASE:</p>
+<p>Based on the recorded observations and collected data (screenshots of running applications, messages sent, actions and decisions taken) during the <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a>, the solutions are evaluated with the participants, leading to a good appreciation of how the selected solutions have contributed to solving the problems.</p>
+</li>
+</ol>
+<figure id="fig1.3.1"><img src="img/test-bed-environment.jpg" alt="Test-bed environment"><figcaption>Figure 4. Test-bed environment.</figcaption></figure>
+<h2 id="11-aim">1.1 Aim</h2>
+<p>The Test-bed supports practitioners by providing an environment in which they can easily <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> new solutions and run exercises. This has several implications for the test-bed:</p>
+<ul>
+<li><strong>Evaluation support:</strong> As we are testing and evaluating new solutions, the Test-bed provides tools for observers and After-Action Review.</li>
+<li><strong>Simulation support:</strong> Due to the nature of the crisis management domain, most solutions cannot be properly tested outside an actual crisis situation. As starting a flooding or burning a forest is clearly not an option to test the solutions, the crisis incident needs to be faked or simulated. The same applies to expected reactions of the environment: people panicking, traffic jams, etc. must be simulated too.</li>
+<li><strong>Execution support:</strong> As the solutions are typically tested within an incident scenario, the Test-bed provides tools to create and execute scenario&apos;s.</li>
+<li><strong>Development support:</strong> To connect new solutions and simulators to the Test-bed, the Test-bed provides adapters in several popular languages and several debugging tools and services. Also, to check whether everything is up-and-running smoothly, it also has an admin tool.</li>
+</ul>
+<h2 id="12-scope-of-the-test-bed">1.2 Scope of the Test-bed</h2>
+<p>This document limits its scope to the core Test-bed design, more specifically, the design of the Test-bed&apos;s reference implementation, which is an implementation of the <a href="https://driver-eu.gitbooks.io/test-bed-specification" target="_blank">Test-bed specification</a> (see Figure 5): it thereby provides an overview of the most important components of the Test-bed, how they work together, and how they can be used by different stakeholders.</p>
+<p>The <a href="GLOSSARY.html#cm" class="glossary-term" title="Crisis Management, a holistic management process that identifies potential impacts that threaten an organization and provides a framework for building resilience, with the capability for an effective response that safeguards the interests of the organization&apos;s key interested parties, reputation, brand and value creating activities, as well as effectively restoring operational capabilities. Note to entry: Crisis management also involves the management of preparedness, mitigation, response, and continuity or recovery in the event of an incident, as well as management of the overall programme through training, rehearsals and reviews to ensure the preparedness, response and continuity plans stay current and up-to-date.">CM</a> solutions and simulators that supplement the Test-bed, however, are <em>not</em> part of the Test-bed. The simulators&apos; function is to simulate an incident, and the reactions that may occur in a real world, since we cannot unleash incidents like a flooding and earthquakes on the real world. The solutions are the actual tools that are trialled and evaluated, and measured whether they actually do solve a <a href="GLOSSARY.html#cm" class="glossary-term" title="Crisis Management, a holistic management process that identifies potential impacts that threaten an organization and provides a framework for building resilience, with the capability for an effective response that safeguards the interests of the organization&apos;s key interested parties, reputation, brand and value creating activities, as well as effectively restoring operational capabilities. Note to entry: Crisis management also involves the management of preparedness, mitigation, response, and continuity or recovery in the event of an incident, as well as management of the overall programme through training, rehearsals and reviews to ensure the preparedness, response and continuity plans stay current and up-to-date.">CM</a> gap. These solutions are fed with the simulator&apos;s output, and perhaps the output of other solutions, so end users can observe and evaluate their contribution during a fictive incident.</p>
+<figure id="fig1.3.2"><img src="img/test-bed-components-explained.png" alt="Scope of the test-bed"><figcaption>Figure 5. Scope of the test-bed.</figcaption></figure>
+<h2 id="13-organisation-of-the-document">1.3 Organisation of the Document</h2>
+<p>This is a live document, and the latest version can always be found online at <a href="https://www.gitbook.com/book/driver-eu/test-bed-design" target="_blank">www.gitbook.com/book/driver-eu/test-bed-design</a>. It is organised as follows:</p>
+<p>The <a href="test-bed-description.html">Test-bed description</a> provides a general overview of the Test-bed reference implementation. It is an easy to read chapter which requires little technical knowledge, and is aimed at anyone who has to work with the Test-bed.</p>
+<p>The chapter, <a href="Trial-owners.md">Test-bed for Trial owners</a>, is specifically aimed at <a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> owners and practitioners, and discusses the functionality the Test-bed offers to them. And also, what it does not offer.</p>
+<p>In the chapter, <a href="developers.html">Test-bed for developers and sysops</a>, the technical side of the Test-bed is explained. Specifically: how to manage a Test-bed as a sysop, or how to connect a solution or simulator to it as a developer.</p>
+<p>The final chapter offers more details about the <a href="design.html">Test-bed design</a>, and provides an explanation for the main design decisions. The intended audience are developers that need a deeper understanding of the Test-bed and its underlying architecture, e.g. for supplementing the Test-bed or for offering a deeper integration of their solution.</p>
+<h2 id="14-whats-new">1.4 What&apos;s new</h2>
+<h3 id="version-1-2018-03-31">Version 1 (2018-03-31)</h3>
+<p>This is the first version of D923.21 Test-bed reference implementation v1. It matches the release version of the software applications as available on GitHub: <a href="https://github.com/DRIVER-EU" target="_blank">github.com/DRIVER-EU</a>. Two future releases of this document are planned, v2 and v3, and the major changes between the different documents will be described here. In the mean time, this online documentation is continuously updated, so it matches the current state of the Test-bed.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Executive summary">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="test-bed-description.html" class="navigation navigation-next " aria-label="Next page: 2. Test-bed description">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1. Introduction","level":"1.3","depth":1,"next":{"title":"2. Test-bed description","level":"1.4","depth":1,"path":"test-bed-description.md","ref":"test-bed-description.md","articles":[]},"previous":{"title":"Executive summary","level":"1.2","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["image-captions"],"root":"./doc","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"image-captions":{"caption":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","variable_name":"pictures"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"Erik Vullings","pdf":{"pageBreaksBefore":"/","headerTemplate":"DRIVER+ project - _TITLE_ - 31 March 2018","paperSize":"a4","margin":{"right":62,"left":62,"top":56,"bottom":56},"fontSize":12,"fontFamily":"Arial","footerTemplate":"_PAGENUM_","chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"pictures":[{"backlink":"index.html#fig1.2.1","level":"1.2","list_caption":"Figure: PTME paradigm applied to DRIVER+","alt":"PTME paradigm applied to DRIVER+","nro":1,"url":"img/pmte_paradigm.png","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"PTME paradigm applied to DRIVER+","attributes":{},"skip":false,"key":"1.2.1"},{"backlink":"index.html#fig1.2.2","level":"1.2","list_caption":"Figure: CIS and CSS","alt":"CIS and CSS","nro":2,"url":"img/test_bed_overview_cis_css.png","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"CIS and CSS","attributes":{},"skip":false,"key":"1.2.2"},{"backlink":"index.html#fig1.2.3","level":"1.2","list_caption":"Figure: Test-bed reference implementation","alt":"Test-bed reference implementation","nro":3,"url":"img/test-bed-components-explained.png","index":3,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Test-bed reference implementation","attributes":{},"skip":false,"key":"1.2.3"},{"backlink":"introduction.html#fig1.3.1","level":"1.3","list_caption":"Figure: Test-bed environment","alt":"Test-bed environment","nro":4,"url":"img/test-bed-environment.jpg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Test-bed environment","attributes":{},"skip":false,"key":"1.3.1"},{"backlink":"introduction.html#fig1.3.2","level":"1.3","list_caption":"Figure: Scope of the test-bed","alt":"Scope of the test-bed","nro":5,"url":"img/test-bed-components-explained.png","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Scope of the test-bed","attributes":{},"skip":false,"key":"1.3.2"},{"backlink":"test-bed-description.html#fig1.4.1","level":"1.4","list_caption":"Figure: Explanation of the Test-bed components","alt":"Explanation of the Test-bed components","nro":6,"url":"img/test-bed-components-explained.png","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Explanation of the Test-bed components","attributes":{},"skip":false,"key":"1.4.1"},{"backlink":"test-bed-description.html#fig1.4.2","level":"1.4","list_caption":"Figure: Admin tool","alt":"Admin tool","nro":7,"url":"img/admin-tool-screenshot.jpg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Admin tool","attributes":{},"skip":false,"key":"1.4.2"},{"backlink":"test-bed-description.html#fig1.4.3","level":"1.4","list_caption":"Figure: JEMM exercise script example","alt":"JEMM exercise script example","nro":8,"url":"img/jemm_exercise_script_example.png","index":3,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"JEMM exercise script example","attributes":{},"skip":false,"key":"1.4.3"},{"backlink":"test-bed-description.html#fig1.4.4","level":"1.4","list_caption":"Figure: Exonaut timeline example","alt":"Exonaut timeline example","nro":9,"url":"img/exonaut_example.png","index":4,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Exonaut timeline example","attributes":{},"skip":false,"key":"1.4.4"},{"backlink":"test-bed-description.html#fig1.4.5","level":"1.4","list_caption":"Figure: Observer Support Tool: Left, an overview of available observation templates. Right, one of the observation templates is selected","alt":"Observer Support Tool: Left, an overview of available observation templates. Right, one of the observation templates is selected","nro":10,"url":"img/ost_forms_overview.png","index":5,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Observer Support Tool: Left, an overview of available observation templates. Right, one of the observation templates is selected","attributes":{},"skip":false,"key":"1.4.5"},{"backlink":"trial-owners.html#fig1.5.1","level":"1.5","list_caption":"Figure: Test-bed composer's home page","alt":"Test-bed composer's home page","nro":11,"url":"img/test-bed-composer-home.png","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Test-bed composer's home page","attributes":{},"skip":false,"key":"1.5.1"},{"backlink":"trial-owners.html#fig1.5.2","level":"1.5","list_caption":"Figure: Test-bed composer: Selecting a solution","alt":"Test-bed composer: Selecting a solution","nro":12,"url":"img/test-bed-composer-solutions.png","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Test-bed composer: Selecting a solution","attributes":{},"skip":false,"key":"1.5.2"},{"backlink":"trial-owners.html#fig1.5.3","level":"1.5","list_caption":"Figure: Test-bed composer: Downloading the docker-compose.yml file","alt":"Test-bed composer: Downloading the docker-compose.yml file","nro":13,"url":"img/test-bed-composer-download.png","index":3,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Test-bed composer: Downloading the docker-compose.yml file","attributes":{},"skip":false,"key":"1.5.3"},{"backlink":"developers.html#fig1.6.1","level":"1.6","list_caption":"Figure: Screenshot of Landoop's Kafka topics UI, which is part of our test-bed","alt":"Screenshot of Landoop's Kafka topics UI, which is part of our test-bed","nro":14,"url":"img/kafka_topics_ui.png","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Screenshot of Landoop's Kafka topics UI, which is part of our test-bed","attributes":{},"skip":false,"key":"1.6.1"},{"backlink":"developers.html#fig1.6.2","level":"1.6","list_caption":"Figure: Screenshot of Landoop's AVRO schema registry, which is part of our test-bed","alt":"Screenshot of Landoop's AVRO schema registry, which is part of our test-bed","nro":15,"url":"img/avro_schema_registry_ui.png","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Screenshot of Landoop's AVRO schema registry, which is part of our test-bed","attributes":{},"skip":false,"key":"1.6.2"},{"backlink":"developers.html#fig1.6.3","level":"1.6","list_caption":"Figure: Screenshot displaying the Kafka-replay service's Swagger interface","alt":"Screenshot displaying the Kafka-replay service's Swagger interface","nro":16,"url":"img/kafka_replay_service.png","index":3,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Screenshot displaying the Kafka-replay service's Swagger interface","attributes":{},"skip":false,"key":"1.6.3"},{"backlink":"developers.html#fig1.6.4","level":"1.6","list_caption":"Figure: State diagram of the time service","alt":"State diagram of the time service","nro":17,"url":"img/state_diagram_time_service.png","index":4,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"State diagram of the time service","attributes":{},"skip":false,"key":"1.6.4"}]},"title":"D923.21 Test-bed reference implementation","gitbook":"*"},"file":{"path":"introduction.md","mtime":"2018-03-30T11:31:31.079Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T10:50:10.859Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

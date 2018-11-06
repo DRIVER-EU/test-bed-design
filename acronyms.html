@@ -1,0 +1,511 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Acronyms · D923.21 Test-bed reference implementation</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Erik Vullings">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="annex.html" />
+    
+    
+    <link rel="prev" href="design.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Executive summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="introduction.html">
+            
+                <a href="introduction.html">
+            
+                    
+                    1. Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="test-bed-description.html">
+            
+                <a href="test-bed-description.html">
+            
+                    
+                    2. Test-bed description
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="trial-owners.html">
+            
+                <a href="trial-owners.html">
+            
+                    
+                    3. Test-bed for Trial owners
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="developers.html">
+            
+                <a href="developers.html">
+            
+                    
+                    4. Test-bed for developers & sysops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="design.html">
+            
+                <a href="design.html">
+            
+                    
+                    5. Test-bed design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8" data-path="acronyms.html">
+            
+                <a href="acronyms.html">
+            
+                    
+                    Acronyms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="annex.html">
+            
+                <a href="annex.html">
+            
+                    
+                    Annex 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="pictures.html">
+            
+                <a href="pictures.html">
+            
+                    
+                    List of Figures
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Acronyms</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="abbreviations">Abbreviations</h1>
+<table>
+<thead>
+<tr>
+<th>Abbreviation</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="GLOSSARY.html#aar" class="glossary-term" title="The After-Action Review (AAR) tool provides the possibility to collect data after a Trial has finished and analyse it. Its main purpose is to facilitate the evaluation of the trialled solutions against the predefined objectives, and to help the participants determine how well they functioned. It collects messages (exchanged during Trial), observation reports and takes screen-shots of the applications during their use.">AAR</a></td>
+<td>After Action Review</td>
+</tr>
+<tr>
+<td><a href="GLOSSARY.html#avro" class="glossary-term" title="Open data serialization system supported by the Apache Organisation.">AVRO</a></td>
+<td>Open data serialization system supported by the Apache Organisation. <a href="https://avro.apache.org" target="_blank">avro.apache.org</a></td>
+</tr>
+<tr>
+<td>C++</td>
+<td>[C plus plus] Programming Language</td>
+</tr>
+<tr>
+<td>C#</td>
+<td>[C-sharp] Programming Language</td>
+</tr>
+<tr>
+<td>CAP</td>
+<td>Common Alerting Protocol, standard data format for exchanging public warnings</td>
+</tr>
+<tr>
+<td><a href="GLOSSARY.html#cis" class="glossary-term" title="Common Information Space for exchanging crisis management messages between solutions.">CIS</a></td>
+<td>Common Information Space for exchanging crisis management messages</td>
+</tr>
+<tr>
+<td><a href="GLOSSARY.html#cm" class="glossary-term" title="Crisis Management, a holistic management process that identifies potential impacts that threaten an organization and provides a framework for building resilience, with the capability for an effective response that safeguards the interests of the organization&apos;s key interested parties, reputation, brand and value creating activities, as well as effectively restoring operational capabilities. Note to entry: Crisis management also involves the management of preparedness, mitigation, response, and continuity or recovery in the event of an incident, as well as management of the overall programme through training, rehearsals and reviews to ensure the preparedness, response and continuity plans stay current and up-to-date.">CM</a></td>
+<td>Crisis Management, see also <a href="annex.html">Annex 1</a></td>
+</tr>
+<tr>
+<td><a href="GLOSSARY.html#css" class="glossary-term" title="Common Simulation Space for exchanging simulation data between simulators.">CSS</a></td>
+<td>Common Simulation Space for exchanging simulation data</td>
+</tr>
+<tr>
+<td><a href="GLOSSARY.html#cop" class="glossary-term" title="Common Operational Picture tools for creating a shared situational awareness">COP</a></td>
+<td>Common Operational Picture tools for creating a shared situational awareness</td>
+</tr>
+<tr>
+<td>CoPCM</td>
+<td>Community of Practice in Crisis Management</td>
+</tr>
+<tr>
+<td><a href="GLOSSARY.html#dis" class="glossary-term" title="Distributed Interactive Simulation, a simulation standard en.wikipedia.org/wiki/Distributed_Interactive_Simulation.">DIS</a></td>
+<td>Distributed Interactive Simulation, a simulation standard <a href="https://en.wikipedia.org/wiki/Distributed_Interactive_Simulation" target="_blank">en.wikipedia.org/wiki/Distributed_Interactive_Simulation</a></td>
+</tr>
+<tr>
+<td><a href="GLOSSARY.html#docker" class="glossary-term" title="Docker is a free software application, available on Linux, Mac and Windows, which offers a way to run other applications in its own sand-box environment without requiring installation. Basically, a single PC can run many different Docker files, where each Docker file represents an application. This is also called virtualisation, as a single PC runs many services as if it was server park. A Docker-compose file, then, combines many Docker files into one, each representing a dedicated service of our Test-bed or an external solution, such as the csCOP tool.">Docker</a></td>
+<td>Container environment to enable independence between applications and infrastructure</td>
+</tr>
+<tr>
+<td>EDXL</td>
+<td>Emergency Data Exchange Language, set of message standards defined by OASIS to share emergency information, <a href="http://docs.oasis-open.org/emergency" target="_blank">docs.oasis-open.org/emergency</a></td>
+</tr>
+<tr>
+<td>EMSI</td>
+<td>Emergency Management Shared Information, message format for the exchange of emergency information</td>
+</tr>
+<tr>
+<td>GitBook</td>
+<td>Open Source service for creating online books</td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td>Repository for managing DRIVER+&#x2019;s software code</td>
+</tr>
+<tr>
+<td>GT</td>
+<td>Guidance Tool</td>
+</tr>
+<tr>
+<td>GUI</td>
+<td>Graphical User Interface</td>
+</tr>
+<tr>
+<td><a href="GLOSSARY.html#hla" class="glossary-term" title="The high-level architecture (HLA) is a general purpose architecture for distributed computer simulation systems. Using HLA, computer simulations can interact (that is, to communicate data, and to synchronize actions) with other computer simulations regardless of the computing platforms. The interaction between simulations is managed by a run-time infrastructure (RTI). HLA is an interoperability standard for distributed simulation used to support analysis, engineering and training in a number of different domains in both military and civilian applications and is the standard technical architecture for all US Department of Defence simulations.">HLA</a></td>
+<td>High Level Architecture, a simulation standard <a href="https://en.wikipedia.org/wiki/High-level_architecture" target="_blank">en.wikipedia.org/wiki/High-level_architecture</a></td>
+</tr>
+<tr>
+<td>Java</td>
+<td>Programming Language</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>Programming Language</td>
+</tr>
+<tr>
+<td>Kafka</td>
+<td>An open source distributed streaming platform supported by the Apache Organisation that is used as the basis to exchange information between simulators and solutions</td>
+</tr>
+<tr>
+<td>KPI</td>
+<td>Key Performance Indicator</td>
+</tr>
+<tr>
+<td>MBtiles</td>
+<td>Single file database format to store images of a map</td>
+</tr>
+<tr>
+<td>MGT</td>
+<td>Management</td>
+</tr>
+<tr>
+<td>PoS</td>
+<td>Portfolio of Solutions, a DRIVER+ content management system to maintain a list of <a href="GLOSSARY.html#cm" class="glossary-term" title="Crisis Management, a holistic management process that identifies potential impacts that threaten an organization and provides a framework for building resilience, with the capability for an effective response that safeguards the interests of the organization&apos;s key interested parties, reputation, brand and value creating activities, as well as effectively restoring operational capabilities. Note to entry: Crisis management also involves the management of preparedness, mitigation, response, and continuity or recovery in the event of an incident, as well as management of the overall programme through training, rehearsals and reviews to ensure the preparedness, response and continuity plans stay current and up-to-date.">CM</a> solutions, their application, strength and weaknesses, and user reviews.</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>Programming Language</td>
+</tr>
+<tr>
+<td><a href="GLOSSARY.html#rest" class="glossary-term" title="REpresentational State Transfer, is a way to interact with many web services, thereby providing interoperability between computer systems on the Internet.">REST</a></td>
+<td>Representational State Transfer (common interface allowing you to read and write data from a service)</td>
+</tr>
+<tr>
+<td>RTI</td>
+<td>Run-time infrastructure, a kind of <a href="GLOSSARY.html#hla" class="glossary-term" title="The high-level architecture (HLA) is a general purpose architecture for distributed computer simulation systems. Using HLA, computer simulations can interact (that is, to communicate data, and to synchronize actions) with other computer simulations regardless of the computing platforms. The interaction between simulations is managed by a run-time infrastructure (RTI). HLA is an interoperability standard for distributed simulation used to support analysis, engineering and training in a number of different domains in both military and civilian applications and is the standard technical architecture for all US Department of Defence simulations.">HLA</a>-based Test-bed</td>
+</tr>
+<tr>
+<td><a href="GLOSSARY.html#sa" class="glossary-term" title="Situational awareness, basically do you know on the map where your people and other resources are, as well as all relevant crisis management related incidents and activities.">SA</a></td>
+<td>Situational awareness, basically do you know on the map where your people and other resources are, as well as all relevant crisis management related incidents and activities.</td>
+</tr>
+<tr>
+<td>SUMO</td>
+<td>Simulation of Urban Mobility, a traffic and pedestrian simulator</td>
+</tr>
+<tr>
+<td><a href="GLOSSARY.html#tgm" class="glossary-term" title="Trial Guidance Methodology, see also DRIVER+ deliverable D922.21 - Trial guidance methodology and guidance tool specifications (version 1).">TGM</a></td>
+<td><a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> Guidance Methodology, as defined in deliverable D922.21, &quot;<a href="GLOSSARY.html#trial" class="glossary-term" title="A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.">Trial</a> guidance methodology and guidance tool specifications (version 1)&quot;.</td>
+</tr>
+<tr>
+<td>TypeScript</td>
+<td>Programming Language</td>
+</tr>
+<tr>
+<td>WFS</td>
+<td>Web Feature Service (serving a map layer as vectors)</td>
+</tr>
+<tr>
+<td>WMS</td>
+<td>Web Mapping Service (serving a map layer as picture)</td>
+</tr>
+<tr>
+<td>XACML</td>
+<td>eXtended Access Control Markup Language, a standard for describing security permissions to resources</td>
+</tr>
+<tr>
+<td>XML</td>
+<td>eXtended Markup Language, a textual representation of a message that is easily readable by computers</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="design.html" class="navigation navigation-prev " aria-label="Previous page: 5. Test-bed design">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="annex.html" class="navigation navigation-next " aria-label="Next page: Annex 1">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Acronyms","level":"1.8","depth":1,"next":{"title":"Annex 1","level":"1.9","depth":1,"path":"annex.md","ref":"annex.md","articles":[]},"previous":{"title":"5. Test-bed design","level":"1.7","depth":1,"path":"design.md","ref":"design.md","articles":[]},"dir":"ltr"},"config":{"plugins":["image-captions"],"root":"./doc","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"image-captions":{"caption":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","variable_name":"pictures"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"Erik Vullings","pdf":{"pageBreaksBefore":"/","headerTemplate":"DRIVER+ project - _TITLE_ - 31 March 2018","paperSize":"a4","margin":{"right":62,"left":62,"top":56,"bottom":56},"fontSize":12,"fontFamily":"Arial","footerTemplate":"_PAGENUM_","chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"pictures":[{"backlink":"index.html#fig1.2.1","level":"1.2","list_caption":"Figure: PTME paradigm applied to DRIVER+","alt":"PTME paradigm applied to DRIVER+","nro":1,"url":"img/pmte_paradigm.png","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"PTME paradigm applied to DRIVER+","attributes":{},"skip":false,"key":"1.2.1"},{"backlink":"index.html#fig1.2.2","level":"1.2","list_caption":"Figure: CIS and CSS","alt":"CIS and CSS","nro":2,"url":"img/test_bed_overview_cis_css.png","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"CIS and CSS","attributes":{},"skip":false,"key":"1.2.2"},{"backlink":"index.html#fig1.2.3","level":"1.2","list_caption":"Figure: Test-bed reference implementation","alt":"Test-bed reference implementation","nro":3,"url":"img/test-bed-components-explained.png","index":3,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Test-bed reference implementation","attributes":{},"skip":false,"key":"1.2.3"},{"backlink":"introduction.html#fig1.3.1","level":"1.3","list_caption":"Figure: Test-bed environment","alt":"Test-bed environment","nro":4,"url":"img/test-bed-environment.jpg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Test-bed environment","attributes":{},"skip":false,"key":"1.3.1"},{"backlink":"introduction.html#fig1.3.2","level":"1.3","list_caption":"Figure: Scope of the test-bed","alt":"Scope of the test-bed","nro":5,"url":"img/test-bed-components-explained.png","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Scope of the test-bed","attributes":{},"skip":false,"key":"1.3.2"},{"backlink":"test-bed-description.html#fig1.4.1","level":"1.4","list_caption":"Figure: Explanation of the Test-bed components","alt":"Explanation of the Test-bed components","nro":6,"url":"img/test-bed-components-explained.png","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Explanation of the Test-bed components","attributes":{},"skip":false,"key":"1.4.1"},{"backlink":"test-bed-description.html#fig1.4.2","level":"1.4","list_caption":"Figure: Admin tool","alt":"Admin tool","nro":7,"url":"img/admin-tool-screenshot.jpg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Admin tool","attributes":{},"skip":false,"key":"1.4.2"},{"backlink":"test-bed-description.html#fig1.4.3","level":"1.4","list_caption":"Figure: JEMM exercise script example","alt":"JEMM exercise script example","nro":8,"url":"img/jemm_exercise_script_example.png","index":3,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"JEMM exercise script example","attributes":{},"skip":false,"key":"1.4.3"},{"backlink":"test-bed-description.html#fig1.4.4","level":"1.4","list_caption":"Figure: Exonaut timeline example","alt":"Exonaut timeline example","nro":9,"url":"img/exonaut_example.png","index":4,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Exonaut timeline example","attributes":{},"skip":false,"key":"1.4.4"},{"backlink":"test-bed-description.html#fig1.4.5","level":"1.4","list_caption":"Figure: Observer Support Tool: Left, an overview of available observation templates. Right, one of the observation templates is selected","alt":"Observer Support Tool: Left, an overview of available observation templates. Right, one of the observation templates is selected","nro":10,"url":"img/ost_forms_overview.png","index":5,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Observer Support Tool: Left, an overview of available observation templates. Right, one of the observation templates is selected","attributes":{},"skip":false,"key":"1.4.5"},{"backlink":"trial-owners.html#fig1.5.1","level":"1.5","list_caption":"Figure: Test-bed composer's home page","alt":"Test-bed composer's home page","nro":11,"url":"img/test-bed-composer-home.png","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Test-bed composer's home page","attributes":{},"skip":false,"key":"1.5.1"},{"backlink":"trial-owners.html#fig1.5.2","level":"1.5","list_caption":"Figure: Test-bed composer: Selecting a solution","alt":"Test-bed composer: Selecting a solution","nro":12,"url":"img/test-bed-composer-solutions.png","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Test-bed composer: Selecting a solution","attributes":{},"skip":false,"key":"1.5.2"},{"backlink":"trial-owners.html#fig1.5.3","level":"1.5","list_caption":"Figure: Test-bed composer: Downloading the docker-compose.yml file","alt":"Test-bed composer: Downloading the docker-compose.yml file","nro":13,"url":"img/test-bed-composer-download.png","index":3,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Test-bed composer: Downloading the docker-compose.yml file","attributes":{},"skip":false,"key":"1.5.3"},{"backlink":"developers.html#fig1.6.1","level":"1.6","list_caption":"Figure: Screenshot of Landoop's Kafka topics UI, which is part of our test-bed","alt":"Screenshot of Landoop's Kafka topics UI, which is part of our test-bed","nro":14,"url":"img/kafka_topics_ui.png","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Screenshot of Landoop's Kafka topics UI, which is part of our test-bed","attributes":{},"skip":false,"key":"1.6.1"},{"backlink":"developers.html#fig1.6.2","level":"1.6","list_caption":"Figure: Screenshot of Landoop's AVRO schema registry, which is part of our test-bed","alt":"Screenshot of Landoop's AVRO schema registry, which is part of our test-bed","nro":15,"url":"img/avro_schema_registry_ui.png","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Screenshot of Landoop's AVRO schema registry, which is part of our test-bed","attributes":{},"skip":false,"key":"1.6.2"},{"backlink":"developers.html#fig1.6.3","level":"1.6","list_caption":"Figure: Screenshot displaying the Kafka-replay service's Swagger interface","alt":"Screenshot displaying the Kafka-replay service's Swagger interface","nro":16,"url":"img/kafka_replay_service.png","index":3,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"Screenshot displaying the Kafka-replay service's Swagger interface","attributes":{},"skip":false,"key":"1.6.3"},{"backlink":"developers.html#fig1.6.4","level":"1.6","list_caption":"Figure: State diagram of the time service","alt":"State diagram of the time service","nro":17,"url":"img/state_diagram_time_service.png","index":4,"caption_template":"Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.","label":"State diagram of the time service","attributes":{},"skip":false,"key":"1.6.4"}]},"title":"D923.21 Test-bed reference implementation","gitbook":"*"},"file":{"path":"acronyms.md","mtime":"2018-03-29T15:32:31.563Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T10:50:10.859Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
