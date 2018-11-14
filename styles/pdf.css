@@ -8,3 +8,24 @@
   page-break-before: always;
   margin-top: 5em;
 }
+
+body {
+  font-size: 17px;
+}
+
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+  text-align: justify;
+}
+
+.online-only,
+.player,
+#player {
+  display: none;
+}
+

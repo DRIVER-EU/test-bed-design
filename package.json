@@ -1,0 +1,49 @@
+{
+  "name": "test-bed-design",
+  "version": "1.0.0",
+  "description": "Documentation for the DRIVER+ test-bed",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {
+    "gitbook-cli": "^2.3.2",
+    "gitbook-plugin-image-captions": "^3.1.0"
+  },
+  "scripts": {
+    "postinstall": "gitbook install",
+    "start": "gitbook serve",
+    "rm": "rm -fr _book",
+    "build:pages": "npm run build && npm run pages && npm run pull && npm run copy && npm run clean && npm run add && npm run commit && npm run push && npm run checkout",
+    "build": "gitbook build",
+    "pages": "git checkout gh-pages",
+    "pull": "git pull origin gh-pages --rebase",
+    "copy": "cp -R _book/* .",
+    "clean": "git clean -fx node_modules && git clean -fx _book",
+    "add": "git add .",
+    "commit": "git commit -a -m \"Update docs\"",
+    "push": "git push origin gh-pages",
+    "checkout": "git checkout master",
+    "build:pdf": "gitbook pdf ./ ./doc/ebooks/driver-plus-test-bed-specification.pdf",
+    "build:epub": "gitbook epub ./ ./doc/ebooks/driver-plus-test-bed-specification.epub",
+    "build:mobi": "gitbook mobi ./ ./doc/ebooks/driver-plus-test-bed-specification.mobi",
+    "build:ebooks": "npm run build:pdf && npm run build:epub && npm run build:mobi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DRIVER-EU/test-bed-design.git"
+  },
+  "keywords": [
+    "DRIVER+",
+    "test-bed",
+    "Kafka",
+    "crisis",
+    "management"
+  ],
+  "author": "Erik Vullings <erik.vullings@gmail.com> (http://www.tno.nl)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DRIVER-EU/test-bed-design/issues"
+  },
+  "homepage": "https://github.com/DRIVER-EU/test-bed-design#readme"
+}
