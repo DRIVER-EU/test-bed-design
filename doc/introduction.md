@@ -44,7 +44,7 @@ The CM solutions and simulators that supplement the Test-bed, however, are *not*
 
 ## 1.3 Organisation of the Document
 
-This is a live document, and the latest version can always be found online at [www.gitbook.com/book/driver-eu/test-bed-design](https://www.gitbook.com/book/driver-eu/test-bed-design). It is organised as follows:
+This is a live document, and the latest version can always be found online at [https://driver-eu.github.io/test-bed-design](https://https://driver-eu.github.io/test-bed-design). It is organised as follows:
 
 The [Test-bed description](test-bed-description.md) provides a general overview of the Test-bed reference implementation. It is an easy to read chapter which requires little technical knowledge, and is aimed at anyone who has to work with the Test-bed.
 
@@ -54,8 +54,14 @@ In the chapter, [Test-bed for developers and sysops](developers.md), the technic
 
 The final chapter offers more details about the [Test-bed design](design.md), and provides an explanation for the main design decisions. The intended audience are developers that need a deeper understanding of the Test-bed and its underlying architecture, e.g. for supplementing the Test-bed or for offering a deeper integration of their solution.
 
+For **reviewers**, in case you have read previous versions of this document, please refer to [Annex 1 Change history](changes.md) to see what has changed.
+
 ## 1.4 What's new
 
 ### Version 1 (2018-03-31)
 
-This is the first version of D923.21 Test-bed reference implementation v1. It matches the release version of the software applications as available on GitHub: [github.com/DRIVER-EU](https://github.com/DRIVER-EU). Two future releases of this document are planned, v2 and v3, and the major changes between the different documents will be described here. In the mean time, this online documentation is continuously updated, so it matches the current state of the Test-bed.
+This is deliverable D923.21, describing the first version of the Test-bed reference implementation. It matches the release version of the software applications as available on GitHub: [github.com/DRIVER-EU](https://github.com/DRIVER-EU). Two future releases of this document are planned, v2 and v3, and the major changes between the different documents will be described here. In the mean time, this online documentation is continuously updated, so it matches the current state of the Test-bed.
+
+### Version 2 (2018-11-30)
+
+This is deliverable D923.22, describing the second version of the Test-bed reference implementation v1. All changes with respect to the previous version are documented in [Annex 2 Change history](changes.md).

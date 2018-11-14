@@ -1,4 +1,4 @@
-# Annex 1: DRIVER+ Terminology
+# Annex 1 DRIVER+ Terminology
 
 | Terminology | Definition for DRIVER+ | Source |
 |-------------|------------------------|--------|
@@ -12,10 +12,3 @@
 | Legacy systems | (Crisis management) system currently in operational use. | Initial DRIVER definition
 | Observer | Exercise participant who watches selected segments as they unfold while remaining separate from role player activities [DRAFT 22300: 2017-- observer participant (3.163) who witnesses the exercise (3.83) while remaining separate from exercise activities Note 1 to entry: Observers may be part of the evaluation (3.81) process (3.180).] | ISO 22300:2012(en) Societal security — Terminology, 2.4.5 [addition in DRAFT 2017]
 | Portfolio of Solutions (PoS) | A database driven web site that documents the available Crisis Management solutions. The PoS includes information on the experiences with a solution (i.e. results and outcomes of Trials), the needs it addresses, the type of practitioner organisations that have used it, the regulatory conditions that apply, societal impact consideration, a glossary, and the design of the Trials. | DoW
-
-
-
-
-
-
-

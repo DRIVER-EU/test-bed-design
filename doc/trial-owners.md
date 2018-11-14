@@ -6,16 +6,20 @@ Trial owners will interact with the Test-bed when they want to Trial one or more
 
 On the other side of the spectrum, a Trial could involve multiple solutions, many participants and observers, in a more realistic, operational-like scenario, with proper data collection and evaluation along all dimensions in place. In this case, the full TGM should be applied to perform a proper **assessment** and funded conclusions can be drawn. As the latter requires a serious investment in time, people and budget, a Trial Owner may consider to combine the Trial with a planned exercise to reduce the costs of preparing, executing and evaluating a Trial.
 
-In the following sections, a use case (storyline) description of each is provided. The main actor in each story is Monica, a regional crisis manager with a professional background in fire-fighting. One of the challenges she is facing is that she does now always have a good overview of where her people and trucks are during a large-scale fire, and she is looking for a solution.
+In the following sections, a use case (storyline) description of each is provided. The main actor in each story is Monica, a regional crisis manager with a professional background in fire-fighting. One of the challenges she is facing is that she does now always have a good overview of where her people and trucks are during a large-scale fire, and she is looking for a solution. Please also have a look at the animation, which is available online at [https://vimeo.com/299680658](https://vimeo.com/299680658).
+
+<div class="online-only">
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/299680658" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+</div>
 
 ## 3.1 Use Case: Evaluating a solution standalone
 
 Monica has heard about an interesting COP solution, *csCOP* via the DRIVER+ Portfolio of Solutions. She considers using it to address her problems
 
-1. Monica visits the Test-bed's [composer website](https://driver-eu.github.io/docker-composer) (see Figure 11).
+1. Monica visits the Test-bed's [composer website](https://driver-eu.github.io/docker-composer) (see Figure 12).
 2. She briefly reads its homepage, which explains her what to do next.
 3. She opens the solution's tab and sees that *csCOP* is available for evaluation.
-4. She select *csCOP* in the menu (see Figure 12).
+4. She selects *csCOP* in the menu (see Figure 13).
 5. She understands that it is difficult to test a solution without any data / scenario, so she visits the data tab and selects a fire-fighting data set situated in the South of France: *It involves a large-scale forest fire, which is rapidly spreading. Ambulances and fire trucks are deployed and driving around. She can also look at census data of the area and a weather report.*
 
 ![Test-bed composer's home page](img/test-bed-composer-home.png)
@@ -32,7 +36,7 @@ Monica has heard about an interesting COP solution, *csCOP* via the DRIVER+ Port
 
 ### Alternative 2: Local scenario
 
-1. As she currently isn't interested in other solutions, she opens the menu and clicks on the BUILD button. A dialog opens and she can download the *Docker-compose* file to her PC (see Figure 13).
+1. As she currently isn't interested in other solutions, she opens the menu and clicks on the BUILD button. A dialog opens and she can download the *Docker-compose* file to her PC (see Figure 14).
 
 2. Running a simple command, the Test-bed is downloaded and started on her own PC, and she can interact with the Test-bed as described above.
 
@@ -40,19 +44,25 @@ Monica has heard about an interesting COP solution, *csCOP* via the DRIVER+ Port
 
 ## 3.2 Use Case: Assessing solutions using a Trial
 
-In order to run a Trial, the same process as described above is followed. The main difference is that more services and solutions will be added, and in many cases, perhaps for security reasons, the Test-bed is run locally on the internal network. Basically, instead of only using the Test-bed core's services, a more complete Test-bed is required, also containing the observer tool, AAR, and Scenario Manager.
+In order to run a Trial, the same process as described above is followed. The main difference is that more services and solutions will be added, and in many cases, the Test-bed is run locally on the internal network. So instead of only using the Test-bed core's services, a more complete Test-bed is required, also containing the observer tool, AAR, and Scenario Manager.
 
 In addition, the Test-bed is needed already well-before the final Trial date, since:
-- The scenario must be created iteratively.
+
+- The scenario is created iteratively.
 - Not all solutions or simulators are already able to connect to the Test-bed. So even before the first dry-runs, solutions and simulators should be able to test their connection and integration.
 
-Typically, setting up the Test-bed for a Trial  would not be performed by the Trial owner herself. Most likely, she will be supported by a local system administrator or consultant to help her decide what she needs, and to prepare the technical infrastructure.
+Typically, setting up the Test-bed for a Trial would not be performed by the Trial owner herself. Most likely, she will be supported by a local system administrator or consultant to help her decide what she needs, and to prepare the technical infrastructure.
 
 When the Test-bed is running, though, the Trial owner has to take responsibility again for defining the scenario in case she has not delegated this task. The scenario is key in that it translates specific objectives to a storyline so the solutions or people can be put to the test.
 
-As the Scenario Manager is not available in the current version of the Test-bed, only a brief outline can be provided. During the preparation, the Scenario Manager acts as the composer:
+During the preparation, the Scenario Manager acts as the composer:
+
 - The objectives of the Trial are defined.
 - An overall scenario is described that can put these objectives to the test.
 - Specific storylines are created to stress the solutions.
+- Within each storyline, different acts are created, for example to:
+  - Instruct a simulator to start a flooding or other incident, or send out social media messages.
+  - Send a message to an observer, to watch-out for certain behaviours.
+  - Inform a role player to conduct a telephone call.
 
-During a Trial, the scenario is started by the Trial owner. The Scenario Manager, acting as the conductor now, instructs everyone when to perform their planned act. Optionally,she can control the scenario time, for example freezing the time during a break, or to steer the Trial in another direction.
+During a Trial, the scenario is started by the Trial owner. The Scenario Manager, acting as the conductor now, instructs everyone when to perform their planned act. Optionally, she can control the scenario time, for example by freezing the time during a break. In case the users of a Solution missed an important test moment, she can also invoke optional storylines or acts, so the Solution and its users get another chance to prove itself.
