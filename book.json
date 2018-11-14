@@ -13,7 +13,7 @@
     }
   },
   "pdf": {
-    "headerTemplate": "DRIVER+ project - _TITLE_ - 31 March 2018",
+    "headerTemplate": "DRIVER+ project - _TITLE_ (v2) - 1 November 2018",
     "footerTemplate": "_PAGENUM_"
   }
 }
