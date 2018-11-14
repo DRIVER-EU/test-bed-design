@@ -13,6 +13,7 @@
   "scripts": {
     "postinstall": "gitbook install",
     "start": "gitbook serve",
+    "rm": "rm -fr _book",
     "build:pages": "npm run build && npm run pages && npm run pull && npm run copy && npm run clean && npm run add && npm run commit && npm run push && npm run checkout",
     "build": "gitbook build",
     "pages": "git checkout gh-pages",
@@ -22,7 +23,11 @@
     "add": "git add .",
     "commit": "git commit -a -m \"Update docs\"",
     "push": "git push origin gh-pages",
-    "checkout": "git checkout master"
+    "checkout": "git checkout master",
+    "build:pdf": "gitbook pdf ./ ./doc/ebooks/driver-plus-test-bed-specification.pdf",
+    "build:epub": "gitbook epub ./ ./doc/ebooks/driver-plus-test-bed-specification.epub",
+    "build:mobi": "gitbook mobi ./ ./doc/ebooks/driver-plus-test-bed-specification.mobi",
+    "build:ebooks": "npm run build:pdf && npm run build:epub && npm run build:mobi"
   },
   "repository": {
     "type": "git",
