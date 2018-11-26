@@ -159,3 +159,28 @@ The security is integrated into the Test-bed's admin tool, and its adapters:
 
 - The admin tool is responsible for creating the security certificates and for authorizing requests to access a topic. More information on the Policy Access Point (PAP) and Policy Decision Point (PDP) is found at the [website](https://github.com/DRIVER-EU/test-bed-security-authorization-service).
 - The adapters implement and respect the decisions from the admin tool's security service and cannot access the restricted topics without being allowed explicitly.
+
+## 4.8 Online Test-beds
+
+As mentioned in section 4.3 there it is possible to make use of an online test-bed that is hosted in a Cloud setup. This serves as an alternative to hosting a test-bed yourself and dealing with setup and configuration required to do so. This is useful for integration testing: whenever two or more parties wish to test their integration via the test-bed, they can request a cloud hosted test-bed that is available within a few minutes. All parties can then remotely connect to this test-bed, without requiring any prior setup and configuration.
+
+The current Test-bed cloud consists of four servers configured as a [Docker Swarm](https://docs.docker.com/engine/swarm/) which allows various test-bed compositions to be hosted in parallel. Docker swarm allows any Test-bed docker composition (configured manually, or with the [online tool](https://driver-eu.github.io/docker-composer) to run on the Docker Swarm servers. Each test-bed can make use of one of the ten available host-names for temporary online test-beds: https://tb1.driver-testbed.eu to https://tb10.driver-testbed.eu.
+
+## 4.9 Reverse Proxy for Test-beds
+
+Optionally the Driver Test-bed can be configured to work with a Reverse proxy called [Traefik](https://traefik.io/). This has several advantages:
+
+* The Test-bed Services (i.e. Topic UI, Schema UI, etc) are not seperately exposed on their own port, but via a relative URL on a shared proxy that can be reached via a configurable hostname. For example instead of exposing the Topics UI at http://hostname:3601 and the Schema UI at http://hostname:3602, they can be exposed at http://hostname/topics-ui/ and http://hostname/schema-ui/ respectively. They will then both share the same HTTP endpoint at http://hostname. 
+* The shared HTTP endpoint can be secured with an SSL certificate, for example automatically via [lets-encrypt](https://letsencrypt.org/). Because all web services in the test-bed use the same reverse proxy, securing this reverse proxy entry point will secure the HTTP traffic for all services behind it without requiring any configuration on the test-bed services.
+* Traefik monitors and logs requests so allow for tracing and monitoring health and load on services in the test-bed.
+
+Traefik is built to integrate seamlessly with Docker Swarm. For setting up the Test-bed with Traefik [these](https://docs.traefik.io/user-guide/docker-and-lets-encrypt/) instructions are followed. Traefik runs in a seperate container, on a shared Docker network with the Test-bed containers to allow routing of traffic to the Test-bed services. It listens to events from Docker stating that a container is started. Metadata provided on startup of the container (labels, see [here](https://docs.traefik.io/configuration/backends/docker/)) specifies how the service should be exposed by Traefik. For example Traefik can expose the service at a specified hostname (domain or subdomain) and at a specific relative path. Moreover, the URL may be manipulated (for example strip the relative path) to allow compatibility with the services. Whenever a new service is hosted on a specified hostname, Traefik automatically ensures that a valid lets-encrypt certificate is present or requested.
+
+There are two beta Test-bed compositions available for usage with Traefik on the test-bed repository 'traefik' branch:
+
+* A composition for a local test-bed with Traefik at https://github.com/DRIVER-EU/test-bed/tree/treafik/docker/local. This allows running the test-bed on your local machine. The external hostname, Kafka broker port, and Schema Registry port can be specified in the .env file.
+* A composition to run in the cloud using Docker swarm at https://github.com/DRIVER-EU/test-bed/tree/treafik/docker/swarm. This is built for running on the TNO hosted cloud servers. The external hostname (i.e. tb1 to tb10.driver-testbed.eu), Kafka broker port, and Schema Registry port must be specified using ENV variables `TESTBED_HOST`, `BROKER_PORT`, and `SCHEMA_REGISTRY_PORT` respectively.
+
+
+
+
