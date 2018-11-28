@@ -1,8 +1,17 @@
 # 1. Introduction
 
-In the Crisis Management (CM) domain, practitioners need to be prepared for the unexpected: based on past experience and the local incidents they had to deal with, they develop a feeling for the things that did not go so well. As with most incidents many lives are involved, they are continuously looking for solutions to improve their response and preparedness.
+In the Crisis Management (CM) domain, practitioners need to be prepared for the unexpected: based on past experience and the local incidents they had to deal with, they develop a feeling for the things that did not go so well. As with most incidents many lives are involved, they are continuously looking for solutions to improve their response and preparedness. Their aim is to be more efficient and effective, save more lives, against fewer costs. Some of the ways to achieve this are to improve existing CM procedures, like media communication. Other possibilities are to introduce new software applications or hardware to remedy current shortcomings, such as introducing a Common Operational Picture application when the situational awareness is insufficient. But how does one really know that such a solution improves things? By trying them out in a Trial, a well-controlled experiment carried out under observation.
 
-Within the [DRIVER+ project](http://www.driver-project.eu), a Trial Guidance Methodology (TGM, deliverable D922.21 - Trial guidance methodology and guidance tool specifications (version 1)) and tools are developed to help resolve the needs of practitioners through a systematic and pragmatic approach. The Test-bed infrastructure is a suite of software tools and services that enables solutions and simulators in the Crisis Management (CM) domain to easily exchange information (see Figure 4). This allows end-users in the CM domain to Trial solutions, and see if they address their gaps. Additionally,it can be used to support training exercises as well.
+The [DRIVER+ project](http://www.driver-project.eu) aims at helping CM practitioners by providing them with the 'tools' to properly evaluate new solutions during a Trail:
+
+- The Portfolio of Solutions (PoS), an online web application where the CM practitioner can find out about existing solutions, and user experiences.
+- A Lessons Learned Framework (LLF), an online web application to share experiences among practitioners.
+- The Trial Guidance Methodology (TGM, deliverable D922.21 - Trial guidance methodology and guidance tool specifications (version 1)) and Trial Guidance Tool (TGT), a step-by-step approach that guides CM practitioners through all the steps needed to prepare and run a Trial.
+- The Test-bed infrastructure, a suite of software tools and services that support practitioners preparing and executing a Trial or training exercise
+
+This document is all about the latter, the Test-bed infrastructure, but since it strongly relates to the TGM, a brief summary of the TGM is presented first.
+
+Within the [DRIVER+ project](http://www.driver-project.eu), a Trial Guidance Methodology (TGM, deliverable D922.21 - Trial guidance methodology and guidance tool specifications (version 1)) and tools are developed to help resolve the needs of practitioners through a systematic and pragmatic approach. The Test-bed infrastructure is a suite of software tools and services that enables solutions and simulators in the Crisis Management (CM) domain to easily exchange information (see [Figure 3](./README.md#fig1.2.3)). This allows end-users in the CM domain to Trial solutions, and see if they address their gaps. Additionally,it can be used to support training exercises as well.
 
 The simplified DRIVER+ TGM process to Trial solutions is like this:
 
@@ -23,38 +32,27 @@ The simplified DRIVER+ TGM process to Trial solutions is like this:
 
    Based on the recorded observations and collected data (screenshots of running applications, messages sent, actions and decisions taken) during the Trial, the solutions are evaluated with the participants, leading to a good appreciation of how the selected solutions have contributed to solving the problems.
 
-![Test-bed environment](img/test-bed-environment.jpg)
+## 1.1 Aim of this Document
 
-## 1.1 Aim
+This document aims at providing the CM practitioners with a clear understanding of what the Test-bed is, and what it can do for his or her organisation. Especially chapter 1 and 2 will be of interest to them, and for the more technical oriented CM practitioner, also chapter 3. Chapter 3 and 4 are concerned with the technical setup, and are directed at developers or system administrators that need to connect new solutions or setup and maintain a Test-bed.
 
-The Test-bed supports practitioners by providing an environment in which they can easily Trial new solutions and run exercises. This has several implications for the test-bed:
+## 1.2 Scope of the document
 
-- **Evaluation support:** As we are testing and evaluating new solutions, the Test-bed provides tools for observers and After-Action Review.
-- **Simulation support:** Due to the nature of the crisis management domain, most solutions cannot be properly tested outside an actual crisis situation. As starting a flooding or burning a forest is clearly not an option to test the solutions, the crisis incident needs to be faked or simulated. The same applies to expected reactions of the environment: people panicking, traffic jams, etc. must be simulated too.
-- **Execution support:** As the solutions are typically tested within an incident scenario, the Test-bed provides tools to create and execute scenario's.
-- **Development support:** To connect new solutions and simulators to the Test-bed, the Test-bed provides adapters in several popular languages and several debugging tools and services. Also, to check whether everything is up-and-running smoothly, it also has an admin tool.
-
-## 1.2 Scope of the Test-bed
-
-This document limits its scope to the core Test-bed design, more specifically, the design of the Test-bed's reference implementation, which is an implementation of the [Test-bed specification](https://driver-eu.gitbooks.io/test-bed-specification) (see Figure 5): it thereby provides an overview of the most important components of the Test-bed, how they work together, and how they can be used by different stakeholders.
+This document limits its scope to the core Test-bed design, more specifically, the design of the Test-bed's reference implementation, which is an implementation of the [Test-bed specification](https://driver-eu.gitbooks.io/test-bed-specification) (see Figure 3): it thereby provides an overview of the most important components of the Test-bed, how they work together, and how they can be used by different stakeholders.
 
 The CM solutions and simulators that supplement the Test-bed, however, are *not* part of the Test-bed. The simulators' function is to simulate an incident, and the reactions that may occur in a real world, since we cannot unleash incidents like a flooding and earthquakes on the real world. The solutions are the actual tools that are trialled and evaluated, and measured whether they actually do solve a CM gap. These solutions are fed with the simulator's output, and perhaps the output of other solutions, so end users can observe and evaluate their contribution during a fictive incident.
-
-![Scope of the test-bed](img/test-bed-components-explained.png)
 
 ## 1.3 Organisation of the Document
 
 This is a live document, and the latest version can always be found online at [https://driver-eu.github.io/test-bed-design](https://https://driver-eu.github.io/test-bed-design). It is organised as follows:
 
-The [Test-bed description](test-bed-description.md) provides a general overview of the Test-bed reference implementation. It is an easy to read chapter which requires little technical knowledge, and is aimed at anyone who has to work with the Test-bed.
+For **reviewers**, please refer to [Annex 2 Change history](changes.md) to see what has changed since the previous version. In order to quickly understand the Test-bed, have a look at the [5 minutes animation at https://vimeo.com/299680658](https://vimeo.com/299680658).
 
-The chapter, [Test-bed for Trial owners](Trial-owners.md), is specifically aimed at Trial owners and practitioners, and discusses the functionality the Test-bed offers to them. And also, what it does not offer.
+The chapter, [Test-bed for Trial owners](Trial-owners.md), is specifically aimed at **Trial owners and practitioners**, and discusses the functionality the Test-bed offers to them. And also, what it does not offer.
 
-In the chapter, [Test-bed for developers and sysops](developers.md), the technical side of the Test-bed is explained. Specifically: how to manage a Test-bed as a sysop, or how to connect a solution or simulator to it as a developer.
+The [Test-bed description](test-bed-description.md) provides a general overview of the Test-bed reference implementation and its building blocks. It is a more technical chapter aimed at Test-bed users with a (limited) technical background.
 
-The final chapter offers more details about the [Test-bed design](design.md), and provides an explanation for the main design decisions. The intended audience are developers that need a deeper understanding of the Test-bed and its underlying architecture, e.g. for supplementing the Test-bed or for offering a deeper integration of their solution.
-
-For **reviewers**, in case you have read previous versions of this document, please refer to [Annex 1 Change history](changes.md) to see what has changed.
+In the chapter, [Test-bed for developers and sysops](developers.md), the technical side of the Test-bed is explained in more detail. Specifically: how to manage a Test-bed as a sysop, or how to connect a new Solution or simulator as a developer. To learn more about the design principles underlying the Test-bed, the reader is referred to [Annex 3 Test-bed design](design.md).
 
 ## 1.4 What's new
 

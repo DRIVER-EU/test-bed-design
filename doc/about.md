@@ -16,7 +16,7 @@
 <tr><td style="font-weight: bold; color: white; background: #00497E">Document Title:</td><td>D923.22 Test-bed reference implementation v2</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">Document Nature:</td><td>Report (R)</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">Dissemination Level:</td><td>Public (P)</td></tr>
-  <tr><td style="font-weight: bold; color: white; background: #00497E">Due Date:</td><td>1 November, 2018 </td></tr>
+  <tr><td style="font-weight: bold; color: white; background: #00497E">Due Date:</td><td>30/11/2018 </td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">Submission Date:</td><td>30/11/2018</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">Sub-Project (SP):</td><td>SP92 - Test-bed</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">Work Package (WP):</td><td>WP923 – Test-bed infrastructure</td></tr>
@@ -47,12 +47,14 @@ All DRIVER+ consortium members are also committed to publish accurate and up to 
 | V0.1  | 01/02/2018 | Initial draft                           | Erik Vullings (TNO, WP923 leader) |
 | V0.2  | 21/03/2018 | Review process started                  | Erik Vullings |
 | V0.3  | 26/03/2018 | Reviews from Alessandro Annunziato (JRC) and Héctor Naranjo (GMV) processed | Erik Vullings |
-| V0.4  | 28/03/2018 | Reviews from Chiara Fonio (JRC), Laurent Dubois (Thales) and Peter Petiet (TNO) processed | Erik Vullings |
+| V0.4  | 28/03/2018 | Reviews from Chiara Fonio (JRC), Laurent Dubost (TCS) and Peter Petiet (TNO) processed | Erik Vullings |
 | V0.5  | 29/03/2018 | Reviews from Marcel van Berlo (TNO) processed | Erik Vullings |
-|	V0.6  | 03/04/2018 | Final check and approval for submission | Peter Petiet, Project Director (TNO) |
+| V0.6  | 03/04/2018 | Final check and approval for submission | Peter Petiet, Project Director (TNO) |
 | V1.0  | 03/04/2018 | Submission to the EC                    | Francisco Gala (ATOS) |
 | V2.0  | 16/08/2018 | Updating documentation for the second release | Erik Vullings |
 | V2.1  | 15/11/2018 | Review process started | Erik Vullings |
+| V2.2  | 25/11/2018 | Cloud and reverse proxy section added | Pieter Hameete (TNO) |
+| V2.3  | 26/11/2018 | Reviews from Héctor Naranjo (GMV), Laurent Dubost & Antoine Léger (TCS), Michael Middelhoff (WWU), and Chiara Fonio (JRC) processed  | Erik Vullings |
 
 <h1 id="driver">The DRIVER+ project</h1>
 

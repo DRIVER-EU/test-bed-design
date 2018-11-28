@@ -1,8 +1,8 @@
-# 5. Test-bed design
+# Annex 3. Test-bed design
 
 The Test-bed is designed to fulfil the functional requirements, as described in D923.11, [Functional specification of the Test-bed](https://www.driver-project.eu/wp-content/uploads/2018/08/DRIVERPLUS_D923.11_Functional-Specification-of-the-Test-bed.pdf). Clearly, different designs can be created that all fulfil these requirements, so this chapter provides a brief explanation of the major design decisions that underlie the current Test-bed's reference implementation. Its intended audience is core developers, who want to improve its functionality, or other backend developers, who want to create an alternative Test-bed that also satisfies these requirements.
 
-## 5.1 Lessons learned from the Functional Specification
+## Annex 3.1 Lessons learned from the Functional Specification
 
 Part of the functional specification describes the [lessons learned](https://driver-eu.gitbooks.io/test-bed-specification/content/lessons-learned.html) from D923.11. To summarize the most important technical lessons that have influenced the current design significantly, are:
 
@@ -11,20 +11,20 @@ Part of the functional specification describes the [lessons learned](https://dri
 3. The Test-bed should use well-defined, easily accessible, syntactically correct messages, and close to common standards.
 4. The Test-bed should be easily reproducible, and offer administrative as well as supporting tools and services.
 
-## 5.2 Distributed message bus using Apache Kafka
+## Annex 3.2 Distributed message bus using Apache Kafka
 
 Based on the functional requirements and lessons 1 and 2, and an analysis of many existing message-oriented systems, the Test-bed's backbone is built upon the distributed streaming service, [Apache Kafka](https://kafka.apache.org). The main reasons to use Kafka are:
 
-- Kafka allows for high performance sending and receiving of a very large number of messages
-- Kafka allows for fast data replication and supports multiple receivers on the same message topic
-- Kafka is a highly durable messaging system, persisting messages on the server or complete distributable file systems
+- Kafka allows for high performance sending and receiving of a very large number of messages.
+- Kafka allows for fast data replication and supports multiple receivers on the same message topic.
+- Kafka is a highly durable messaging system, persisting messages on the server or complete distributable file systems.
 - Kafka is a distributed system, making it scalable in the amount of message topics, senders and receivers.
 - Kafka already has a large developer community, making it possible to easily use community-released tools to the current framework and assuring sustainability of Kafka.
 - Kafka already has several security and message validation modules present, that will make it easier for simulators to safely connect to the CSS.
 
 Besides Apache Kafka, there are numerous popular open source messaging systems that were considered: [ActiveMQ](activemq.apache.org), [RabbitMQ](https://www.rabbitmq.com), and [ZeroMQ](http://zeromq.org). The main reason for using Kafka, however, is its speed, low latency, and the fact that it is built from the ground up to be distributed. Especially for the simulators that are connected to the Test-bed, speed and low-latency are very important. And Kafka can easily process up to 100,000 messages per second, 10 times as much as the others. Its distributed nature allows to not only separate simulators and solutions, if required, but also supports having a reliable cross-site communication framework. Additionally, with its schema registry, it has excellent support for message validation out-of-the-box, which is detailed in the next section. The same applies to message persistency. Each message is immediately persisted to disk for a set time, which is easy for After-Action-Reviews, but also for clients that are not continuously online. In most messaging systems, when a consumer is briefly offline, the message is lost forever unless special care is taken to persist them.
 
-## 5.3 Well-defined messages using Apache AVRO {#AVRO}
+## Annex 3.3 Well-defined messages using Apache AVRO {#AVRO}
 
 Being able to communicate using well-defined messages is of primordial importance for any messaging system, and the Test-bed uses [Apache AVRO](https://avro.apache.org).
 
@@ -49,7 +49,7 @@ Other evaluated candidates for defining message formats were [XML schema](https:
 - Protobuf is also a binary message format, like AVRO, but also lacks schema migration.
 - HLA, yet another binary message format, is standard in the (Defence) simulation world, but of no use when defining messages in the CIS space.
 
-## 5.4 CIS and CSS adapters in several programming languages
+## Annex 3.4 CIS and CSS adapters in several programming languages
 
 On top of the communication framework, a set of guidelines need to be present that allows for external components and Test-bed components to communicate effectively. In this case, this set of guidelines is packed into a simple library called the adapter.
 

@@ -2,7 +2,7 @@
 
 | Abbreviation | Definition |
 |--------------|------------|
-| AAR          | After Action Review
+| AAR          | After Action Review tool, which supports reviewing a Trial when it is finished
 | AVRO         | Open data serialization system supported by the Apache Organisation. [avro.apache.org](https://avro.apache.org)
 | C++          | [C plus plus] Programming Language
 | C#           | [C-sharp] Programming Language
@@ -32,8 +32,10 @@
 | REST         | Representational State Transfer (common interface allowing you to read and write data from a service)
 | RTI          | Run-time infrastructure, a kind of HLA-based Test-bed
 | SA           | Situational awareness, basically do you know on the map where your people and other resources are, as well as all relevant crisis management related incidents and activities.
+| SMT          | Scenario Management Tool, allows you to create new scenarios
 | SUMO         | Simulation of Urban Mobility, a traffic and pedestrian simulator
 | TGM          | Trial Guidance Methodology, as defined in deliverable D922.21, "Trial guidance methodology and guidance tool specifications (version 1)".
+| TGT          | Trial Guidance Tool, an online application that supports a practitioner in setting up a Trial
 | TypeScript   | Programming Language
 | WFS          | Web Feature Service (serving a map layer as vectors)
 | WMS          | Web Mapping Service (serving a map layer as picture)
