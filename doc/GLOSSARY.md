@@ -51,6 +51,7 @@ The online observer support tool facilitates the task of the observer by providi
 ## Scenario Manager
 
 The Scenario Manager acts as the *composer* and *conductor* of a classical performance:
+
 - As the *composer*, it defines what each role has to play. For example, what do the simulators need to do in order to provide a realistic incident and background to the Trial, or it could include sending direct messages to solutions.
 - As the *conductor*, it controls *when* each role starts and stops.
 
@@ -72,4 +73,4 @@ Trial Guidance Methodology, see also DRIVER+ deliverable D922.21 - Trial guidanc
 
 ## Trial
 
-A Trial is a test of the performance, qualities, or suitability of a solution. A solution, in this context, is something that solves a crisis management gap.
+An event for systematically assessing solutions for current and emerging needs in such a way that practitioners can do this following a pragmatic and systematic approach.

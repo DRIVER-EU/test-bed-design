@@ -1,6 +1,6 @@
 {
   "root": "./doc",
-  "title": "D923.21 Test-bed reference implementation",
+  "title": "D923.22 Test-bed reference implementation v2",
   "author": "Erik Vullings",
   "plugins": [ "image-captions" ],
   "pluginsConfig": {
@@ -23,7 +23,7 @@
         "top": 36,
         "bottom": 36
     },
-    "headerTemplate": "DRIVER+ project - D923.21 Test-bed reference implementation (v2) - November 2018",
+    "headerTemplate": "DRIVER+ project - D923.22 Test-bed reference implementation (v2) - November 2018",
     "footerTemplate": "_PAGENUM_"
   }
 }
