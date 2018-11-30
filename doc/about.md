@@ -44,17 +44,15 @@ All DRIVER+ consortium members are also committed to publish accurate and up to 
 
 | Issue | Date       | Comment                                 | Author                            |
 |-------|------------|-----------------------------------------|-----------------------------------|
-| V0.1  | 01/02/2018 | Initial draft                           | Erik Vullings (TNO, WP923 leader) |
-| V0.2  | 21/03/2018 | Review process started                  | Erik Vullings |
-| V0.3  | 26/03/2018 | Reviews from Alessandro Annunziato (JRC) and Héctor Naranjo (GMV) processed | Erik Vullings |
-| V0.4  | 28/03/2018 | Reviews from Chiara Fonio (JRC), Laurent Dubost (TCS) and Peter Petiet (TNO) processed | Erik Vullings |
-| V0.5  | 29/03/2018 | Reviews from Marcel van Berlo (TNO) processed | Erik Vullings |
-| V0.6  | 03/04/2018 | Final check and approval for submission | Peter Petiet, Project Director (TNO) |
-| V1.0  | 03/04/2018 | Submission to the EC                    | Francisco Gala (ATOS) |
-| V2.0  | 16/08/2018 | Updating documentation for the second release | Erik Vullings |
-| V2.1  | 15/11/2018 | Review process started | Erik Vullings |
-| V2.2  | 25/11/2018 | Cloud and reverse proxy section added | Pieter Hameete (TNO) |
-| V2.3  | 26/11/2018 | Reviews from Héctor Naranjo (GMV), Laurent Dubost & Antoine Léger (TCS), Michael Middelhoff (WWU), and Chiara Fonio (JRC) processed  | Erik Vullings |
+| V1.1  | 16/08/2018 | Updating documentation for the second release | Erik Vullings, TNO |
+| V1.2  | 15/11/2018 | Review process started | Erik Vullings, TNO |
+| V1.3  | 25/11/2018 | Cloud and reverse proxy section added | Pieter Hameete, TNO |
+| V1.4  | 26/11/2018 | Reviews from Héctor Naranjo (GMV), Laurent Dubost & Antoine Léger (TCS), Michael Middelhoff (WWU), and Chiara Fonio (JRC) processed | Erik Vullings, TNO |
+| V1.5  | 27/11/2018 | Document  review | Angela Schmitt, DLR |
+| V1.6  | 28/11/2018 | Preparation of final version | Erik Vullings, TNO |
+| V1.7  | 29/11/2018 | Final check and approval for submission | Tim Stelkens-Kobsch, DLR, Quality Manager |
+| V1.8  | 29/11/2018 | Final check and approval for submission | Marijn Rijken, TNO, Project Director |
+| V2.0  | 30/11/2018 | Submission to the EC | Francisco Gala, ATOS |
 
 <h1 id="driver">The DRIVER+ project</h1>
 
