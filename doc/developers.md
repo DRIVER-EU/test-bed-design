@@ -151,14 +151,36 @@ That is why this Test-bed is using open source software, so it is easy to find:
 
 Even though the Test-bed does not use HLA or DIS internally, there are many simulators that provide a HLA or DIS export, and that can be useful for a Trial. In those cases, a HLA or DIS simulation environment can be created, as is done normally, including a gateway service to bridge the gap with our test-bed: typically, such a gateway has an HLA connector to retrieve information from the HLA/DIS side, and a subset of the information is published in the CSS. And vice versa. Even though this kind of integration if suboptimal, in practice, this is not really noticeable.
 
-## 4.7 Security, or Authorization and Access Control
+## 4.7 Security
 
-Security is an integral part of the Test-bed: although in many cases, security may not be required, it can be a show-stopper if it is not there. For example, when sharing critical infrastructure information, or personal data about people, in a certain topic, you want to be sure that only certain adapters, and therefore Solutions, can access that data. That is why access to certain topics may be prohibited.
+Security is an integral part of the Test-bed: although in most crisis management use cases, deciders consider that safety prevails anyhow, to such an extent that security never comes into the picture or merely as a measure of last resort, a lack of security controls in crisis management solutions from the ground up may have a disastrous impact on crisis management decisions, operations and, in the end, on people's lives; therefore, DRIVER's test-bed has *security by design*. We focus especially on the security of information exchanged in CIS and CSS topics, because this is where critical or sensitive information flows. We have three information security objectives:
 
-The security is integrated into the Test-bed's admin tool, and its adapters:
+- Integrity of information exchanged in CIS and CSS topics: messages should not be tampered without notice;
+- Authenticity of information exchanged in CISS and CSS topics: the origin of the messages published to certain topics should be authenticated, and, by extension, only legit/trusted users may publish on certain topics;
+- Confidentiality of information exchanged in CISS and CSS topics, such as critical infrastructure information or personal information (beware the GDPR): only authorized Solutions (adapters) may have access to the messages published to certain topics.
 
-- The admin tool is responsible for creating the security certificates and for authorizing requests to access a topic. More information on the Policy Access Point (PAP) and Policy Decision Point (PDP) is found at the [website](https://github.com/DRIVER-EU/test-bed-security-authorization-service).
-- The adapters implement and respect the decisions from the admin tool's security service and cannot access the restricted topics without being allowed explicitly.
+To achieve these objectives, the test-bed includes an access control framework in which both system administrators and developers have a role to play.
+
+### Authentication
+The CIS/CSS Kafka broker enforces SSL/TLS transport security with mutual authentication. This means that adapters are required to authenticate with SSL client certificates. Developers shall get such SSL client certificates from the Admin Tool, with the approval of a system administrator. The subject name of the certificate must uniquely identify the adapter within the organization. More specifically, the subject name must include an Organization name (O) identifying the Organization that owns the Solution or Simulator, and  a Common Name (CN) identifying the Solution or Simulator instance within that organization. The Admin Tool uses a Certificate Authority (CA) provided with the testbed in the backend, to issue those certificates.
+
+ Developers then configure their adapters with those certificates as client certificates (keystore), the aforementioned CA's certificate in their truststore (trusted CAs) in order to authenticate the broker (using a certificate issued by that same CA as well), and recommended TLS parameters according to current best practices: TLS v1.0 or later (as of writing), strong cipher suites, etc. Developers must take good care of protecting the confidentiality of the private key associated to their client certificate according to best practices and the risk level. If the key is compromised, authentication is useless. Developers must report any compromised key to system administrators so that the certificate be revoked.
+
+ By default, the CIS/CSS broker trusts only that backend CA for client certificates. If developers wish to use client certificates issued by another CA, system administrators may grant their wish by modifying the broker's SSL configuration. This change consists to add the other CA's certificate to the broker's [SSL truststore (JKS)](https://github.com/DRIVER-EU/test-bed/blob/master/docker/local%2Bsecurity/broker/config/ssl/truststore.jks) and restart the broker service.
+
+Once all adapters are properly configured by developers for SSL client authentication, they are able to connect to the secured CIS/CSS broker and at least access public topics such as *system_* topics.
+
+### Authorization
+For stronger security, whenever trial owners want to protect specific CIS/CSS topics, system administrators shall enable topic authorization. By default, this test-bed security feature is disabled, i.e. all authenticated users (according to previous section) have access to all topics. System administrators enable topic authorization by using an [extra Docker Compose file](https://docs.docker.com/compose/extends/#multiple-compose-files) that extends the default one with authorization enforcement components.
+
+Once enabled, access to any topic is denied by default, except for certain public topics such as *system_* topics. This means that for other topics, access must be granted explicitly by system administrators. More specifically, for each sensitive topic X, the system administrator shall configure the topic access policy via the Admin Tool. A topic access policy is set on a specific topic X and consists of a list of access rules. Each access rule consists of:
+- Authorized subject name, as in the adapter's SSL certificate (aka Kafka client ID in this case), OR Kafka consumer group ID;
+- A list of *permissions*; each *permission* is a couple *(ACTION, bool)*, where *ACTION* is the action considered on the topic (in Kafka API model), e.g. *READ* (subscribe a topic) or *WRITE* (publish on a topic), and the boolean *bool* is true if and only if the action is permitted (positive rule), else denied. 
+
+If a consumer group ID is used as first item (instead of subject name), the system administrator must also declare the corresponding group memberships in the Admin Tool, i.e. who is authorized to join this group.
+
+In order to improve performances, system administrators can enable the authorization decision cache (disabled by default) in Kafka's configuration via Docker Compose environment variables. This allows Kafka (the Kafka authorizer in particular) to cache decisions to avoid requesting the remote PDP every time. The downside is that changes to the topic access policies that occur in the remote PDP during the cache interval may be ignored.
+
 
 ## 4.8 Online Test-beds
 

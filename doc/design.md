@@ -58,3 +58,74 @@ The adapter is the only form of connection between an application (solution, sim
 The adapter sets up and maintains the connection between application and the communication framework via several system message topics. The adapter deals with error handling and additional message validation, allowing the application to send and receive messages easily.
 
 To read more about the implementation, see [Chapter 2 Adapters](test-bed-description.md#adapters).
+
+## Annex 3.5 Security architecture
+
+The testbed Security Architecture consists of the following elements:
+
+- Security Services;
+- CIS/CSS broker security features;    
+- CIS/CSS adapter security features.
+
+For more details, read on the next sections.
+
+### Security Services 
+
+There are two security services running in the test-bed:
+- Certificate Management Service;
+- Authorization Service.
+
+#### Certificate Management Service
+
+The Certificate Management Service provides:
+- A Certificate Authority (CA) that issues SSL/TLS client (resp. server) certificates to the CIS/CSS adapters (resp. broker);
+- A REST API - backed by the aforementioned CA - for managing the lifecycle of X.509 (standard) certificates used for SSL/TLS authentication in client-server communications on the testbed. This is the API used by the Admin Tool on behalf of system administrators, to issue SSL client certificates certificates to developers for their adapters. The API is described on the [test-bed's Github repository](https://github.com/DRIVER-EU/test-bed/tree/master/docker/local%2Bsecurity#certificate-management-service).
+- An endpoint for verifying certificate revocation status (CRL or OCSP standard). This is the endpoint used by the CIS/CSS broker and adapters to validate the status of the certificate of any remote peer they are establishing a SSL session with.
+
+The Certificate Management Service is based on the open source project EJBCA (Community Edition).
+
+#### Authorization Service
+
+The Authorization Service provides two endpoints:
+- PAP (Policy Administration Point);
+- PDP (Policy Decision Point).
+
+The Authorization Service is based on the open source XACML 3.0 PDP implementation project [AuthzForce](https://github.com/authzforce/core) (Thales).
+
+##### Policy Administration Point
+
+The PAP (Policy Administration Point in [ABAC (Attribute-Based Access Control)](https://csrc.nist.gov/publications/detail/sp/800-162/final) standard model) endpoint exposes a REST API for managing CIS/CSS topic access policies. System administrators interact via the Admin Tool with this API for defining and managing the access policies for CIS/CSS topics. The API is described on the [Authorization Service's Github repository](https://github.com/DRIVER-EU/test-bed-security-authorization-service#api-usage).
+
+##### Policy Decision Point
+
+The PDP (Policy Decision Point in [ABAC (Attribute-Based Access Control)](https://csrc.nist.gov/publications/detail/sp/800-162/final) standard model) exposes a REST API for requesting an authorization decision (Permit/Deny) according to the policies defined via the PAP, and an input authorization request. The CIS/CSS broker (via its PEP, aka Kafka *authorizer* in this case) interacts with this API for deciding whether to reject (if PDP returns Deny) or let a message go (if PDP returns Permit) through the broker. We say that the CIS/CSS broker enforces the PDP's decision. 
+
+The PDP interface complies with the standards:
+- [REST Profile of XACML 3.0](https://docs.oasis-open.org/xacml/xacml-rest/v1.0/xacml-rest-v1.0.html) for the transport protocol (HTTP) and entry point;
+- [JSON Profile of XACML 3.0](https://docs.oasis-open.org/xacml/xacml-json-http/v1.0/xacml-json-http-v1.0.html) for the API request-response payload formats (XACML Request/Response).
+
+### CIS/CSS broker security (Kafka) 
+
+The broker security consists of the following:
+- Kafka SSL/TLS layer;
+- DRIVER+'s custom Kafka *authorizer* (XACML-driven).
+
+#### Kafka TLS layer
+
+*The TLS term is used instead of *SSL* because we mandate the use of TLS 1.0 or later in DRIVER+.*
+
+The Kafka broker exposes a TLS server interface that enforces the confidentiality, integrity and mutual authentication of communications with CIS/CSS adapters. It authenticates to Kafka consumers with a TLS server certificate issued by the Certificate Management Service's CA mentioned earlier. The Kafka broker is configure to require TLS client certificate authentication with client certificates issued by that same CA. The TLS setup follows the official Kafka documentation's section: [Encryption and Authentication with SSL](https://docs.confluent.io/current/kafka/authentication_ssl.html).
+
+#### Custom Kafka Authorizer (XACML PEP)
+
+The Kafka broker's configuration is modified to use a [custom Authorizer](https://docs.confluent.io/current/kafka/authorization.html#authorizer) implementation that can interact with the Authorization Service's PDP endpoint mentioned earlier. This Authorizer plays the role of PEP (Policy Enforcement Point) in the [ABAC (Attribute-Based Access Control)](https://csrc.nist.gov/publications/detail/sp/800-162/final) standard model), and more specifically in the [XACML standard](https://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-en.html) architecture. Therefore, this custom Authorizer supports the required XACML standards (REST and JSON profiles) and rejects (resp. accepts) messages if the PDP's returned decision is Deny (resp. Permit).
+
+In order to improve performances, this Authorizer may cache decisions to avoid requesting the remote PDP every time. The downside is that changes to the topic access policies that occur in the remote PDP during the cache interval may be ignored. This decision cache is enabled and configured via Docker Compose environment variables.
+
+The Authorizer's source code is open and available with technical documentation on a [dedicated Github repository](https://github.com/DRIVER-EU/kafka-combined-acl-xacml-authorizer).
+
+### CIS/CSS adapter security
+
+CIS/CSS adapters are Kafka clients. Therefore, they are required to use TLS (1.0 or later) for communicating with the CIS/CSS Kafka brokers, and TLS client certificates (X.509) provided by the aforementioned Certificate Management Service. In order to properly authenticate the CIS/CSS broker, adapters must use a TLS truststore (set of trusted CAs) that contains the certificate of the Certificate Management Service's backend CA, or preferably of the Root CA (that the backend CA is a subordinate of).
+
+The Kafka documentation gives an example of [Kafka client SSL configuration](https://kafka.apache.org/documentation/#security_configclients).
