@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "gitbook-cli": "^2.3.2",
-    "gitbook-plugin-image-captions": "^3.1.0"
+    "gitbook-plugin-image-captions": "^3.1.0",
+    "gitbook-plugin-uml": "^1.0.1",
+    "safe-buffer": "^5.1.2"
   },
   "scripts": {
     "postinstall": "gitbook install",

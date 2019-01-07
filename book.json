@@ -2,7 +2,7 @@
   "root": "./doc",
   "title": "D923.22 Test-bed reference implementation v2",
   "author": "Erik Vullings",
-  "plugins": [ "image-captions" ],
+  "plugins": ["image-captions", "uml"],
   "pluginsConfig": {
     "image-captions": {
       "caption": "Figure _BOOK_IMAGE_NUMBER_. _CAPTION_.",
@@ -18,10 +18,10 @@
     "fontFamily": "Calibri",
     "paperSize": "a4",
     "margin": {
-        "right": 62,
-        "left": 62,
-        "top": 36,
-        "bottom": 36
+      "right": 62,
+      "left": 62,
+      "top": 36,
+      "bottom": 36
     },
     "headerTemplate": "DRIVER+ project - D923.22 Test-bed reference implementation (v2) - November 2018",
     "footerTemplate": "_PAGENUM_"
