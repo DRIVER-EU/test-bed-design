@@ -12,7 +12,7 @@ To install the Gitbook service, and the necessary plugins, run:
 npm i # alternative, use pnpm i
 ```
 
-Additionally, in order to render the UML diagrams, you need to [install Graphviz](https://graphviz.gitlab.io/download).
+Additionally, in order to render the UML diagrams, you need to [install Graphviz](https://graphviz.gitlab.io/download). If you also wish to create ebooks, also install [Calibre](https://calibre-ebook.com/).
 
 ## Build instructions
 
