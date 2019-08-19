@@ -6,11 +6,11 @@ The Test-bed supports practitioners by providing an environment in which they ca
 
 The Test-bed must support the exchange of information between solutions, simulators and tools. Information such as the location of an incident, alert messages, or the locations of vehicles. Comparable to people exchanging information via email, chat or twitter, the Test-bed exchanges information using the open-source messaging system [Apache Kafka](https://kafka.apache.org) from the [Apache organisation](http://www.apache.org/).
 
-Since all DRIVER+ solutions are software systems, the Test-bed's support for non-software systems, such as a new process, is limited: Clearly, the Observer Support tool and After-Action Review tool could be used. However, the Test-bed can also provide a suitable environment for exercising a new process, since it offers facilities to create a realistic incident environment. For example, the open source SUMO tool could be used to simulate traffic, and the open source csCOP tool could be used to offer the participants a realistic common operational picture during their Trial. Do note that in this case, the data capturing and analysis would be more primitive compared to technical solutions, in that it would mainly depend on the observations.
+Since all DRIVER+ solutions are software systems, the Test-bed's support for non-software systems, such as a new process, is limited: Clearly, the Observer Support tool and After-Action-Review tool could be used. However, the Test-bed can also provide a suitable environment for exercising a new process, since it offers facilities to create a realistic incident environment. For example, the open source SUMO tool could be used to simulate traffic, and the open source csCOP tool could be used to offer the participants a realistic common operational picture during their Trial. Do note that in this case, the data capturing and analysis would be more primitive compared to technical solutions, in that it would mainly depend on the observations.
 
 ### Adapters
 
-Adapters are used to connect solutions and simulators to the Test-bed in order to exchange information. As the Test-bed is based on Apache Kafka, which is used worldwide, there are connectors for most programming languages, so software applications can easily connect to it. While connected to the Test-bed, an application can send and/or receive messages. When you want to *receive* a message, you subscribe to a topic of interest: thereafter, you get all the messages that are published until you end your subscription. Optionally, you can even receive messages that were published in the past, or while you were offline, as Kafka logs all messages for a pre-set time. This is especially useful for mobile clients that are not always connected to a network. To *publish* a message, you just need to send it to a topic of interest and every interested application that has subscribed to this topic receives it instantly.
+Adapters are used to connect solutions and simulators to the Test-bed in order to exchange information. As the Test-bed is based on Apache Kafka, which is used worldwide, there are connectors for most programming languages, so software applications can easily connect to it. While connected to the Test-bed, an application can send and/or receive messages. When you want to *receive* a message, you subscribe to a topic of interest: thereafter, you get all the messages that are published until you end your subscription. Optionally, you can even receive messages that were published in the past, or while you were offline, as Kafka logs all messages for a configurable time. This is especially useful for mobile clients that are not always connected to a network. To *publish* a message, you just need to send it to a topic of interest and every interested application that has subscribed to this topic receives it instantly.
 
 *For example, to publish a CAP (Common Alerting Protocol) message to all interested parties, you use an adapter to send your CAP message to the 'cap' topic. Every tool that has subscribed to the 'cap' topic will get it right away.*
 
@@ -54,7 +54,8 @@ In order to facilitate Solutions to obtain the needed information from the simul
 
 ![Conceptual diagram of gateways translating messages back and forth between CIS and CSS](img/conceptual-diagram-of-gateways.png)
 
-> An example of this would be the simulation of a flooding. Imagine a river that has rising water levels due to an increase of rain water. At the river bank, there are several sensors that measure the actual water level. An application is created and connected to current operational systems to send CAP messages regarding the water level in clear categories ranging from LOW to DANGEROUSLY HIGH. A possible solution is assessed on improving decision-making based on the messages outputted by the created sensor application.<br>
+> An example of this would be the simulation of a flooding. Imagine a river that has rising water levels due to an increase of rain water. At the river bank, there are several sensors that measure the actual water level. An application is created and connected to current operational systems to send CAP messages regarding the water level in clear categories ranging from LOW to DANGEROUSLY HIGH. A possible solution is assessed on improving decision-making based on the messages outputted by the created sensor application.
+
 In this example, the water level is calculated in a flooding simulator, which connects to the CSS. The gateway listens to the calculated water levels in the CSS, uses it to compute the water levels at the exact sensor locations, and sends out the expected messages to the CIS, similar to the operational application. The decision-support tool, which is connected to the CIS, listens to these formatted messages of the gateway as if it was connected to the actual operational application. This also provides Trial owners the option to experiment with sensor failures, more or fewer sensors, etc.
 
 There are also Solutions that send messages which serve as commands or requests to change the simulated world. Again, a gateway would be used to bridge the CIS and CSS spaces.
@@ -102,15 +103,15 @@ Alternative commercial solutions exist too, such as [Exonaut](https://www.4cstra
 
 ![Exonaut timeline example](img/exonaut_example.png)
 
-### Scenario Manager Tool (_under active development_)
+### Trial-Management-Tool Tool (_under active development_)
 
-A Scenario Manager is an integral part of the Test-bed reference implementation too, since it is not possible to use JEMM or Exonaut directly, as:
+A Trial-Management-Tool is an integral part of the Test-bed reference implementation too, since it is not possible to use JEMM or Exonaut directly, as:
 
 - JEMM is only available to NATO members, and can only be used in an exercise when military personnel requests it. This will not always be the case.
 - JEMM and Exonaut are aimed at the military community, and the fit with the Crisis Management domain is not optimal.
 - JEMM and Exonaut are closed source, so a strong integration with the Test-bed is not possible, as the applications cannot be modified.
 
-The Test-bed's Scenario Manager, then, acts as the *composer* and *conductor* of a classical performance:
+The Test-bed's Trial-Management-Tool, then, acts as the *composer* and *conductor* of a classical performance:
 
 - As the *composer*, it defines what each role has to play. For example, what do the simulators or role-players need to do in order to provide a realistic incident and background to the Trial, or it could include sending direct messages to solutions.
 - As the *conductor*, it controls *when* each role starts and stops.
@@ -132,7 +133,7 @@ Detailed information:
 
 ## 3.4 Evaluation
 
-Evaluation is needed to verify that the Trial objectives have been achieved. The Test-bed provides two services for this: an Online Observer Support tool and an After-Action Review tool.
+Evaluation is needed to verify that the Trial objectives have been achieved. The Test-bed provides two services for this: an Online Observer Support tool and an After-Action-Review tool.
 
 ### Online Observer Support tool
 
@@ -141,8 +142,8 @@ Based on the specified objectives of the Trial, an observer expects to observe d
 Although the observer tool (see Figure 11) can run standalone, outside of the Test-bed context, there are several benefits when it is connected, since this allows:
 
 - To share observations with Trial staff: they can use this information to steer the Trial in a particular direction.
-- The After-Action Review tool can use the observations during the analysis and evaluation.
-- The Scenario Manager can inform the observers of major events that are about to occur: so they are warned ahead of time.
+- The After-Action-Review tool can use the observations during the analysis and evaluation.
+- The Trial-Management-Tool can inform the observers of major events that are about to occur: so they are warned ahead of time.
 - Observation forms can be created dynamically and transmitted to selected observers.
 
 Although the observer tool enables the collection of personal data, research ethics is outside the scope of this technically-oriented document, and is being described in more detail in [D923.21 - Trial guidance methodology and guidance tool specifications (version 1)](https://www.driver-project.eu/wp-content/uploads/2018/08/DRIVERPLUS_D923.11_Functional-Specification-of-the-Test-bed.pdf).
@@ -155,9 +156,9 @@ Detailed information:
 - [Website](https://github.com/DRIVER-EU/ost)
 - [Documentation](https://driver-eu.gitbooks.io/specification-of-the-online-observer-support-tool/)
 
-### After-Action Review tool (_under active development_)
+### After-Action-Review tool (_under active development_)
 
-The After-Action Review (AAR) tool collects data during a Trial: messages exchanged during the Trial, observation reports, and screenshots of the solutions during the Trial. Its main purpose is to facilitate the evaluation of the trialled solutions against the predefined objectives, and to help the participants determine how well they functioned. Using a timeline displaying the collected messages, the whole Trial can be analysed visually, and one can quickly jump to a specific point in time in order to inspect a specific message, observation or see the active screenshot.
+The After-Action-Review (AAR) tool collects data during a Trial: messages exchanged during the Trial, observation reports, and screenshots of the solutions during the Trial. Its main purpose is to facilitate the evaluation of the trialled solutions against the predefined objectives, and to help the participants determine how well they functioned. Using a timeline displaying the collected messages, the whole Trial can be analysed visually, and one can quickly jump to a specific point in time in order to inspect a specific message, observation or see the active screenshot.
 
 Detailed information:
 
@@ -177,7 +178,7 @@ In the Test-bed, the goal of simulation is to provide a realistic, immersive bac
 The Test-bed, therefore, offers support to simulators for creating this realistic and immersive background, by:
 
 - Providing a [time-service and GUI](https://github.com/DRIVER-EU/test-bed-time-service) (see Figure 12): i.e. each adapter knows the scenario time, so simulators and solutions can use this in their user interface and calculations. Think of a clock display, but also when sending an email or CAP message, making sure it uses the correct timestamps.
-- The Scenario Manager, as discussed above.
+- The Trial-Management-Tool, as discussed above.
 
 ![The Test-bed time-service GUI can be used to start/stop/pause a Trial, as well as set the simulation speed](img/test-bed-time-service.png)
 

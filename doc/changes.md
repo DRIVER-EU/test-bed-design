@@ -20,7 +20,7 @@ The changes with respect to the first version are described in the following.
 - Clarified the scope and aims of the document, based on the EU reviewers comments.
 - Removed a duplicated picture.
 
-### Test-bed for Crisis Management Practitioners
+### A Test-bed for Crisis Management Practitioners
 
 - Before discussing the Test-bed, first discuss it from the perspective of the Trial owner (chapter 2 and 3 were swapped with respect to the previous version, thereby addressing the reviewers comments).
 - Added an description of the Test-bed composer, in order to distinguish it better from the PoS of TGT.
@@ -40,7 +40,7 @@ The changes with respect to the first version are described in the following.
 - Added a new image for the Gateway.
 - In section 2.3 [2.3 Trialling, Exercising and Scenario Management](test-bed-description.md#23-trialling-exercising-and-scenario-management):
   - Added link to TGM and functional specification document.
-  - Added link to Scenario Manager and AAR website.
+  - Added link to Trial-Management-Tool and AAR website.
   - Added screenshot of time service.
   - Mentioned TNO's critical infrastructure simulator.
 
@@ -61,3 +61,30 @@ The changes with respect to the first version are described in the following.
 - Moved to Annex 3.
 - Moved section on large data to Chapter 4.
 - Truncated section on the Adapters, and referred to Chapter 3.
+
+## Version 3
+
+The changes with respect to the second version are described in the following.
+
+### Overall changes
+
+- Renamed Scenario Manager to Trial-Management-Tool: the reason for this change was that a Trial may contain several scenarios.
+
+### Introduction
+
+- Added a reference to the change history in [section 1.3](introduction.md#13-organisation-of-the-document).
+
+### A Test-bed for Crisis Management Professionals
+
+- Included a remark that the Test-bed is also useful for supporting table top or field exercises, even if this is out-of-scope.
+- In Use Case 2.1, added a manual Test-bed creation mode. In practice, Test-beds are mostly created by technical people, and they prefer to work directly with the text-based Docker images files.
+- In Alternative 1, Cloud scenario, the actually implemented cloud scenario is added. It turned out that the effort required for the ideal situation was too high, compared to the low effort needed for the current implementation.
+- In Alternative 1, Local scenario, the current way-of-working is added.
+- Slightly updated Use Case 2.2 to reflect the latest state.
+
+### 
+
+## TODO
+
+Update figure 3
+

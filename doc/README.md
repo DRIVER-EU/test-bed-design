@@ -24,13 +24,13 @@ In addition, several adapters are created to connect solutions and simulators to
 Around this core functionality, additional tools are developed that facilitate the usage of this environment (see Figure 3):
 
 - Administrative tools: Is everyone up-and-running, secure, and connected to the right information topics?
-- Evaluation tools: What did we observe during the Trial, and what implications does this have during the After-Action Review.
+- Evaluation tools: What did we observe during the Trial, and what implications does this have during the After-Action-Review.
 - Scenario tools: To create an interesting scenario that triggers the participants and solutions in the right way.
 - Support tools: For testing and debugging, for creating your personalized Test-bed environment, but also to share common data such as map layers or census data.
 
 ![Test-bed reference implementation: the components inside the yellow rectangle are being developed as open source tools in the DRIVER+ project](img/test-bed-components-explained.png)
 
-The Test-bed will be delivered in 3 versions. Version 1 is intended for use in Trials 1 and 2, and consists of a limited number of components (i.e. Scenario Manager Tool (SMT) and After-Action-Review (AAR) tool are not included and other components in first prototype quality). Version 2 (_current version_) is to be used in Trials 3 and 4 and the Final Demo and comes with all components with a quality level surpassing that of a first prototype. It will contain data-sets and basic scenarios that can be used for effectively implementing and testing the Test-bed. The final version, Version 3, should have an even better quality based on experiences gathered from the use of the Test-bed in the executed Trials. 
+The Test-bed will be delivered in 3 versions. Version 1 is intended for use in Trials 1 and 2, and consists of a limited number of components (i.e. Trial-Management-Tool Tool (TMT) and After-Action-Review (AAR) tool are not included and other components in first prototype quality). Version 2 (_current version_) is to be used in Trials 3 and 4 and the Final Demo and comes with all components with a quality level surpassing that of a first prototype. It will contain data-sets and basic scenarios that can be used for effectively implementing and testing the Test-bed. The final version, Version 3, should have an even better quality based on experiences gathered from the use of the Test-bed in the executed Trials. 
 
 All versions are already available open-source (under a liberal MIT license) on [github.com/DRIVER-EU](https://github.com/DRIVER-EU). The subsequent updated Test-bed reference implementations are documented in D923.21, D923.22 (this document) and D923.23 - Reference Implementations of the Test-bed (versions 1/2/3 resp.).
 
