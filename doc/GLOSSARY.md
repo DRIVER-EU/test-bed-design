@@ -2,7 +2,17 @@
 
 ## AAR
 
-The After-Action Review (AAR) tool provides the possibility to collect data after a Trial has finished and analyse it. Its main purpose is to facilitate the evaluation of the trialled solutions against the predefined objectives, and to help the participants determine how well they functioned. It collects messages (exchanged during Trial), observation reports and takes screen-shots of the applications during their use.
+The After-Action-Review (AAR) tool provides the possibility to collect data after a Trial has finished and analyse it. Its main purpose is to facilitate the evaluation of the trialled solutions against the predefined objectives, and to help the participants determine how well they functioned. It collects messages (exchanged during Trial), observation reports and takes screen-shots of the applications during their use.
+
+## After-Action-Review
+
+The After-Action-Review (AAR) tool provides the possibility to collect data after a Trial has finished and analyse it. Its main purpose is to facilitate the evaluation of the trialled solutions against the predefined objectives, and to help the participants determine how well they functioned. It collects messages (exchanged during Trial), observation reports and takes screen-shots of the applications during their use.
+
+## Admin tool
+
+The admin tool provides the technical administrator of the Test-bed with a overview of all the services that are running.
+
+Specifically, it contains a distributed error log, allows the administrator to create information exchange topics, and register new solutions or other applications.
 
 ## AVRO
 
@@ -44,13 +54,24 @@ An exercise is an activity carried out to train personnel and processes in crisi
 
 The high-level architecture (HLA) is a general purpose architecture for distributed computer simulation systems. Using HLA, computer simulations can interact (that is, to communicate data, and to synchronize actions) with other computer simulations regardless of the computing platforms. The interaction between simulations is managed by a run-time infrastructure (RTI). HLA is an interoperability standard for distributed simulation used to support analysis, engineering and training in a number of different domains in both military and civilian applications and is the standard technical architecture for all US Department of Defence simulations.
 
-## Observer tool
+## Observer support tool
 
 The online observer support tool facilitates the task of the observer by providing him or her with pre-made questions that can be easily answered during a Trial or exercise, and scenario triggers informing the observer of things to come. In addition, these responses will be harvested by the Test-bed, and used for evaluation at the end of the exercise.
 
-## Scenario Manager
+## OST
 
-The Scenario Manager acts as the *composer* and *conductor* of a classical performance:
+The online observer support tool facilitates the task of the observer by providing him or her with pre-made questions that can be easily answered during a Trial or exercise, and scenario triggers informing the observer of things to come. In addition, these responses will be harvested by the Test-bed, and used for evaluation at the end of the exercise.
+
+## TMT
+
+The Trial-Management-Tool acts as the *composer* and *conductor* of a classical performance:
+
+- As the *composer*, it defines what each role has to play. For example, what do the simulators need to do in order to provide a realistic incident and background to the Trial, or it could include sending direct messages to solutions.
+- As the *conductor*, it controls *when* each role starts and stops.
+
+## Trial-Management-Tool
+
+The Trial-Management-Tool acts as the *composer* and *conductor* of a classical performance:
 
 - As the *composer*, it defines what each role has to play. For example, what do the simulators need to do in order to provide a realistic incident and background to the Trial, or it could include sending direct messages to solutions.
 - As the *conductor*, it controls *when* each role starts and stops.
