@@ -70,7 +70,7 @@ The procedure for testing multiple solutions and simulators before an actual Tri
 
 1. system administrator starts up the Test-bed and the Admin Tool, or uses a Test-bed available online. If not done already, all required schema's are registered with the schema registry.
 2. system administrator inspects the Admin Tool and verifies that all required solutions and simulators are available and running online without errors.
-3. system administrator starts up the Scenario Manager, loads the Trial scenario, and initializes it. The Test-bed's time service updates the fictive Trial time and state, and every application that uses time should reflect that.
+3. system administrator starts up the Trial-Management-Tool, loads the Trial scenario, and initializes it. The Test-bed's time service updates the fictive Trial time and state, and every application that uses time should reflect that.
 4. system administrator runs the Trial scenario, either from the beginning or at another point in time, e.g. where issues were discovered. The time-service will update the fictive time accordingly.
 5. system administrator resets the Trial scenario, and replays it, as many times as required to make sure that everything works as expected.
 
@@ -115,7 +115,7 @@ Within the Test-bed, therefore, the scenario time (a.k.a. Trial time or fictive 
 
 As a developer, you do not need to interact with these messages directly, since:
 
-- Every adapter has a time interface to get the current scenario time. Even as a solution developer, you should also use this time to timestamp the messages that you send. For example, if inside your message you refer to a particular time, always base it on the scenario time. 
+- Every adapter has a time interface to get the current scenario time. Even as a solution developer, you should also use this time to timestamp the messages that you send. For example, if inside your message you refer to a particular time, always base it on the scenario time.
 - Every adapter has a state describing the current scenario phase, which you can optionally use during the integration:
   - **Idle:** no scenario has started. The time interface returns the system time (in UTC).
   - **Initialized:** the scenario is ready to be started. All adapters will receive the scenario start time, and can use this to initialize their service. In the near future, adapters have the ability to inform the Test-bed when they are initialized and ready to start.
@@ -162,37 +162,39 @@ Security is an integral part of the Test-bed: although in most crisis management
 To achieve these objectives, the test-bed includes an access control framework in which both system administrators and developers have a role to play.
 
 ### Authentication
+
 The CIS/CSS Kafka broker enforces SSL/TLS transport security with mutual authentication. This means that adapters are required to authenticate with SSL client certificates. Developers shall get such SSL client certificates from the Admin Tool, with the approval of a system administrator. The subject name of the certificate must uniquely identify the adapter within the organization. More specifically, the subject name must include an Organization name (O) identifying the Organization that owns the Solution or Simulator, and  a Common Name (CN) identifying the Solution or Simulator instance within that organization. The Admin Tool uses a Certificate Authority (CA) provided with the testbed in the backend, to issue those certificates.
 
- Developers then configure their adapters with those certificates as client certificates (keystore), the aforementioned CA's certificate in their truststore (trusted CAs) in order to authenticate the broker (using a certificate issued by that same CA as well), and recommended TLS parameters according to current best practices: TLS v1.0 or later (as of writing), strong cipher suites, etc. Developers must take good care of protecting the confidentiality of the private key associated to their client certificate according to best practices and the risk level. If the key is compromised, authentication is useless. Developers must report any compromised key to system administrators so that the certificate be revoked.
+ Developers then configure their adapters with those certificates as client certificates (key store), the aforementioned CA's certificate in their truststore (trusted CAs) in order to authenticate the broker (using a certificate issued by that same CA as well), and recommended TLS parameters according to current best practices: TLS v1.0 or later (as of writing), strong cipher suites, etc. Developers must take good care of protecting the confidentiality of the private key associated to their client certificate according to best practices and the risk level. If the key is compromised, authentication is useless. Developers must report any compromised key to system administrators so that the certificate be revoked.
 
  By default, the CIS/CSS broker trusts only that backend CA for client certificates. If developers wish to use client certificates issued by another CA, system administrators may grant their wish by modifying the broker's SSL configuration. This change consists to add the other CA's certificate to the broker's [SSL truststore (JKS)](https://github.com/DRIVER-EU/test-bed/blob/master/docker/local%2Bsecurity/broker/config/ssl/truststore.jks) and restart the broker service.
 
 Once all adapters are properly configured by developers for SSL client authentication, they are able to connect to the secured CIS/CSS broker and at least access public topics such as *system_* topics.
 
 ### Authorization
+
 For stronger security, whenever trial owners want to protect specific CIS/CSS topics, system administrators shall enable topic authorization. By default, this test-bed security feature is disabled, i.e. all authenticated users (according to previous section) have access to all topics. System administrators enable topic authorization by using an [extra Docker Compose file](https://docs.docker.com/compose/extends/#multiple-compose-files) that extends the default one with authorization enforcement components.
 
 Once enabled, access to any topic is denied by default, except for certain public topics such as *system_* topics. This means that for other topics, access must be granted explicitly by system administrators. More specifically, for each sensitive topic X, the system administrator shall configure the topic access policy via the Admin Tool. A topic access policy is set on a specific topic X and consists of a list of access rules. Each access rule consists of:
+
 - Authorized subject name, as in the adapter's SSL certificate (aka Kafka client ID in this case), OR Kafka consumer group ID;
-- A list of *permissions*; each *permission* is a couple *(ACTION, bool)*, where *ACTION* is the action considered on the topic (in Kafka API model), e.g. *READ* (subscribe a topic) or *WRITE* (publish on a topic), and the boolean *bool* is true if and only if the action is permitted (positive rule), else denied. 
+- A list of *permissions*; each *permission* is a couple *(ACTION, bool)*, where *ACTION* is the action considered on the topic (in Kafka API model), e.g. *READ* (subscribe a topic) or *WRITE* (publish on a topic), and the Boolean *bool* is true if and only if the action is permitted (positive rule), else denied.
 
 If a consumer group ID is used as first item (instead of subject name), the system administrator must also declare the corresponding group memberships in the Admin Tool, i.e. who is authorized to join this group.
 
 In order to improve performances, system administrators can enable the authorization decision cache (disabled by default) in Kafka's configuration via Docker Compose environment variables. This allows Kafka (the Kafka authorizer in particular) to cache decisions to avoid requesting the remote PDP every time. The downside is that changes to the topic access policies that occur in the remote PDP during the cache interval may be ignored.
 
-
 ## 4.8 Online Test-beds
 
 As mentioned in section 4.3, it is possible to make use of an online test-bed that is hosted in a Cloud setup. This serves as an alternative to hosting a test-bed yourself and is useful for integration testing: whenever two or more parties wish to test their integration via the test-bed, they can request a cloud-hosted test-bed that is available within a few minutes. All parties can then remotely connect to this test-bed, without requiring any prior setup and configuration.
 
-The current Test-bed cloud consists of four servers configured as a [Docker Swarm](https://docs.docker.com/engine/swarm/) which allows various test-bed compositions to be hosted in parallel. Docker swarm allows any Test-bed docker composition (configured manually, or with the [online tool](https://driver-eu.github.io/docker-composer) to run on the Docker Swarm servers. Each Test-bed can make use of one of the ten available host-names for temporary online test-beds: https://tb1.driver-testbed.eu to https://tb10.driver-testbed.eu.
+The current Test-bed cloud consists of four servers configured as a [Docker Swarm](https://docs.docker.com/engine/swarm/) which allows various test-bed compositions to be hosted in parallel. Docker swarm allows any Test-bed docker composition (configured manually, or with the [online tool](https://driver-eu.github.io/docker-composer) to run on the Docker Swarm servers. Each Test-bed can make use of one of the ten available host-names for temporary online test-beds: [https://tb1.driver-testbed.eu](https://tb1.driver-testbed.eu) to [https://tb10.driver-testbed.eu](https://tb10.driver-testbed.eu).
 
 ## 4.9 Reverse Proxy for Test-beds
 
 Optionally the Driver Test-bed can be configured to work with a Reverse proxy called [Traefik](https://traefik.io). This has several advantages:
 
-- The Test-bed Services (i.e. Topic UI, Schema UI, etc) are not separately exposed on their own port, but via a relative URL on a shared proxy that can be reached via a configurable hostname. For example instead of exposing the Topics UI at http://hostname:3601 and the Schema UI at http://hostname:3602, they can be exposed at http://hostname/topics-ui/ and http://hostname/schema-ui/ respectively. They will then both share the same HTTP endpoint at http://hostname.
+- The Test-bed Services (i.e. Topic UI, Schema UI, etc) are not separately exposed on their own port, but via a relative URL on a shared proxy that can be reached via a configurable hostname. For example instead of exposing the Topics UI at `http://hostname:3601` and the Schema UI at `http://hostname:3602`, they can be exposed at `http://hostname/topics-ui/` and `http://hostname/schema-ui/` respectively. They will then both share the same HTTP endpoint at `http://hostname`.
 - The shared HTTP endpoint can be secured with an SSL certificate, for example automatically  created via [lets-encrypt](https://letsencrypt.org/). Because all web services in the test-bed use the same reverse proxy, securing this reverse proxy entry point will secure the HTTP traffic for all services behind it without requiring any configuration on the test-bed services.
 - Traefik monitors and logs requests so allow for tracing and monitoring health and load on services in the test-bed.
 
@@ -200,5 +202,5 @@ Traefik is built to integrate seamlessly with Docker Swarm. For setting up the T
 
 There are two beta Test-bed compositions available for usage with Traefik on the test-bed repository 'traefik' branch:
 
-- A composition for a local test-bed with Traefik at https://github.com/DRIVER-EU/test-bed/tree/treafik/docker/local. This allows running the test-bed on your local machine. The external hostname, Kafka broker port, and Schema Registry port can be specified in the .env file.
-- A composition to run in the cloud using Docker swarm at https://github.com/DRIVER-EU/test-bed/tree/treafik/docker/swarm. This is built for running on the TNO hosted cloud servers. The external hostname, Kafka broker port, and Schema Registry port must be specified using ENV variables `TESTBED_HOST`, `BROKER_PORT`, and `SCHEMA_REGISTRY_PORT` respectively.
+- A composition for a local test-bed with Traefik at [https://github.com/DRIVER-EU/test-bed/tree/treafik/docker/local](https://github.com/DRIVER-EU/test-bed/tree/treafik/docker/local). This allows running the test-bed on your local machine. The external hostname, Kafka broker port, and Schema Registry port can be specified in the .env file.
+- A composition to run in the cloud using Docker swarm at [https://github.com/DRIVER-EU/test-bed/tree/treafik/docker/swarm](https://github.com/DRIVER-EU/test-bed/tree/treafik/docker/swarm). This is built for running on the TNO hosted cloud servers. The external hostname, Kafka broker port, and Schema Registry port must be specified using ENV variables `TESTBED_HOST`, `BROKER_PORT`, and `SCHEMA_REGISTRY_PORT` respectively.
