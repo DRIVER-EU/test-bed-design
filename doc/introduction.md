@@ -62,4 +62,8 @@ This is deliverable D923.21, describing the first version of the Test-bed refere
 
 ### Version 2 (2018-11-30)
 
-This is deliverable D923.22, describing the second version of the Test-bed reference implementation v1. All changes with respect to the previous version are documented in [Annex 2 Change history](changes.md).
+This is deliverable D923.22, describing the second version of the Test-bed reference implementation v2. All changes with respect to the previous version are documented in [Annex 2 Change history](changes.md).
+
+### Version 3 (2019-08-31)
+
+This is deliverable D923.23, describing the third and final version of the Test-bed reference implementation v3. All changes with respect to the previous version are documented in [Annex 2 Change history](changes.md).
