@@ -82,9 +82,18 @@ The changes with respect to the second version are described in the following.
 - In Alternative 1, Local scenario, the current way-of-working is added.
 - Slightly updated Use Case 2.2 to reflect the latest state.
 
-### 
+### Test-bed description
+
+- Added a short description on how the Test-bed can be used for trialling processes and procedures. The previous version was a bit negative about its use, but that vision has changed due to more recent experiences.
+- Added an overview of the type of messages that can be exchanged.
+- Added direct link to TGM handbook.
+- Rewritten the part about the TMT.
+- AAR text updated, added images.
+- Added two papers (ITEC2019 and SUMO conference)
+- Minor textual edits.
+- Updated most images.
 
 ## TODO
 
 Update figure 3
-
+Update admin picture

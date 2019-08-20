@@ -54,7 +54,7 @@ An exercise is an activity carried out to train personnel and processes in crisi
 
 The high-level architecture (HLA) is a general purpose architecture for distributed computer simulation systems. Using HLA, computer simulations can interact (that is, to communicate data, and to synchronize actions) with other computer simulations regardless of the computing platforms. The interaction between simulations is managed by a run-time infrastructure (RTI). HLA is an interoperability standard for distributed simulation used to support analysis, engineering and training in a number of different domains in both military and civilian applications and is the standard technical architecture for all US Department of Defence simulations.
 
-## Observer support tool
+## Observer Support Tool
 
 The online observer support tool facilitates the task of the observer by providing him or her with pre-made questions that can be easily answered during a Trial or exercise, and scenario triggers informing the observer of things to come. In addition, these responses will be harvested by the Test-bed, and used for evaluation at the end of the exercise.
 

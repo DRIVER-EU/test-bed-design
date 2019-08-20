@@ -1,6 +1,6 @@
 # 2. A Test-bed for Crisis Management Practitioners
 
-This Chapter discusses the **future** Test-bed functionality that could benefit a practitioner, so although most functionality can already be realized today, not everything is in place yet.
+This Chapter discusses the **future** Test-bed functionality that could benefit a practitioner, so although most functionality can already be realized today, not everything is in place yet as we will continue improving it until February 2020.
 
 Trial owners will interact with the Test-bed when they want to Trial one or more solutions. Since Trials vary in complexity and scope, not all TGM steps may be required for every Trial. On the one side of the spectrum, the Trial may be more like a simple and inexpensive software **test**, in which a Trial Owner can verify that a Solution has useful features, is user-friendly, looks good, and does not crash. Typically, this would be done with only a few people. For a CM Solution, such a Trial also requires (some components of) the Test-bed, together with a test-scenario. The test-scenario allows you to test the solution in a relevant context.
 
