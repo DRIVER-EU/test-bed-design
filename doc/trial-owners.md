@@ -1,8 +1,10 @@
 # 2. A Test-bed for Crisis Management Practitioners
 
-This Chapter discusses the **future** Test-bed functionality that could benefit a practitioner, so although most functionality can already be realized today, not everything is in place yet as we will continue improving it until February 2020.
+This Chapter discusses the **future** Test-bed functionality that could benefit a practitioner, so although 95% of the  functionality can already be realized today, not everything is in place yet and we will continue improving it until February 2020.
 
-Trial owners will interact with the Test-bed when they want to Trial one or more solutions. Since Trials vary in complexity and scope, not all TGM steps may be required for every Trial. On the one side of the spectrum, the Trial may be more like a simple and inexpensive software **test**, in which a Trial Owner can verify that a Solution has useful features, is user-friendly, looks good, and does not crash. Typically, this would be done with only a few people. For a CM Solution, such a Trial also requires (some components of) the Test-bed, together with a test-scenario. The test-scenario allows you to test the solution in a relevant context.
+Trial owners will interact with the Test-bed when they want to Trial one or more solutions (see Figure 4). Since Trials vary in complexity and scope, not all TGM steps may be required for every Trial. On the one side of the spectrum, the Trial may be more like a simple and inexpensive software **test**, in which a Trial Owner can verify that a Solution has useful features, is user-friendly, looks good, and does not crash. Typically, this would be done with only a few people. For a CM Solution, such a Trial also requires (some components of) the Test-bed, together with a test-scenario. The test-scenario allows you to test the solution in a relevant context.
+
+![High-level overview of the technical infrastructure needed for a trial](img/test_bed_overview.png)
 
 > For example, if one would test a COP tool as is, it would probably not have any map layers, basically showing an empty map. Using a test-scenario, the COP tool can be tested in the context of a simple incident, perhaps a flooding, have some ambulances driving around, and map layers showing population information, locations of critical infrastructure, etc.
 
@@ -29,9 +31,9 @@ In the following sections, a use case (storyline) description of each is provide
 
 Monica has heard about an interesting COP solution via the DRIVER+ Portfolio of Solutions. She considers using it to address her problems in fighting fires. After defining the gaps and specifying the requirements, according to the TGM, she continues in an iterative way:
 
-1. Monica, supported by an IT professional, visits the [Test-bed's website](https://github.io/DRIVER-EU/test-bed) (see Figure 4). _It allows her, or anyone else, to specify the technical components that should make up the Test-bed. Alternatively, visit the [Test-bed's website](https://github.io/DRIVER-EU/test-bed) and select one of the available (Docker-based) Test-bed definitions from the `docker` folder. Download the folder and you can run them instantly (if Docker is installed on your PC)._
+1. Monica, supported by an IT professional, visits the [Test-bed's website](https://github.io/DRIVER-EU/test-bed) (see Figure 5). _It allows her, or anyone else, to specify the technical components that should make up the Test-bed. Alternatively, visit the [Test-bed's website](https://github.io/DRIVER-EU/test-bed) and select one of the available (Docker-based) Test-bed definitions from the `docker` folder. Download the folder and you can run them instantly (if Docker is installed on your PC)._
 2. She opens the solution's tab and sees that the COP tool is available for evaluation. _In the future, available solutions could be linked to the Portfolio of Solutions._
-3. She selects it in the menu (see Figure 5).
+3. She selects it in the menu (see Figure 6).
 4. She understands that it is difficult to test a solution without any data / scenario, so she visits the data tab and selects a fire-fighting data set situated in the South of France: *It involves a large-scale forest fire, which is rapidly spreading. Ambulances and fire trucks are deployed and driving around. She can also look at census data of the area and a weather report.*
 
 ![Test-bed composer's home page](img/test-bed-composer-home.png)
@@ -50,7 +52,7 @@ Monica has heard about an interesting COP solution via the DRIVER+ Portfolio of 
 
 ### Alternative 2: Local scenario
 
-1. As she currently is not interested in other solutions, she opens the menu and clicks on the BUILD button. A dialog opens and she can download the *Docker-compose* file to her PC (see Figure 6).
+1. As she currently is not interested in other solutions, she opens the menu and clicks on the BUILD button. A dialog opens and she can download the *Docker-compose* file to her PC (see Figure 7).
 
 2. Running a simple command, the Test-bed is downloaded and started on her own PC, and she can interact with the Test-bed as described above.
 

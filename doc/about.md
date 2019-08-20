@@ -13,11 +13,11 @@
 
 <table style="border: 2px solid black">
   <tr><td style="font-weight: bold; color: white; background: #00497E">Document Status:</td><td>Final</td></tr>
-<tr><td style="font-weight: bold; color: white; background: #00497E">Document Title:</td><td>D923.22 Test-bed reference implementation v2</td></tr>
+<tr><td style="font-weight: bold; color: white; background: #00497E">Document Title:</td><td>D923.23 Test-bed reference implementation v3</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">Document Nature:</td><td>Report (R)</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">Dissemination Level:</td><td>Public (P)</td></tr>
-  <tr><td style="font-weight: bold; color: white; background: #00497E">Due Date:</td><td>30/11/2018 </td></tr>
-  <tr><td style="font-weight: bold; color: white; background: #00497E">Submission Date:</td><td>30/11/2018</td></tr>
+  <tr><td style="font-weight: bold; color: white; background: #00497E">Due Date:</td><td>30/09/2019 </td></tr>
+  <tr><td style="font-weight: bold; color: white; background: #00497E">Submission Date:</td><td>30/09/2019</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">Sub-Project (SP):</td><td>SP92 - Test-bed</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">Work Package (WP):</td><td>WP923 – Test-bed infrastructure</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">Document Leader:</td><td>TNO</td></tr>
@@ -53,6 +53,11 @@ All DRIVER+ consortium members are also committed to publish accurate and up to 
 | V1.7  | 29/11/2018 | Final check and approval for submission | Tim Stelkens-Kobsch, DLR, Quality Manager |
 | V1.8  | 29/11/2018 | Final check and approval for submission | Marijn Rijken, TNO, Project Director |
 | V2.0  | 30/11/2018 | Submission to the EC | Francisco Gala, ATOS |
+| V2.1  | 20/08/2019 | Updated and included latest changes | Erik Vullings, TNO |
+| V2.2  | ??/??/2019 | Reviews from Héctor Naranjo (GMV), Laurent Dubost & Antoine Léger (TCS), Dennis Horstkemper (WWU) processed | Erik Vullings, TNO |
+| V2.3  | ??/09/2019 | Final check and approval for submission | Tim Stelkens-Kobsch, DLR, Quality Manager |
+| V2.4  | ??/09/2019 | Final check and approval for submission | Marijn Rijken, TNO, Project Director |
+| V3.0  | 30/09/2019 | Submission to the EC | Francisco Gala, ATOS |
 
 <h1 id="driver">The DRIVER+ project</h1>
 

@@ -76,6 +76,7 @@ The changes with respect to the second version are described in the following.
 
 ### A Test-bed for Crisis Management Professionals
 
+- Included a new diagram with the high-level overview of all Trial components (Figure 4).
 - Included a remark that the Test-bed is also useful for supporting table top or field exercises, even if this is out-of-scope.
 - In Use Case 2.1, added a manual Test-bed creation mode. In practice, Test-beds are mostly created by technical people, and they prefer to work directly with the text-based Docker images files.
 - In Alternative 1, Cloud scenario, the actually implemented cloud scenario is added. It turned out that the effort required for the ideal situation was too high, compared to the low effort needed for the current implementation.
