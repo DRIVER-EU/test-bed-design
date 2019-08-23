@@ -2,7 +2,7 @@
 
 The Test-bed supports practitioners by providing an environment in which they can easily Trial new solutions and run exercises. In this chapter, the main components of the Test-bed are explained (see [Figure 3](./README.md#fig1.2.3)) and is aimed at a fairly technical audience. A shorter version was recently presented at ITEC2019, "An interoperability Framework for Trials and Exercises", by Hendriks, Vullings, Van Campen2, and Hameete.
 
-Although all trialled DRIVER+ solutions are software systems, the Test-bed also offers excellent support for non-software systems, such as a new process or procedure.
+Although most trialled DRIVER+ solutions are software systems, the Test-bed also offers excellent support for non-software systems, such as a new process or procedure.
 
 - The Test-bed's technical infrastructure can be used to put a new process in a relevant crisis-management context. For example, the open source [SUMO tool](http://sumo.sourceforge.net/) could be used to simulate traffic, and the open source [csCOP tool](https://github.com/DRIVER-EU/csCOP) could be used to offer the participants a realistic common operational picture during their Trial. There are also organisations that provide commercial support to provide the Test-bed with realistic incident visualisations.
 - Within the Test-bed, there are three tools that can also be of direct value for trialling new procedures: the Trial-Management-Tool ([see Section 3.3](test-bed-description.md#trial-management-tool)), the Observer-Support-Tool ([Section 3.4](test-bed-description.md#online-observer-support-tool)), and the After-Action-Review tool ([Section 3.4](test-bed-description.md#after-action-review-tool)). The first to provide stimuli to the procedure, the second to capture all observations, and the last to review the whole trial session.
@@ -43,44 +43,63 @@ The default Kafka connectors, however, are lacking certain features that are use
 
 The Test-bed currently maintains the following adapters: [Java](https://github.com/DRIVER-EU/java-test-bed-adapter), [C#](https://github.com/DRIVER-EU/csharp-test-bed-adapter), [JavaScript/TypeScript/Node.js](https://github.com/DRIVER-EU/node-test-bed-adapter), [Python](https://github.com/DRIVER-EU/python-test-bed-adapter), and a [REST](https://github.com/DRIVER-EU/test-bed-rest-service) adapter, which allows any application to publish and receive messages using basic internet commands.
 
-### Message types
+### AVRO Message types
 
 As software applications need to understand the messages they receive, the Test-bed has to assure that every message that is sent complies with the expected format (syntax). For example, when a solution wants to share the location of a vehicle or the value of a sensor, you probably need to capture the vehicle's or sensor's location, as well as its type, speed or sensor value. Then it is important to know that the type will be one out of a list of possibilities, that the location is specified using two numbers, and that the speed or sensor value is a number too.
 
+To capture this information, the common solution is to specify it in a so-called schema. The Test-bed enforces this too, and it uses the open [Apache AVRO](https://avro.apache.org) schema format (for a brief example, see below). All Test-bed schema's are shared publicly in the [DRIVER+ AVRO schema repository](https://github.com/DRIVER-EU/avro-schemas), which also contains more relevant schema's for CAP or EMSI messages. An excerpt of a CAP schema is shown below.
+
 ```json
-// Schema example for requesting the OST to change the trial stage (update the questionnaires)
+// Excerpt of a Common Allerting Protocol schema. The complete schema can be found at
+// https://github.com/DRIVER-EU/avro-schemas/blob/master/standard/cap/standard_cap-value.avsc.
 {
+  "name": "eu.driver.model.cap.Alert",
+  "namespace": "eu.driver.model.cap",
+  "doc": "CAP Alert Message (version 1.2)",
   "type": "record",
-  "name": "RequestChangeOfTrialStage",
-  "namespace": "eu.driver.model.core",
-  "doc": "With this message the observer tool gets informed about a new trial state.",
   "fields": [
     {
-      "name": "ostTrialId",
-      "type": [
-        "null",
-        "int"
-      ],
-      "doc": "The unique identifier of the running Trial.",
-      "default": null
+      "name": "identifier",
+      "type": "string"
     },
     {
-      "name": "ostTrialSessionId",
-      "type": "int",
-      "doc": "The sessionId for the running Trial."
+      "name": "sender",
+      "type": "string"
     },
     {
-      "name": "ostTrialStageId",
-      "type": "int",
-      "doc": "The stageId of the stage that should be activated."
+      "name": "sent",
+      "type": "string",
+      "doc": "TODO xs:dateTime Used pattern"
+    },
+    {
+      "name": "status",
+      "type": {
+        "name": "Status",
+        "namespace": "eu.driver.model.cap",
+        "type": "enum",
+        "symbols": [ "Actual", "Exercise", "System", "Test", "Draft" ]
+      }
     }
+    // ...
   ]
 }
 ```
 
-To capture this information, the common solution is to specify it in a so-called schema. The Test-bed enforces this too, and it uses the open [Apache AVRO](https://avro.apache.org) schema format. All Test-bed schema's are shared publicly in the [DRIVER+ AVRO schema repository](https://github.com/DRIVER-EU/avro-schemas).
+**Dealing with standards:** In the CM domain, several standards exists, such as CAP, EDXL or EMSI. They are represented using XML, a textual representation of a message that is easily readable by computers, and which are formalized using XML schemas. Although the Test-bed could have used XML messages directly, there is currently no way to validate this inside Kafka, i.e. a topic that should only deal with CAP messages would still accept EMSI messages, since they are both XML, which would lead to exceptions in the topic subscribers. Even trickier are invalid CAP messages that do not respect the XML schema, or use a different version of the schema. Also XML messages are much more verbose than the binary AVRO messages.
 
-**Dealing with standards:** In the CM domain, several standards exists, such as CAP, EDXL or EMSI. They are represented using XML, a textual representation of a message that is easily readable by computers. A recurring problem with all standards, however, is that they rarely represent all the information you would like to share. This often leads to adding new fields, or, even worse, *re-purposing* existing fields. Additionally, not every organisation uses it in the same way.  Furthermore, existing standards do not cover the full range of information that needs to be shared during a Trial. For trialling new solutions, the Test-bed needs to be flexible and exact, and that's why the Test-bed does support these standards, but converted to the AVRO format. In that way, every connected solution or simulator will exactly know what to expect when reading a message, as new fields can be easily added in a robust way.
+For all of these reasons, the Test-bed enforces all topics to use AVRO schemas, and the XML schemas are converted to AVRO schemas. But this comes at a small price, as this conversion is not perfect since XML schemas are slightly more expressive. For example, an XML schema can enforce a string to adhere to a specific pattern, such as a phone number, which is not possible in AVRO:
+
+```xml
+<xsd:simpleType name="phoneType">
+  <xsd:restriction base="xsd:string">
+   <xsd:pattern value="[0-9]{3}-[0-9]{7}"/>
+  </xsd:restriction>
+</xsd:simpleType>
+```
+
+However, since most solutions dealing with CM standards should already have formatted these messages correctly, this should not lead to many problems. Within the DRIVER+ Trials, at least, it worked well.
+
+Finally, another advantage of using AVRO schemas is that they are shared in the Test-bed via the schema registry
 
 ### CIS and CSS
 
@@ -140,11 +159,32 @@ Whether designing a **Trial** to evaluate solutions, or an **exercise** to train
 
 In a **Trial**, the primary objective is to test and evaluate solutions, and a similar procedure is followed. In that case, the *training objectives* are replaced by *research questions*, but the other steps remain the same. More details about the methodology to setup a proper Trial can be found in the [Trial Guidance Methodology handbook, available at https://www.driver-project.eu/trial-guidance-methodology/](https://www.driver-project.eu/trial-guidance-methodology).
 
-### Existing software
+### Scenario support during a Trial or exercise {#tmt_reqts}
 
-The process described above is the typical approach taken by the NATO's Joint Exercise Management Module ([JEMM](http://slideplayer.com/slide/7873364)) (see Figure 10). It is a tool to support live exercises as well as table top exercises, from a few people to battalions. It puts a lot of emphasis on authorization management (*who can do what?*) during the creation of a scenario, and has a limited level of automation. For example, JEMM can connect to Outlook / Exchange Server to automatically create or receive email messages. Sending, though, is still a manual process.
+A Trial or exercise requires a relevant context for the participants in which they can trial new solutions or improve their competencies in handling an incident. This context is not static, but evolves in time, and may contain the incident but also non-participating organisations, and is called a _scenario_. For example, there is a storm, high waters and heavy rainfall, increasing the risk of flooding. Due to a traffic incident involving a truck, the gates of the main sluice cannot be closed anymore, and the water is threatening the inner city. Two hours later, a small dyke leakage floods an electricity station, rendering the pump to keep the polder dry useless. Etc.
 
-JEMM is only available free of charge to military NATO members, i.e. to use it in a Trial, a military presence is required.
+In the simplest cases, such a scenario can be controlled via info cards, and at each step, a new info card message is presented to the participants. Such a message could detail an evolving situation, or inform them of a specific need, to name but a few. This quickly becomes unwieldy when dealing with many messages, or with alternative _what if_ branches, and a tool would be needed to support the staff. A few tools exist to manage and support a scenario, which will be discussed in the next session. Ideally, such a tool should offer support to Trial staff for:
+
+1. Creating and editing a new scenario, where a scenario is represented as a sequence of specific messages over time. These messages are often called _'injects'_, as they inject certain behaviour into a running Trial.
+2. Providing a good overview of the scenario timeline: _what is happening when_.
+3. Managing stakeholder and objectives for a Trial or exercise, and checking that these objectives are represented in the scenario.
+4. Managing the requested observations: since a scenario defines what is happening when, it also 'knows' best what should be observed, and should be able to inform observers to look out for certain behaviour.
+5. Including additional information into the recorded message sequence for after-action review, such as dedicated messages for starting and stopping a scenario (a session) or a CM phase.
+6. A clear separation between different 'storylines', e.g. one main storyline for the evolving incident, another storyline to train organisation A, and another for organisation B. Or storylines dedicated to trialling a new solution.
+7. Branching i.e. a scenario is a kind of tree where the participants decide which path to follow.
+8. Conditional execution of messages or branches.
+9. Support for CM messages.
+10. Automation, such as automatically sending emails or tweets.
+11. Running distributed, so the staff can access it remotely and edit it at the same time.
+12. Controlling simulators, like a traffic simulator responding to a 'create traffic incident' message.
+13. Replacing simulators when the simulation requirements are very basic and require no, or very limited, interaction, e.g. replace a flooding simulator with a pre-recorded time sequence of flood maps.
+14. Managing one or more scenarios in the context of a Trial or exercise. For example, a flooding Trial may have two scenarios, and before and one after the flooding incident itself.
+
+### Existing software for managing Trials or exercises
+
+In NATO, military exercises are often supported by the Joint Exercise Management Module, or [JEMM](http://slideplayer.com/slide/7873364) (see Figure 10). It is a web-based tool to support live exercises as well as table-top exercises, from a few people to battalions. Essentially, it is an enhanced spreadsheet, where each line represents an action, and the time moves down vertically, making it difficult to separate multiple storylines or see the whole picture. It also puts a lot of emphasis on authorization management (*who can do what?*) during the creation of a scenario, and has a limited level of automation: for example, the Command Staff Trainer of the Dutch Army employs a dedicated simulator to simulate the outcomes of a battle. This simulator is controlled manually, however, and JEMM is only used to inform a human operator when he or she has to take a particular action.
+
+Since JEMM is only available to military NATO members, in which case it is free-of-charge, to use it in a Trial would require military involvement.
 
 ![JEMM exercise script example](img/jemm_exercise_script_example.png)
 
@@ -152,43 +192,25 @@ Alternative commercial solutions exist too, such as [Exonaut](https://www.4cstra
 
 ![Exonaut timeline example](img/exonaut_example.png)
 
-### Trial-Management-Tool (TMT)
+### Scenario management using the Trial-Management-Tool (TMT)
 
-The Trial-Management-Tool is an integral part of the Test-bed reference implementation, since it is not possible to use JEMM or Exonaut directly, as:
+To properly support the complex Trials in DRIVER+, tooling is required for managing the scenario. However, it is not possible to use JEMM or Exonaut directly, as:
 
-- JEMM is only available to NATO members, and can only be used in an exercise when military personnel requests it. This will not always be the case.
-- JEMM and Exonaut are aimed at the military community, and the fit with the Crisis Management domain is not optimal.
+- JEMM is only available to NATO members, and can only be used in an exercise when military personnel requests it. This will often not be the case in CM-centred Trials which are the focus of DRIVER+.
+- JEMM and Exonaut are aimed at the military community, and the fit with the Crisis Management domain is not optimal. For example, there is not support for typical CM messages like CAP, and contains a lot of military jargon.
 - JEMM and Exonaut are closed source, so a strong integration with the Test-bed is not possible, as the applications cannot be modified.
 
-Therefore, in order to assess solutions during a **Trial**, one or more scenarios are created in the TMT by CM experts and Trial staff (see Figure 12). Each scenario controls the simulation time (start, stop, pause), and specifies what is happening during the Trial, so the solutions can be properly evaluated, and the Trial objectives are met. In a scenario, multiple storylines can be created, each containing one or more injects, i.e. messages to simulators, solutions and role-players.  
+Within the Test-bed, the open source [Trial-Management-Tool](https://github.com/DRIVER-EU/scenario-manager) is an integral part, and it allows the Trial staff to fulfil all requirements as stated [above](#tmt_reqts). For any Trial or exercise, one starts by defining the *training objectives*, *What does the training audience need to learn?*. Next, one or more appropriate *scenarios* are formulated by CM experts in which these training objectives can be tested and exercised, providing a realistic context (see Figure 12). The scenario is further broken down into *storylines*. A storyline describes a developing situation that trigger a trialled solution or will set conditions and provide the training audience an opportunity to achieve specific training objectives. It often targets a subset of the solutions or training audiences, e.g. only the COP tool or fire fighters, and consists of timed events, or so-called *injects*. Think of an email to the commander, a 'start flooding' message to a flooding simulator, or instructions to a role-playing actor. Additionally, the scenario may include extra messages for managing the Trial, such as the time that a scenario was started or stopped (a session), instructing the observers to pay attention to certain behaviour, or annotation the begin and end of a CM phase.
 
-During the Trial execution, those messages influence the scenario. For example, the TMT can send a message to a traffic simulator to create an incident at a certain location, or it could send a Common Alerting Protocol message to a Command & Control application. Additionally, the TMT can send messages to role-players, so they can make a call or play a non-participating command centre. The Trial staff can also send messages earlier or later, or resend them, offering a great level of control over the Trial.
+During the Trial execution, those messages influence the participant's context. For example, the TMT can send a message to a traffic simulator to create a traffic incident at a certain location, or it could send a Common Alerting Protocol (CAP) message to a Command & Control application. Additionally, the TMT can send messages to role-players, so they can make a call or play a non-participating command centre. The Trial staff can also send messages earlier or later, or resend them, offering a great level of control over the Trial.
 
 ![Edit a scenario, including specifying start and end time and creating checklists](img/tmt_edit_scenario.png)
 
-Creating a scenario in the TMT can be compared by creating a new project (see Figure 13). However, instead of managing a project by creating subprojects, work packages and tasks, a Trial scenario (=> project) consists of storylines (=> subprojects), acts (=> work packages) and injects (=> tasks, like a simple message). And whereas in a project, you assign resources, in the TMT you assign simulators, role players and observers (=> resources).
-
-A scenario is created while preparing the Trial and executed during the Trial. And like a project manager controlling the sequence of the tasks during the lifetime of a project, the Trial staff is also able to control the sequence of inject/messages during the lifetime of a scenario. For example, a scenario may specify that initially, water levels rise, next a dyke breaks and a flooding starts. In parallel, a traffic accident causes an ammonia cloud to threaten a part of the city. And its output is a time sequence of messages, for example to instruct a simulator to start a flooding, a role player to call 112 or an observer to watch out for a particular use of a solution.
+Creating a scenario in the TMT can be compared to creating a new project (see Figure 13). However, instead of managing a project by creating subprojects, work packages and tasks, a Trial scenario (=> project) consists of storylines (=> subprojects), acts (=> work packages) and injects (=> tasks, like a simple message). And whereas in a project, you assign resources, in the TMT you assign simulators, role players and observers.
 
 ![A scenario timeline is comparable to a project manager's Gantt chart](img/tmt_edit_timeline.png)
 
-For an exercise, one starts by defining the *training objectives*, *What does the training audience need to learn?*. Next, an appropriate *Mission / Main scenario* is formulated in which these training objectives can be tested and exercised. The mission is further broken down into *storylines*. A Storyline describes a developing situation that will set conditions and provide the Training Audience an opportunity to achieve specific training objectives. It often targets a subset of the training audience, e.g. only the fire fighters, and consists of timed events, or so-called *injects*. Think of an email to the commander, a 'start flooding' message to a flooding simulator, or instructions to a role-playing actor.
-
-So the TMT acts as the *composer* and *conductor* of a classical performance:
-
-- As the *composer*, it defines what each role has to play. For example, what do the simulators or role-players need to do in order to provide a realistic incident and background to the Trial, or it could include sending direct messages to solutions.
-- As the *conductor*, it controls *when* each role starts and stops.
-
-In summary, the TMT offers the following functionality:
-
-- Define the stakeholders and objectives of the Trial.
-- Describe an overall scenario that can put these objectives to the test (see Figure 12).
-- Specific storylines are created to stress the solutions (see Figure 13).
-- Within each storyline, different acts are created, for example to:
-  - Instruct a simulator to start the fire or other incident, or send out social media messages.
-  - Send a message to the Observer Support Tool, to switch the set of questions.
-  - Inform a role player to conduct a telephone call.
-- Run or execute the scenario (see Figure 14).
+A scenario is created while preparing the Trial and executed during the Trial (see Figure 14). And like a project manager controlling the sequence of the tasks during the lifetime of a project, the Trial Director is also able to control the sequence of injects/messages during the lifetime of a scenario.
 
 ![A running scenario can be paused, and certain messages require manual confirmation](img/tmt_run.png)
 
@@ -276,3 +298,39 @@ All simulators have their own data model of how they represent the simulated wor
 The simulators only need to be concerned with maintaining the current state of a given location (including entities and processes present at that location), and do not have to deal with the different kinds of communication types for tools and users to depict that current state.
 
 The CSS allows simulators to only focus on maintaining the current state of the simulated world (i.e. the simulated truth of the incident and the world around it). In order to communicate state changes with other simulators inside the CSS, self-created communication messages are allowed inside this space.
+
+## 3.6 Conclusion and Roadmap
+
+The actual Test-bed reference implementation v3 already provides all the required functionality to conduct Trials for testing the usefulness of new solutions for CM organisations. But CM organisations more often train than trial, and future versions should enhance the training capability too, improving support for table top and field exercises. Preferably, this should be done in close cooperation with the DRIVER+ Centre's of Excellence, typically CM umbrella organisations.
+
+Besides being useful for CM organisations, there is also a growing need in the Defence domain for urban battlespaces. Whereas battles of the past were mostly conducted in the open, modern battles are typically conducted in an urban environment, and kinetic simulators and training environments must be enhanced with urban environments and their typical characteristics: critical infrastructures, social media, cyber and sensor networks. The Test-bed is, therefore, also useful in the Defence domain.
+
+Finally, also the police has an increasing need for such tooling: terrorist attacks, manhunts or large scale public events are often not isolated to a single location and may generate multiple incidents, requiring regional and national cooperation. Having an environment to train such large scale incidents should be beneficial for them too. Ideally, required functionality would be specified together with the Police Academy.
+
+It would even be interesting to see if the Test-bed, and especially the TMT, can be used to recreate the timeline in crime-fighting. Take the example of an assassination, abduction or finding a missing child: create a main storyline based on the known facts. For each hypothesis, add a new storyline that fills in the gaps and analyse it. Does the alibi of X hold, or may he have met Y somewhere in between. Get a better impression of the relevant time period when watching public CCTV camera's or reviewing social media photos.
+
+These combined needs may lead to the following future functionality.
+
+### Test-bed
+
+The Test-bed could be enhanced with additional services, some being actively developed, such as:
+
+- An [email gateway service](https://github.com/DRIVER-EU/email-gateway), to forward Test-bed messages to email clients and receive emails. In case emails are based on fixed templates, these templates can be interpreted by a computer and trigger events or sent to other solutions.
+- A [geo-fencing service](https://github.com/DRIVER-EU/geo-fencer), triggering events when a participant, resource or simulated entity cross a pre-set geographic location.
+- Gateway to HLA (especially the REAPER FOM) or DIS, to improve interoperability.
+- Map services for sharing maps.
+- A communication service so voice and chat messages can be recorded.
+- Adapters in Rust, C++ and Go.
+- Text-to-speech services, so phone calls can be generated and replace role-players.
+- Speech-to-text services, so phone calls can trigger events, e.g. a phone call including a menu, requesting a dyke break at a certain location in order to spare the city.
+
+The Admin tool already provides most required functionality, and required enhancements are documenten on [GitHub](https://github.com/DRIVER-EU/test-bed-admin/issues). They are mostly minor things, like improved editing of the configuration, add sorting or filtering of info logs.
+
+The TMT's enhancements are documented on [GitHub](https://github.com/DRIVER-EU/scenario-manager/issues). In particular:
+
+- Adding new message types should be simpler.
+- Allowing for life edits such that the staff can inject new messages on the fly.
+- Allow to start a scenario 'in the middle', i.e. skipping part of the scenario. For example, to jump to an interesting scene or during debugging or integrating.
+- Listening to external messages, like a trigger from the geo-fencing service, informing the TMT that something relevant has occurred, or a voice command via phone or chat to start a storyline.
+
+For the OST, the main focus is on better user-friendliness, making it easier to create new observations, and improved analysis capability. And finally, for the AAR, support capturing screenshots or video from running solutions.

@@ -85,6 +85,7 @@ The changes with respect to the second version are described in the following.
 
 ### Test-bed description
 
+- Added a conclusion / roadmap section at the end.
 - Added a short description on how the Test-bed can be used for trialling processes and procedures. The previous version was a bit negative about its use, but that vision has changed due to more recent experiences.
 - Added an overview of the type of messages that can be exchanged.
 - Added direct link to TGM handbook.
@@ -94,7 +95,22 @@ The changes with respect to the second version are described in the following.
 - Minor textual edits.
 - Updated most images.
 
-## TODO
+### The Test-bed for developers and system administrators
 
-Update figure 3
-Update admin picture
+- Improved intro, added link to node.js example project.
+- Added more detail to use case 4.2.
+- Added section on Single-Sign-On as part of section 4.7.
+- Rewritten the paragraph 'Dealing with standards' to better explain why we are using AVRO.
+- Added a new section: 'Scenario support during a Trial or exercise'.
+- Updated the section on JEMM. Added example of the Command Staff Trainer.
+- Removed reference to the message injector.
+- Renamed Message topics UI to the Kafka topics UI.
+- Renamed Schema registry to AVRO schema registry.
+- Time service: added a remark that we are always communicating UTC time.
+- Time: improved consistency, scenario time is always referred to as trial time.
+- HLA: There is nowadays the option to use C#.
+- Minor textual edits throughout the chapter.
+
+### Annex 3: Test-bed design
+
+- Minor textual edits throughout the chapter.
