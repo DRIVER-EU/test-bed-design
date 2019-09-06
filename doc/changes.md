@@ -70,6 +70,11 @@ The changes with respect to the second version are described in the following.
 
 - Renamed Scenario Manager to Trial-Management-Tool: the reason for this change was that a Trial may contain several scenarios.
 
+### Executive summary
+
+- Updated to present version 3.
+- Added a paragraph on additional software that we delivered, and which is not part of the original DoW.
+
 ### Introduction
 
 - Added a reference to the change history in [section 1.3](introduction.md#13-organisation-of-the-document).

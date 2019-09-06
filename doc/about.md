@@ -54,7 +54,7 @@ All DRIVER+ consortium members are also committed to publish accurate and up to 
 | V1.8  | 29/11/2018 | Final check and approval for submission | Marijn Rijken, TNO, Project Director |
 | V2.0  | 30/11/2018 | Submission to the EC | Francisco Gala, ATOS |
 | V2.1  | 20/08/2019 | Updated and included latest changes | Erik Vullings, TNO |
-| V2.2  | 30/08/2019 | Reviews from Héctor Naranjo (GMV), Laurent Dubost & Antoine Léger (TCS), Dennis Horstkemper (WWU) processed | Erik Vullings, TNO |
+| V2.2  | 06/09/2019 | Reviews from Héctor Naranjo (GMV), Laurent Dubost & Antoine Léger (TCS), Dennis Horstkemper (WWU) processed | Erik Vullings, TNO |
 | V2.3  | 13/09/2019 | Final check and approval for submission | Tim Stelkens-Kobsch, DLR, Quality Manager |
 | V2.4  | 20/09/2019 | Final check and approval for submission | Marijn Rijken, TNO, Project Director |
 | V3.0  | 30/09/2019 | Submission to the EC | Francisco Gala, ATOS |

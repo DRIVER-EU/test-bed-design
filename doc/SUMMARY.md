@@ -10,4 +10,5 @@
 * [Annex 1. Terminology](annex.md)
 * [Annex 2. Change history](changes.md)
 * [Annex 3. Test-bed design](design.md)
+* [Annex 4. Docker Test-bed example](docker.md)
 * [List of Figures](pictures.md)
