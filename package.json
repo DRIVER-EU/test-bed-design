@@ -28,7 +28,7 @@
     "build:pdf": "gitbook pdf ./ ./doc/ebooks/driver-plus-test-bed-specification.pdf",
     "build:epub": "gitbook epub ./ ./doc/ebooks/driver-plus-test-bed-specification.epub",
     "build:mobi": "gitbook mobi ./ ./doc/ebooks/driver-plus-test-bed-specification.mobi",
-    "build:ebooks": "npm run build:pdf && npm run build:epub && npm run build:mobi"
+    "build:ebooks": "npm run build:pdf && npm run build:mobi"
   },
   "repository": {
     "type": "git",
