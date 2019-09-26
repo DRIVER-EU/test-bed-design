@@ -85,7 +85,15 @@ To capture this information, the common solution is to specify it in a so-called
 }
 ```
 
-**Dealing with standards:** In the CM domain, several standards exists, such as CAP, EDXL or EMSI. They are represented using XML, a textual representation of a message that is easily readable by computers, and which are formalized using XML schemas. Although the Test-bed could have used XML messages directly, there is currently no way to validate this inside Kafka, i.e. a topic that should only deal with CAP messages would still accept EMSI messages, since they are both XML, which would lead to exceptions in the topic subscribers. Even trickier are invalid CAP messages that do not respect the XML schema, or use a different version of the schema. Also XML messages are much more verbose than the binary AVRO messages.
+### Dealing with standards
+
+The Test-bed enforces AVRO schemas, as it:
+
+- Is able to process and distinguish between various types of Messages formats such as CAP, EMSI.
+- Can enforce that only valid messages are shared.
+- Is concise.
+
+In the CM domain, several standards exists, such as CAP, EDXL or EMSI. They are represented using XML, a textual representation of a message that is easily readable by computers, and which are formalized using XML schemas. Although the Test-bed could have used XML messages directly, there is currently no way to validate this inside Kafka, i.e. a topic that should only deal with CAP messages would still accept EMSI messages, since they are both XML, which would lead to exceptions in the topic subscribers. Even trickier are invalid CAP messages that do not respect the XML schema, or use a different version of the schema. Also XML messages are much more verbose than the binary AVRO messages.
 
 For all of these reasons, the Test-bed enforces all topics to use AVRO schemas, and the XML schemas are converted to AVRO schemas. But this comes at a small price, as this conversion is not perfect since XML schemas are slightly more expressive. For example, an XML schema can enforce a string to adhere to a specific pattern, such as a phone number, which is not possible in AVRO:
 
