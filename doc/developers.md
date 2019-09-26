@@ -3,7 +3,7 @@
 This chapter discusses the Test-bed from a technical perspective, and is aimed at skilled IT persons, such as system administrators and developers. It is presumed that you are already familiar with the previous chapters.
 
 - A _system administrator_, in the current context, is responsible for installing the Test-bed on their local network or in the cloud, and making sure that all the solution and simulation providers can get access to this network as well. This task is discussed in the use case 'Installing the Test-bed'.
-- A _developer_ would be tasked with connecting an existing Solution or simulator to the Test-bed. Besides the direct coupling, allowing their tools to receive and publish messages, it most likely also involves translating existing messages to their own format. Finally, in case you are connecting a simulator, you also need more detailed information about the time management in the Test-bed.
+- A _developer_ would be tasked with connecting an existing solution or simulator to the Test-bed. Besides the direct coupling, allowing their tools to receive and publish messages, it most likely also involves translating existing messages to their own format. Finally, in case you are connecting a simulator, you also need more detailed information about the time management in the Test-bed.
 
 Watch the following animation (also available at [https://player.vimeo.com/video/299681354](https://player.vimeo.com/video/299681354)) to get a better understanding of what is going on.
 
@@ -63,7 +63,7 @@ Connecting to the Test-bed is needed to share information that you produce, or t
 
 ![Screenshot displaying the Replay service's GUI interface](img/kafka_replay_service.png)
 
-## 4.3 Use case: Pre-trial integration testing
+## 4.3 Use case: Pre-Trial integration testing
 
 The procedure for testing multiple solutions and simulators before an actual Trial with participants is performed, is similar to the procedure for testing a single application. It is assumed that the single solutions and simulators have already been successfully integrated with the Test-bed, and all required message schemas are defined.
 
@@ -160,13 +160,13 @@ Security is an integral part of the Test-bed: although in most crisis management
 
 - Integrity of information exchanged in CIS and CSS topics: messages should not be tampered without notice.
 - Authenticity of information exchanged in CISS and CSS topics: the origin of the messages published to certain topics should be authenticated, and, by extension, only legit/trusted users may publish on certain topics.
-- Confidentiality of information exchanged in CISS and CSS topics, such as critical infrastructure information or personal information (beware the GDPR): only authorized Solutions (adapters) may have access to the messages published to certain topics.
+- Confidentiality of information exchanged in CISS and CSS topics, such as critical infrastructure information or personal information (beware the GDPR): only authorized solutions (adapters) may have access to the messages published to certain topics.
 
 To achieve these objectives, the Test-bed includes an access control framework in which both system administrators and developers have a role to play.
 
 ### Authentication
 
-The CIS/CSS Kafka broker enforces SSL/TLS transport security with mutual authentication. This means that adapters are required to authenticate with SSL client certificates. Developers shall get such SSL client certificates from the Admin Tool, with the approval of a system administrator. The subject name of the certificate must uniquely identify the adapter within the organization. More specifically, the subject name must include an Organization name (O) identifying the Organization that owns the Solution or Simulator, and  a Common Name (CN) identifying the Solution or Simulator instance within that organization. The Admin Tool uses a Certificate Authority (CA), provided with the testbed in the backend, to issue those certificates.
+The CIS/CSS Kafka broker enforces SSL/TLS transport security with mutual authentication. This means that adapters are required to authenticate with SSL client certificates. Developers shall get such SSL client certificates from the Admin Tool, with the approval of a system administrator. The subject name of the certificate must uniquely identify the adapter within the organization. More specifically, the subject name must include an Organization name (O) identifying the Organization that owns the solution or simulator, and  a Common Name (CN) identifying the solution or simulator instance within that organization. The Admin Tool uses a Certificate Authority (CA), provided with the testbed in the backend, to issue those certificates.
 
 Developers then configure their adapters with those certificates as client certificates (key store), the aforementioned CA's certificate in their truststore (trusted CAs) in order to authenticate the broker (using a certificate issued by that same CA as well), and recommended TLS parameters according to current best practices: TLS v1.0 or later (as of writing), strong cipher suites, etc. Developers must take good care of protecting the confidentiality of the private key associated to their client certificate according to best practices and the risk level. If the key is compromised, authentication is useless. Developers must report any compromised key to system administrators so that the certificate be revoked.
 
@@ -180,7 +180,7 @@ For stronger security, whenever trial owners want to protect specific CIS/CSS to
 
 Once enabled, access to any topic is denied by default, except for certain public topics such as *system_* topics. This means that for other topics, access must be granted explicitly by system administrators. More specifically, for each sensitive topic X, the system administrator shall configure the topic access policy via the Admin Tool. A topic access policy is set on a specific topic X and consists of a list of access rules. Each access rule consists of:
 
-- Authorized subject name, as in the adapter's SSL certificate (a.k.a. Kafka client ID in this case), OR Kafka consumer group ID;
+- Authorized subject name, as in the adapter's SSL certificate (a.k.a. Kafka client ID in this case), OR Kafka consumer group ID.
 - A list of *permissions*; each *permission* is a couple *(ACTION, bool)*, where *ACTION* is the action considered on the topic (in Kafka API model), e.g. *READ* (subscribe a topic) or *WRITE* (publish on a topic), and the Boolean *bool* is true if and only if the action is permitted (positive rule), else denied.
 
 If a consumer group ID is used as the first item (instead of subject name), the system administrator must also declare the corresponding group memberships in the Admin Tool, i.e. who is authorized to join this group.

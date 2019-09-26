@@ -32,7 +32,7 @@ Common Operational Picture tools for creating a shared situational awareness
 
 ## DIS
 
-Distributed Interactive Simulation, a simulation standard [en.wikipedia.org/wiki/Distributed_Interactive_Simulation](https://en.wikipedia.org/wiki/Distributed_Interactive_Simulation).
+Distributed Interactive Simulation, a simulation standard often employed in a military context. See [en.wikipedia.org/wiki/Distributed_Interactive_Simulation](https://en.wikipedia.org/wiki/Distributed_Interactive_Simulation).
 
 ## Docker
 
@@ -75,7 +75,7 @@ REpresentational State Transfer, is a way to interact with many web services, th
 
 ## TGM
 
-Trial Guidance Methodology, see also DRIVER+ deliverable D922.21 - Trial guidance methodology and guidance tool specifications (version 1).
+Trial Guidance Methodology, see also DRIVER+ deliverable D922.41 - Trial guidance methodology and guidance tool specifications (version 2).
 
 ## Trial
 

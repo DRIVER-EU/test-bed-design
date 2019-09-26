@@ -6,12 +6,12 @@ The [DRIVER+ project](http://www.driver-project.eu) aims at helping CM practitio
 
 - The Portfolio of Solutions (PoS), an online web application where the CM practitioner can find out about existing solutions, and user experiences.
 - A Lessons Learned Framework (LLF), an online web application to share experiences among practitioners.
-- The Trial Guidance Methodology (TGM, deliverable D922.21 - Trial guidance methodology and guidance tool specifications (version 1)) and Trial Guidance Tool (TGT), a step-by-step approach that guides CM practitioners through all the steps needed to prepare and run a Trial.
+- The Trial Guidance Methodology (TGM, deliverable D922.41 - Trial guidance methodology and guidance tool specifications (version 2)) and Trial Guidance Tool (TGT), a step-by-step approach that guides CM practitioners through all the steps needed to prepare and run a Trial.
 - The Test-bed infrastructure, a suite of software tools and services that support practitioners preparing and executing a Trial or training exercise
 
 This document is all about the latter, the Test-bed infrastructure, but since it strongly relates to the TGM, a brief summary of the TGM is presented first.
 
-Within the [DRIVER+ project](http://www.driver-project.eu), a Trial Guidance Methodology (TGM, deliverable D922.21 - Trial guidance methodology and guidance tool specifications (version 1)) and tools are developed to help resolve the needs of practitioners through a systematic and pragmatic approach. The Test-bed infrastructure is a suite of software tools and services that enables solutions and simulators in the Crisis Management (CM) domain to easily exchange information (see [Figure 3](./README.md#fig1.2.3)). This allows end-users in the CM domain to Trial solutions, and see if they address their gaps. Additionally,it can be used to support training exercises as well.
+Within the [DRIVER+ project](http://www.driver-project.eu), a Trial Guidance Methodology (TGM, deliverable D922.41 - Trial guidance methodology and guidance tool specifications (version 2)) and tools are developed to help resolve the needs of practitioners through a systematic and pragmatic approach. The Test-bed infrastructure is a suite of software tools and services that enables solutions and simulators in the Crisis Management (CM) domain to easily exchange information (see [Figure 3](./README.md#fig1.2.3)). This allows end-users in the CM domain to Trial solutions, and see if they address their gaps. Additionally,it can be used to support training exercises as well.
 
 The simplified DRIVER+ TGM process to Trial solutions is like this:
 
@@ -52,7 +52,7 @@ The chapter, [Test-bed for Trial owners](Trial-owners.md), is specifically aimed
 
 The [Test-bed description](test-bed-description.md) provides a general overview of the Test-bed reference implementation and its building blocks. It is a more technical chapter aimed at Test-bed users with a (limited) technical background.
 
-In the chapter, [Test-bed for developers and sysops](developers.md), the technical side of the Test-bed is explained in more detail. Specifically: how to manage a Test-bed as a sysop, or how to connect a new Solution or simulator as a developer. To learn more about the design principles underlying the Test-bed, the reader is referred to [Annex 3 Test-bed design](design.md).
+In the chapter, [Test-bed for developers and sysops](developers.md), the technical side of the Test-bed is explained in more detail. Specifically: how to manage a Test-bed as a sysop, or how to connect a new solution or simulator as a developer. To learn more about the design principles underlying the Test-bed, the reader is referred to [Annex 3 Test-bed design](design.md).
 
 ## 1.4 What's new
 
