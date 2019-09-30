@@ -22,7 +22,7 @@
   <tr><td style="font-weight: bold; color: white; background: #00497E">Work Package (WP):</td><td>WP923 – Test-bed infrastructure</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">Document Leader:</td><td>TNO</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">File Name:</td><td>
-  <a href="./ebooks/driver-plus-test-bed-specification.pdf" target="_blank">test-bed-design.pdf</a>, also available as <a href="./ebooks/driver-plus-test-bed-specification.epub" target="_blank">epub</a> or <a href="./ebooks/driver-plus-test-bed-specification.mobi" target="_blank">mobi</a> eBook. The latest version can be found online at <a href="https://driver-eu.github.io/test-bed-design" target="_blank">https://driver-eu.github.io/test-bed-design</a></td></tr>
+  <a href="./ebooks/DRIVER+_D923.23_Reference implementation v3 - Final release of the test-bed reference implementation.pdf" target="_blank">test-bed-design.pdf</a>, also available as <a href="./ebooks/DRIVER+_D923.23_Reference implementation v3 - Final release of the test-bed reference implementation.epub" target="_blank">epub</a> or <a href="./ebooks/DRIVER+_D923.23_Reference implementation v3 - Final release of the test-bed reference implementation.mobi" target="_blank">mobi</a> eBook. The latest version can be found online at <a href="https://driver-eu.github.io/test-bed-design" target="_blank">https://driver-eu.github.io/test-bed-design</a></td></tr>
 </table>
 
 <div id="disclaimer" style="font-style: italic; color: grey;">
