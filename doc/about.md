@@ -13,7 +13,7 @@
 
 <table style="border: 2px solid black">
   <tr><td style="font-weight: bold; color: white; background: #00497E">Document Status:</td><td>Final</td></tr>
-<tr><td style="font-weight: bold; color: white; background: #00497E">Document Title:</td><td>D923.23 Test-bed reference implementation v3</td></tr>
+<tr><td style="font-weight: bold; color: white; background: #00497E">Document Title:</td><td>D923.23 Reference implementation v3: Final release of the test-bed reference implementation [M65]</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">Document Nature:</td><td>Report (R)</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">Dissemination Level:</td><td>Public (P)</td></tr>
   <tr><td style="font-weight: bold; color: white; background: #00497E">Due Date:</td><td>30/09/2019 </td></tr>
